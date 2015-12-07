@@ -4,7 +4,7 @@ var React = require('react');
 
 var shallowRenderer = ReactTestUtils.createRenderer();
 
-var App = require('../src/components/app.jsx');
+var App = require('../src/js/components/app.jsx');
 
 shallowRenderer.render(<App />);
 var appRender = shallowRenderer.getRenderOutput();
