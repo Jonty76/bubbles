@@ -4,7 +4,7 @@ module.exports = {
 
     entry: [
       'webpack/hot/dev-server',
-      "./src/js/main.js"
+      "./src/js/main.jsx"
     ],
     output: {
       path: __dirname + '/public',
@@ -13,7 +13,7 @@ module.exports = {
     },
     module: {
       loaders: [
-        { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot','babel']},
+        { test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot','babel']},
         { test: /\.css$/, loader: 'style!css'}
       ]
     },
