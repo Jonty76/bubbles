@@ -1,0 +1,22 @@
+{
+  "name": "bubbles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+   "test": "test"
+ },
+  "scripts": {
+    "test": "./node_modules/.bin/tape ./test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgne/bubbles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgne/bubbles/issues"
+  },
+  "homepage": "https://github.com/jgne/bubbles#readme"
+}
