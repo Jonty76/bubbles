@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "directories": {
-   "test": "test"
- },
+    "test": "test"
+  },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./test/*"
+    "test": "babel-node test"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/jgne/bubbles/issues"
   },
-  "homepage": "https://github.com/jgne/bubbles#readme"
+  "homepage": "https://github.com/jgne/bubbles#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "react": "^0.14.3"
+  },
+  "devDependencies": {
+    "react-addons-test-utils": "^0.14.3",
+    "tape": "^4.2.2"
+  }
 }
