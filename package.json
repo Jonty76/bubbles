@@ -8,11 +8,13 @@
   },
   "scripts": {
     "test": "babel-node test",
+    "start": "node lib/start.js",
     "hapi-test": "istanbul cover tape test/hapi-test.js",
     "dev:build": "webpack --config webpack.development.config.js --progress --colors",
     "dev:start": "webpack-dev-server --hot --inline --progress --colors --config webpack.development.config.js",
     "build": "webpack --config webpack.production.config.js --progress --colors",
-    "dev": "webpack-dev-server --hot --inline --progress --colors --config webpack.development.config.js"
+    "dev": "webpack-dev-server --hot --inline --progress --colors --config webpack.development.config.js",
+    "postinstall": "webpack --config webpack.production.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "react": "^0.14.1",
     "react-dom": "^0.14.3",
     "react-input-calendar": "^0.1.19",
-    "react-router": "^1.0.1"
+    "react-router": "^1.0.1",
+    "webpack": "^1.12.2"
   },
   "devDependencies": {
     "babel-cli": "^6.3.15",
@@ -54,7 +57,6 @@
     "shot": "^1.7.0",
     "style-loader": "^0.13.0",
     "tape": "^4.2.2",
-    "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   },
   "pre-commit": [
