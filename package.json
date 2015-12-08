@@ -37,7 +37,8 @@
     "jsx-loader": "^0.13.2",
     "react": "^0.14.1",
     "react-dom": "^0.14.3",
-    "react-router": "^1.0.1"
+    "react-router": "^1.0.1",
+    "webpack": "^1.12.2"
   },
   "devDependencies": {
     "babel-cli": "^6.3.15",
@@ -54,7 +55,6 @@
     "shot": "^1.7.0",
     "style-loader": "^0.13.0",
     "tape": "^4.2.2",
-    "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   },
   "pre-commit": [
