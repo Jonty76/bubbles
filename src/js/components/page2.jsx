@@ -1,14 +1,11 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router';
 
-
 module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <Link to="/page1">page 1</Link>
-        <br/>
-        <Link to="/page2">page 2</Link>
+        <h1>This is page 2</h1>
       </div>
     );
   }

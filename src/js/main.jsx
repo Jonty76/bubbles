@@ -1,13 +1,21 @@
 'use strict';
 
-var React       = require('react');
-var ReactDOM    = require('react-dom');
-var App         = require('./components/app.jsx');
-var rootElement = document.getElementById('react-content');
+import React from 'react';
+import { render } from 'react-dom';
+import { Router, Route, Link } from 'react-router';
+
+let Index = require('./components/app.jsx');
+let Page1 = require('./components/page1.jsx');
+let Page2 = require('./components/page2.jsx');
+
+let rootElement = document.getElementById('react-content');
 
 require('../styles/main.js');
 
-ReactDOM.render(
-  <App />,
-  rootElement
-);
+render((
+  <Router>
+    <Route path="/" component={Index} />
+    <Route path="page2" component={Page2} />
+    <Route path="page1" component={Page1} />
+  </Router>
+),rootElement);
