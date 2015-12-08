@@ -6,7 +6,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <Link to="/page1">page 1</Link>
+        <Link to="/select-airport">page 1</Link>
         <br/>
         <Link to="/page2">page 2</Link>
       </div>
