@@ -8,7 +8,6 @@ module.exports = React.createClass({
       <div>
         <Link to="/select-airport">page 1</Link>
         <br/>
-        <Link to="/page2">page 2</Link>
       </div>
     );
   }
