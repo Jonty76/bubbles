@@ -14,7 +14,7 @@
     "dev:start": "webpack-dev-server --hot --inline --progress --colors --config webpack.development.config.js",
     "build": "webpack --config webpack.production.config.js --progress --colors",
     "dev": "webpack-dev-server --hot --inline --progress --colors --config webpack.development.config.js",
-    "postinstall": "npm run build"
+    "postinstall": "webpack --config webpack.production.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
