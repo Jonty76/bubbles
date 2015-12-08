@@ -2,8 +2,9 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import { Select } from 'formsy-react-components';
 import {Router, Route, Link} from 'react-router';
+import Calendar from 'react-input-calendar';
 
-let Selector = React.createClass({
+let airlineSelectorClass = React.createClass({
   render: function() {
     let airlineOptions = [
       {label: "British Airways"},
@@ -21,15 +22,29 @@ let Selector = React.createClass({
   }
 });
 
+let calendarSelectorClass = React.createClass({
+  render: function (){
+    return (
+      <Calendar
+        format = "DD/MM/YYYY"
+        date="08-12-2015"
+      />,
+    document.body
+    );
+  }
+
+});
+
 let Page = React.createClass({
   render:function(){
     return (
       <div>
         <Formsy.Form>
           <fieldset>
-            <Selector />
+            <airlineSelectorClass />
           </fieldset>
         </Formsy.Form>
+        <calendarSelectorClass />
       </div>
     );
   }
@@ -38,6 +53,7 @@ let Page = React.createClass({
 module.exports = ({
   Page,
   Components:{
-    Selector
+    airlineSelectorClass,
+    calendarSelectorClass
   }
 });
