@@ -1,8 +1,11 @@
 import React from 'react';
 import Formsy from 'formsy-react';
-import {Select} from 'formsy-react-components';
+import {Select, Input} from 'formsy-react-components';
+
 // import {Router, Route, Link} from 'react-router';
 import Calendar from 'react-input-calendar';
+
+
 
 let Selector = React.createClass({
   render: function() {
@@ -33,10 +36,20 @@ let Calendar2 = React.createClass({
   )}
 });
 
+let FlightNumberInput = React.createClass ({
+  render: function(){
+    return(
+      <Input name="flightNumberSelection" value="" placeholder="Flight Number" onChange={this.props.onChange}/>
+    )
+  }
+
+});
+
 let FlightDetails = React.createClass({
   render: function(){
     return (
-      <p> This is your airline: {this.props.airline} </p>
+      <p> This is your airline: {this.props.airline} 
+       This is your flight number: {this.props.flightNumber}</p>
     )
   }
 });
@@ -45,7 +58,8 @@ let FlightDetails = React.createClass({
 let Page = React.createClass({
   getInitialState: function(){
     return {
-      userAirline: ""
+      userAirline: "",
+      userFlightNumber: ""
     };
   },
 
@@ -59,6 +73,16 @@ let Page = React.createClass({
     this.selectAirline(value);
   },
 
+  inputFlightNumber: function(flightNumber){
+    this.setState({
+      userFlightNumber: flightNumber
+    });
+  },
+
+  flightNumberInputChange: function(name, value){
+    this.inputFlightNumber(value);
+  },
+
   render: function() {
     return (
       <div>
@@ -69,10 +93,10 @@ let Page = React.createClass({
         </Formsy.Form>
         <Calendar2 />
         <Formsy.Form>
-        <input type='text' placeholder="Flight number" />
+        <FlightNumberInput onChange= {this.flightNumberInputChange} />
         <input class="btn btn-primary" formnovalidate="" type="submit" value="Go" />
         </Formsy.Form>
-        <FlightDetails airline={this.state.userAirline} />
+        <FlightDetails airline={this.state.userAirline} flightNumber={this.state.userFlightNumber} />
       </div>
     );
   }
