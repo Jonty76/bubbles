@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-var Header = React.createClass({
+var About = React.createClass({
   render: function() {
     return (
       <div>
-        <Link to="/about"> About </Link>
+        <Link to="/select-airport">Home</Link>
+        <p> filler text here!! </p>
         <br/>
       </div>
     );
   }
 });
 
-module.exports = Header;
+module.exports = About;
