@@ -56,6 +56,32 @@ let FlightDetails = React.createClass({
   }
 });
 
+let DetailsController = React.createClass({
+  getInitialState: function(){
+    return {
+      flightDetails:"Enter Flight"
+    };
+  },
+  render:function(){
+    return (
+      <div>
+        <button class="btn btn-primary"  onClick={this.flightDetailsOnPage}>GO</button>
+        {this.state.flightDetails}
+      </div>
+    )
+
+  },
+
+  flightDetailsOnPage: function() {
+    this.setState({
+      flightDetails: (
+        <FlightDetails airline={this.props.airline}      flightNumber={this.props.flightNumber}
+        flightDate={this.props.flightDate} />
+      )
+    });
+  }
+});
+
 
 let Page = React.createClass({
   getInitialState: function(){
@@ -68,7 +94,7 @@ let Page = React.createClass({
 
   selectAirline: function(airline){
     this.setState({
-      userAirline: "This is your airline: " + airline +", "
+      userAirline: "Airline: " + airline +", "
     });
   },
 
@@ -103,16 +129,18 @@ let Page = React.createClass({
       <div>
         <Formsy.Form>
           <fieldset>
-            <Selector onChange= {this.selectorChange} />
+            <Selector onChange={this.selectorChange}/>
           </fieldset>
         </Formsy.Form>
         <CalendarInput onChange={this.calendarInputChange} />
         <Formsy.Form>
-        <FlightNumberInput onChange= {this.flightNumberInputChange} />
-        <input class="btn btn-primary" formnovalidate="" type="submit" value="Go" />
+        <FlightNumberInput onChange={this.flightNumberInputChange} />
         </Formsy.Form>
-        <FlightDetails airline={this.state.userAirline} flightNumber={this.state.userFlightNumber}
-          flightDate={this.state.userFlightDate} />
+        <DetailsController
+          airline = {this.state.userAirline}
+          flightDate = {this.state.userFlightDate}
+          flightNumber = {this.state.userFlightNumber}
+        />
       </div>
     );
   }
