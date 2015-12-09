@@ -8,6 +8,8 @@ let App = require('./components/app.jsx');
 let SelectAirport = require('./components/views/select-airport.jsx').Page;
 let About = require('./components/views/about.jsx');
 let rootElement = document.getElementById('react-content');
+let AirportNotServed = require('./components/views/airport-not-served.jsx').Page;
+
 
 require('../styles/main.js');
 
@@ -17,6 +19,7 @@ render((
       <IndexRoute component={SelectAirport} />
       <Route path="about" component={About} />
       <Route path="select-airport" component={SelectAirport} />
+     <Route path="airport-not-served" component={AirportNotServed} />
     </Route>
   </Router>
 ),rootElement);

@@ -3,11 +3,6 @@ import Formsy from 'formsy-react';
 import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
 
-let testFunc = function(name, value) {
-  console.log("selector value changed!!!, now we heve this data:");
-  console.log("name: ", name);
-  console.log("value: ", value);
-};
 
 let Selector = React.createClass({
  render: function() {
@@ -38,12 +33,12 @@ let LinkToFlightDetails = React.createClass({
 let Page = React.createClass({
   getInitialState: function() {
     return {
-      nextLink: '/airportNotServed'
+      nextLink: '/airport-not-served'
     };
   },
-  
+
   selectAirport: function(airport) {
-    var link = (airport === 'Gatwick') ? '/flightDetails' : '/airportNotServed';
+    var link = (airport === 'Gatwick') ? '/flightDetails' : '/airport-not-served';
     this.setState({
       nextLink: link
     });
