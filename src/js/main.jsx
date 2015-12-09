@@ -6,6 +6,9 @@ import { Router, Route, Link, IndexRoute } from 'react-router';
 
 let App = require('./components/app.jsx');
 let SelectAirport = require('./components/views/select-airport.jsx').Page;
+
+let SelectFlight = require('./components/views/select-flight.jsx').Page;
+
 let About = require('./components/views/about.jsx');
 let rootElement = document.getElementById('react-content');
 let AirportNotServed = require('./components/views/airport-not-served.jsx').Page;
@@ -19,7 +22,9 @@ render((
       <IndexRoute component={SelectAirport} />
       <Route path="about" component={About} />
       <Route path="select-airport" component={SelectAirport} />
+      <Route path="select-flight" component={SelectFlight} />
      <Route path="airport-not-served" component={AirportNotServed} />
     </Route>
+
   </Router>
 ),rootElement);

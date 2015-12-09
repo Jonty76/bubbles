@@ -17,8 +17,10 @@ module.exports = React.createClass({
     console.log(this.props);
     return (
       <div>
+        
         <Header />
         {this.props.children}
+
       </div>
     );
   }

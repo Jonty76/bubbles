@@ -38,7 +38,7 @@ let Page = React.createClass({
   },
 
   selectAirport: function(airport) {
-    var link = (airport === 'Gatwick') ? '/flightDetails' : '/airport-not-served';
+    var link = (airport === 'Gatwick') ? '/select-flight' : '/airport-not-served';
     this.setState({
       nextLink: link
     });
