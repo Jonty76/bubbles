@@ -36,10 +36,10 @@ let Page = React.createClass({
     );
     return (
       <div>
-        <Link to='/select-airport'>Home</Link>
+        <Link to='/create-account'>CHANGE THIS</Link>
         <p>
           Sorry we do not currently serve this airport.
-          Enter your email and we'll update you when we do! 
+          Enter your email and we'll update you when we do!
          </p>
          {this.state.emailSubmitted ? submittedText : submitForm}
       </div>
