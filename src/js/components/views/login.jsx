@@ -4,6 +4,7 @@ import { Input } from 'formsy-react-components';
 
 var Page = React.createClass({
   render: function() {
+    console.log("rendering login page");
     return (
       <div>
         <Formsy.Form>
@@ -22,7 +23,7 @@ var Page = React.createClass({
             placeholder="Enter password"
           />
         </Formsy.Form>
-        <Link to="/confirm-payment">
+        <Link to="/payment">
           <button>LOG IN</button>
         </Link>
         <Link to="create-account">
