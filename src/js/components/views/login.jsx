@@ -24,7 +24,7 @@ var Page = React.createClass({
           />
         </Formsy.Form>
         <Link to="/payment">
-          <button>LOG IN</button>
+          <div className="next-button">LOG IN</div>
         </Link>
         <Link to="create-account">
           <button>Or click here to create an account</button>
