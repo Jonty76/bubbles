@@ -1,7 +1,7 @@
 import React from 'react';
 import Formsy from 'formsy-react';
-import { Input,  } from 'formsy-react-components';
-// import { Link } from 'react-router';
+import { Input } from 'formsy-react-components';
+import { Link } from 'react-router';
 
 let Page = React.createClass({
   render: function() {
@@ -155,13 +155,17 @@ let Page = React.createClass({
           required
         />
       </fieldset>
-      </Formsy.Form>
+      <fieldset>
+        <Link to="/payment">
+          <button>CREATE ACCOUNT</button>
+        </Link>
+      </fieldset>
+    </Formsy.Form>
     );
   }
 });
 
 module.exports = {
   Page,
-  Components: {
-  }
+  Components: {}
 }
