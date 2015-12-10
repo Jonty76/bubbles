@@ -6,7 +6,6 @@ import {Select, Input} from 'formsy-react-components';
 import Calendar from 'react-input-calendar';
 
 
-
 let Selector = React.createClass({
   render: function() {
     let airlineOptions = [
@@ -36,13 +35,29 @@ let CalendarInput = React.createClass({
   )}
 });
 
-let FlightNumberInput = React.createClass ({
-  render: function(){
-    return(
-      <Input name="flightNumberSelection" value="" placeholder="Flight Number" onChange={this.props.onChange}/>
-    )
-  }
 
+let FlightNumberSelector = React.createClass({
+  render: function() {
+    let flightNumberOptions = [
+      {
+        label: " "
+      }, {
+        label: "BA350"
+      }, {
+        label: "BA101"
+      }, {
+        label: "BA100"
+      }
+    ];
+
+  if (this.props.dateSelected) {
+    return (
+      <Select name="flightNumberSelector" options = {flightNumberOptions}        />
+      );
+    } else {
+      return <p> </p>;
+    }
+  }
 });
 
 let FlightDetails = React.createClass({
@@ -55,6 +70,34 @@ let FlightDetails = React.createClass({
     )
   }
 });
+
+// let FlightNumberDropDownController = React.createClass({
+//   getInitialState: function (){
+//     return{
+//       flightNumberDropDown:""
+//     };
+//   },
+//   render: function(){
+//     return (
+//       <div>
+//         {this.state.flightNumberDropDown}
+//       </div>
+//     )
+//   },
+
+  // flightNumberDropDownOnPage: function(){
+//     this.setState({
+//       flightNumberDropDown: (
+//         <FlightNumberSelector
+//           flightNumberOptions={this.props.flightNumberOptions}
+//           dateSelected={this.props.dateSelected}
+//         />
+//       )
+//     })
+//   }
+// });
+
+
 
 let DetailsController = React.createClass({
   getInitialState: function(){
@@ -75,8 +118,11 @@ let DetailsController = React.createClass({
   flightDetailsOnPage: function() {
     this.setState({
       flightDetails: (
-        <FlightDetails airline={this.props.airline}      flightNumber={this.props.flightNumber}
-        flightDate={this.props.flightDate} />
+        <FlightDetails
+          airline={this.props.airline}
+          flightNumber={this.props.flightNumber}
+          flightDate={this.props.flightDate}
+        />
       )
     });
   }
@@ -87,7 +133,8 @@ let Page = React.createClass({
   getInitialState: function(){
     return {
       userAirline: "",
-      userFlightNumber: "",
+      userFlightDateSelected: false,
+      // userFlightNumber: "",
       userFlightDate: ""
     };
   },
@@ -102,8 +149,20 @@ let Page = React.createClass({
     this.selectAirline(value);
   },
 
+  // selectFlightNumber: function(number){
+  //   this.setState({
+  //     userFlightNumber: "Flight Number: " + number +", "
+  //   });
+  // },
+  //
+  //
+  // flightNumberSelectorChange: function(name, value){
+  //   this.selectFlightNumber(value);
+  // },
+
   inputDate: function(flightDate){
     this.setState({
+      userFlightDateSelected: true,
       userFlightDate : "This is your flight date: "  + flightDate + ", "
     });
   },
@@ -112,29 +171,17 @@ let Page = React.createClass({
     this.inputDate(value);
   },
 
-  inputFlightNumber: function(flightNumber){
-    this.setState({
-      userFlightNumber: "This is your flight number: " + flightNumber +", "
-    });
-  },
-
-  flightNumberInputChange: function(name, value){
-    this.inputFlightNumber(value);
-  },
-
-
-
   render: function() {
     return (
       <div>
         <Formsy.Form>
           <fieldset>
-            <Selector onChange={this.selectorChange}/>
+            <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
         <CalendarInput onChange={this.calendarInputChange} />
         <Formsy.Form>
-        <FlightNumberInput onChange={this.flightNumberInputChange} />
+        <FlightNumberSelector dateSelected={this.state.userFlightDateSelected} />
         </Formsy.Form>
         <DetailsController
           airline = {this.state.userAirline}
@@ -151,6 +198,6 @@ module.exports = ({
   Components: {
     Selector,
     CalendarInput,
-    FlightNumberInput
+    FlightNumberSelector
   }
 });
