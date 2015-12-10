@@ -2,10 +2,10 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 
+
 // import {Router, Route, Link} from 'react-router';
 import Calendar from 'react-input-calendar';
-
-
+import Moment from 'moment';
 
 let Selector = React.createClass({
   render: function() {
@@ -15,7 +15,7 @@ let Selector = React.createClass({
       }, {
         label: "Emirates"
       }, {
-        label: "Air Japan"
+        label: "Japan Airlines"
       }, {
         label: "South African Airways"
       }
@@ -29,20 +29,84 @@ let Selector = React.createClass({
 
 
 let CalendarInput = React.createClass({
+
   render: function() {
     return (
-      <Calendar date="12-09-2015" format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
+      <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
 
   )}
 });
 
-let FlightNumberInput = React.createClass ({
-  render: function(){
-    return(
-      <Input name="flightNumberSelection" value="" placeholder="Flight Number" onChange={this.props.onChange}/>
-    )
-  }
 
+let FlightNumberSelector = React.createClass({
+  render: function() {
+    let baflightNumberOptions = [
+      {
+        label: ""
+      }, {
+        label: "BA350"
+      }, {
+        label: "BA101"
+      }, {
+        label: "BA100"
+      }
+    ];
+
+    let emiratesflightNumberOptions = [
+      {
+        label: ""
+      }, {
+        label: "EK230"
+      }, {
+        label: "EK401"
+      }, {
+        label: "EK650"
+      }
+    ];
+    let japanflightNumberOptions = [
+      {
+        label: ""
+      }, {
+        label: "JL371"
+      }, {
+        label: "JL721"
+      }, {
+        label: "JL090"
+      }
+    ];
+    let southafricaflightNumberOptions = [
+      {
+        label: ""
+      }, {
+        label: "SAA650"
+      }, {
+        label: "SAA151"
+      }, {
+        label: "SAA887"
+      }
+    ];
+    var flightNumberOptions;
+
+    if (this.props.airline === "British Airways"){
+      flightNumberOptions=baflightNumberOptions;
+    } else if (this.props.airline === "Emirates"){
+      flightNumberOptions= emiratesflightNumberOptions;
+    } else if (this.props.airline === "Japan Airlines"){
+      flightNumberOptions= japanflightNumberOptions;
+    } else if (this.props.airline === "South African Airways"){
+      flightNumberOptions= southafricaflightNumberOptions
+    }
+
+  if (this.props.isDateSelected && this.props.isAirlineSelected) {
+
+          return (
+            <Select name="flightNumberSelector" options={flightNumberOptions}  />
+          );
+
+    } else {
+      return <p> </p>;
+    }
+  }
 });
 
 let FlightDetails = React.createClass({
@@ -55,6 +119,7 @@ let FlightDetails = React.createClass({
     )
   }
 });
+
 
 let DetailsController = React.createClass({
   getInitialState: function(){
@@ -75,8 +140,11 @@ let DetailsController = React.createClass({
   flightDetailsOnPage: function() {
     this.setState({
       flightDetails: (
-        <FlightDetails airline={this.props.airline}      flightNumber={this.props.flightNumber}
-        flightDate={this.props.flightDate} />
+        <FlightDetails
+          airline={this.props.airline}
+          flightNumber={this.props.flightNumber}
+          flightDate={this.props.flightDate}
+        />
       )
     });
   }
@@ -87,14 +155,17 @@ let Page = React.createClass({
   getInitialState: function(){
     return {
       userAirline: "",
-      userFlightNumber: "",
-      userFlightDate: ""
+      isUserAirlineSelected: false,
+      userFlightDate: Moment().format('L'),
+      isUserFlightDateSelected: false,
+      userFlightNumber: ""
     };
   },
 
   selectAirline: function(airline){
     this.setState({
-      userAirline: "Airline: " + airline +", "
+      userAirline: airline,
+      isUserAirlineSelected: true
     });
   },
 
@@ -102,8 +173,20 @@ let Page = React.createClass({
     this.selectAirline(value);
   },
 
+  // selectFlightNumber: function(number){
+  //   this.setState({
+  //     userFlightNumber: "Flight Number: " + number +", "
+  //   });
+  // },
+  //
+  //
+  // flightNumberSelectorChange: function(name, value){
+  //   this.selectFlightNumber(value);
+  // },
+
   inputDate: function(flightDate){
     this.setState({
+      isUserFlightDateSelected: true,
       userFlightDate : "This is your flight date: "  + flightDate + ", "
     });
   },
@@ -112,29 +195,19 @@ let Page = React.createClass({
     this.inputDate(value);
   },
 
-  inputFlightNumber: function(flightNumber){
-    this.setState({
-      userFlightNumber: "This is your flight number: " + flightNumber +", "
-    });
-  },
-
-  flightNumberInputChange: function(name, value){
-    this.inputFlightNumber(value);
-  },
-
-
-
   render: function() {
     return (
       <div>
         <Formsy.Form>
           <fieldset>
-            <Selector onChange={this.selectorChange}/>
+            <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
-        <CalendarInput onChange={this.calendarInputChange} />
+        <CalendarInput onChange={this.calendarInputChange} date={this.state.userFlightDate} />
         <Formsy.Form>
-        <FlightNumberInput onChange={this.flightNumberInputChange} />
+        <FlightNumberSelector isDateSelected={this.state.isUserFlightDateSelected}
+        airline = {this.state.userAirline}
+        isAirlineSelected={this.state.isUserAirlineSelected}  />
         </Formsy.Form>
         <DetailsController
           airline = {this.state.userAirline}
@@ -151,6 +224,6 @@ module.exports = ({
   Components: {
     Selector,
     CalendarInput,
-    FlightNumberInput
+    FlightNumberSelector
   }
 });
