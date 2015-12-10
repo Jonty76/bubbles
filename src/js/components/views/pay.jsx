@@ -43,16 +43,16 @@ let Page = React.createClass({
           <p>Please choose a card</p>
         ) : (
           <Formsy.Form>
-          <Input
-            name="cvv"
-            value=""
-            type="text"
-            label="CVV"
-            required
-            />
-          <Link to="/order-confirmation">
-            <button>PAY</button>
-          </Link>
+            <Input
+              name="cvv"
+              value=""
+              type="text"
+              label="CVV"
+              required
+              />
+            <Link to="/order-confirmation">
+              <button>PAY</button>
+            </Link>
           </Formsy.Form>
         )}
       </div>
