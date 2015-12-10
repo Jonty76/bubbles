@@ -3,7 +3,8 @@ import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 
 
-// import {Router, Route, Link} from 'react-router';
+
+import { Link } from 'react-router';
 import Calendar from 'react-input-calendar';
 import Moment from 'moment';
 
@@ -11,6 +12,8 @@ let Selector = React.createClass({
   render: function() {
     let airlineOptions = [
       {
+        label: "Choose Airline"
+      }, {
         label: "British Airways"
       }, {
         label: "Emirates"
@@ -42,7 +45,7 @@ let FlightNumberSelector = React.createClass({
   render: function() {
     let baflightNumberOptions = [
       {
-        label: ""
+        label: "Choose Flight Number"
       }, {
         label: "BA350"
       }, {
@@ -100,7 +103,7 @@ let FlightNumberSelector = React.createClass({
   if (this.props.isDateSelected && this.props.isAirlineSelected) {
 
           return (
-            <Select name="flightNumberSelector" options={flightNumberOptions}  />
+            <Select name="flightNumberSelector" options={flightNumberOptions} onChange={this.props.onChange} />
           );
 
     } else {
@@ -127,24 +130,44 @@ let DetailsController = React.createClass({
       flightDetails:"Enter Flight"
     };
   },
-  render:function(){
-    return (
-      <div>
-        <button class="btn btn-primary"  onClick={this.flightDetailsOnPage}>GO</button>
-        {this.state.flightDetails}
-      </div>
-    )
 
+  componentWillReceiveProps: function(newProps) {
+    let airlineChanged = newProps.isAirlineSelected;
+    let dateChanged = newProps.isDateSelected;
+    let flightChanged = newProps.isFlightNumberSelected;
+
+    console.log(airlineChanged, dateChanged, flightChanged)
+
+    if( airlineChanged && dateChanged && flightChanged){
+      console.log("inside if!!");
+      this.flightDetailsOnPage(newProps);
+    }
   },
 
-  flightDetailsOnPage: function() {
+  render: function(){
+    console.log("render!!!!");
+    return (
+      <div>
+        {this.state.flightDetails}
+      </div>
+  )},
+
+
+  flightDetailsOnPage: function(newProps) {
+    console.log("flightDetailsOnPage called");
+
     this.setState({
       flightDetails: (
-        <FlightDetails
-          airline={this.props.airline}
-          flightNumber={this.props.flightNumber}
-          flightDate={this.props.flightDate}
-        />
+        <div>
+          <FlightDetails
+            airline={newProps.airline}
+            flightNumber= {newProps.flightNumber}
+            flightDate={newProps.flightDate}
+          />
+          <Link to="/basket">
+            <button class="btn btn-primary"  >Confirm your flight</button>
+          </Link>
+        </div>
       )
     });
   }
@@ -158,7 +181,8 @@ let Page = React.createClass({
       isUserAirlineSelected: false,
       userFlightDate: Moment().format('L'),
       isUserFlightDateSelected: false,
-      userFlightNumber: ""
+      userFlightNumber: "",
+      isUserFlightNumberSelected: false
     };
   },
 
@@ -173,16 +197,19 @@ let Page = React.createClass({
     this.selectAirline(value);
   },
 
-  // selectFlightNumber: function(number){
-  //   this.setState({
-  //     userFlightNumber: "Flight Number: " + number +", "
-  //   });
-  // },
-  //
-  //
-  // flightNumberSelectorChange: function(name, value){
-  //   this.selectFlightNumber(value);
-  // },
+  selectFlightNumber: function(number){
+    this.setState({
+      isUserFlightNumberSelected: true,
+      userFlightNumber: "Flight Number: " + number +", "
+
+    });
+    console.log("selectFlightNumber", number);
+  },
+
+
+  flightNumberSelectorChange: function(name, value){
+    this.selectFlightNumber(value);
+  },
 
   inputDate: function(flightDate){
     this.setState({
@@ -205,14 +232,19 @@ let Page = React.createClass({
         </Formsy.Form>
         <CalendarInput onChange={this.calendarInputChange} date={this.state.userFlightDate} />
         <Formsy.Form>
-        <FlightNumberSelector isDateSelected={this.state.isUserFlightDateSelected}
-        airline = {this.state.userAirline}
-        isAirlineSelected={this.state.isUserAirlineSelected}  />
+        <FlightNumberSelector
+         isDateSelected={this.state.isUserFlightDateSelected}
+         airline = {this.state.userAirline}
+         isAirlineSelected={this.state.isUserAirlineSelected}
+         onChange= {this.flightNumberSelectorChange}/>
         </Formsy.Form>
         <DetailsController
           airline = {this.state.userAirline}
           flightDate = {this.state.userFlightDate}
           flightNumber = {this.state.userFlightNumber}
+          isAirlineSelected= {this.state.isUserAirlineSelected}
+          isDateSelected= {this.state.isUserFlightDateSelected}
+          isFlightNumberSelected= {this.state.isUserFlightNumberSelected}
         />
       </div>
     );
