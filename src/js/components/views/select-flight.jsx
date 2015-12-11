@@ -163,7 +163,7 @@ let DetailsController = React.createClass({
             flightDate={newProps.flightDate}
           />
           <Link to="/basket">
-            <button class="btn btn-primary"  >Confirm your flight</button>
+            <div className="next-button" >Confirm your flight</div>
           </Link>
         </div>
       )
