@@ -115,10 +115,11 @@ let FlightNumberSelector = React.createClass({
 let FlightDetails = React.createClass({
   render: function(){
     return (
-      <p>  {this.props.airline}
-        {this.props.flightDate}
-        {this.props.flightNumber}
-       </p>
+      <div>
+        <p>  {this.props.airline} </p>
+        <p>  {this.props.flightDate} </p>
+        <p>  {this.props.flightNumber} </p>
+      </div>
     )
   }
 });
@@ -144,7 +145,6 @@ let DetailsController = React.createClass({
   },
 
   render: function(){
-
     return (
       <div>
         {this.state.flightDetails}
@@ -153,7 +153,19 @@ let DetailsController = React.createClass({
 
 
   flightDetailsOnPage: function(newProps) {
-
+    console.log(newProps.flightNumber);
+    {(newProps.flightNumber==="Flight Number: BA100" ||newProps.flightNumber==="Flight Number: EK650" ||newProps.flightNumber==="Flight Number: JL090" ||newProps.flightNumber==="Flight Number: SAA887"  )?
+        (this.setState({
+          flightDetails: (
+            <div>
+              <p> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
+              <Link to="/select-airport">
+                <div className="next-button" >Return to homepage</div>
+              </Link>
+            </div>
+        )
+       })
+       ) : (
     this.setState({
       flightDetails: (
         <div>
@@ -165,11 +177,17 @@ let DetailsController = React.createClass({
           <Link to="/basket">
             <div className="next-button" >Confirm your flight</div>
           </Link>
+          <p> Gate: 25</p>
+          <p> Time: 10:00</p>
+          <p> If this is correct, please confirm below </p>
         </div>
       )
-    });
-  }
+    })
+  )
+}
+}
 });
+
 
 
 let Page = React.createClass({
@@ -198,10 +216,10 @@ let Page = React.createClass({
   selectFlightNumber: function(number){
     this.setState({
       isUserFlightNumberSelected: true,
-      userFlightNumber: "Flight Number: " + number +", "
+      userFlightNumber: "Flight Number: " + number
 
     });
-  
+
   },
 
 
@@ -212,7 +230,7 @@ let Page = React.createClass({
   inputDate: function(flightDate){
     this.setState({
       isUserFlightDateSelected: true,
-      userFlightDate : "This is your flight date: "  + flightDate + ", "
+      userFlightDate : "Flight date: "  + flightDate
     });
   },
 
