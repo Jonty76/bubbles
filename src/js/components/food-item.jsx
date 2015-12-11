@@ -72,9 +72,9 @@ var FoodItem = React.createClass({
   render: function() {
     return (
       <div>
-        <AddItem addItem={this.props.actions.addItem} />
+        <AddItem addItem= {this.props.addItem} id={this.props.details.id} />
         <p> {this.props.details.displayName} </p>
-        <RemoveItem removeItem={this.props.actions.removeItem} />
+        <RemoveItem removeItem={this.props.removeItem} id={this.props.details.id} />
         <p> {this.props.details.price} </p>
       </div>
     );
