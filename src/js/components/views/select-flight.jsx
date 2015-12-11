@@ -136,16 +136,15 @@ let DetailsController = React.createClass({
     let dateChanged = newProps.isDateSelected;
     let flightChanged = newProps.isFlightNumberSelected;
 
-    console.log(airlineChanged, dateChanged, flightChanged)
 
     if( airlineChanged && dateChanged && flightChanged){
-      console.log("inside if!!");
+
       this.flightDetailsOnPage(newProps);
     }
   },
 
   render: function(){
-    console.log("render!!!!");
+
     return (
       <div>
         {this.state.flightDetails}
@@ -154,7 +153,6 @@ let DetailsController = React.createClass({
 
 
   flightDetailsOnPage: function(newProps) {
-    console.log("flightDetailsOnPage called");
 
     this.setState({
       flightDetails: (
@@ -203,7 +201,7 @@ let Page = React.createClass({
       userFlightNumber: "Flight Number: " + number +", "
 
     });
-    console.log("selectFlightNumber", number);
+  
   },
 
 
