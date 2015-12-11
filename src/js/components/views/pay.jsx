@@ -42,6 +42,7 @@ let Page = React.createClass({
         {!this.state.cardSelected ? (
           <p>Please choose a card</p>
         ) : (
+          <div>
           <Formsy.Form>
             <Input
               name="cvv"
@@ -50,10 +51,11 @@ let Page = React.createClass({
               label="CVV"
               required
               />
-            <Link to="/order-confirmation">
-              <button>PAY</button>
-            </Link>
           </Formsy.Form>
+          <Link to="/order-confirmation">
+            <div className="next-button">PAY</div>
+          </Link>
+          </div>
         )}
       </div>
     );

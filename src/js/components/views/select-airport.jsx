@@ -24,7 +24,7 @@ let LinkToFlightDetails = React.createClass({
   render: function() {
     return (
       <Link to={this.props.nextLink}>
-        <button> Go </button>
+        <div className="next-button"> GO </div>
       </Link>
     );
   }
@@ -54,10 +54,9 @@ let Page = React.createClass({
         <Formsy.Form>
           <fieldset>
             <Selector onChange={this.selectorChange}/>
-            <br />
-            <LinkToFlightDetails nextLink={this.state.nextLink} />
           </fieldset>
         </Formsy.Form>
+        <LinkToFlightDetails nextLink={this.state.nextLink} />
       </div>
     );
   }
