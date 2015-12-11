@@ -30,11 +30,17 @@ var AddItem = React.createClass({
 
 var NumberOrdered = React.createClass({
   render: function() {
+    var atLeastOne = (
+       <p>{this.props.numberOrdered+"x"}</p>
+     );
+    var zero = (
+      <p></p>
+    );
     return (
       <div>
-         <p>{this.props.numberOrdered+"x"}</p>
+      {this.props.numberOrdered > 0 ? atLeastOne : zero}
       </div>
-    )
+    );
   }
 });
 
