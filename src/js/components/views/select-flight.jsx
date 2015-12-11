@@ -1,9 +1,6 @@
 import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
-
-
-
 import { Link } from 'react-router';
 import Calendar from 'react-input-calendar';
 import Moment from 'moment';
@@ -153,7 +150,6 @@ let DetailsController = React.createClass({
 
 
   flightDetailsOnPage: function(newProps) {
-    console.log(newProps.flightNumber);
     {(newProps.flightNumber==="Flight Number: BA100" ||newProps.flightNumber==="Flight Number: EK650" ||newProps.flightNumber==="Flight Number: JL090" ||newProps.flightNumber==="Flight Number: SAA887"  )?
         (this.setState({
           flightDetails: (
