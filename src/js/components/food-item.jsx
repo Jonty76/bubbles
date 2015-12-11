@@ -2,7 +2,7 @@ import React from 'react';
 
 var RemoveItem = React.createClass({
   removeItem: function() {
-    this.props.actions.removeItem(this.props.id);
+    this.props.removeItem(this.props.id);
   },
 
   render: function() {
