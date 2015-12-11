@@ -2,27 +2,50 @@ import React from 'react';
 
 var RemoveItem = React.createClass({
   removeItem: function() {
-    this.props.actions.removeItem(this.props.details.id);
+    this.props.removeItem(this.props.details.id);
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.removeItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.removeItem}>-</button>
+      {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
 });
 
+var props = {
+  actions: {
+    addItem: function() {}
+  },
+  id: 3
+}
+
+var rItemProps = {
+  removeItem: function() {}
+}
+
 var AddItem = React.createClass({
   addItem: function() {
-    this.props.actions.addItem(this.props.details.id);
+    this.props.addItem(this.props.details.id);
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.addItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.addItem}>-</button>
+      {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
@@ -30,11 +53,17 @@ var AddItem = React.createClass({
 
 var NumberOrdered = React.createClass({
   render: function() {
+    var atLeastOne = (
+       <p>{this.props.numberOrdered+"x"}</p>
+     );
+    var zero = (
+      <p></p>
+    );
     return (
       <div>
-         <p>{this.props.numberOrdered+"x"}</p>
+      {this.props.numberOrdered > 0 ? atLeastOne : zero}
       </div>
-    )
+    );
   }
 });
 
@@ -43,9 +72,9 @@ var FoodItem = React.createClass({
   render: function() {
     return (
       <div>
-        <AddItem addItem= {this.props.addItem} />
+        <AddItem addItem= {this.props.addItem} id={this.props.details.id} />
         <p> {this.props.details.displayName} </p>
-        <RemoveItem removeItem={this.props.removeItem} />
+        <RemoveItem removeItem={this.props.removeItem} id={this.props.details.id} />
         <p> {this.props.details.price} </p>
       </div>
     );
