@@ -2,7 +2,7 @@ import React from 'react';
 
 var RemoveItem = React.createClass({
   removeItem: function() {
-    this.props.actions.removeItem(this.props.details.id);
+    this.props.actions.removeItem(this.props.id);
   },
 
   render: function() {
@@ -16,7 +16,7 @@ var RemoveItem = React.createClass({
 
 var AddItem = React.createClass({
   addItem: function() {
-    this.props.actions.addItem(this.props.details.id);
+    this.props.actions.addItem(this.props.id);
   },
 
   render: function() {
@@ -43,9 +43,9 @@ var FoodItem = React.createClass({
   render: function() {
     return (
       <div>
-        <AddItem addItem= {this.props.addItem} />
+        <AddItem addItem= {this.props.addItem} id={this.props.details.id} />
         <p> {this.props.details.displayName} </p>
-        <RemoveItem removeItem={this.props.removeItem} />
+        <RemoveItem removeItem={this.props.removeItem} id={this.props.details.id} />
         <p> {this.props.details.price} </p>
       </div>
     );
