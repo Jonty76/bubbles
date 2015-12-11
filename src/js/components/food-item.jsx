@@ -6,9 +6,15 @@ var RemoveItem = React.createClass({
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.removeItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.removeItem}>-</button>
+      {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
@@ -20,9 +26,15 @@ var AddItem = React.createClass({
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.addItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.addItem}>-</button>
+      {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
