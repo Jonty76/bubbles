@@ -60,7 +60,7 @@ var NumberOrdered = React.createClass({
 var FoodItem = React.createClass({
   render: function() {
     return (
-      <div>
+      <div onClick={this.props.actions.addItem}>
         <AddItem addItem={this.props.actions.addItem} id={this.props.details.id} />
         <p> {this.props.details.displayName} </p>
         <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.details.id} />
