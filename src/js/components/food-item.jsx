@@ -6,9 +6,15 @@ var RemoveItem = React.createClass({
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.removeItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.removeItem}>-</button>
+        {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
@@ -20,23 +26,35 @@ var AddItem = React.createClass({
   },
 
   render: function() {
+    var showButton = (
+        <button onClick={this.addItem}>-</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
     return (
       <div>
-        <button onClick={this.addItem}>-</button>
+        {this.props.numberOrdered > 0 ? showButton : hideButton}
       </div>
     );
   }
 });
 
 var NumberOrdered = React.createClass({
-  render: function() {
-    return (
-      <div>
-         <p>{this.props.numberOrdered+"x"}</p>
-      </div>
-    )
-  }
-});
+   render: function() {
+     var atLeastOne = (
+        <p>{this.props.numberOrdered+"x"}</p>
+      );
+     var zero = (
+       <p></p>
+     );
+     return (
+       <div>
+       {this.props.numberOrdered > 0 ? atLeastOne : zero}
+       </div>
+     );
+   }
+ });
 
 
 var FoodItem = React.createClass({
