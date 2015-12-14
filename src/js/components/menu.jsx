@@ -5,16 +5,14 @@ let Menu = React.createClass({
   render: function() {
     return (
       <div>
-        this.props.types.map(function(foodType) {
-          return (
-              <li><FoodType {...foodType} /></li>
-          );
-        })
+        {this.props.types.map(function(foodType) {
+              <li>
+                <FoodType {...foodType} />
+              </li>
+        })}
       </div>
     );
   }
 });
 
-module.exports = {
-    Menu
-}
+module.exports = Menu;
