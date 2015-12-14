@@ -16,6 +16,10 @@ let CreateAccount     = require('./components/views/create-account.jsx').Page;
 let Payment           = require('./components/views/pay.jsx');
 let OrderConfirmation = require('./components/views/order-confirmation.jsx');
 
+console.log(typeof Basket);
+console.log(typeof BasketPage);
+console.log(typeof About);
+
 require('../styles/main.js');
 
 let rootElement       = document.getElementById('react-content');
@@ -29,7 +33,7 @@ render((
       <Route path="select-airport" component={SelectAirport} />
       <Route path="select-flight" component={SelectFlight} />
       <Route path="basket" component={Basket}>
-        <Route path="basket/page" component={BasketPage} />
+        <Route path="/basket/page" component={BasketPage} />
       </Route>
       <Route path="login" component={Login} />
       <Route path="create-account" component={CreateAccount} />

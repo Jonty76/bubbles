@@ -22,6 +22,7 @@ var RemoveItem = React.createClass({
 
 var AddItem = React.createClass({
   addItem: function() {
+    console.log("woahaa!");
     this.props.addItem(this.props.id);
   },
 
@@ -58,9 +59,15 @@ var NumberOrdered = React.createClass({
 
 
 var FoodItem = React.createClass({
+  clickHandler: function(event) {
+    event.preventDefault(); // stopPropiagation?!!
+    this.props.actions.addItem(this.props.details.id);
+  },
+
   render: function() {
+    console.log("buzinga!");
     return (
-      <div onClick={this.props.actions.addItem}>
+      <div onClick={this.clickHandler}>
         <AddItem addItem={this.props.actions.addItem} id={this.props.details.id} />
         <p> {this.props.details.displayName} </p>
         <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.details.id} />

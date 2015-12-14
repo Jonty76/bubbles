@@ -56,53 +56,77 @@ var getMenu = function() {
 // TODO: create function to choose props for children (numberOrdered, id, displayName and price)
 // TODO: filter menu ie get correct pages
 
-Basket = React.createClass({
+let Basket = React.createClass({
 
-  getDefaultProps: function() {
-    return {
-      actions: {
-        addItem: function(itemID) {
-          // faster solution. use this.state.menu[itemID]
-          this.state.menu.forEach(function(item) {
-            if (item.id === itemID) {
-              item.quantityOrdered++;
-              console.log('item with id ', itemID, "incremented, now has ", item.quantityOrdered + "ordered");
-            }
-          });
-        },
-
-        removeItem: function(itemID) {
-          this.state.menu.forEach(function(item) {
-            if (item.id === itemID) {
-              item.quantityOrdered--;
-              console.log('item with id ', itemID, "decremented, now has ", item.quantityOrdered + "ordered");
-            }
-          });
+  addItem: function(itemID) {
+      // faster solution. use this.state.menu[itemID]
+      var menu = this.state.basket.map(function(item, i, array) {
+        var itemCopy = {};
+        Object.keys(item).forEach(function(key) {
+          itemCopy[key] = item[key];
+        });
+        if (itemCopy.id === itemID) {
+          itemCopy.quantityOrdered++;
+          console.log('item with id ', itemID, "incremented, now has ", item.quantityOrdered + "ordered");
         }
+      return itemCopy;
+      });
+      this.setState({
+        basket: menu
+      });
+  },
 
-        clearBasket : function() {
-          resetMenu(this.state.basket);
-          // this.this.state.menu.forEach(function(item) {
-          //   item.quantityOrdered = 0;
-          // })
-        }
+  removeItem: function(itemID) {
+    var menu = this.state.basket.map(function(item, i, array) {
+      var itemCopy;
+      Object.keys(item).forEach(function(key) {
+        itemCopy[key] = item[key];
+      });
+      if (itemCopy.id === itemID) {
+        itemCopy.quantityOrdered--;
+        console.log('item with id ', itemID, "incremented, now has ", item.quantityOrdered + "ordered");
       }
-    };
+    return itemCopy;
+    });
+    this.setState({
+      basket: menu
+    });
+  },
+
+  clearBasket : function() {
+    var menu = this.state.basket.map(function(item, i, array) {
+      var itemCopy;
+      Object.keys(item).forEach(function(key) {
+        itemCopy[key] = item[key];
+      });
+      itemCopy.quantityOrdered = 0;
+      return itemCopy;
+    });
+    this.setState({
+      basket: menu
+    });
   },
 
   getInitialState: function() {
     return {
-      basket: getMenu()
+      basket: getMenu(),
+      actions: {
+        addItem: this.addItem,
+        removeItem: this.removeItem,
+        clearBasket: this.clearBasket
+      }
     };
   },
 
-  getChildrenWithActions: function () {
-    var childProps = {
-      actions: this.props.actions
-    };
+  getChildrenWithActions: function() {
+    // var childProps = {
+    //   actions: this.props.actions,
+    //   basket: this.state.basket
+    // };
+    var state = this.state;
 
     return React.Children.map(this.props.children, function(child) {
-      return React.cloneElement(child, childProps);
+      return React.cloneElement(child, state);
     });
   },
 
@@ -116,3 +140,5 @@ Basket = React.createClass({
     );
   }
 });
+
+module.exports = Basket;
