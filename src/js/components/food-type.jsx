@@ -14,13 +14,13 @@ var Title = React.createClass({
 var FoodItems = React.createClass({
   render: function() {
     return (
-      this.props.items.forEach(function(item){
-        return (
-        <div>
-          <li><FoodItem {...item} /></li>
-        </div>
-      });
-    )
+      <div>
+        this.props.items.map(function(item){
+          return (
+            <li><FoodItem {...item} /></li>
+          });
+        )
+      </div>
   );
 }
 });
