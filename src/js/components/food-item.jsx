@@ -28,7 +28,7 @@ var AddItem = React.createClass({
 
   render: function() {
     var showButton = (
-        <button onClick={this.addItem}>-</button>
+        <button onClick={this.addItem}>+</button>
     );
     var hideButton = (
       <div></div>
@@ -66,11 +66,13 @@ var FoodItem = React.createClass({
 
   render: function() {
     console.log("buzinga!");
+    console.log(this.props.details.numberOrdered);
     return (
       <div onClick={this.clickHandler}>
-        <AddItem addItem={this.props.actions.addItem} id={this.props.details.id} />
+        <NumberOrdered numberOrdered={this.props.details.numberOrdered} />
+        <AddItem addItem={this.props.actions.addItem} id={this.props.details.id} numberOrdered={this.props.details.numberOrdered}/>
         <p> {this.props.details.displayName} </p>
-        <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.details.id} />
+        <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.details.id} numberOrdered={this.props.details.numberOrdered} />
         <p> {this.props.details.price} </p>
       </div>
     );
