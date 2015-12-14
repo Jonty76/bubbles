@@ -5,7 +5,7 @@ var Title = React.createClass({
   render: function() {
     return(
       <div>
-        {this.props.title}
+        <h1>{this.props.title}</h1>
       </div>
     )
   }
@@ -31,7 +31,6 @@ var FoodType = React.createClass({
   render: function(){
     return (
       <Title title={this.props.title} />
-      <h1>{this.props.title}</h1>
       <FoodItems items={this.props.items} />
     }
   );
