@@ -31,8 +31,8 @@ var FoodType = React.createClass({
   render: function(){
     return (
       <div>
-      <Title title={this.props.title} />
-      <FoodItems items={this.props.items} />
+        <Title title={this.props.title} />
+        <FoodItems items={this.props.items} />
       </div>
     }
   );
@@ -41,6 +41,7 @@ var FoodType = React.createClass({
 module.exports = {
   FoodType,
   Components: {
-
+    FoodItems,
+    Title
   }
 }
