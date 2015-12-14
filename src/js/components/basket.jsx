@@ -45,10 +45,36 @@ var getMenu = function() {
       foodType : "Sandwich",
       restaurant : "Pret",
       price: "200"
+    },
+    {
+      id : getId(),
+      name :"Yellow Tail",
+      foodType : "Sushi",
+      restaurant : "Pret",
+      price: "500"
+    },
+    {
+      id : getId(),
+      name :"Salmon",
+      foodType : "Sushi",
+      restaurant : "Pret",
+      price: "200"
+    },
+    {
+      id : getId(),
+      name :"veg",
+      foodType : "Sushi",
+      restaurant : "Yo! Sushi",
+      price: "00"
     }
   ];
   resetMenu(menu);
   return menu;
+}
+
+var getDescription = function(name) {
+  if (name === "Pret") return "write about pret here";
+  return ;
 }
 
 // TODO: create actions addItem and removeItem
@@ -57,6 +83,29 @@ var getMenu = function() {
 // TODO: filter menu ie get correct pages
 
 let Basket = React.createClass({
+
+  filterMenu: function(menu, tagName, searchValue) {
+    return menu.filter(function(menuItem) {
+      return menuItem[tagName] === searchValue;
+    });
+  },
+
+  orderMenu: function(menu, tagName) {
+    var structuredMenu = menu.reduce(function(structuredMenu, menuItem) {
+      if (typeof structuredMenu[menuItem[tagName]] === 'undefined') {
+        structuredMenu[menuItem[tagName]] = [];
+      }
+      structuredMenu[menuItem[tagName]].push(menuItem);
+      return structuredMenu;
+    }, {});
+    return Object.keys(structuredMenu).map(function(sectionName) {
+      return {
+        name: sectionName,
+        description: getDescription(sectionName),
+        items: structuredMenu[sectionName]
+      };
+    })
+  },
 
   addItem: function(itemID) {
       // faster solution. use this.state.menu[itemID]
@@ -114,17 +163,16 @@ let Basket = React.createClass({
         addItem: this.addItem,
         removeItem: this.removeItem,
         clearBasket: this.clearBasket
+      },
+      helpers: {
+        filterMenu: this.filterMenu,
+        orderMenu: this.orderMenu
       }
     };
   },
 
   getChildrenWithActions: function() {
-    // var childProps = {
-    //   actions: this.props.actions,
-    //   basket: this.state.basket
-    // };
     var state = this.state;
-
     return React.Children.map(this.props.children, function(child) {
       return React.cloneElement(child, state);
     });

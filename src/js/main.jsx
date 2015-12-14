@@ -10,6 +10,7 @@ let AirportNotServed  = require('./components/views/airport-not-served.jsx').Pag
 let SelectAirport     = require('./components/views/select-airport.jsx').Page;
 let SelectFlight      = require('./components/views/select-flight.jsx').Page;
 let BasketPage        = require('./components/views/basket.jsx');
+let Menu              = require('./components/views/menu.jsx');
 let Basket            = require('./components/basket.jsx');
 let Login             = require('./components/views/login.jsx');
 let CreateAccount     = require('./components/views/create-account.jsx').Page;
@@ -34,6 +35,7 @@ render((
       <Route path="select-flight" component={SelectFlight} />
       <Route path="basket" component={Basket}>
         <Route path="/basket/page" component={BasketPage} />
+        <Route path="/basket/menu" component={Menu} />
       </Route>
       <Route path="login" component={Login} />
       <Route path="create-account" component={CreateAccount} />

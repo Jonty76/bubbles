@@ -13,15 +13,13 @@ var Title = React.createClass({render: function() {
 var FoodItems = React.createClass({render: function() {
     return (
       <div>
-        {this
-          .props
-          .items
-          .map(function(item) {
+        {this.props.items.map(function(item) {
             return (
-              <li><FoodItem {...item}/></li>
-            )
-          })
-        }
+              <li>
+                <FoodItem {...item} actions={this.props.actions} />
+              </li>
+            );
+          }.bind(this))}
       </div>
     );
   }
@@ -30,8 +28,8 @@ var FoodItems = React.createClass({render: function() {
 var FoodType = React.createClass({render: function() {
     return (
       <div>
-        <Title title={this.props.title}/>
-        <FoodItems items={this.props.items}/>
+        <Title title={this.props.name}/>
+        <FoodItems items={this.props.items} actions={this.props.actions}/>
       </div>
     );
   }

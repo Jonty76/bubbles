@@ -61,17 +61,18 @@ var NumberOrdered = React.createClass({
 var FoodItem = React.createClass({
   clickHandler: function(event) {
     event.preventDefault(); // stopPropiagation?!!
-    this.props.actions.addItem(this.props.details.id);
+    this.props.actions.addItem(this.props.id);
   },
 
   render: function() {
     console.log("buzinga!");
+    console.log(this.props);
     return (
       <div onClick={this.clickHandler}>
-        <AddItem addItem={this.props.actions.addItem} id={this.props.details.id} />
-        <p> {this.props.details.displayName} </p>
-        <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.details.id} />
-        <p> {this.props.details.price} </p>
+        <AddItem addItem={this.props.actions.addItem} id={this.props.id} />
+        <p> {this.props.name} </p>
+        <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.id} />
+        <p> {this.props.price} </p>
       </div>
     );
   }
