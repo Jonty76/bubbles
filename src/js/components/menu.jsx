@@ -4,13 +4,13 @@ import { FoodType } from './food-type.jsx';
 let Menu = React.createClass({
   render: function() {
     return (
-      this.props.types.forEach(function(foodType) {
-        return (
-          <div>
-            <li><FoodType {...foodType} /></li>
-          </div>
-        );
-      })
+      <div>
+        this.props.types.map(function(foodType) {
+          return (
+              <li><FoodType {...foodType} /></li>
+          );
+        })
+      </div>
     );
   }
 });
