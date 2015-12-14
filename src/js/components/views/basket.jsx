@@ -12,7 +12,8 @@ let Basket = React.createClass({
         details: {
          id: item.id,
          price: item.price,
-         displayName: item.name
+         displayName: item.name,
+         numberOrdered: item.quantityOrdered
         }
       };
       return (
