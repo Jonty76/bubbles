@@ -9,11 +9,16 @@ let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
 let SelectAirport     = require('./components/views/select-airport.jsx').Page;
 let SelectFlight      = require('./components/views/select-flight.jsx').Page;
-let Basket            = require('./components/views/basket.jsx');
+let BasketPage        = require('./components/views/basket.jsx');
+let Basket            = require('./components/basket.jsx');
 let Login             = require('./components/views/login.jsx');
 let CreateAccount     = require('./components/views/create-account.jsx').Page;
 let Payment           = require('./components/views/pay.jsx');
 let OrderConfirmation = require('./components/views/order-confirmation.jsx');
+
+console.log(typeof Basket);
+console.log(typeof BasketPage);
+console.log(typeof About);
 
 require('../styles/main.js');
 
@@ -27,7 +32,9 @@ render((
       <Route path="airport-not-served" component={AirportNotServed} />
       <Route path="select-airport" component={SelectAirport} />
       <Route path="select-flight" component={SelectFlight} />
-      <Route path="basket" component={Basket} />
+      <Route path="basket" component={Basket}>
+        <Route path="/basket/page" component={BasketPage} />
+      </Route>
       <Route path="login" component={Login} />
       <Route path="create-account" component={CreateAccount} />
       <Route path="payment" component={Payment} />
