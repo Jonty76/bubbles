@@ -92,13 +92,13 @@ let Basket = React.createClass({
 
   filterMenuByQuantity: function(menu) {
     return menu.filter(function(menuItem) {
-      return menuItem[quantityOrdered] > 0;
+      return menuItem.quantityOrdered > 0;
     });
   },
 
   numberOfItemsInBasket: function(quantityFilteredMenu) {
     return quantityFilteredMenu.map(function(menuItem){
-      return menuItem[quantityOrdered];
+      return menuItem.quantityOrdered;
     }).reduce(function(sum, next) {
       return sum + next;
     }, 0);
@@ -106,7 +106,7 @@ let Basket = React.createClass({
 
   totalPriceOfItemsInBasket: function(quantityFilteredMenu) {
     return quantityFilteredMenu.map(function(menuItem) {
-      return menuItem[price] * menuItem[quantityOrdered];
+      return menuItem.price * menuItem.quantityOrdered;
       }).reduce(function(sum, next) {
         return sum + next;
     }, 0);
@@ -114,7 +114,7 @@ let Basket = React.createClass({
 
   getSubtotalForEachItem: function(quantityFilteredMenu) {
     return quantityFilteredMenu.map(function(menuItem) {
-      return menuItem[price] * menuItem[quantityOrdered];
+      return menuItem.price * menuItem.quantityOrdered;
     });
   },
 
@@ -152,24 +152,6 @@ let Basket = React.createClass({
         basket: menu
       });
   },
-
-  //
-  // inCheckout: function(itemID) {
-  //     // faster solution. use this.state.menu[itemID]
-  //     var menu = this.state.inCheckout.map(function(item, i, array) {
-  //       var itemCopy = {};
-  //       Object.keys(item).forEach(function(key) {
-  //         itemCopy[key] = item[key];
-  //       });
-  //       if itemCopy.quantityOrdered>0{
-  //         console.log('item with id ', itemID, "is in checkout ", item.quantityOrdered + "ordered");
-  //       }
-  //     return itemCopy;
-  //     });
-  //     this.setState({
-  //       basket: menu
-  //     });
-  // },
 
   removeItem: function(itemID) {
     var menu = this.state.basket.map(function(item, i, array) {
