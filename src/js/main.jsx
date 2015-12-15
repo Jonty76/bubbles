@@ -34,7 +34,7 @@ render((
       <Route path="select-airport" component={SelectAirport} />
       <Route path="select-flight" component={SelectFlight} />
       <Route path="basket" component={Basket}>
-        <Route path="/basket/page" component={BasketPage} />
+        // <Route path="/basket/page" component={BasketPage} />
         <Route path="/basket/menu" component={Menu} />
       </Route>
       <Route path="login" component={Login} />
