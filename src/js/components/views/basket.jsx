@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 let FoodItem = require('../food-item.jsx').FoodItem;
 
 let Basket = React.createClass({
+  // OLD TEST COMPONENT!
   render: function() {
     var actions = this.props.actions;
     var menu = this.props.basket.map(function(item) {
