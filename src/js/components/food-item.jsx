@@ -1,7 +1,8 @@
 import React from 'react';
 
 var RemoveItem = React.createClass({
-  removeItem: function() {
+  removeItem: function(event) {
+    event.stopPropagation();
     this.props.removeItem(this.props.id);
   },
 
@@ -60,7 +61,8 @@ var NumberOrdered = React.createClass({
 
 var FoodItem = React.createClass({
   clickHandler: function(event) {
-    event.preventDefault(); // stopPropiagation?!!
+    // event.preventDefault(); //
+    event.stopPropagation();
     this.props.actions.addItem(this.props.id);
   },
 
@@ -69,10 +71,20 @@ var FoodItem = React.createClass({
     // console.log(this.props);
     return (
       <div onClick={this.clickHandler}>
-        <AddItem addItem={this.props.actions.addItem} id={this.props.id} />
-        <NumberOrdered numberOrdered={this.props.quantityOrdered} />
+        <AddItem
+          addItem={this.props.actions.addItem}
+          id={this.props.id}
+          numberOrdered={this.props.quantityOrdered}
+        />
+        <NumberOrdered
+          numberOrdered={this.props.quantityOrdered}
+        />
         <p> {this.props.name} </p>
-        <RemoveItem removeItem={this.props.actions.removeItem} id={this.props.id} />
+        <RemoveItem
+          removeItem={this.props.actions.removeItem}
+          id={this.props.id}
+          numberOrdered={this.props.quantityOrdered}
+        />
         <p> {this.props.price} </p>
       </div>
     );
