@@ -127,7 +127,7 @@ let Basket = React.createClass({
 
   removeItem: function(itemID) {
     var menu = this.state.basket.map(function(item, i, array) {
-      var itemCopy;
+      var itemCopy = {};
       Object.keys(item).forEach(function(key) {
         itemCopy[key] = item[key];
       });
@@ -156,9 +156,16 @@ let Basket = React.createClass({
     });
   },
 
+
   getInitialState: function() {
     return {
-      basket: getMenu(),
+      basket: getMenu()
+    };
+  },
+
+  getChildrenWithActions: function() {
+
+    let props = {
       actions: {
         addItem: this.addItem,
         removeItem: this.removeItem,
@@ -169,12 +176,12 @@ let Basket = React.createClass({
         orderMenu: this.orderMenu
       }
     };
-  },
 
-  getChildrenWithActions: function() {
-    var state = this.state;
+    props = Object.assign(props, this.state);
+    console.log("PROPS!!!", props);
+    // var state = this.state;
     return React.Children.map(this.props.children, function(child) {
-      return React.cloneElement(child, state);
+      return React.cloneElement(child, props);
     });
   },
 

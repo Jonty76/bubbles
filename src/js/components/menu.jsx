@@ -3,16 +3,17 @@ import { FoodType } from './food-type.jsx';
 
 let Menu = React.createClass({
   render: function() {
+    console.log("yo!!!", this.props.menu);
     return (
-      <ul>
+      <div>
         {this.props.menu.map(function(foodType) {
           return (
-            <li>
+            <div className="menu-section">
               <FoodType {...foodType} actions={this.props.actions}/>
-            </li>
+            </div>
           );
         }.bind(this))}
-      </ul>
+      </div>
     );
   }
 });

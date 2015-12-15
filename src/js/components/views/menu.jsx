@@ -4,11 +4,13 @@ import { Link } from 'react-router';
 let MenuComponent = require('../menu.jsx');
 
 var Menu = React.createClass({
-  
+
   getStructuredMenu: function() {
+    console.log("this.props.basket:", this.props.basket);
     var filterer = this.props.helpers.filterMenu;
     var structurer = this.props.helpers.orderMenu;
-    var filteredMenu = filterer(this.props.basket, "restaurant", "Yo! Sushi");
+    var filteredMenu = filterer(this.props.basket, "restaurant", "Pret");
+    console.log("filteredMenu:", filteredMenu);
     return structurer(filteredMenu, "foodType");
   },
 
