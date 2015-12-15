@@ -16,6 +16,7 @@ let Login             = require('./components/views/login.jsx');
 let CreateAccount     = require('./components/views/create-account.jsx').Page;
 let Payment           = require('./components/views/pay.jsx');
 let OrderConfirmation = require('./components/views/order-confirmation.jsx');
+let SelectMenu        = require('./components/views/select-menu.jsx');
 
 console.log(typeof Basket);
 console.log(typeof BasketPage);
@@ -36,6 +37,7 @@ render((
       <Route path="basket" component={Basket}>
         <Route path="/basket/page" component={BasketPage} />
         <Route path="/basket/menu" component={Menu} />
+        <Route path="/basket/select-menu" component={SelectMenu} />
       </Route>
       <Route path="login" component={Login} />
       <Route path="create-account" component={CreateAccount} />
