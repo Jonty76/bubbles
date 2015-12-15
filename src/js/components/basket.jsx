@@ -107,6 +107,21 @@ let Basket = React.createClass({
     })
   },
 
+  getUniqueTags: function(menu, tagName){
+    let arrIncludes = function(array, search){
+      return array.reduce(function(includes, elem){
+        return includes || elem === search;
+      }, false)
+    }
+   return menu.reduce(function(uniqueTags, menuItem){
+     if (!arrIncludes(uniqueTags, menuItem[tagName])) {
+       uniqueTags.push(menuItem[tagName])
+     }
+      return uniqueTags;
+   }, []);
+
+  },
+
   addItem: function(itemID) {
       // faster solution. use this.state.menu[itemID]
       var menu = this.state.basket.map(function(item, i, array) {
@@ -173,7 +188,8 @@ let Basket = React.createClass({
       },
       helpers: {
         filterMenu: this.filterMenu,
-        orderMenu: this.orderMenu
+        orderMenu: this.orderMenu,
+        getUniqueTags: this.getUniqueTags
       }
     };
 
