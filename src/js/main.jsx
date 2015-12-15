@@ -9,7 +9,7 @@ let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
 let SelectAirport     = require('./components/views/select-airport.jsx').Page;
 let SelectFlight      = require('./components/views/select-flight.jsx').Page;
-let BasketPage        = require('./components/views/basket.jsx');
+let BasketPage        = require('./components/views/basket-page.jsx');
 let Menu              = require('./components/views/menu.jsx');
 let Basket            = require('./components/basket.jsx');
 let Login             = require('./components/views/login.jsx');
@@ -34,7 +34,7 @@ render((
       <Route path="select-airport" component={SelectAirport} />
       <Route path="select-flight" component={SelectFlight} />
       <Route path="basket" component={Basket}>
-        // <Route path="/basket/page" component={BasketPage} />
+        <Route path="/basket/page" component={BasketPage} />
         <Route path="/basket/menu" component={Menu} />
       </Route>
       <Route path="login" component={Login} />

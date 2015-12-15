@@ -16,7 +16,11 @@ var FoodItems = React.createClass({render: function() {
         {this.props.items.map(function(item) {
             return (
               <li>
-                <FoodItem {...item} actions={this.props.actions} />
+                <FoodItem
+                  {...item}
+                  actions={this.props.actions}
+                  inCheckout={this.props.inCheckout}
+                  />
               </li>
             );
           }.bind(this))}
@@ -29,7 +33,7 @@ var FoodType = React.createClass({render: function() {
     return (
       <div>
         <Title title={this.props.name}/>
-        <FoodItems items={this.props.items} actions={this.props.actions}/>
+        <FoodItems items={this.props.items} actions={this.props.actions} inCheckout={this.props.inCheckout} />
       </div>
     );
   }
