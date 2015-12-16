@@ -22,8 +22,11 @@ let Selector = React.createClass({
     ];
 
     return (
-      <Select name="airlineSelector" options={airlineOptions} onChange={this.props.onChange}/>
-    );
+      <div>
+        <p className = 'view-text'> Please enter your flight details </p>
+        <Select name="airlineSelector" options={airlineOptions} onChange={this.props.onChange}/>
+      </div>
+  );
   }
 });
 
