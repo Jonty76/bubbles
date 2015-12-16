@@ -90,6 +90,34 @@ let Basket = React.createClass({
     });
   },
 
+  filterMenuByQuantity: function(menu) {
+    return menu.filter(function(menuItem) {
+      return menuItem.quantityOrdered > 0;
+    });
+  },
+
+  numberOfItemsInBasket: function(quantityFilteredMenu) {
+    return quantityFilteredMenu.map(function(menuItem){
+      return menuItem.quantityOrdered;
+    }).reduce(function(sum, next) {
+      return sum + next;
+    }, 0);
+  },
+
+  totalPriceOfItemsInBasket: function(quantityFilteredMenu) {
+    return quantityFilteredMenu.map(function(menuItem) {
+      return menuItem.price * menuItem.quantityOrdered;
+      }).reduce(function(sum, next) {
+        return sum + next;
+    }, 0);
+  },
+
+  getSubtotalForEachItem: function(quantityFilteredMenu) {
+    return quantityFilteredMenu.map(function(menuItem) {
+      return menuItem.price * menuItem.quantityOrdered;
+    });
+  },
+
   orderMenu: function(menu, tagName) {
     var structuredMenu = menu.reduce(function(structuredMenu, menuItem) {
       if (typeof structuredMenu[menuItem[tagName]] === 'undefined') {
@@ -159,7 +187,7 @@ let Basket = React.createClass({
 
   clearBasket : function() {
     var menu = this.state.basket.map(function(item, i, array) {
-      var itemCopy;
+      var itemCopy = {};
       Object.keys(item).forEach(function(key) {
         itemCopy[key] = item[key];
       });
@@ -171,6 +199,22 @@ let Basket = React.createClass({
     });
   },
 
+  clearQuantityOfItem: function(itemID) {
+    var menu = this.state.basket.map(function(item, i, array) {
+      var itemCopy = {};
+      Object.keys(item).forEach(function(key) {
+        itemCopy[key] = item[key];
+      });
+      if (itemCopy.id === itemID) {
+        itemCopy.quantityOrdered = 0;
+        console.log('Entire quantity of item with id ', itemID, "has now been removed", item.quantityOrdered + "ordered");
+      }
+      return itemCopy;
+    });
+    this.setState({
+      basket: menu
+    });
+  },
 
   getInitialState: function() {
     return {
@@ -184,13 +228,19 @@ let Basket = React.createClass({
       actions: {
         addItem: this.addItem,
         removeItem: this.removeItem,
-        clearBasket: this.clearBasket
+        clearBasket: this.clearBasket,
+        clearQuantityOfItem: this.clearQuantityOfItem
       },
       helpers: {
         filterMenu: this.filterMenu,
         orderMenu: this.orderMenu,
+        filterMenuByQuantity: this.filterMenuByQuantity,
+        totalPriceOfItemsInBasket: this.totalPriceOfItemsInBasket,
+        numberOfItemsInBasket: this.numberOfItemsInBasket,
+        getSubtotalForEachItem: this.getSubtotalForEachItem
         getUniqueTags: this.getUniqueTags
       }
+
     };
 
     props = Object.assign(props, this.state);

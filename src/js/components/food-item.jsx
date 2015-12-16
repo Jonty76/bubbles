@@ -1,5 +1,26 @@
 import React from 'react';
 
+var AddItem = React.createClass({
+  addItem: function() {
+    console.log("woahaa!");
+    this.props.addItem(this.props.id);
+  },
+
+  render: function() {
+    var showButton = (
+        <button onClick={this.addItem}>+</button>
+    );
+    var hideButton = (
+      <div></div>
+    );
+    return (
+      <div>
+        {this.props.numberOrdered > 0 ? showButton : hideButton}
+      </div>
+    );
+  }
+});
+
 var RemoveItem = React.createClass({
   removeItem: function(event) {
     event.stopPropagation();
@@ -21,26 +42,41 @@ var RemoveItem = React.createClass({
   }
 });
 
-var AddItem = React.createClass({
-  addItem: function() {
-    console.log("woahaa!");
-    this.props.addItem(this.props.id);
+
+var ClearQuantityOfItem = React.createClass({
+  clearQuantityOfItem: function(event) {
+    event.stopPropagation();
+    this.props.clearQuantityOfItem(this.props.id);
   },
 
   render: function() {
-    var showButton = (
-        <button onClick={this.addItem}>+</button>
+    var inCheckoutPage = (
+      <button onClick={this.clearQuantityOfItem}>x</button>
     );
-    var hideButton = (
+    var notInCheckoutPage = (
       <div></div>
     );
     return (
       <div>
-        {this.props.numberOrdered > 0 ? showButton : hideButton}
+        {this.props.inCheckout ? inCheckoutPage : notInCheckoutPage}
       </div>
     );
   }
 });
+
+var Price = React.createClass({
+
+  render: function(){
+    return (
+      <div>
+        <span>
+          {this.props.inCheckout ? this.props.subtotal : this.props.price}
+        </span>
+      </div>
+    );
+  }
+});
+
 
 var NumberOrdered = React.createClass({
    render: function() {
@@ -85,9 +121,20 @@ var FoodItem = React.createClass({
           id={this.props.id}
           numberOrdered={this.props.quantityOrdered}
         />
-        <p> {this.props.price} </p>
+        <Price
+          price={this.props.price}
+          subtotal={this.props.quantityOrdered * this.props.price}
+          inCheckout={this.props.inCheckout}
+        />
+        <ClearQuantityOfItem
+          clearQuantityOfItem={this.props.actions.clearQuantityOfItem}
+          inCheckout={this.props.inCheckout}
+          id={this.props.id}
+          numberOrdered={this.props.quantityOrdered}
+        />
       </div>
     );
+
   }
 });
 
@@ -96,6 +143,8 @@ module.exports = {
   Components: {
     AddItem,
     RemoveItem,
-    NumberOrdered
+    NumberOrdered,
+    ClearQuantityOfItem,
+    Price
   }
 }
