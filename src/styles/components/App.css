@@ -7,7 +7,6 @@ body {
   padding-top: 3em;
   padding-bottom: 3em;
   margin: 0;
-  font-family: impact;
 }
 
 .content-wrapper {
@@ -23,7 +22,6 @@ body {
   text-align: center;
   text-decoration: none;
   padding: 1em 0 1em 0;
-  color: green;
 }
 
 .header {
@@ -33,7 +31,6 @@ body {
   background-color: lightgrey;
   position: fixed;
   padding: 1em 0 1em 0;
-  color: green;
 }
 
 .header a{
