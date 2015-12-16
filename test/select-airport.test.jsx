@@ -8,7 +8,7 @@ var Selector = require('../src/js/components/views/select-airport.jsx').Componen
 
 shallowRenderer.render(<Selector />);
 var appRender = shallowRenderer.getRenderOutput();
-console.log(appRender.props.options);
+
 test('Testing dropdown menu in select-airport.jsx', t => {
   var options = appRender.props.options;
   t.equal(options.length, 2, 'Two options in Selector');

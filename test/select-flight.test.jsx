@@ -16,7 +16,7 @@ flightSelectorShallowRenderer.render(<FlightNumberSelector />);
 var selectorRender = selectorShallowRenderer.getRenderOutput();
 var flightSelectorRender = flightSelectorShallowRenderer.getRenderOutput();
 
-console.log('flightSelectorRender: ', flightSelectorRender);
+
 
 test('Testing dropdown menus in select-flight.jsx', t => {
   var selectorRenderOptions = selectorRender.props.options;

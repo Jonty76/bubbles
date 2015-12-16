@@ -42,7 +42,6 @@ var RemoveItem = React.createClass({
   }
 });
 
-
 var ClearQuantityOfItem = React.createClass({
   clearQuantityOfItem: function(event) {
     event.stopPropagation();
@@ -103,8 +102,8 @@ var FoodItem = React.createClass({
   },
 
   render: function() {
-    console.log("buzinga!");
-    // console.log(this.props);
+
+
     return (
       <div onClick={this.clickHandler}>
         <AddItem
