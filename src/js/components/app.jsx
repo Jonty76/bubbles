@@ -29,7 +29,7 @@ class RouteCSSTransitionGroup extends React.Component {
 
     var previousPathname = this.state.previousPathname;
 
-    // const { children, ...props } = this.props
+    // const { children, ...props } = this.props woahaa
     // const { previousPathname } = this.state
 
     return (
@@ -65,10 +65,16 @@ module.exports = React.createClass({
 
     var child = this.props.children;
     console.log("main.jsx", child);
+//    transitionAppear={true} transitionAppearTimeout={1000}
     return (
         <div>
-          <RouteCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
-              <Header />
+          <Header />
+          <RouteCSSTransitionGroup
+            component="div"
+            transitionName="example"
+            transitionEnterTimeout={2000}
+            transitionLeaveTimeout={2000}>
+
               {child}
           </RouteCSSTransitionGroup>
         </div>
