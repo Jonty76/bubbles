@@ -4,7 +4,7 @@ import Header from './header.jsx';
 
 module.exports = React.createClass({
   render: function() {
-    //console.log(this.props.children.length);
+    
     return (
       <div>
         <Header />

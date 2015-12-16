@@ -65,7 +65,7 @@ var getMenu = function() {
       name :"veg",
       foodType : "Sushi",
       restaurant : "Yo! Sushi",
-      price: "00"
+      price: "100"
     }
   ];
   resetMenu(menu);
@@ -83,6 +83,13 @@ var getDescription = function(name) {
 // TODO: filter menu ie get correct pages
 
 let Basket = React.createClass({
+
+  setMenuType: function(tagName, tagValue) {
+    this.setState({
+      tagName: tagName,
+      tagValue: tagValue
+    });
+  },
 
   filterMenu: function(menu, tagName, searchValue) {
     return menu.filter(function(menuItem) {
@@ -229,7 +236,8 @@ let Basket = React.createClass({
         addItem: this.addItem,
         removeItem: this.removeItem,
         clearBasket: this.clearBasket,
-        clearQuantityOfItem: this.clearQuantityOfItem
+        clearQuantityOfItem: this.clearQuantityOfItem,
+        setMenuType: this.setMenuType
       },
       helpers: {
         filterMenu: this.filterMenu,
@@ -237,22 +245,21 @@ let Basket = React.createClass({
         filterMenuByQuantity: this.filterMenuByQuantity,
         totalPriceOfItemsInBasket: this.totalPriceOfItemsInBasket,
         numberOfItemsInBasket: this.numberOfItemsInBasket,
-        getSubtotalForEachItem: this.getSubtotalForEachItem
+        getSubtotalForEachItem: this.getSubtotalForEachItem,
         getUniqueTags: this.getUniqueTags
       }
 
     };
 
     props = Object.assign(props, this.state);
-    console.log("PROPS!!!", props);
-    // var state = this.state;
+
     return React.Children.map(this.props.children, function(child) {
       return React.cloneElement(child, props);
     });
   },
 
   render: function() {
-    console.log(this.props.children);
+
     return (
       <div>
         <p>WOAH</p>

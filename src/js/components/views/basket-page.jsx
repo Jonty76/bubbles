@@ -20,7 +20,7 @@ var BasketPage = React.createClass({
     var fee = menu.map(function(menuitem){
       return menuitem.restaurant;
     }).forEach(function(item) {
-        if(result.indexOf(item) < 0 ) {
+        if(result.indexOf(item) <= 0 ) {
          result.push(item);
         }
       });
