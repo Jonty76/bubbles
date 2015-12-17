@@ -12,16 +12,16 @@ var Title = React.createClass({render: function() {
 
 var FoodItems = React.createClass({render: function() {
     return (
-      <div>
+      <div className='list-group'>
         {this.props.items.map(function(item) {
             return (
-              <li>
+              <div className='list-group-item'>
                 <FoodItem
                   {...item}
                   actions={this.props.actions}
                   inCheckout={this.props.inCheckout}
                   />
-              </li>
+              </div>
             );
           }.bind(this))}
       </div>
