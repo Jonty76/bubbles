@@ -11,11 +11,15 @@ let Selector = React.createClass({
      {label : "Gatwick"}
    ];
    return (
+     <div>
+       <p className = "slogan">Take-Off Take-Away</p>
+       <p className = "view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
      <Select
        name="airportSelector"
        options={airportOptions}
        onChange={this.props.onChange}
      />
+ </div>
   );
  }
 });
