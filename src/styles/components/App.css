@@ -13,10 +13,22 @@ body {
   padding: 0, 1em, 0, 1em;
 }
 
+.logo {
+  height:4em;
+  margin-top:-1em;
+}
+
+.slogan {
+  margin-top:4em;
+}
+
+.view-text {
+  margin-top: 2em;
+}
 .next-button {
   bottom: 0;
   width: 100%;
-  height: 1em;
+  height: 3em;
   background-color: lightgrey;
   position: fixed;
   text-align: center;
@@ -37,4 +49,5 @@ body {
   text-decoration: none;
   float:right;
   padding-right: 2em;
+  margin-top:-0.5em;
 }
