@@ -35,12 +35,15 @@ let SelectMenu = React.createClass({
     return uniqueTags.map(function(restaurantName){
       return (
         <Link to="/basket/menu">
-          <button
-            onClick={event => this.goToRestaurant(event, restaurantName)}>{restaurantName}</button>
+          <img className = "restaurant-logo"
+            onClick={event => this.goToRestaurant(event, restaurantName)}
+            src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
         </Link>
       )
     }.bind(this));
   },
+
+  // https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg
 
   renderSelectRestaurant: function() {
     var restaurantList = this.getRestaurantList();
@@ -58,7 +61,7 @@ let SelectMenu = React.createClass({
     return uniqueTags.map(function(foodTypeName){
       return (
         <Link to="/basket/menu">
-          <button
+          <button className="food-type-list"
             onClick={event => this.goToFoodType(event, foodTypeName)}>{foodTypeName}</button>
         </Link>
       )
@@ -127,7 +130,7 @@ let SelectMenu = React.createClass({
 
     return (
       <div>
-        <input
+        <input className="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}
           type="text"

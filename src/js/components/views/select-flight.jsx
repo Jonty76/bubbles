@@ -113,9 +113,9 @@ let FlightDetails = React.createClass({
   render: function(){
     return (
       <div>
-        <p>  {this.props.airline} </p>
-        <p>  {this.props.flightDate} </p>
-        <p>  {this.props.flightNumber} </p>
+        <p className = 'view-text'>  {this.props.airline} </p>
+        <p className = 'view-text'>  {this.props.flightDate} </p>
+        <p className = 'view-text'>  {this.props.flightNumber} </p>
       </div>
     )
   }
@@ -125,7 +125,7 @@ let FlightDetails = React.createClass({
 let DetailsController = React.createClass({
   getInitialState: function(){
     return {
-      flightDetails:"Enter Flight"
+      flightDetails: ""
     };
   },
 
@@ -144,7 +144,7 @@ let DetailsController = React.createClass({
   render: function(){
     return (
       <div>
-        {this.state.flightDetails}
+        <p className = "view-text">{this.state.flightDetails}</p>
       </div>
   )},
 
@@ -154,7 +154,7 @@ let DetailsController = React.createClass({
         (this.setState({
           flightDetails: (
             <div>
-              <p> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
+              <p className = 'view-text'> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
               <Link to="/select-airport">
                 <div className="next-button" >Return to homepage</div>
               </Link>
@@ -173,9 +173,9 @@ let DetailsController = React.createClass({
           <Link to="/basket">
             <div className="next-button" >Confirm your flight</div>
           </Link>
-          <p> Gate: 25</p>
-          <p> Time: 10:00</p>
-          <p> If this is correct, please confirm below </p>
+          <p className = 'view-text'> Gate: 25</p>
+          <p className = 'view-text'> Time: 10:00</p>
+          <p className = 'view-text'> If this is correct, please confirm below </p>
         </div>
       )
     })
@@ -237,6 +237,7 @@ let Page = React.createClass({
   render: function() {
     return (
       <div>
+        <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
         <Formsy.Form>
           <fieldset>
             <Selector onChange={this.selectorChange} />

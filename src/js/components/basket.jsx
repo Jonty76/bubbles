@@ -262,7 +262,7 @@ let Basket = React.createClass({
 
     return (
       <div>
-        <p>WOAH</p>
+        <p></p>
         {this.getChildrenWithActions()}
       </div>
     );
