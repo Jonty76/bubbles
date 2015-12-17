@@ -10,7 +10,7 @@ shallowRenderer.render(<Header />);
 var headerRender = shallowRenderer.getRenderOutput();
 
 test('Testing link to about in Header', t => {
-  var link = headerRender.props.children[0];
+  var link = headerRender.props.children[1];
   t.equal(link.props.to, '/about', 'Link to /about is first child of Header');
   t.end();
 });
