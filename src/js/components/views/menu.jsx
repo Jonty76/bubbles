@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 let MenuComponent = require('../menu.jsx');
+let BasketBar = require('../basket-bar.jsx');
 
 var Menu = React.createClass({
 
@@ -24,7 +25,7 @@ var Menu = React.createClass({
     return (
       <div>
         <MenuComponent menu={menu} actions={this.props.actions} />
-        <Link to="/basket/page">Basket</Link>
+        <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     );
   }
