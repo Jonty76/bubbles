@@ -4,12 +4,18 @@ import { Input } from 'formsy-react-components';
 import { Link } from 'react-router';
 
 let Page = React.createClass({
+
   render: function() {
+    var sharedProps = {
+      layout: 'horizontal',
+      validatePristine: true
+    };
     return (
       <div>
         <Formsy.Form>
           <fieldset>
             <Input
+              {...sharedProps}
               name="firstName"
               value=""
               label="First Name"
@@ -19,6 +25,7 @@ let Page = React.createClass({
               required
             />
             <Input
+              {...sharedProps}
               name="surname"
               value=""
               label="Surname"
@@ -28,6 +35,7 @@ let Page = React.createClass({
               required
             />
             <Input
+              {...sharedProps}
               name="email"
               value=""
               label="Email"
@@ -38,21 +46,23 @@ let Page = React.createClass({
               required
             />
             <Input
+              {...sharedProps}
               name="password1"
               value=""
               label="Password"
               type="password"
-              validation="minLength:8"
+              validations="minLength:8"
               validationError="Your password must be at least 8 characters long."
               placeholder="Choose a password"
               required
             />
             <Input
+              {...sharedProps}
               name="password2"
               value=""
               label="Confirm password"
               type="password"
-              validation="equalsField:password1"
+              validations="equalsField:password1"
               validationErrors={{
                 equalsField: "Passwords must match."
               }}
@@ -62,6 +72,7 @@ let Page = React.createClass({
         </fieldset>
         <fieldset>
           <Input
+            {...sharedProps}
             name="cardNumber"
             label="Card number"
             value=""
@@ -71,6 +82,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="expirationDate"
             label="Expiration date"
             value=""
@@ -80,6 +92,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="cvv"
             label="CVV"
             value=""
@@ -89,6 +102,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="cardHolderName"
             label="Card holder name"
             value=""
@@ -99,6 +113,7 @@ let Page = React.createClass({
         </fieldset>
         <fieldset>
           <Input
+            {...sharedProps}
             name="addressLine1"
             label="Address line 1"
             value=""
@@ -108,6 +123,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="addressLine2"
             label="Address line 2"
             value=""
@@ -116,6 +132,7 @@ let Page = React.createClass({
             help="This is a required text input."
           />
           <Input
+            {...sharedProps}
             name="city"
             label="City"
             value=""
@@ -124,6 +141,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="country"
             label="Country"
             value=""
@@ -132,6 +150,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="country"
             label="County"
             value=""
@@ -140,6 +159,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="postCode"
             label="Postal code"
             value=""
@@ -148,6 +168,7 @@ let Page = React.createClass({
             required
           />
           <Input
+            {...sharedProps}
             name="phone"
             label="Phone"
             value=""
