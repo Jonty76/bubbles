@@ -36,6 +36,7 @@ let Page = React.createClass({
     );
     return (
       <div>
+
         <p className='view-text'>
           Sorry we do not currently serve this airport.
           Enter your email and we'll update you when we do!
