@@ -49,7 +49,9 @@ let Page = React.createClass({
               value=""
               type="text"
               label="CVV"
+              help="Enter three digits"
               required
+              validations={{matchRegexp: /^(\d\d\d)$/}}
               />
           </Formsy.Form>
           <Link to="/order-confirmation">

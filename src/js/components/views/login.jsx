@@ -5,10 +5,15 @@ import { Input } from 'formsy-react-components';
 var Page = React.createClass({
   render: function() {
     console.log("rendering login page");
+    var sharedProps = {
+      layout: 'horizontal',
+      validatePristine: true
+    };
     return (
       <div>
         <Formsy.Form>
           <Input
+            {...sharedProps}
             name="email"
             value=""
             label="Email"
@@ -16,6 +21,7 @@ var Page = React.createClass({
             placeholder="Enter your email"
           />
           <Input
+            {...sharedProps}
             name="password1"
             value=""
             label="Password"
