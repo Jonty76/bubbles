@@ -8,12 +8,13 @@ let Page = React.createClass({
   render: function() {
     var sharedProps = {
       layout: 'horizontal',
-      validatePristine: true
+      validatePristine: false
     };
     return (
       <div>
         <Formsy.Form>
           <fieldset>
+            <legend>Piccnicc account details</legend>
             <Input
               {...sharedProps}
               name="firstName"
@@ -21,7 +22,6 @@ let Page = React.createClass({
               label="First Name"
               type="text"
               placeholder="Enter your first name"
-              help="This is a required text input."
               required
             />
             <Input
@@ -31,7 +31,6 @@ let Page = React.createClass({
               label="Surname"
               type="text"
               placeholder="Enter your surname"
-              help="This is a required text input."
               required
             />
             <Input
@@ -41,8 +40,13 @@ let Page = React.createClass({
               label="Email"
               type="email"
               autoComplete="off"
+              validations={{
+                isEmail: true,
+              }}
+              validationErrors={{
+                isEmail: 'You have to type valid email',
+              }}
               placeholder="Enter your email"
-              help="This is a required text input."
               required
             />
             <Input
@@ -71,14 +75,20 @@ let Page = React.createClass({
             />
         </fieldset>
         <fieldset>
+          <legend>Payment details</legend>
           <Input
             {...sharedProps}
             name="cardNumber"
             label="Card number"
             value=""
             type="text"
+            validations={{
+              matchRegexp: /^(\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d)$/
+            }}
+            validationErrors= {{
+              matchRegexp: "Please enter a 16 digit number"
+            }}
             placeholder="Enter your card number"
-            help="This is a required text input."
             required
           />
           <Input
@@ -88,30 +98,11 @@ let Page = React.createClass({
             value=""
             type="text"
             placeholder="MM/YY"
-            help="This is a required text input."
             required
-          />
-          <Input
-            {...sharedProps}
-            name="cvv"
-            label="CVV"
-            value=""
-            type="text"
-            placeholder=""
-            help="This is a required text input."
-            required
-          />
-          <Input
-            {...sharedProps}
-            name="cardHolderName"
-            label="Card holder name"
-            value=""
-            type="text"
-            placeholder="Enter your name as it appears on card"
-            help="This is a required text input."
           />
         </fieldset>
         <fieldset>
+          <legend>Billing address</legend>
           <Input
             {...sharedProps}
             name="addressLine1"
@@ -119,8 +110,6 @@ let Page = React.createClass({
             value=""
             type="text"
             placeholder="Enter the first line of your address"
-            help="This is a required text input."
-            required
           />
           <Input
             {...sharedProps}
@@ -129,7 +118,6 @@ let Page = React.createClass({
             value=""
             type="text"
             placeholder="Enter the second line of your address"
-            help="This is a required text input."
           />
           <Input
             {...sharedProps}
@@ -137,7 +125,6 @@ let Page = React.createClass({
             label="City"
             value=""
             type="text"
-            help="This is a required text input."
             required
           />
           <Input
@@ -146,16 +133,6 @@ let Page = React.createClass({
             label="Country"
             value=""
             type="text"
-            help="This is a required text input."
-            required
-          />
-          <Input
-            {...sharedProps}
-            name="country"
-            label="County"
-            value=""
-            type="text"
-            help="This is a required text input."
             required
           />
           <Input
@@ -164,16 +141,6 @@ let Page = React.createClass({
             label="Postal code"
             value=""
             type="text"
-            help="This is a required text input."
-            required
-          />
-          <Input
-            {...sharedProps}
-            name="phone"
-            label="Phone"
-            value=""
-            type="text"
-            help="This is a required text input."
             required
           />
         </fieldset>
