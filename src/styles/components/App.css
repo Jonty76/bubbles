@@ -7,7 +7,24 @@ body {
   padding-top: 3em;
   padding-bottom: 3em;
   margin: 0;
+  background-size:100%;
+  /*background-image: url('https://cloud.githubusercontent.com/assets/11833296/11870559/a8c28fc2-a4c0-11e5-8720-c32b3614bc3e.png');*/
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #A5D15E;
+  background-color:#E6E7E8 ;
+  }
+
+.form-control {
+  width:60%;
+  margin:auto;
+  color:grey;
 }
+
+/*.input-div {
+  width:60%;
+  margin:auto;
+  color:blue;
+}*/
 
 .content-wrapper {
   padding: 0, 1em, 0, 1em;
@@ -15,25 +32,37 @@ body {
 
 .logo {
   height:4em;
-  margin-top:-1em;
+  display: block;
+  margin: -1em auto;
+  margin-right:27%;
+
 }
 
 .slogan {
-  margin-top:4em;
+  margin-top:2em;
+  text-align: center;
+  font-size: 200%;
+  color:#70B500;
+
 }
 
 .view-text {
   margin-top: 2em;
+  text-align: center;
+  font-size: 140%;
 }
 .next-button {
   bottom: 0;
   width: 100%;
   height: 3em;
-  background-color: lightgrey;
+  background-color: grey;
   position: fixed;
   text-align: center;
   text-decoration: none;
-  padding: 1em 0 1em 0;
+  padding: 1em 0 2em 0;
+  color: white;
+  font-size: 130%;
+
 }
 
 .basket-bar {
@@ -46,17 +75,26 @@ body {
 }
 
 .header {
-  height: 1em;
+  height: 4em;
   width: 100%;
   top: 0;
-  background-color: lightgrey;
+  background-color: #231F20;
   position: fixed;
   padding: 1em 0 1em 0;
 }
 
-.header a{
+.about-link{
   text-decoration: none;
   float:right;
   padding-right: 2em;
-  margin-top:-0.5em;
+  margin-top:-1.5em;
+  color: #1CBBE6;
+}
+
+.home-link{
+  text-decoration: none;
+  float:left;
+  padding-left: 2em;
+  margin-top:0.5em;
+  color: #1CBBE6;
 }
