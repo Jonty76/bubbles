@@ -12,7 +12,8 @@ let Selector = React.createClass({
    ];
    return (
      <div>
-       <p className = 'view-text'> Please select your airport </p>
+       <p className = "slogan">Take-Off Take-Away</p>
+       <p className = "view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
      <Select
        name="airportSelector"
        options={airportOptions}

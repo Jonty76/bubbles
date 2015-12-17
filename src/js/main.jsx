@@ -34,17 +34,17 @@ render((
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
       <Route path="select-airport" component={SelectAirport} />
-      // <Route path="select-flight" component={SelectFlight} />
-      // <Route path="basket" component={Basket}>
-      //   <IndexRoute component={SelectMenu} />
-      //   <Route path="/basket/page" component={BasketPage} />
-      //   <Route path="/basket/menu" component={Menu} />
-      //   <Route path="/basket/select-menu" component={SelectMenu} />
-      // </Route>
-      // <Route path="login" component={Login} />
-      // <Route path="create-account" component={CreateAccount} />
-      // <Route path="payment" component={Payment} />
-      // <Route path="order-confirmation" component={OrderConfirmation} />
+      <Route path="select-flight" component={SelectFlight} />
+      <Route path="basket" component={Basket}>
+        <IndexRoute component={SelectMenu} />
+        <Route path="/basket/page" component={BasketPage} />
+        <Route path="/basket/menu" component={Menu} />
+        <Route path="/basket/select-menu" component={SelectMenu} />
+      </Route>
+      <Route path="login" component={Login} />
+      <Route path="create-account" component={CreateAccount} />
+      <Route path="payment" component={Payment} />
+      <Route path="order-confirmation" component={OrderConfirmation} />
     </Route>
   </Router>
 ),rootElement);

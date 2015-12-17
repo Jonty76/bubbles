@@ -14,7 +14,12 @@ body {
 }
 
 .logo {
-  height:2em
+  height:4em;
+  margin-top:-1em;
+}
+
+.slogan {
+  margin-top:4em;
 }
 
 .view-text {
