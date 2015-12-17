@@ -5,8 +5,7 @@ var About = React.createClass({
   render: function() {
     return (
       <div>
-        <Link to="/select-airport">Home</Link>
-        <p> filler text here!! </p>
+        <p className='view-text'> filler text here!! </p>
         <br/>
       </div>
     );

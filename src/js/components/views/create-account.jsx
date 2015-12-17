@@ -4,55 +4,69 @@ import { Input } from 'formsy-react-components';
 import { Link } from 'react-router';
 
 let Page = React.createClass({
+
   render: function() {
+    var sharedProps = {
+      layout: 'horizontal',
+      validatePristine: false
+    };
     return (
       <div>
         <Formsy.Form>
           <fieldset>
+            <legend>Piccnicc account details</legend>
             <Input
+              {...sharedProps}
               name="firstName"
               value=""
               label="First Name"
               type="text"
               placeholder="Enter your first name"
-              help="This is a required text input."
               required
             />
             <Input
+              {...sharedProps}
               name="surname"
               value=""
               label="Surname"
               type="text"
               placeholder="Enter your surname"
-              help="This is a required text input."
               required
             />
             <Input
+              {...sharedProps}
               name="email"
               value=""
               label="Email"
               type="email"
               autoComplete="off"
+              validations={{
+                isEmail: true,
+              }}
+              validationErrors={{
+                isEmail: 'You have to type valid email',
+              }}
               placeholder="Enter your email"
-              help="This is a required text input."
               required
             />
             <Input
+              {...sharedProps}
               name="password1"
               value=""
               label="Password"
               type="password"
-              validation="minLength:8"
+              validations="minLength:8"
               validationError="Your password must be at least 8 characters long."
               placeholder="Choose a password"
               required
             />
             <Input
+              {...sharedProps}
               name="password2"
               value=""
               label="Confirm password"
               type="password"
-              validation="equalsField:password1"
+              validations="equalsField:password1"
               validationErrors={{
                 equalsField: "Passwords must match."
               }}
@@ -61,98 +75,72 @@ let Page = React.createClass({
             />
         </fieldset>
         <fieldset>
+          <legend>Payment details</legend>
           <Input
+            {...sharedProps}
             name="cardNumber"
             label="Card number"
             value=""
             type="text"
+            validations={{
+              matchRegexp: /^(\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d)$/
+            }}
+            validationErrors= {{
+              matchRegexp: "Please enter a 16 digit number"
+            }}
             placeholder="Enter your card number"
-            help="This is a required text input."
             required
           />
           <Input
+            {...sharedProps}
             name="expirationDate"
             label="Expiration date"
             value=""
             type="text"
             placeholder="MM/YY"
-            help="This is a required text input."
             required
-          />
-          <Input
-            name="cvv"
-            label="CVV"
-            value=""
-            type="text"
-            placeholder=""
-            help="This is a required text input."
-            required
-          />
-          <Input
-            name="cardHolderName"
-            label="Card holder name"
-            value=""
-            type="text"
-            placeholder="Enter your name as it appears on card"
-            help="This is a required text input."
           />
         </fieldset>
         <fieldset>
+          <legend>Billing address</legend>
           <Input
+            {...sharedProps}
             name="addressLine1"
             label="Address line 1"
             value=""
             type="text"
             placeholder="Enter the first line of your address"
-            help="This is a required text input."
-            required
           />
           <Input
+            {...sharedProps}
             name="addressLine2"
             label="Address line 2"
             value=""
             type="text"
             placeholder="Enter the second line of your address"
-            help="This is a required text input."
           />
           <Input
+            {...sharedProps}
             name="city"
             label="City"
             value=""
             type="text"
-            help="This is a required text input."
             required
           />
           <Input
+            {...sharedProps}
             name="country"
             label="Country"
             value=""
             type="text"
-            help="This is a required text input."
             required
           />
           <Input
-            name="country"
-            label="County"
-            value=""
-            type="text"
-            help="This is a required text input."
-            required
-          />
-          <Input
+            {...sharedProps}
             name="postCode"
             label="Postal code"
             value=""
             type="text"
-            help="This is a required text input."
-            required
-          />
-          <Input
-            name="phone"
-            label="Phone"
-            value=""
-            type="text"
-            help="This is a required text input."
             required
           />
         </fieldset>
