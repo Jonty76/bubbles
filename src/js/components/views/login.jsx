@@ -18,6 +18,7 @@ var Page = React.createClass({
             value=""
             label="Email"
             type="email"
+            validations="isEmail"
             placeholder="Enter your email"
           />
           <Input
