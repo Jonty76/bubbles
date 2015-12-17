@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router';
 
 let MenuComponent = require('../menu.jsx');
+let BasketBar = require('../basket-bar.jsx');
 
 let SelectMenu = React.createClass({
 
@@ -133,6 +134,7 @@ let SelectMenu = React.createClass({
           placeholder="Search by food type or name">
         </input>
         {searchResult}
+        <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     )
   }
