@@ -32,8 +32,10 @@ let CalendarInput = React.createClass({
 
   render: function() {
     return (
-      <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
-
+      <div>
+        <p>Date of Flight</p>
+        <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
+      </div>
   )}
 });
 
@@ -111,11 +113,51 @@ let FlightNumberSelector = React.createClass({
 
 let FlightDetails = React.createClass({
   render: function(){
+
+    if(this.props.flightNumber === 'Flight Number: BA350' || this.props.flightNumber === 'Flight Number: EK401') {
+      var destinationAirport = (
+        <p>To: DXB Dubai International</p>
+      );
+        }
+    if (this.props.flightNumber === 'Flight Number: BA101') {
+      var destinationAirport = (
+        <p>To: JFK John F. Kennedy International Airport</p>
+      );
+    }  if (this.props.flightNumber === 'Flight Number: EK230') {
+      var destinationAirport = (
+        <p>To: ZVJ Abu Dhabi International</p>
+      );
+    }
+
+     if (this.props.flightNumber === 'Flight Number: JL371') {
+      var destinationAirport = (
+        <p>To: ITM Osaka International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: JL721') {
+      var destinationAirport = (
+        <p>To: HND Haneda International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: SAA650') {
+      var destinationAirport = (
+        <p>To: JNB Johannesburg International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: SAA151') {
+      var destinationAirport = (
+        <p>To: CPT Cape Town International</p>
+      );
+    }
+    console.log("******", destinationAirport);
+    console.log(this.props.flightNumber);
     return (
       <div>
         <p className = 'view-text'>  {this.props.airline} </p>
         <p className = 'view-text'>  {this.props.flightDate} </p>
         <p className = 'view-text'>  {this.props.flightNumber} </p>
+        <p className= 'view-text'> From: LGW London Gatwick </p>
+              {destinationAirport}
       </div>
     )
   }
@@ -125,7 +167,7 @@ let FlightDetails = React.createClass({
 let DetailsController = React.createClass({
   getInitialState: function(){
     return {
-      flightDetails: ""
+      flightDetails:""
     };
   },
 
@@ -191,7 +233,8 @@ let Page = React.createClass({
     return {
       userAirline: "",
       isUserAirlineSelected: false,
-      userFlightDate: Moment().format('L'),
+//      Moment().format('L')
+      userFlightDate: "10/10/2015",
       isUserFlightDateSelected: false,
       userFlightNumber: "",
       isUserFlightNumberSelected: false
