@@ -1,11 +1,11 @@
 .input-calendar {
     font-family: 'Pontano Sans', sans-serif;
     width: 175px;
-    position: relative;
+    position: absolute;
 }
 
 .input-calendar-wrapper {
-    position: absolute;
+    /*position: absolute;*/
     padding: 5px 12px;
     border: 1px solid #c4c4c4;
     border-radius: 5px;
@@ -23,12 +23,15 @@
 }
 
 .input-calendar .input-calendar-value {
-    width: 120px;
+    width: 60%;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'Pontano Sans', sans-serif;
     font-size: 16px;
-    padding: 2px 8px;
+    padding: 6px 12px;
+    display: block;
+    margin:auto;
+    color:grey;
 }
 
 .input-calendar .input-calendar-value:focus {
