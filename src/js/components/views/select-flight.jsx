@@ -233,7 +233,8 @@ let Page = React.createClass({
     return {
       userAirline: "",
       isUserAirlineSelected: false,
-      userFlightDate: Moment().format('L'),
+//      Moment().format('L')
+      userFlightDate: "10/10/2015",
       isUserFlightDateSelected: false,
       userFlightNumber: "",
       isUserFlightNumberSelected: false
