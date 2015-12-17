@@ -5,8 +5,9 @@ var Header = React.createClass({
   render: function() {
     return (
       <div className="header">
-        <img className="logo" src="https://cloud.githubusercontent.com/assets/11833296/11848833/b9515a66-a41c-11e5-8ba2-69ae418f300b.png" />
-        <Link to="/about"> About </Link>
+        <Link className="home-link" to="/select-airport">Home</Link>
+        <img className="logo" src="https://cloud.githubusercontent.com/assets/11833296/11873087/b39cf6fc-a4d0-11e5-8773-0a5076f9c5e5.png" />
+        <Link className="about-link" to="/about"> About </Link>
         <br/>
       </div>
     );

@@ -11,11 +11,11 @@ let Selector = React.createClass({
      {label : "Gatwick"}
    ];
    return (
-     <Select
-       name="airportSelector"
-       options={airportOptions}
-       onChange={this.props.onChange}
-     />
+       <Select
+         name="airportSelector"
+         options={airportOptions}
+         onChange={this.props.onChange}
+       />
   );
  }
 });
@@ -51,6 +51,7 @@ let Page = React.createClass({
   render: function() {
     return (
       <div>
+        <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
         <Formsy.Form>
           <fieldset>
             <Selector onChange={this.selectorChange}/>
