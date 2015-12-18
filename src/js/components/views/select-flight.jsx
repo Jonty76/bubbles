@@ -2,7 +2,7 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
-import Calendar from 'react-input-calendar';
+import Calendar from 'react-datepicker';
 import Moment from 'moment';
 
 let Selector = React.createClass({
@@ -28,16 +28,17 @@ let Selector = React.createClass({
 });
 
 
-let CalendarInput = React.createClass({
-
-  render: function() {
-    return (
-      <div>
-        <p>Date of Flight</p>
-        <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
-      </div>
-  )}
-});
+// let CalendarInput = React.createClass({
+//
+//   //    <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
+//   render: function() {
+//     return (
+//       <div>
+//         <p>Date of Flight</p>
+//         <Calendar date={this.props.date} format="DD/MM/YYYY" />
+//       </div>
+//   )}
+// });
 
 
 let FlightNumberSelector = React.createClass({
@@ -233,8 +234,7 @@ let Page = React.createClass({
     return {
       userAirline: "",
       isUserAirlineSelected: false,
-//      Moment().format('L')
-      userFlightDate: "10/10/2015",
+      userFlightDate: Moment().format('L'),
       isUserFlightDateSelected: false,
       userFlightNumber: "",
       isUserFlightNumberSelected: false
@@ -286,7 +286,8 @@ let Page = React.createClass({
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
-        <CalendarInput onChange={this.calendarInputChange} date={this.state.userFlightDate} />
+        <p>Date of Flight</p>
+        <Calendar onChange={this.calendarInputChange} date={this.state.userFlightDate} format="DD/MM/YYYY" />
         <Formsy.Form>
         <FlightNumberSelector
          isDateSelected={this.state.isUserFlightDateSelected}
@@ -311,7 +312,7 @@ module.exports = ({
   Page,
   Components: {
     Selector,
-    CalendarInput,
+    Calendar,
     FlightNumberSelector
   }
 });

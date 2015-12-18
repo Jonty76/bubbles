@@ -44,6 +44,7 @@
     "jsx-loader": "^0.13.2",
     "moment": "^2.10.6",
     "react": "^0.14.3",
+    "react-datepicker": "^0.17.0",
     "react-dom": "^0.14.3",
     "react-input-calendar": "^0.1.19",
     "react-router": "^1.0.1",
