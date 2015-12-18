@@ -33,17 +33,35 @@ let SelectMenu = React.createClass({
     var getUniqueTags = this.props.helpers.getUniqueTags;
     var uniqueTags = getUniqueTags(this.props.basket, "restaurant");
     return uniqueTags.map(function(restaurantName){
+
+      var yoSushiImage= (
+      <img className = "restaurant-logo"
+        onClick={event => this.goToRestaurant(event, restaurantName)}
+        src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
+      );
+
+      var pretImage = (
+        <img className = "restaurant-logo"
+          src = "https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg"/>
+      );
+
+      var grainStoreImage = (
+        <img className = "restaurant-logo"
+          onClick={event => this.goToRestaurant(event, restaurantName)}
+          src = "https://cloud.githubusercontent.com/assets/11833296/11897909/719aeb9a-a58b-11e5-8680-99488d69bef1.jpeg"/>
+      );
+
       return (
         <Link to="/basket/menu">
-          <img className = "restaurant-logo"
-            onClick={event => this.goToRestaurant(event, restaurantName)}
-            src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
+          <div className = "restaurant-logo-wrapper"   onClick={event => this.goToRestaurant(event, restaurantName)}>
+          {restaurantName === "Pret A Manger"? pretImage : restaurantName === "Yo! Sushi"? yoSushiImage : grainStoreImage}
+          <h1 className = "restaurant-name"> {restaurantName}</h1>
+          </div>
         </Link>
       )
     }.bind(this));
   },
 
-  // https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg
 
   renderSelectRestaurant: function() {
     var restaurantList = this.getRestaurantList();
@@ -62,7 +80,7 @@ let SelectMenu = React.createClass({
       return (
         <Link to="/basket/menu">
           <button className="food-type-list"
-            onClick={event => this.goToFoodType(event, foodTypeName)}>{foodTypeName}</button>
+            onClick={event => this.goToFoodType(event, foodTypeName)}><span className="glyphicon glyphicon-tag pull-left"></span>{foodTypeName}</button>
         </Link>
       )
     }.bind(this));
@@ -129,7 +147,7 @@ let SelectMenu = React.createClass({
     }
 
     return (
-      <div>
+      <div className='pull-out'>
         <input className="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

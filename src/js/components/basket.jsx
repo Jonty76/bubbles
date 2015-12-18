@@ -1,6 +1,9 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router';
 import Header from './header.jsx';
+import {setPrice} from './../savePrice.js';
+
+
 
 let getId = (function() {
   let id = 0;
@@ -18,177 +21,180 @@ var resetMenu = function(menu) {
 
 var getMenu = function() {
   var menu = [
-    {
-      id : getId(),
-      name :"Waldorf salad thin tartlet, smoked salmon",
-      foodType : "Pie",
-      restaurant : "Grain Store",
-      price: "850"
-    },
-    {
-      id : getId(),
-      name :"Dehydrated crisp vegetable, fruit & mushroom salad in prune vinegar dressing & wood pigeon",
-      foodType : "Salad",
-      restaurant : "Grain Store",
-      price: "900"
-    },
-    {
-      id : getId(),
-      name :"Dried fava beans & kishk soup, pomegranate molasses",
-      foodType : "Soup",
-      restaurant : "Grain Store",
-      price: "650"
-    },
-    {
-      id : getId(),
-      name :"Butternut squash ravioli, mustard apricots, rocket & pumpkin seeds",
-      foodType : "Pasta",
-      restaurant : "Grain Store",
-      price: "750"
-    },
-    {
-      id : getId(),
-      name :"Hot seaweed sushi, glazed pak choi, black garlic purée, hake à la plancha, vanilla butter",
-      foodType : "Sushi",
-      restaurant: "Grain Store",
-      price: "750"
-    },
-    {
-      id : getId(),
-      name :"Green tomato, miso, chilli & lime glazed grilled octopus",
-      foodType : "Salad",
-      restaurant : "Grain Store",
-      price: "950"
-    },
-    {
-      id : getId(),
-      name :"Chilli con veggie, mixed rice, sour cream",
-      foodType : "Main",
-      restaurant : "Grain Store",
-      price: "1200"
-    },
-    {
-      id : getId(),
-      name :"Farro wheat, risotto, jerusalem artichokes, leeks & chestnut mushrooms",
-      foodType : "Main",
-      restaurant : "Grain Store",
-      price: "1500"
-    },
-    {
-      id : getId(),
-      name :"Avocado Maki",
-      foodType : "Sushi",
-      restaurant : "Yo! Sushi",
-      price: "200"
-    },
-    {
-      id : getId(),
-      name :"California Roll",
-      foodType : "Sushi",
-      restaurant : "Yo! Sushi",
-      price: "360"
-    },
-    {
-      id : getId(),
-      name : " Surumi, Wakame & Cucumber",
-      foodType : "Salad",
-      restaurant : "Yo! Sushi",
-      price: "270"
-    },
-    {
-      id : getId(),
-      name :"Edamame",
-      foodType : "Salad",
-      restaurant : "Yo! Sushi",
-      price: "200"
-    },
-    {
-      id : getId(),
-      name :"Spicy Chicken",
-      foodType : "Salad",
-      restaurant : "Yo! Sushi",
-      price: "410"
-    },
-    {
-      id : getId(),
-      name :"Yuzu Cured Salmon",
-      foodType : "Salad",
-      restaurant : "Yo! Sushi",
-      price: "500"
-    },
-    {
-      id : getId(),
-      name :"Spicy Tuna Mini Roll",
-      foodType : "Sushi",
-      restaurant : "Yo! Sushi",
-      price: "450"
-    },
-    {
-      id : getId(),
-      name :"Egg & Tomato on Rye ",
-      foodType : "Sandwich",
-      restaurant : "Pret",
-      price: "199"
-    },
-    {
-      id : getId(),
-      name :"Scottish Smoked Salmon Granary",
-      foodType : "Sandwich",
-      restaurant : "Pret",
-      price: "335"
-    },
-    {
-      id : getId(),
-      name :"Chicken & Avocado Granary",
-      foodType : "Sandwich",
-      restaurant : "Pret",
-      price: "335"
-    },
-    {
-      id : getId(),
-      name :"Teriyaki Salmon Sushi",
-      foodType : "Sushi",
-      restaurant : "Pret",
-      price: "450"
-    },
-    {
-      id : getId(),
-      name :"Aromatic Asian Chicken Soup",
-      foodType : "Soup",
-      restaurant : "Pret",
-      price: "350"
-    },
-    {
-      id : getId(),
-      name :"Lentil and Quinoa Soup",
-      foodType : "Soup",
-      restaurant : "Pret",
-      price: "350"
-    },
-    {
-      id : getId(),
-      name :"Leek and Potato Soup",
-      foodType : "Soup",
-      restaurant : "Pret",
-      price: "350"
-    },
-    {
-      id : getId(),
-      name :"Tuscan Minestrone Soup",
-      foodType : "Soup",
-      restaurant : "Pret",
-      price: "350"
-    }
-  ];
+      {
+        id : getId(),
+        name :"Waldorf salad thin tartlet, smoked salmon",
+        foodType : "Pie",
+        restaurant : "Grain Store",
+        price: "850"
+      },
+      {
+        id : getId(),
+        name :"Dehydrated crisp vegetable, fruit & mushroom salad in prune vinegar dressing & wood pigeon",
+        foodType : "Salad",
+        restaurant : "Grain Store",
+        price: "900"
+      },
+      {
+        id : getId(),
+        name :"Dried fava beans & kishk soup, pomegranate molasses",
+        foodType : "Soup",
+        restaurant : "Grain Store",
+        price: "650"
+      },
+      {
+        id : getId(),
+        name :"Butternut squash ravioli, mustard apricots, rocket & pumpkin seeds",
+        foodType : "Pasta",
+        restaurant : "Grain Store",
+        price: "750"
+      },
+      {
+        id : getId(),
+        name :"Hot seaweed sushi, glazed pak choi, black garlic purée, hake à la plancha, vanilla butter",
+        foodType : "Sushi",
+        restaurant: "Grain Store",
+        price: "750"
+      },
+      {
+        id : getId(),
+        name :"Green tomato, miso, chilli & lime glazed grilled octopus",
+        foodType : "Salad",
+        restaurant : "Grain Store",
+        price: "950"
+      },
+      {
+        id : getId(),
+        name :"Chilli con veggie, mixed rice, sour cream",
+        foodType : "Main",
+        restaurant : "Grain Store",
+        price: "1200"
+      },
+      {
+        id : getId(),
+        name :"Farro wheat, risotto, jerusalem artichokes, leeks & chestnut mushrooms",
+        foodType : "Main",
+        restaurant : "Grain Store",
+        price: "1500"
+      },
+      {
+        id : getId(),
+        name :"Avocado Maki",
+        foodType : "Sushi",
+        restaurant : "Yo! Sushi",
+        price: "200"
+      },
+      {
+        id : getId(),
+        name :"California Roll",
+        foodType : "Sushi",
+        restaurant : "Yo! Sushi",
+        price: "360"
+      },
+      {
+        id : getId(),
+        name : " Surumi, Wakame & Cucumber",
+        foodType : "Salad",
+        restaurant : "Yo! Sushi",
+        price: "270"
+      },
+      {
+        id : getId(),
+        name :"Edamame",
+        foodType : "Salad",
+        restaurant : "Yo! Sushi",
+        price: "200"
+      },
+      {
+        id : getId(),
+        name :"Spicy Chicken",
+        foodType : "Salad",
+        restaurant : "Yo! Sushi",
+        price: "410"
+      },
+      {
+        id : getId(),
+        name :"Yuzu Cured Salmon",
+        foodType : "Salad",
+        restaurant : "Yo! Sushi",
+        price: "500"
+      },
+      {
+        id : getId(),
+        name :"Spicy Tuna Mini Roll",
+        foodType : "Sushi",
+        restaurant : "Yo! Sushi",
+        price: "450"
+      },
+      {
+        id : getId(),
+        name :"Egg & Tomato on Rye ",
+        foodType : "Sandwich",
+        restaurant : "Pret A Manger",
+        price: "199"
+      },
+      {
+        id : getId(),
+        name :"Scottish Smoked Salmon Granary",
+        foodType : "Sandwich",
+        restaurant : "Pret A Manger",
+        price: "335"
+      },
+      {
+        id : getId(),
+        name :"Chicken & Avocado Granary",
+        foodType : "Sandwich",
+        restaurant : "Pret A Manger",
+        price: "335"
+      },
+      {
+        id : getId(),
+        name :"Teriyaki Salmon Sushi",
+        foodType : "Sushi",
+        restaurant : "Pret A Manger",
+        price: "450"
+      },
+      {
+        id : getId(),
+        name :"Aromatic Asian Chicken Soup",
+        foodType : "Soup",
+        restaurant : "Pret A Manger",
+        price: "350"
+      },
+      {
+        id : getId(),
+        name :"Lentil and Quinoa Soup",
+        foodType : "Soup",
+        restaurant : "Pret A Manger",
+        price: "350"
+      },
+      {
+        id : getId(),
+        name :"Leek and Potato Soup",
+        foodType : "Soup",
+        restaurant : "Pret A Manger",
+        price: "350"
+      },
+      {
+        id : getId(),
+        name :"Tuscan Minestrone Soup",
+        foodType : "Soup",
+        restaurant : "Pret A Manger",
+        price: "350"
+      }
+    ];
 
   resetMenu(menu);
   return menu;
 }
 
 var getDescription = function(name) {
-  if (name === "Pret") return "write about pret here";
-  return ;
+  console.log(name, "@@@@@@");
+  if (name === "Pret A Manger") return "Pret A Manger creates handmade, natural food, avoiding the obscure chemicals, additives andpreservatives found in much of the ‘prepared’and ‘fast’ food on the market today.";
+  if (name === "Yo! Sushi") return "Rock and Roll conveyor belt sushi ninjas. Serving up sashimi, maki, noodles, handrolls, katsu curry and more. Nom nom nom.";
+  if (name === "Grain Store") return "Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.";
 }
+
 
 // TODO: create actions addItem and removeItem
 
@@ -216,6 +222,13 @@ let Basket = React.createClass({
     });
   },
 
+  formatPrice: function (price){
+    var pounds = price => Math.floor(price/100);
+    var pad = (str, len) => str.length < len ? pad('0' + str, len) : str;
+    var pence = price => pad((price - 100 * pounds(price)).toString(), 2);
+    return '£' + pounds(price) + '.' + pence(price);
+  },
+
   numberOfItemsInBasket: function(quantityFilteredMenu) {
     return quantityFilteredMenu.map(function(menuItem){
       return menuItem.quantityOrdered;
@@ -225,11 +238,13 @@ let Basket = React.createClass({
   },
 
   totalPriceOfItemsInBasket: function(quantityFilteredMenu) {
-    return quantityFilteredMenu.map(function(menuItem) {
+    var price = quantityFilteredMenu.map(function(menuItem) {
       return menuItem.price * menuItem.quantityOrdered;
       }).reduce(function(sum, next) {
         return sum + next;
     }, 0);
+    setPrice(price); // I LOVE GLOBAL VARIABLES
+    return price;
   },
 
   getSubtotalForEachItem: function(quantityFilteredMenu) {
@@ -359,7 +374,9 @@ let Basket = React.createClass({
         totalPriceOfItemsInBasket: this.totalPriceOfItemsInBasket,
         numberOfItemsInBasket: this.numberOfItemsInBasket,
         getSubtotalForEachItem: this.getSubtotalForEachItem,
-        getUniqueTags: this.getUniqueTags
+        getUniqueTags: this.getUniqueTags,
+        getDescription:getDescription,
+        formatPrice: this.formatPrice
       }
 
     };

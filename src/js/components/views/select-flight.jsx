@@ -4,7 +4,6 @@ import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
 import DatePicker from 'react-datepicker';
 import Moment from 'moment';
-//require('react-datepicker/dist/react-datepicker.css');
 
 let Selector = React.createClass({
   render: function() {
@@ -139,19 +138,21 @@ let FlightDetails = React.createClass({
       );
     }
 
-    // var date = new Date (this.props.flightDate);
-    // var day = date.getDate();
-    // var year = date.getFullYear();
-    // var month = date.getMonth()+1;
-    // var dateStr = day+"/"+month+"/"+year;
+
 
     return (
       <div>
-        <p className = 'view-text'>  {this.props.airline} </p>
-        <p className = 'view-text'>  Flight date: {this.props.flightDate} </p>
-        <p className = 'view-text'>  {this.props.flightNumber} </p>
-        <p className= 'view-text'> From: LGW London Gatwick </p>
+        <p className = 'view-text'>
+          {this.props.airline}
+          <br/>
+          Flight date: {this.props.flightDate}
+          <br/>
+          {this.props.flightNumber} <br/>
+        From: LGW London Gatwick
+
               {destinationAirport}
+            <br/>
+            </p>
       </div>
     )
   }
