@@ -153,11 +153,16 @@ let FlightDetails = React.createClass({
     console.log(this.props.flightNumber);
     return (
       <div>
-        <p className = 'view-text'>  {this.props.airline} </p>
-        <p className = 'view-text'>  {this.props.flightDate} </p>
-        <p className = 'view-text'>  {this.props.flightNumber} </p>
-        <p className= 'view-text'> From: LGW London Gatwick </p>
+        <p className = 'view-text'>
+          {this.props.airline}
+          <br/>
+          {this.props.flightDate}
+          <br/>
+          {this.props.flightNumber} <br/>
+        From: LGW London Gatwick
               {destinationAirport}
+            <br/>
+            </p>
       </div>
     )
   }
@@ -212,12 +217,12 @@ let DetailsController = React.createClass({
             flightNumber= {newProps.flightNumber}
             flightDate={newProps.flightDate}
           />
+          <p> Gate: 25 <br/>
+                  Time: 10:00 </p>
           <Link to="/basket">
             <div className="next-button" >Confirm your flight</div>
           </Link>
-          <p className = 'view-text'> Gate: 25</p>
-          <p className = 'view-text'> Time: 10:00</p>
-          <p className = 'view-text'> If this is correct, please confirm below </p>
+
         </div>
       )
     })

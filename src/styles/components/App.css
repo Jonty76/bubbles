@@ -69,12 +69,12 @@ body {
 .food-type-list {
   width: 100%;
   height: 3em;
-  background-color: grey;
+  background-color: white;
+  color:#70B500;
   /*position: fixed;*/
   text-align: center;
   text-decoration: none;
   padding: 1em 0 2em 0;
-  color: white;
   font-size: 130%;
 }
 
@@ -115,10 +115,29 @@ body {
 .food-search{
   width:100%;
   margin:auto;
+  padding-top:1em;
   color:grey;
   height:3em;
 }
 
 .restaurant-logo {
+  height:19.5em;
   width:100%;
+}
+
+.restaurant-logo-wrapper {
+  position:relative;
+  width:100%;
+}
+
+.restaurant-name {
+  position:absolute;
+  top:5.4em;
+  left: 0;
+  width: 100%;
+  color: white;
+}
+
+.glyphicon-tag {
+  color:black;
 }

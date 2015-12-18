@@ -21,43 +21,43 @@ var getMenu = function() {
     {
       id : getId(),
       name :"Salmon sandwich",
-      foodType : "Sandwich",
-      restaurant : "Pret",
+      foodType : "Sandwiches",
+      restaurant : "Pret A Manger",
       price: "350"
     },
     {
       id : getId(),
       name :"Cheese and pickle sandwich",
-      foodType : "Sandwich",
-      restaurant : "Pret",
+      foodType : "Sandwiches",
+      restaurant : "Pret A Manger",
       price: "250"
     },
     {
       id : getId(),
       name :"Nutella and banana sandwich",
-      foodType : "Sandwich",
-      restaurant : "Pret",
+      foodType : "Sandwiches",
+      restaurant : "Pret A Manger",
       price: "500"
     },
     {
       id : getId(),
       name :"Jam sandwich",
-      foodType : "Sandwich",
-      restaurant : "Pret",
+      foodType : "Sandwiches",
+      restaurant : "Pret A Manger",
       price: "200"
     },
     {
       id : getId(),
       name :"Yellow Tail",
       foodType : "Sushi",
-      restaurant : "Pret",
+      restaurant : "Pret A Manger",
       price: "500"
     },
     {
       id : getId(),
       name :"Salmon",
       foodType : "Sushi",
-      restaurant : "Pret",
+      restaurant : "Pret A Manger",
       price: "200"
     },
     {
@@ -73,7 +73,7 @@ var getMenu = function() {
 }
 
 var getDescription = function(name) {
-  if (name === "Pret") return "write about pret here";
+  if (name === "Pret A Manger") return "write about pret here";
   return ;
 }
 
