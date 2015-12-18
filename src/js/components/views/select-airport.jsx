@@ -7,6 +7,7 @@ import { Link } from 'react-router';
 let Selector = React.createClass({
  render: function() {
    let airportOptions = [
+     {label : "Select Airport"},
      {label : "Heathrow"},
      {label : "Gatwick"}
    ];
