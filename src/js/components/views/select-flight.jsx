@@ -32,7 +32,7 @@ let FlightNumberSelector = React.createClass({
   render: function() {
     let baflightNumberOptions = [
       {
-        label: "Choose Flight Number"
+        label: "Select Flight Number"
       }, {
         label: "BA350"
       }, {
@@ -44,7 +44,7 @@ let FlightNumberSelector = React.createClass({
 
     let emiratesflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "EK230"
       }, {
@@ -55,7 +55,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let japanflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "JL371"
       }, {
@@ -66,7 +66,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let southafricaflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "SAA650"
       }, {
@@ -141,20 +141,14 @@ let FlightDetails = React.createClass({
 
 
     return (
-      <div>
-        <p className = 'view-text'>
-          {this.props.airline}
-          <br/>
-          Flight date: {this.props.flightDate}
-          <br/>
-          {this.props.flightNumber} <br/>
-        From: LGW London Gatwick
-
-              {destinationAirport}
-              <p>Gate: 25</p>
-                <p>Time: 10:00</p>
-              <p>  Is this correct?</p>
-            </p>
+      <div className="flight-details-div">
+          <p>Airline: {this.props.airline}</p>
+          <p>Flight date: {this.props.flightDate}</p>
+          <p>{this.props.flightNumber}</p>
+          <p>From: LGW London Gatwick</p>
+          {destinationAirport}
+          <p>Gate: 25</p>
+          <p>Time: 10:30</p>
       </div>
     )
   }
@@ -183,7 +177,7 @@ let DetailsController = React.createClass({
   render: function(){
     return (
       <div>
-        <p className = "view-text">{this.state.flightDetails}</p>
+        {this.state.flightDetails}
       </div>
   )},
 
@@ -277,6 +271,10 @@ let Page = React.createClass({
   },
 
   render: function() {
+    var paddingLeft = {
+      paddingLeft: '2.4em'
+    };
+
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
@@ -285,7 +283,7 @@ let Page = React.createClass({
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
-        <p>Date of Flight</p>
+        <p style={paddingLeft}>Date of Flight</p>
         <DatePicker
           onChange={this.calendarInputChange}
           date={this.state.userFlightDate}

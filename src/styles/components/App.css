@@ -30,7 +30,7 @@ body {
 .datepicker__input{
   width:80%;
   margin:0 auto;
-  margin-left:2.3em;
+  margin-left:2.4em;
   color:grey;
 
 }
@@ -130,6 +130,10 @@ body {
   z-index: 1;
 }
 
+.padding-top {
+  padding-top: 2em;
+}
+
 .about-link{
   text-decoration: none;
   float:right;
@@ -219,4 +223,23 @@ body {
 
 .basket-bar-cart{
   line-height:0.1em;
+}
+
+.flight-details-div{
+  text-align:center;
+}
+
+.basket-prices{
+  font-weight: bold;
+}
+
+.clear-button{
+  color:blue;
+  top: 2em;
+}
+
+.order-more-link{
+  display:inline;
+  text-decoration: underline;
+  color: #70B500;
 }

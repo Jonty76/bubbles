@@ -11,9 +11,14 @@ var OrderPage = React.createClass({
     return (
       <div>
         <div className="content-wrapper">
-          <p>Thank you for your order, your delivery is now being processed.</p>
-          <p>A confirmation email has been sent to user@example.com</p>
-          <p> price: {this.props.helpers.formatPrice(getPrice())} </p>
+        <p className="view-text">
+          <b>Thank you for your order, your delivery is now being processed.</b>
+          <br/>
+          <br/>
+          A confirmation email has been sent to jonny.g@hotmail.com
+          <br/>
+          Price: {this.props.helpers.formatPrice(getPrice())}
+        </p>
         </div>
         <Link to="/select-airport">
           <div className="next-button">ORDER AGAIN</div>

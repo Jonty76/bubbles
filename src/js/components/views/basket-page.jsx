@@ -36,12 +36,16 @@ var BasketPage = React.createClass({
     return (
       <div>
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
-        <div>Subtotal: {formatPrice(foodSubtotal)}</div>
-        <div>Delivery Fee: {formatPrice(deliveryFee)}</div>
-        <div>Total: {formatPrice(total)}</div>
-        <Link to='/basket/select-menu'>
-          <div className='btn btn-default'>Order More</div>
-        </Link>
+        <div>
+          <div className="basket-prices pull-right">
+            <div>Subtotal: {formatPrice(foodSubtotal)}</div>
+            <div>Delivery Fee: {formatPrice(deliveryFee)}</div>
+            <div>Total: {formatPrice(total)}</div>
+          </div>
+            <Link to='/basket/select-menu'>
+              <div className="order-more-link pull-left"><h4>Order More</h4></div>
+            </Link>
+        </div>
         <Link to='/login'>
           <div className='next-button'>CHECKOUT</div>
         </Link>

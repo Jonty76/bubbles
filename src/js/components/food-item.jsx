@@ -67,7 +67,7 @@ var ClearQuantityOfItem = React.createClass({
 
   render: function() {
     var inCheckoutPage = (
-      <button onClick={this.clearQuantityOfItem}>x</button>
+      <span className="glyphicon glyphicon-remove" onClick={this.clearQuantityOfItem}></span>
     );
     var notInCheckoutPage = (
       <div></div>
