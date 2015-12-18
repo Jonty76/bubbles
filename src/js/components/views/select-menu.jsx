@@ -42,14 +42,19 @@ let SelectMenu = React.createClass({
 
       var pretImage = (
         <img className = "restaurant-logo"
-          onClick={event => this.goToRestaurant(event, restaurantName)}
           src = "https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg"/>
+      );
+
+      var grainStoreImage = (
+        <img className = "restaurant-logo"
+          onClick={event => this.goToRestaurant(event, restaurantName)}
+          src = "https://cloud.githubusercontent.com/assets/11833296/11897909/719aeb9a-a58b-11e5-8680-99488d69bef1.jpeg"/>
       );
 
       return (
         <Link to="/basket/menu">
-          <div className = "restaurant-logo-wrapper">
-          {restaurantName === "Pret A Manger"? pretImage : yoSushiImage}
+          <div className = "restaurant-logo-wrapper"   onClick={event => this.goToRestaurant(event, restaurantName)}>
+          {restaurantName === "Pret A Manger"? pretImage : restaurantName === "Yo! Sushi"? yoSushiImage : grainStoreImage}
           <h1 className = "restaurant-name"> {restaurantName}</h1>
           </div>
         </Link>

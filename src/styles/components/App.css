@@ -121,7 +121,7 @@ body {
 }
 
 .restaurant-logo {
-  height:19.5em;
+  height:18em;
   width:100%;
 }
 
@@ -131,11 +131,28 @@ body {
 }
 
 .restaurant-name {
-  position:absolute;
-  top:5.4em;
+position:absolute;
+  top:5em;
   left: 0;
   width: 100%;
   color: white;
+}
+
+.restaurant-name-on-menu{
+  position:absolute;
+  top:1em;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align:center;
+}
+.restaurant-description-on-menu {
+  position:absolute;
+  top:6em;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align:center;
 }
 
 .glyphicon-tag {
