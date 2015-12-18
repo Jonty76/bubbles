@@ -2,7 +2,7 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
-import Calendar from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 import Moment from 'moment';
 
 let Selector = React.createClass({
@@ -26,19 +26,6 @@ let Selector = React.createClass({
     );
   }
 });
-
-
-// let CalendarInput = React.createClass({
-//
-//   //    <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
-//   render: function() {
-//     return (
-//       <div>
-//         <p>Date of Flight</p>
-//         <Calendar date={this.props.date} format="DD/MM/YYYY" />
-//       </div>
-//   )}
-// });
 
 
 let FlightNumberSelector = React.createClass({
@@ -150,17 +137,19 @@ let FlightDetails = React.createClass({
         <p>To: CPT Cape Town International</p>
       );
     }
-    console.log("******", destinationAirport);
-    console.log(this.props.flightNumber);
+
+
+
     return (
       <div>
         <p className = 'view-text'>
           {this.props.airline}
           <br/>
-          {this.props.flightDate}
+          Flight date: {this.props.flightDate}
           <br/>
           {this.props.flightNumber} <br/>
         From: LGW London Gatwick
+
               {destinationAirport}
             <br/>
             </p>
@@ -239,7 +228,7 @@ let Page = React.createClass({
     return {
       userAirline: "",
       isUserAirlineSelected: false,
-      userFlightDate: Moment().format('L'),
+      userFlightDate: Moment().format('DD/MM/YYYY'),
       isUserFlightDateSelected: false,
       userFlightNumber: "",
       isUserFlightNumberSelected: false
@@ -274,12 +263,18 @@ let Page = React.createClass({
   inputDate: function(flightDate){
     this.setState({
       isUserFlightDateSelected: true,
-      userFlightDate : "Flight date: "  + flightDate
+      userFlightDate : flightDate
     });
   },
 
   calendarInputChange: function(value){
-    this.inputDate(value);
+    var date = new Date (value);
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var dateStr = day+"/"+month+"/"+year;
+
+    this.inputDate(dateStr);
   },
 
   render: function() {
@@ -292,7 +287,13 @@ let Page = React.createClass({
           </fieldset>
         </Formsy.Form>
         <p>Date of Flight</p>
-        <Calendar onChange={this.calendarInputChange} date={this.state.userFlightDate} format="DD/MM/YYYY" />
+        <DatePicker
+          onChange={this.calendarInputChange}
+          date={this.state.userFlightDate}
+          placeholderText={this.state.userFlightDate}
+          format="DD/MM/YYYY"
+          dateFormatCalendar= 'DD/MM/YYYY'
+        />
         <Formsy.Form>
         <FlightNumberSelector
          isDateSelected={this.state.isUserFlightDateSelected}
@@ -317,7 +318,7 @@ module.exports = ({
   Page,
   Components: {
     Selector,
-    Calendar,
+    DatePicker,
     FlightNumberSelector
   }
 });
