@@ -286,6 +286,7 @@ let Page = React.createClass({
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
+        <p>Date of Flight</p>
         <Calendar onChange={this.calendarInputChange} date={this.state.userFlightDate} format="DD/MM/YYYY" />
         <Formsy.Form>
         <FlightNumberSelector
