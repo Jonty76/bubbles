@@ -33,8 +33,11 @@ var BasketPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
+    var basketDivStyle = {
+      paddingTop: '1.5em'
+    };
     return (
-      <div>
+      <div style={basketDivStyle}>
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
         <div>
           <div className="basket-prices pull-right">
