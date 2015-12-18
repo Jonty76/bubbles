@@ -154,11 +154,16 @@ let FlightDetails = React.createClass({
     console.log(this.props.flightNumber);
     return (
       <div>
-        <p className = 'view-text'>  {this.props.airline} </p>
-        <p className = 'view-text'>  {this.props.flightDate} </p>
-        <p className = 'view-text'>  {this.props.flightNumber} </p>
-        <p className= 'view-text'> From: LGW London Gatwick </p>
+        <p className = 'view-text'>
+          {this.props.airline}
+          <br/>
+          {this.props.flightDate}
+          <br/>
+          {this.props.flightNumber} <br/>
+        From: LGW London Gatwick
               {destinationAirport}
+            <br/>
+            </p>
       </div>
     )
   }
