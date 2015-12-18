@@ -375,7 +375,7 @@ let Basket = React.createClass({
         numberOfItemsInBasket: this.numberOfItemsInBasket,
         getSubtotalForEachItem: this.getSubtotalForEachItem,
         getUniqueTags: this.getUniqueTags,
-        getDescription:getDescription
+        getDescription:getDescription,
         formatPrice: this.formatPrice
       }
 
