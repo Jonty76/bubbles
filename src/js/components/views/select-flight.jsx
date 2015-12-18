@@ -6,7 +6,6 @@ import DatePicker from 'react-datepicker';
 import Moment from 'moment';
 require('react-datepicker/dist/react-datepicker.css');
 
-
 let Selector = React.createClass({
   render: function() {
     let airlineOptions = [
@@ -140,16 +139,16 @@ let FlightDetails = React.createClass({
       );
     }
 
-    var formattedDate = new Date (this.props.flightDate).toString("DD/MM/YY");
-    var UKformattedDate = formattedDate.toString("dd mm yy");
-
-    console.log("UKformattedDate", formattedDate);
-    console.log("this.props.flightDate", this.props.flightDate);
+    // var date = new Date (this.props.flightDate);
+    // var day = date.getDate();
+    // var year = date.getFullYear();
+    // var month = date.getMonth()+1;
+    // var dateStr = day+"/"+month+"/"+year;
 
     return (
       <div>
         <p className = 'view-text'>  {this.props.airline} </p>
-        <p className = 'view-text'>  Flight date: {formattedDate} </p>
+        <p className = 'view-text'>  Flight date: {this.props.flightDate} </p>
         <p className = 'view-text'>  {this.props.flightNumber} </p>
         <p className= 'view-text'> From: LGW London Gatwick </p>
               {destinationAirport}
@@ -228,7 +227,7 @@ let Page = React.createClass({
     return {
       userAirline: "",
       isUserAirlineSelected: false,
-      userFlightDate: Moment().format('L'),
+      userFlightDate: Moment().format('DD/MM/YYYY'),
       isUserFlightDateSelected: false,
       userFlightNumber: "",
       isUserFlightNumberSelected: false
@@ -268,7 +267,13 @@ let Page = React.createClass({
   },
 
   calendarInputChange: function(value){
-    this.inputDate(value);
+    var date = new Date (value);
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var dateStr = day+"/"+month+"/"+year;
+
+    this.inputDate(dateStr);
   },
 
   render: function() {
@@ -284,8 +289,8 @@ let Page = React.createClass({
         <DatePicker
           onChange={this.calendarInputChange}
           date={this.state.userFlightDate}
+          placeholderText={this.state.userFlightDate}
           format="DD/MM/YYYY"
-          placeholderText='Click to select a date'
           dateFormatCalendar= 'DD/MM/YYYY'
         />
         <Formsy.Form>
