@@ -8,6 +8,7 @@ var About = React.createClass({
         <p className='view-text'> filler text here!! </p>
         <br/>
       </div>
+
     );
   }
 });

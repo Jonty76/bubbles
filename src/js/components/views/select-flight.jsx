@@ -209,7 +209,7 @@ let DetailsController = React.createClass({
             flightNumber= {newProps.flightNumber}
             flightDate={newProps.flightDate}
           />
-          <Link to="/basket">
+        <Link to="/basket/select-menu">
             <div className="next-button" >Confirm</div>
           </Link>
           </div>
