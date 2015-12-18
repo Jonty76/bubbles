@@ -4,7 +4,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, Link, IndexRoute } from 'react-router';
 
-let App               = require('./components/app.jsx');
 let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
 let SelectAirport     = require('./components/views/select-airport.jsx').Page;
