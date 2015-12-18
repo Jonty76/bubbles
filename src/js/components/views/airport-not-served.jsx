@@ -35,7 +35,7 @@ let Page = React.createClass({
         </div>
         <input className="next-button"
           type="submit"
-          defaultValue="Submit"
+          defaultValue="SUBMIT"
           />
       </Formsy.Form>
     );
