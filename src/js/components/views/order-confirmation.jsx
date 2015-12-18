@@ -17,7 +17,7 @@ var OrderPage = React.createClass({
           <br/>
           A confirmation email has been sent to jonny.g@hotmail.com
           <br/>
-          Price: {this.props.helpers.formatPrice(getPrice())}
+          Total Amount: {this.props.helpers.formatPrice(getPrice())}
         </p>
         </div>
         <Link to="/select-airport">
