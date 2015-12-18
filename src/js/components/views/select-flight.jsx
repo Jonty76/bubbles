@@ -271,6 +271,10 @@ let Page = React.createClass({
   },
 
   render: function() {
+    var paddingLeft = {
+      paddingLeft: '2.4em'
+    };
+
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
@@ -279,6 +283,7 @@ let Page = React.createClass({
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
+        <p style={paddingLeft}>Date of Flight</p>
         <DatePicker
           onChange={this.calendarInputChange}
           date={this.state.userFlightDate}
