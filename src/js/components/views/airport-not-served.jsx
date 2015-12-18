@@ -27,6 +27,9 @@ let Page = React.createClass({
         <Input
           placeholder="Email"
           name="emailInput"
+          validations={{
+            isEmail: true,
+          }}
           />
         <input className="next-button"
           type="submit"

@@ -17,7 +17,7 @@ body {
 
 .form-control {
   width:60%;
-  margin:auto;
+  margin:0;
   color:grey;
 }
 
@@ -26,7 +26,10 @@ body {
   margin:auto;
   color:blue;
 }*/
-
+.padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .content-wrapper {
   padding: 0, 1em, 0, 1em;
 }
