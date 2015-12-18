@@ -163,14 +163,17 @@ body {
   width:100%;
 }
 
-.restaurant-logo {
-  height:18em;
-  width:100%;
-}
-
 .restaurant-logo-wrapper {
   position:relative;
   width:100%;
+
+}
+
+.restaurant-logo-menu{
+  height:18em;
+  width:110%;
+  margin-left:-1em;
+  right:0;
 }
 
 .restaurant-name {
@@ -199,7 +202,8 @@ body {
 }
 
 .glyphicon-tag {
-  color:black;
+  color:grey;
+  margin-left:1em;
 }
 
 
@@ -230,6 +234,7 @@ body {
 }
 
 .basket-prices{
+  margin-bottom: 5em;
   font-weight: bold;
 }
 
