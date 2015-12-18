@@ -2,6 +2,8 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
+import Slogan from '../slogan.jsx';
+
 
 
 let Selector = React.createClass({
@@ -52,6 +54,7 @@ let Page = React.createClass({
   render: function() {
     return (
       <div>
+        <Slogan />
         <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
         <Formsy.Form>
           <fieldset>
