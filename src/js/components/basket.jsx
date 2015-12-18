@@ -1,6 +1,9 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router';
 import Header from './header.jsx';
+import {setPrice} from './../savePrice.js';
+
+
 
 let getId = (function() {
   let id = 0;
@@ -216,6 +219,13 @@ let Basket = React.createClass({
     });
   },
 
+  formatPrice: function (price){
+    var pounds = price => Math.floor(price/100);
+    var pad = (str, len) => str.length < len ? pad('0' + str, len) : str;
+    var pence = price => pad((price - 100 * pounds(price)).toString(), 2);
+    return '£' + pounds(price) + '.' + pence(price);
+  },
+
   numberOfItemsInBasket: function(quantityFilteredMenu) {
     return quantityFilteredMenu.map(function(menuItem){
       return menuItem.quantityOrdered;
@@ -225,11 +235,13 @@ let Basket = React.createClass({
   },
 
   totalPriceOfItemsInBasket: function(quantityFilteredMenu) {
-    return quantityFilteredMenu.map(function(menuItem) {
+    var price = quantityFilteredMenu.map(function(menuItem) {
       return menuItem.price * menuItem.quantityOrdered;
       }).reduce(function(sum, next) {
         return sum + next;
     }, 0);
+    setPrice(price); // I LOVE GLOBAL VARIABLES
+    return price;
   },
 
   getSubtotalForEachItem: function(quantityFilteredMenu) {
@@ -359,7 +371,8 @@ let Basket = React.createClass({
         totalPriceOfItemsInBasket: this.totalPriceOfItemsInBasket,
         numberOfItemsInBasket: this.numberOfItemsInBasket,
         getSubtotalForEachItem: this.getSubtotalForEachItem,
-        getUniqueTags: this.getUniqueTags
+        getUniqueTags: this.getUniqueTags,
+        formatPrice: this.formatPrice
       }
 
     };

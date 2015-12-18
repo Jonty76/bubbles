@@ -28,16 +28,11 @@ var BasketPage = React.createClass({
   },
 
   render: function() {
-    console.log("heyyyyyyyy", this.getCheckoutList());
     var menu = this.getCheckoutList();
     var deliveryFee = this.getDeliveryFee(menu);
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
-    var pounds = price => Math.floor(price/100);
-    var pad = (price, digits) => price.length < digits ? pad('0' + price, digits) : price;
-    var pence = price => pad((price - 100 * pounds(price)).toString(), 2);
-    var formatPrice = price => '£' + pounds(price) + '.' + pence(price);
-
     return (
       <div>
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
