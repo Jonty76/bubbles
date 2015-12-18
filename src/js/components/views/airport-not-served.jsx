@@ -20,7 +20,7 @@ let Page = React.createClass({
 
   render: function() {
     var submittedText = (
-      <p>Thank You!</p>
+      <p className = "view-text">Thank You!</p>
     );
     var submitForm = (
       <Formsy.Form onSubmit={this.submitForm}>
@@ -28,7 +28,7 @@ let Page = React.createClass({
           placeholder="Email"
           name="emailInput"
           />
-        <input
+        <input className="next-button"
           type="submit"
           defaultValue="Submit"
           />
@@ -36,8 +36,8 @@ let Page = React.createClass({
     );
     return (
       <div>
-        <Link to='/basket'>CHANGE THIS</Link>
-        <p>
+
+        <p className='view-text'>
           Sorry we do not currently serve this airport.
           Enter your email and we'll update you when we do!
          </p>

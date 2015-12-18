@@ -2,7 +2,7 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
-import Calendar from 'react-input-calendar';
+import Calendar from 'react-datepicker';
 import Moment from 'moment';
 
 let Selector = React.createClass({
@@ -28,14 +28,17 @@ let Selector = React.createClass({
 });
 
 
-let CalendarInput = React.createClass({
-
-  render: function() {
-    return (
-      <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
-
-  )}
-});
+// let CalendarInput = React.createClass({
+//
+//   //    <Calendar date={this.props.date} format="DD/MM/YYYY" openOnInputFocus="bool" closeOnSelect="bool" minView="0" onChange={this.props.onChange}/>
+//   render: function() {
+//     return (
+//       <div>
+//         <p>Date of Flight</p>
+//         <Calendar date={this.props.date} format="DD/MM/YYYY" />
+//       </div>
+//   )}
+// });
 
 
 let FlightNumberSelector = React.createClass({
@@ -111,11 +114,51 @@ let FlightNumberSelector = React.createClass({
 
 let FlightDetails = React.createClass({
   render: function(){
+
+    if(this.props.flightNumber === 'Flight Number: BA350' || this.props.flightNumber === 'Flight Number: EK401') {
+      var destinationAirport = (
+        <p>To: DXB Dubai International</p>
+      );
+        }
+    if (this.props.flightNumber === 'Flight Number: BA101') {
+      var destinationAirport = (
+        <p>To: JFK John F. Kennedy International Airport</p>
+      );
+    }  if (this.props.flightNumber === 'Flight Number: EK230') {
+      var destinationAirport = (
+        <p>To: ZVJ Abu Dhabi International</p>
+      );
+    }
+
+     if (this.props.flightNumber === 'Flight Number: JL371') {
+      var destinationAirport = (
+        <p>To: ITM Osaka International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: JL721') {
+      var destinationAirport = (
+        <p>To: HND Haneda International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: SAA650') {
+      var destinationAirport = (
+        <p>To: JNB Johannesburg International</p>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: SAA151') {
+      var destinationAirport = (
+        <p>To: CPT Cape Town International</p>
+      );
+    }
+    console.log("******", destinationAirport);
+    console.log(this.props.flightNumber);
     return (
       <div>
-        <p>  {this.props.airline} </p>
-        <p>  {this.props.flightDate} </p>
-        <p>  {this.props.flightNumber} </p>
+        <p className = 'view-text'>  {this.props.airline} </p>
+        <p className = 'view-text'>  {this.props.flightDate} </p>
+        <p className = 'view-text'>  {this.props.flightNumber} </p>
+        <p className= 'view-text'> From: LGW London Gatwick </p>
+              {destinationAirport}
       </div>
     )
   }
@@ -125,7 +168,7 @@ let FlightDetails = React.createClass({
 let DetailsController = React.createClass({
   getInitialState: function(){
     return {
-      flightDetails:"Enter Flight"
+      flightDetails:""
     };
   },
 
@@ -144,7 +187,7 @@ let DetailsController = React.createClass({
   render: function(){
     return (
       <div>
-        {this.state.flightDetails}
+        <p className = "view-text">{this.state.flightDetails}</p>
       </div>
   )},
 
@@ -154,7 +197,7 @@ let DetailsController = React.createClass({
         (this.setState({
           flightDetails: (
             <div>
-              <p> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
+              <p className = 'view-text'> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
               <Link to="/select-airport">
                 <div className="next-button" >Return to homepage</div>
               </Link>
@@ -173,9 +216,9 @@ let DetailsController = React.createClass({
           <Link to="/basket">
             <div className="next-button" >Confirm your flight</div>
           </Link>
-          <p> Gate: 25</p>
-          <p> Time: 10:00</p>
-          <p> If this is correct, please confirm below </p>
+          <p className = 'view-text'> Gate: 25</p>
+          <p className = 'view-text'> Time: 10:00</p>
+          <p className = 'view-text'> If this is correct, please confirm below </p>
         </div>
       )
     })
@@ -237,12 +280,14 @@ let Page = React.createClass({
   render: function() {
     return (
       <div>
+        <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
         <Formsy.Form>
           <fieldset>
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
-        <CalendarInput onChange={this.calendarInputChange} date={this.state.userFlightDate} />
+        <p>Date of Flight</p>
+        <Calendar onChange={this.calendarInputChange} date={this.state.userFlightDate} format="DD/MM/YYYY" />
         <Formsy.Form>
         <FlightNumberSelector
          isDateSelected={this.state.isUserFlightDateSelected}
@@ -267,7 +312,7 @@ module.exports = ({
   Page,
   Components: {
     Selector,
-    CalendarInput,
+    Calendar,
     FlightNumberSelector
   }
 });

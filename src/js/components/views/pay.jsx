@@ -36,6 +36,10 @@ let Page = React.createClass({
   },
 
   render: function() {
+    var sharedProps = {
+      layout: 'horizontal',
+      validatePristine: true
+    };
     return (
       <div>
         <Selector onChange={this.onChange} />
@@ -45,11 +49,14 @@ let Page = React.createClass({
           <div>
           <Formsy.Form>
             <Input
+              {...sharedProps}
               name="cvv"
               value=""
               type="text"
               label="CVV"
+              help="Enter three digits"
               required
+              validations={{matchRegexp: /^(\d\d\d)$/}}
               />
           </Formsy.Form>
           <Link to="/order-confirmation">

@@ -31,13 +31,17 @@ var BasketPage = React.createClass({
     var menu = this.getCheckoutList();
     var deliveryFee = this.getDeliveryFee(menu);
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
     return (
       <div>
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
-        <div>Subtotal: {this.props.helpers.totalPriceOfItemsInBasket(this.props.basket)}</div>
-        <div>Delivery Fee: {deliveryFee}</div>
-        <div>Total: {total}</div>
+        <div>Subtotal: {formatPrice(foodSubtotal)}</div>
+        <div>Delivery Fee: {formatPrice(deliveryFee)}</div>
+        <div>Total: {formatPrice(total)}</div>
+        <Link to='/basket/select-menu'>
+          Order More
+        </Link>
         <Link to='/login'>
           <div className='next-button'>CHECKOUT</div>
         </Link>
