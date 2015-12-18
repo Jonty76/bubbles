@@ -130,6 +130,10 @@ body {
   z-index: 1;
 }
 
+.padding-top {
+  padding-top: 2em;
+}
+
 .about-link{
   text-decoration: none;
   float:right;
