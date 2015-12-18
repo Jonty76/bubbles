@@ -10,12 +10,13 @@ var AddItem = React.createClass({
   render: function() {
     var buttonStyle = {
       position: 'relative',
-      top: '0.8em',
-      left: '-0.1em'
+      top: '0.35em',
+      left: '-0.1em',
+      fontSize: '1.4em',
     };
     var showButton = (
-        <div className="btn-xs" onClick={this.addItem}>
-          <span style={buttonStyle} className="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+        <div style={buttonStyle} onClick={this.addItem}>
+          <span className="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
         </div>
     );
     var hideButton = (
@@ -38,11 +39,12 @@ var RemoveItem = React.createClass({
   render: function() {
     var buttonStyle = {
       position: 'relative',
-      bottom: '0.6em',
-      left: '-0.1em'
+      bottom: '0.15em',
+      left: '-0.1em',
+      fontSize: '1.4em',
     };
     var showButton = (
-      <div style={buttonStyle} className="btn-xs" onClick={this.removeItem}>
+      <div style={buttonStyle} onClick={this.removeItem}>
         <span className="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       </div>
     );
@@ -128,10 +130,31 @@ var FoodItem = React.createClass({
       display: 'inline-block'
     };
 
+    var buttonsStyle = {
+      display: 'inline-block',
+      height: '5em',
+      width: '8%'
+    };
+
+    var contentStyle = {
+      display: 'inline-block',
+      width: '70%',
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)'
+    };
+
+    var priceStyle = {
+      display: 'inline-block',
+      position: 'absolute',
+      top: '50%',
+      left: '85%',
+      transform: 'translateY(-50%)'
+    };
 
     return (
       <div onClick={this.clickHandler}>
-        <div style={inlineStyle}>
+        <div style={buttonsStyle}>
           <AddItem
             addItem={this.props.actions.addItem}
             id={this.props.id}
@@ -146,8 +169,8 @@ var FoodItem = React.createClass({
             numberOrdered={this.props.quantityOrdered}
           />
         </div>
-        <span style={inlineStyle}> {this.props.name} </span>
-        <div style={inlineStyle} className='pull-right'>
+        <span style={contentStyle}> {this.props.name} </span>
+        <div style={priceStyle} className='pull-right'>
           <Price
             price={this.props.price}
             subtotal={this.props.quantityOrdered * this.props.price}
