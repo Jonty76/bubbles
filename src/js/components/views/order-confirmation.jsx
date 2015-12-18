@@ -9,7 +9,7 @@ var OrderPage = React.createClass({
           <p>Thank you for your order, your delivery is now being processed.</p>
           <p>A confirmation email has been sent to user@example.com</p>
         </div>
-        <Link to="/basket">
+        <Link to="/select-airport">
           <div className="next-button">ORDER AGAIN</div>
         </Link>
       </div>

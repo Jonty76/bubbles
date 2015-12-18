@@ -24,10 +24,15 @@ let Page = React.createClass({
     );
     var submitForm = (
       <Formsy.Form onSubmit={this.submitForm}>
-        <Input
-          placeholder="Email"
-          name="emailInput"
-          />
+        <div className ='padding'>
+          <Input
+            placeholder="Email"
+            name="emailInput"
+            validations={{
+              isEmail: true,
+            }}
+            />
+        </div>
         <input className="next-button"
           type="submit"
           defaultValue="Submit"

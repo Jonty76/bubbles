@@ -218,12 +218,12 @@ let DetailsController = React.createClass({
             flightNumber= {newProps.flightNumber}
             flightDate={newProps.flightDate}
           />
-          <p> Gate: 25 <br/>
-                  Time: 10:00 </p>
           <Link to="/basket">
-            <div className="next-button" >Confirm your flight</div>
+            <div className="next-button" >Confirm</div>
           </Link>
-
+          <p className = 'view-text'> Gate: 25</p>
+          <p className = 'view-text'> Time: 10:00</p>
+          <p className = 'view-text'> Is this correct? </p>
         </div>
       )
     })
