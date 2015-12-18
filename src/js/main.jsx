@@ -45,6 +45,7 @@ render((
       <Route path="login" component={Login} />
       <Route path="create-account" component={CreateAccount} />
       <Route path="payment" component={Payment} />
+
     </Route>
   </Router>
 ),rootElement);
