@@ -10,14 +10,22 @@ let Selector = React.createClass({
      {label : "Visa ending in --1234"},
      {label : "Mastercard ending in --5678"}
    ];
+
+   var fontSize = {
+     fontSize: '2em'
+   };
    return (
-     <Formsy.Form className='padding'>
-       <Select
-         name="cardSelector"
-         options={cardOptions}
-         onChange={this.props.onChange}
-       />
-     </Formsy.Form>
+    <div>
+      <div className='padding-top padding' style={fontSize}>PAY</div>
+         <Formsy.Form className='padding'>
+             <Select
+              name="cardSelector"
+              options={cardOptions}
+              onChange={this.props.onChange}
+             />
+        </Formsy.Form>
+    </div>
+
   );
  }
 });
