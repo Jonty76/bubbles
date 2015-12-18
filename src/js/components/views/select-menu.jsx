@@ -80,7 +80,7 @@ let SelectMenu = React.createClass({
       return (
         <Link to="/basket/menu">
           <button className="food-type-list"
-            onClick={event => this.goToFoodType(event, foodTypeName)}><span className="glyphicon glyphicon-tag pull-left"></span>{foodTypeName}</button>
+            onClick={event => this.goToFoodType(event, foodTypeName)}><span className="glyphicon glyphicon-tag pull-left tag"></span>{foodTypeName}</button>
         </Link>
       )
     }.bind(this));
