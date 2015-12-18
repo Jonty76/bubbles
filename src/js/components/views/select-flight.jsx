@@ -151,7 +151,9 @@ let FlightDetails = React.createClass({
         From: LGW London Gatwick
 
               {destinationAirport}
-            <br/>
+              <p>Gate: 25</p>
+                <p>Time: 10:00</p>
+              <p>  Is this correct?</p>
             </p>
       </div>
     )
@@ -193,7 +195,7 @@ let DetailsController = React.createClass({
             <div>
               <p className = 'view-text'> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
               <Link to="/select-airport">
-                <div className="next-button" >Return to homepage</div>
+                <div className="next-button" >RETURN TO HOMEPAGE</div>
               </Link>
             </div>
         )
@@ -207,13 +209,10 @@ let DetailsController = React.createClass({
             flightNumber= {newProps.flightNumber}
             flightDate={newProps.flightDate}
           />
-          <Link to="/basket">
+        <Link to="/basket/select-menu">
             <div className="next-button" >Confirm</div>
           </Link>
-          <p className = 'view-text'> Gate: 25</p>
-          <p className = 'view-text'> Time: 10:00</p>
-          <p className = 'view-text'> Is this correct? </p>
-        </div>
+          </div>
       )
     })
   )
