@@ -9,8 +9,17 @@ var Page = React.createClass({
       layout: 'horizontal',
       validatePristine: true
     };
+    var colorText = {
+      color: 'grey',
+      textDecoration: 'underline'
+    };
+    var fontSize = {
+      fontSize: '2em'
+    };
     return (
       <div>
+      <div className='padding-top' style={fontSize}>LOGIN</div>
+      <div className='padding-top'>
         <Formsy.Form>
           <Input
             {...sharedProps}
@@ -34,9 +43,10 @@ var Page = React.createClass({
           <div className="next-button">LOG IN</div>
         </Link>
         <Link to="create-account">
-          <button>Or click here to create an account</button>
+          <div style={colorText}>Or click here to create an account</div>
         </Link>
       </div>
+    </div>
     );
   }
 });

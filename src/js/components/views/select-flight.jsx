@@ -32,7 +32,7 @@ let FlightNumberSelector = React.createClass({
   render: function() {
     let baflightNumberOptions = [
       {
-        label: "Choose Flight Number"
+        label: "Select Flight Number"
       }, {
         label: "BA350"
       }, {
@@ -44,7 +44,7 @@ let FlightNumberSelector = React.createClass({
 
     let emiratesflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "EK230"
       }, {
@@ -55,7 +55,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let japanflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "JL371"
       }, {
@@ -66,7 +66,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let southafricaflightNumberOptions = [
       {
-        label: ""
+        label: "Select Flight Number"
       }, {
         label: "SAA650"
       }, {

@@ -7,7 +7,8 @@ let Selector = React.createClass({
  render: function() {
    let cardOptions = [
      {label : "Choose card"},
-     {label : "Placeholder for card data"}
+     {label : "Visa ending in --1234"},
+     {label : "Mastercard ending in --5678"}
    ];
    return (
      <Formsy.Form className='padding'>
@@ -44,7 +45,7 @@ let Page = React.createClass({
       <div>
         <Selector onChange={this.onChange} />
         {!this.state.cardSelected ? (
-          <p>Please choose a card</p>
+          <p className='padding'>Please choose a card</p>
         ) : (
           <div>
           <Formsy.Form className='padding'>
