@@ -30,6 +30,17 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.margin-main-content {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.pull-out {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
 .content-wrapper {
   padding: 0, 1em, 0, 1em;
 }
@@ -66,7 +77,8 @@ body {
   padding: 1em 0 2em 0;
   color: white;
   font-size: 130%;
-
+  left: 0;
+  right: 0;
 }
 
 .food-type-list {
@@ -97,6 +109,7 @@ body {
   background-color: #231F20;
   position: fixed;
   padding: 1em 0 1em 0;
+  z-index: 1;
 }
 
 .about-link{
