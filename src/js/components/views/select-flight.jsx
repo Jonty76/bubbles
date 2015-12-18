@@ -4,7 +4,7 @@ import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
 import DatePicker from 'react-datepicker';
 import Moment from 'moment';
-require('react-datepicker/dist/react-datepicker.css');
+//require('react-datepicker/dist/react-datepicker.css');
 
 let Selector = React.createClass({
   render: function() {
