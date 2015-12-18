@@ -8,7 +8,7 @@ module.exports = React.createClass({
     return (
       <div>
         <Header />
-        {this.props.children}
+        <div className='margin-main-content'>{this.props.children}</div>
       </div>
     );
   }

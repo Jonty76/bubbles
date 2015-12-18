@@ -14,6 +14,6 @@ test('Testing dropdown menu in select-airport.jsx', t => {
   console.log("!!!!", options);
   console.log("!!!!", appRender.props);
   t.equal(options.length, 3, 'Two options in Selector');
-  t.equal(options[2].label, "Gatwick", 'Gatwick is third option');
+  t.equal(options[2].label, "Gatwick Airport - LGW", 'Gatwick is third option');
   t.end();
 });

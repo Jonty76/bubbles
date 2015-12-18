@@ -10,8 +10,8 @@ let Selector = React.createClass({
  render: function() {
    let airportOptions = [
      {label : "Select Airport"},
-     {label : "Heathrow"},
-     {label : "Gatwick"}
+     {label : "Heathrow Airport - LHR"},
+     {label : "Gatwick Airport - LGW"}
    ];
    return (
        <Select

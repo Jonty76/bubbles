@@ -147,7 +147,7 @@ let SelectMenu = React.createClass({
     }
 
     return (
-      <div>
+      <div className='pull-out'>
         <input className="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

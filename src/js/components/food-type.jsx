@@ -15,7 +15,7 @@ var FoodItems = React.createClass({render: function() {
       <div className='list-group'>
         {this.props.items.map(function(item) {
             return (
-              <div className='list-group-item'>
+              <div className='list-group-item pull-out'>
                 <FoodItem
                   {...item}
                   actions={this.props.actions}
