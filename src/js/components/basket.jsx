@@ -2,7 +2,9 @@ import React from 'react';
 import { Router, Route, Link } from 'react-router';
 import Header from './header.jsx';
 import {setPrice} from './../savePrice.js';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import StaticContainer from 'react-static-container'
+import { createHistory, useBasename } from 'history'
 
 
 let getId = (function() {
@@ -193,6 +195,57 @@ var getDescription = function(name) {
   if (name === "Pret A Manger") return "Pret A Manger creates handmade, natural food, avoiding the obscure chemicals, additives andpreservatives found in much of the ‘prepared’and ‘fast’ food on the market today.";
   if (name === "Yo! Sushi") return "Rock and Roll conveyor belt sushi ninjas. Serving up sashimi, maki, noodles, handrolls, katsu curry and more. Nom nom nom.";
   if (name === "Grain Store") return "Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.";
+}
+
+
+
+class RouteCSSTransitionGroup extends React.Component {
+
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      previousPathname: null
+    }
+  }
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (nextContext.location.pathname !== this.context.location.pathname) {
+      this.setState({ previousPathname: this.context.location.pathname })
+    }
+  }
+
+  render() {
+    var children = this.props.children;
+    var props = this.props;
+
+    var previousPathname = this.state.previousPathname;
+    var tranStyle = {
+        marginTop: "-10em"
+    }
+
+    return (
+      <ReactCSSTransitionGroup {...props}>
+        <StaticContainer style={tranStyle}
+          key={previousPathname || this.context.location.pathname}
+          shouldUpdate={!previousPathname}
+        >
+          {children}
+        </StaticContainer>
+      </ReactCSSTransitionGroup>
+    )
+  }
+
+  componentDidUpdate() {
+    if (this.state.previousPathname) {
+      this.setState({ previousPathname: null })
+    }
+  }
+}
+
+
+RouteCSSTransitionGroup.contextTypes = {
+  location: React.PropTypes.object
 }
 
 
@@ -392,8 +445,14 @@ let Basket = React.createClass({
 
     return (
       <div>
-        <p></p>
-        {this.getChildrenWithActions()}
+        <Header />
+        <RouteCSSTransitionGroup
+          component="div"
+          transitionName="example"
+          transitionEnterTimeout={200}
+          transitionLeaveTimeout={200}>
+            <div className='margin-main-content'>{this.getChildrenWithActions()}</div>
+        </RouteCSSTransitionGroup>
       </div>
     );
   }
