@@ -8,13 +8,6 @@ var BasketBar = React.createClass({
     var formatPrice = this.props.helpers.formatPrice;
     var subtotal = formatPrice(getPrice(this.props.menu));
 
-    var inlineStyle = {
-      position: 'fixed',
-      bottom: 0,
-      display: 'inline',
-      width: '100%',
-      backgroundColor: 'lightgrey'
-    };
 
     var itemsInBasket = this.props.helpers.numberOfItemsInBasket(this.props.menu);
 
@@ -24,10 +17,10 @@ var BasketBar = React.createClass({
 
     var notEmptyBasket = (
         <Link to='/basket/page'>
-          <div style={inlineStyle}>
-            <span>VIEW BASKET</span>
-            <span className='pull-right'>{subtotal}</span>
-            <span className='pull-right glyphicon glyphicon-shopping-cart'>{itemsInBasket}</span>
+          <div className="basket-bar">
+            <span className ="basket-bar-text">VIEW BASKET</span>
+            <span className='pull-right basket-bar-text'>{subtotal}</span>
+            <span className='pull-right glyphicon glyphicon-shopping-cart basket-bar-cart'>{itemsInBasket}</span>
           </div>
         </Link>
     );
