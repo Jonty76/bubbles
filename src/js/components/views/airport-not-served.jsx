@@ -23,7 +23,7 @@ let Page = React.createClass({
       <p className = "view-text">Thank You!</p>
     );
     var submitForm = (
-      <Formsy.Form onSubmit={this.submitForm}>
+      <Formsy.Form className ='padding' onSubmit={this.submitForm}>
         <Input
           placeholder="Email"
           name="emailInput"
