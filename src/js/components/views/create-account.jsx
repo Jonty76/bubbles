@@ -12,7 +12,7 @@ let Page = React.createClass({
     };
     return (
       <div>
-        <Formsy.Form>
+        <Formsy.Form className='padding-top'>
           <fieldset>
             <legend>Piccnicc account details</legend>
             <Input
