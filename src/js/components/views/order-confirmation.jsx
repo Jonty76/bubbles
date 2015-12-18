@@ -15,7 +15,7 @@ var OrderPage = React.createClass({
           <p>A confirmation email has been sent to user@example.com</p>
           <p> price: {this.props.helpers.formatPrice(getPrice())} </p>
         </div>
-        <Link to="/basket">
+        <Link to="/select-airport">
           <div className="next-button">ORDER AGAIN</div>
         </Link>
       </div>

@@ -10,7 +10,7 @@ let Selector = React.createClass({
      {label : "Placeholder for card data"}
    ];
    return (
-     <Formsy.Form>
+     <Formsy.Form className='padding'>
        <Select
          name="cardSelector"
          options={cardOptions}
@@ -47,7 +47,7 @@ let Page = React.createClass({
           <p>Please choose a card</p>
         ) : (
           <div>
-          <Formsy.Form>
+          <Formsy.Form className='padding'>
             <Input
               {...sharedProps}
               name="cvv"

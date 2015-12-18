@@ -28,18 +28,6 @@ class RouteCSSTransitionGroup extends React.Component {
     var props = this.props;
 
     var previousPathname = this.state.previousPathname;
-    //
-    // var style = {
-    //   position: "absolute",
-    //   bottom: '0',
-    //   top: '0'
-    //   // height: '100%'
-    // }
-
-
-    // const { children, ...props } = this.props woahaa
-    // const { previousPathname } = this.state
-
     var tranStyle = {
         marginTop: "-10em"
     }
@@ -80,9 +68,10 @@ module.exports = React.createClass({
           transitionName="example"
           transitionEnterTimeout={200}
           transitionLeaveTimeout={200}>
-            {child}
+            <div className='margin-main-content'>{this.props.children}</div>
         </RouteCSSTransitionGroup>
       </div>
    );
   }
+  // {child}
 });

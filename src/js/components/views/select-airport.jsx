@@ -2,13 +2,16 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
+import Slogan from '../slogan.jsx';
+
 
 
 let Selector = React.createClass({
  render: function() {
    let airportOptions = [
-     {label : "Heathrow"},
-     {label : "Gatwick"}
+     {label : "Select Airport"},
+     {label : "Heathrow Airport - LHR"},
+     {label : "Gatwick Airport - LGW"}
    ];
    return (
        <Select
@@ -38,7 +41,7 @@ let Page = React.createClass({
   },
 
   selectAirport: function(airport) {
-    var link = (airport === 'Gatwick') ? '/select-flight' : '/airport-not-served';
+    var link = (airport === 'Gatwick Airport - LGW') ? '/select-flight' : '/airport-not-served';
     this.setState({
       nextLink: link
     });
@@ -51,6 +54,7 @@ let Page = React.createClass({
   render: function() {
     return (
       <div>
+        <Slogan />
         <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
         <Formsy.Form>
           <fieldset>

@@ -7,7 +7,7 @@ let Page = React.createClass({
 
   render: function() {
     var sharedProps = {
-      layout: 'horizontal',
+      layout: 'vertical',
       validatePristine: false
     };
     return (

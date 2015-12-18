@@ -40,7 +40,7 @@ var BasketPage = React.createClass({
         <div>Delivery Fee: {formatPrice(deliveryFee)}</div>
         <div>Total: {formatPrice(total)}</div>
         <Link to='/basket/select-menu'>
-          Order More
+          <div className='btn btn-default'>Order More</div>
         </Link>
         <Link to='/login'>
           <div className='next-button'>CHECKOUT</div>
