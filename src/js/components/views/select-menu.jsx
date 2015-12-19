@@ -152,7 +152,7 @@ let SelectMenu = React.createClass({
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}
           type="text"
-          placeholder="Search by food type or name">
+          placeholder="Search here by food type or name...">
         </input>
         {searchResult}
         <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
