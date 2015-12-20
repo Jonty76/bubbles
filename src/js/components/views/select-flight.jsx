@@ -243,7 +243,7 @@ let DetailsController = React.createClass({
             flightDate={newProps.flightDate}
           />
         <Link to="/basket/select-menu">
-            <div className="next-button" >Confirm</div>
+            <div className="next-button" >CONFIRM</div>
           </Link>
           </div>
       )
@@ -311,26 +311,31 @@ let Page = React.createClass({
 
   render: function() {
     var paddingLeft = {
-      paddingLeft: '2.4em'
+      paddingLeft: '2.1em'
+    };
+    var paddingRight = {
+      paddingRight: '8em'
     };
 
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
-        <Formsy.Form>
+        <Formsy.Form style={paddingLeft}>
           <fieldset>
             <Selector onChange={this.selectorChange} />
           </fieldset>
         </Formsy.Form>
         <p style={paddingLeft}>Date of Flight</p>
+        <div style={paddingRight}>
         <DatePicker
-          onChange={this.calendarInputChange}
-          date={this.state.userFlightDate}
-          placeholderText={this.state.userFlightDate}
-          format="DD/MM/YYYY"
-          dateFormatCalendar= 'DD/MM/YYYY'
-        />
-        <Formsy.Form>
+            onChange={this.calendarInputChange}
+            date={this.state.userFlightDate}
+            placeholderText={this.state.userFlightDate}
+            format="DD/MM/YYYY"
+            dateFormatCalendar= 'DD/MM/YYYY'
+          />
+        </div>
+        <Formsy.Form style={paddingLeft}>
         <FlightNumberSelector
          isDateSelected={this.state.isUserFlightDateSelected}
          airline = {this.state.userAirline}
