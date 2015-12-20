@@ -13,11 +13,11 @@ let Selector = React.createClass({
       }, {
         label: "British Airways"
       }, {
-        label: "Emirates"
+        label: "Iberia"
       }, {
-        label: "Japan Airlines"
+        label: "Air Berlin"
       }, {
-        label: "South African Airways"
+        label: "Norwegian Air"
       }
     ];
 
@@ -34,57 +34,57 @@ let FlightNumberSelector = React.createClass({
       {
         label: "Select Flight Number"
       }, {
-        label: "BA350"
+        label: "BA2540"
       }, {
-        label: "BA101"
+        label: "BA2740"
       }, {
-        label: "BA100"
+        label: "BA2612"
       }
     ];
 
-    let emiratesflightNumberOptions = [
+    let iberiaflightNumberOptions = [
       {
         label: "Select Flight Number"
       }, {
-        label: "EK230"
+        label: "IB5660"
       }, {
-        label: "EK401"
+        label: "IB3717"
       }, {
-        label: "EK650"
+        label: "IB5855"
       }
     ];
-    let japanflightNumberOptions = [
+    let airBerlinflightNumberOptions = [
       {
         label: "Select Flight Number"
       }, {
-        label: "JL371"
+        label: "AB5198"
       }, {
-        label: "JL721"
+        label: "AB5208"
       }, {
-        label: "JL090"
+        label: "AB5189"
       }
     ];
-    let southafricaflightNumberOptions = [
+    let norwegianAirFlightNumberOptions = [
       {
         label: "Select Flight Number"
       }, {
-        label: "SAA650"
+        label: "DY7015"
       }, {
-        label: "SAA151"
+        label: "DY4442"
       }, {
-        label: "SAA887"
+        label: "DY1341"
       }
     ];
     var flightNumberOptions;
 
     if (this.props.airline === "British Airways"){
       flightNumberOptions=baflightNumberOptions;
-    } else if (this.props.airline === "Emirates"){
-      flightNumberOptions= emiratesflightNumberOptions;
-    } else if (this.props.airline === "Japan Airlines"){
-      flightNumberOptions= japanflightNumberOptions;
-    } else if (this.props.airline === "South African Airways"){
-      flightNumberOptions= southafricaflightNumberOptions
+    } else if (this.props.airline === "Iberia"){
+      flightNumberOptions= iberiaflightNumberOptions;
+    } else if (this.props.airline === "Air Berlin"){
+      flightNumberOptions= airBerlinflightNumberOptions;
+    } else if (this.props.airline === "Norwegian Air"){
+      flightNumberOptions= norwegianAirFlightNumberOptions
     }
 
   if (this.props.isDateSelected && this.props.isAirlineSelected) {
@@ -102,42 +102,78 @@ let FlightNumberSelector = React.createClass({
 let FlightDetails = React.createClass({
   render: function(){
 
-    if(this.props.flightNumber === 'Flight Number: BA350' || this.props.flightNumber === 'Flight Number: EK401') {
+    if(this.props.flightNumber === 'Flight Number: BA2540'){
       var destinationAirport = (
-        <p>To: DXB Dubai International</p>
+        <div>
+          <p>To: FCO Rome</p>
+          <p>Time: 15:25</p>
+        </div>
       );
         }
-    if (this.props.flightNumber === 'Flight Number: BA101') {
+
+    if(this.props.flightNumber === 'Flight Number: BA2740') {
       var destinationAirport = (
-        <p>To: JFK John F. Kennedy International Airport</p>
+        <div>
+          <p>To: GVA Geneva</p>
+          <p>Time: 14:45</p>
+        </div>
       );
-    }  if (this.props.flightNumber === 'Flight Number: EK230') {
+        }
+
+    if (this.props.flightNumber === 'Flight Number: IB5660') {
       var destinationAirport = (
-        <p>To: ZVJ Abu Dhabi International</p>
+        <div>
+        <p>To: BCN Barcelona</p>
+        <p>Time: 21:00</p>
+        </div>
       );
     }
 
-     if (this.props.flightNumber === 'Flight Number: JL371') {
+
+    if (this.props.flightNumber === 'Flight Number: IB3717') {
       var destinationAirport = (
-        <p>To: ITM Osaka International</p>
-      );
-    }
-     if (this.props.flightNumber === 'Flight Number: JL721') {
-      var destinationAirport = (
-        <p>To: HND Haneda International</p>
-      );
-    }
-     if (this.props.flightNumber === 'Flight Number: SAA650') {
-      var destinationAirport = (
-        <p>To: JNB Johannesburg International</p>
-      );
-    }
-     if (this.props.flightNumber === 'Flight Number: SAA151') {
-      var destinationAirport = (
-        <p>To: CPT Cape Town International</p>
+        <div>
+        <p>To: MAD Madrid</p>
+        <p>Time: 20:15</p>
+        </div>
       );
     }
 
+    if (this.props.flightNumber === 'Flight Number: AB5198') {
+     var destinationAirport = (
+       <div>
+         <p>To: EDI Edinburgh</p>
+         <p>Time: 20:50</p>
+       </div>
+     );
+   }
+
+   if (this.props.flightNumber === 'Flight Number: AB5208') {
+    var destinationAirport = (
+      <div>
+        <p>To: GLA Glasgow</p>
+        <p>Time: 19:35</p>
+      </div>
+    );
+  }
+
+
+     if (this.props.flightNumber === 'Flight Number: DY4442') {
+      var destinationAirport = (
+        <div>
+          <p>To: GOT Gothenburg Landvetter</p>
+          <p>Time: 20:40</p>
+        </div>
+      );
+    }
+     if (this.props.flightNumber === 'Flight Number: DY7015') {
+      var destinationAirport = (
+        <div>
+          <p>To: JFK John F Kennedy International</p>
+          <p>Time: 17:10</p>
+        </div>
+      );
+    }
 
 
     return (
@@ -147,8 +183,6 @@ let FlightDetails = React.createClass({
           <p>{this.props.flightNumber}</p>
           <p>From: LGW London Gatwick</p>
           {destinationAirport}
-          <p>Gate: 25</p>
-          <p>Time: 10:30</p>
       </div>
     )
   }
@@ -183,11 +217,16 @@ let DetailsController = React.createClass({
 
 
   flightDetailsOnPage: function(newProps) {
-    {(newProps.flightNumber==="Flight Number: BA100" ||newProps.flightNumber==="Flight Number: EK650" ||newProps.flightNumber==="Flight Number: JL090" ||newProps.flightNumber==="Flight Number: SAA887"  )?
+    {(newProps.flightNumber==="Flight Number: BA2612" ||newProps.flightNumber==="Flight Number: DY1341" ||newProps.flightNumber==="Flight Number: AB5189" ||newProps.flightNumber==="Flight Number: IB5855")?
         (this.setState({
           flightDetails: (
             <div>
-              <p className = 'view-text'> Sorry, your flight is in under an hour. Try next time and have a lovely flight! </p>
+              <p className = 'view-text'> Your flight departs in less than one hour. Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered in good time for you to board, so we can't accept your order this time.
+                Please try again next time you fly, just give us a little bit more notice - you can book any time up to 60 minutes before scheduled take-off.
+                <br/>
+                Have  a safe flight,
+                <br/>
+                Piccnicc</p>
               <Link to="/select-airport">
                 <div className="next-button" >RETURN TO HOMEPAGE</div>
               </Link>
