@@ -44,7 +44,7 @@ var OrderPage = React.createClass({
         </p>
         </div>
         <Link to="/select-airport">
-          <div className="next-button">ORDER AGAIN</div>
+          <div className="next-button" onClick={this.props.actions.clearBasket}>ORDER AGAIN</div>
         </Link>
       </div>
     );
