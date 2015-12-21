@@ -175,9 +175,11 @@ let FlightDetails = React.createClass({
       );
     }
 
-
+var smallerText = {
+  fontSize: '0.85em'
+};
     return (
-      <div className="flight-details-div">
+      <div style={smallerText} className="flight-details-div">
           <p>Airline: {this.props.airline}</p>
           <p>Flight date: {this.props.flightDate}</p>
           <p>{this.props.flightNumber}</p>
