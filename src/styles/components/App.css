@@ -16,7 +16,7 @@ body {
   }
 
 .form-control {
-  width:60%;
+  width:65%;
   margin:0;
   color:grey;
 }
@@ -29,11 +29,10 @@ body {
 
 
 .datepicker__input{
-  width:80%;
+  width:65%;
   margin:0 auto;
   margin-left:2.4em;
   color:grey;
-
 }
 
 /*.input-div {
@@ -170,7 +169,7 @@ body {
 }
 
 .restaurant-logo {
-  height:18em;
+  height:15em;
   width:100%;
 }
 
@@ -189,7 +188,7 @@ body {
 
 .restaurant-name {
   position:absolute;
-  top:5em;
+  top:6.5em;
   left: 0;
   width: 100%;
   color: white;

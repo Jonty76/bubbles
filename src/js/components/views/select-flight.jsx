@@ -321,10 +321,15 @@ let Page = React.createClass({
     var paddingRight = {
       paddingRight: '6.8em',
       paddingLeft: '4.2em',
-
     };
     var centre = {
     };
+    var paddingDate = {
+      paddingLeft: '4.2em',
+      paddingRight: '2.5em',
+
+    };
+
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
@@ -334,7 +339,7 @@ let Page = React.createClass({
           </fieldset>
         </Formsy.Form>
         <p style={paddingLeft}>Date of Flight</p>
-        <div style={paddingRight}>
+        <div style={paddingDate}>
         <DatePicker
             onChange={this.calendarInputChange}
             date={this.state.userFlightDate}
