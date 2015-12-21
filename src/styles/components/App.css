@@ -29,11 +29,10 @@ body {
 
 
 .datepicker__input{
-  width:70%;
+  width:65%;
   margin:0 auto;
   margin-left:2.4em;
   color:grey;
-
 }
 
 /*.input-div {
