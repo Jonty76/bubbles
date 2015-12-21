@@ -18,7 +18,7 @@ var BasketBar = React.createClass({
     var notEmptyBasket = (
         <Link to='/basket/page'>
           <div className="basket-bar">
-            <span className ="basket-bar-text">VIEW BASKET</span>
+            <span className ="basket-bar-text">VIEW HAMPER</span>
             <span className='pull-right basket-bar-text'>{subtotal}</span>
             <span className='pull-right glyphicon glyphicon-shopping-cart basket-bar-cart'>{itemsInBasket}</span>
           </div>
