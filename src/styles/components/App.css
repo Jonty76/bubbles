@@ -154,9 +154,19 @@ body {
 .food-search{
   width:100%;
   margin:auto;
-  padding-top:1em;
+  margin-left:0.9em;
+  padding-top:0.8em;
   color:grey;
-  height:3em;
+  height:2.5em;
+  font-size: 1.2em;
+}
+
+.input-group-addon{
+  position:absolute;
+  padding-top:1.4em;
+  border: none;
+  margin-left: -0.6em;
+  background-color:white;
 }
 
 .restaurant-logo {
