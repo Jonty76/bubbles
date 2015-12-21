@@ -183,6 +183,7 @@ let FlightDetails = React.createClass({
           <p>{this.props.flightNumber}</p>
           <p>From: LGW London Gatwick</p>
           {destinationAirport}
+          <p>Gate: [tbc]</p>
       </div>
     )
   }
