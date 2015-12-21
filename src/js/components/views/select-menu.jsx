@@ -90,9 +90,12 @@ let SelectMenu = React.createClass({
 
   renderSelectFoodType: function() {
     var foodTypeList = this.getFoodTypeList();
+
     return (
       <div>
         {foodTypeList}
+        <button className="food-type-list"
+                onClick={event => this.replaceState(this.getInitialState())}><span className="glyphicon glyphicon-tag pull-left tag"></span>Order By Restaurant</button>
       </div>
     );
   },
@@ -155,6 +158,7 @@ let SelectMenu = React.createClass({
           placeholder="Search here by food type or name...">
         </input>
         {searchResult}
+
         <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     )
