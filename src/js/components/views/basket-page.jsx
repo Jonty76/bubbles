@@ -36,8 +36,15 @@ var BasketPage = React.createClass({
     var basketDivStyle = {
       paddingTop: '1.5em'
     };
+    var centreText = {
+      width: '100%',
+      textAlign: 'center'
+    };
     return (
       <div style={basketDivStyle}>
+        <div style={centreText}>
+        <h3>HAMPER</h3>
+        </div>
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
         <div>
           <div className="basket-prices pull-right">
