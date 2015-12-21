@@ -263,7 +263,8 @@ let Page = React.createClass({
       userFlightDate: Moment().format('DD/MM/YYYY'),
       isUserFlightDateSelected: false,
       userFlightNumber: "",
-      isUserFlightNumberSelected: false
+      isUserFlightNumberSelected: false,
+      minDate: Moment()
     };
   },
 
@@ -333,6 +334,8 @@ let Page = React.createClass({
             placeholderText={this.state.userFlightDate}
             format="DD/MM/YYYY"
             dateFormatCalendar= 'DD/MM/YYYY'
+            minDate={this.state.minDate}
+            readOnly='true'
           />
         </div>
         <Formsy.Form style={paddingLeft}>
