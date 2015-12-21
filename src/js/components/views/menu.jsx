@@ -59,7 +59,11 @@ var Menu = React.createClass({
           <div className = "restaurant-logo-wrapper">
           {this.props.tagValue === "Pret A Manger"? pretImage : this.props.tagValue === "Yo! Sushi"? yoSushiImage : this.props.tagValue === "Grain Store"? grainStoreImage : noImage}
           </div>
-          <MenuComponent menu={menu} actions={this.props.actions} />
+          <MenuComponent
+            menu={menu}
+            actions={this.props.actions}
+            showBackLink={this.props.tagName === 'foodType'}
+          />
         <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     );
