@@ -32,7 +32,7 @@ let FlightNumberSelector = React.createClass({
   render: function() {
     let baflightNumberOptions = [
       {
-        label: "Select Flight Number"
+        label: "Select Flight No."
       }, {
         label: "BA2540"
       }, {
@@ -44,7 +44,7 @@ let FlightNumberSelector = React.createClass({
 
     let iberiaflightNumberOptions = [
       {
-        label: "Select Flight Number"
+        label: "Select Flight No."
       }, {
         label: "IB5660"
       }, {
@@ -55,7 +55,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let airBerlinflightNumberOptions = [
       {
-        label: "Select Flight Number"
+        label: "Select Flight No."
       }, {
         label: "AB5198"
       }, {
@@ -66,7 +66,7 @@ let FlightNumberSelector = React.createClass({
     ];
     let norwegianAirFlightNumberOptions = [
       {
-        label: "Select Flight Number"
+        label: "Select Flight No."
       }, {
         label: "DY7015"
       }, {
@@ -312,12 +312,16 @@ let Page = React.createClass({
 
   render: function() {
     var paddingLeft = {
-      paddingLeft: '2.1em'
+      paddingLeft: '6.5em',
+      margin: '0 auto'
     };
     var paddingRight = {
-      paddingRight: '8em'
-    };
+      paddingRight: '6.8em',
+      paddingLeft: '4.2em',
 
+    };
+    var centre = {
+    };
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
