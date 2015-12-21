@@ -325,6 +325,8 @@ let Page = React.createClass({
     };
     var centre = {
     };
+
+
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>

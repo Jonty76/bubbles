@@ -55,7 +55,7 @@ let SelectMenu = React.createClass({
         <Link to="/basket/menu">
           <div className = "restaurant-logo-wrapper"   onClick={event => this.goToRestaurant(event, restaurantName)}>
           {restaurantName === "Pret A Manger"? pretImage : restaurantName === "Yo! Sushi"? yoSushiImage : grainStoreImage}
-          <h1 className = "restaurant-name"> {restaurantName}</h1>
+          <h3 className = "restaurant-name"> {restaurantName}</h3>
           </div>
         </Link>
       )
