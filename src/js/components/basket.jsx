@@ -191,7 +191,6 @@ var getMenu = function() {
 }
 
 var getDescription = function(name) {
-  console.log(name, "@@@@@@");
   if (name === "Pret A Manger") return "Pret A Manger creates handmade, natural food, avoiding the obscure chemicals, additives andpreservatives found in much of the ‘prepared’and ‘fast’ food on the market today.";
   if (name === "Yo! Sushi") return "Rock and Roll conveyor belt sushi ninjas. Serving up sashimi, maki, noodles, handrolls, katsu curry and more. Nom nom nom.";
   if (name === "Grain Store") return "Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.";
@@ -347,7 +346,6 @@ let Basket = React.createClass({
         });
         if (itemCopy.id === itemID) {
           itemCopy.quantityOrdered++;
-          console.log('item with id ', itemID, "incremented, now has ", item.quantityOrdered + "ordered");
         }
       return itemCopy;
       });
@@ -364,7 +362,6 @@ let Basket = React.createClass({
       });
       if (itemCopy.id === itemID) {
         itemCopy.quantityOrdered--;
-        console.log('item with id ', itemID, "incremented, now has ", item.quantityOrdered + "ordered");
       }
     return itemCopy;
     });
@@ -395,7 +392,6 @@ let Basket = React.createClass({
       });
       if (itemCopy.id === itemID) {
         itemCopy.quantityOrdered = 0;
-        console.log('Entire quantity of item with id ', itemID, "has now been removed", item.quantityOrdered + "ordered");
       }
       return itemCopy;
     });

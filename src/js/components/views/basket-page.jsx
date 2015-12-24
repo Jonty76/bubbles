@@ -6,7 +6,6 @@ let MenuComponent = require('../menu.jsx');
 var BasketPage = React.createClass({
 
   getCheckoutList: function() {
-    console.log("this.props.basket:", this.props.basket);
     var wholeMenu = this.props.basket;
     var filterer = this.props.helpers.filterMenu;
     var quantityFilterer = this.props.helpers.filterMenuByQuantity;
