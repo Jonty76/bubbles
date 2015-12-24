@@ -4,7 +4,6 @@ import { Input } from 'formsy-react-components';
 
 var Page = React.createClass({
   render: function() {
-    console.log("rendering login page");
     var sharedProps = {
       layout: 'horizontal',
       validatePristine: true

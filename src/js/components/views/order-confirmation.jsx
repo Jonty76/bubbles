@@ -5,7 +5,6 @@ import {getPrice} from '../../savePrice.js';
 
 var OrderPage = React.createClass({
   getCheckoutList: function() {
-    console.log("this.props.basket:", this.props.basket);
     var wholeMenu = this.props.basket;
     var filterer = this.props.helpers.filterMenu;
     var quantityFilterer = this.props.helpers.filterMenuByQuantity;
@@ -35,10 +34,8 @@ var OrderPage = React.createClass({
     };
     var menu = this.getCheckoutList();
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
-    console.log("*****______*****", foodSubtotal);
     var deliveryFee = this.getDeliveryFee(menu);
     var total = foodSubtotal + deliveryFee;
-    console.log(total);
     return (
       <div>
         <div className="content-wrapper">
