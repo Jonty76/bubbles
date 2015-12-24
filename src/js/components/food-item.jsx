@@ -3,7 +3,6 @@ import React from 'react';
 
 var AddItem = React.createClass({
   addItem: function() {
-    console.log("woahaa!");
     this.props.addItem(this.props.id);
   },
 

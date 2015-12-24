@@ -212,8 +212,6 @@ let DetailsController = React.createClass({
   },
 
   render: function(){
-    console.log("******", this.props);
-
     return (
       <div>
         {this.state.flightDetails}
