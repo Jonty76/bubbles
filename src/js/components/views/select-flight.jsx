@@ -212,6 +212,8 @@ let DetailsController = React.createClass({
   },
 
   render: function(){
+    console.log("******", this.props);
+
     return (
       <div>
         {this.state.flightDetails}
@@ -246,7 +248,7 @@ let DetailsController = React.createClass({
             flightDate={newProps.flightDate}
           />
         <Link to="/basket/select-menu">
-            <div className="next-button" >CONFIRM</div>
+            <div className="next-button" onClick={this.props.clearBasket}>CONFIRM</div>
           </Link>
           </div>
       )
@@ -329,7 +331,6 @@ let Page = React.createClass({
       paddingRight: '2.5em',
 
     };
-
     return (
       <div>
         <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
@@ -364,6 +365,7 @@ let Page = React.createClass({
           isAirlineSelected= {this.state.isUserAirlineSelected}
           isDateSelected= {this.state.isUserFlightDateSelected}
           isFlightNumberSelected= {this.state.isUserFlightNumberSelected}
+          clearBasket={this.props.actions.clearBasket}
         />
       </div>
     );
