@@ -10,7 +10,7 @@ body {
   background-size:100%;
   /*background-image: url('https://cloud.githubusercontent.com/assets/11833296/11870559/a8c28fc2-a4c0-11e5-8720-c32b3614bc3e.png');*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #A5D15E;
+  color: #517B58;
   background-color:#E6E7E8 ;
 
   }
@@ -71,7 +71,7 @@ body {
   margin-top:2em;
   text-align: center;
   font-size: 200%;
-  color:#70B500;
+  color:#517B58;
 
 }
 
@@ -98,7 +98,7 @@ body {
   width: 100%;
   height: 3em;
   background-color: white;
-  color:#70B500;
+  color:#517B58;
   /*position: fixed;*/
   text-align: center;
   text-decoration: none;
@@ -256,5 +256,5 @@ body {
 .order-more-link{
   display:inline;
   text-decoration: underline;
-  color: #70B500;
+  color: #517B58;
 }
