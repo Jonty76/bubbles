@@ -4,6 +4,28 @@ import {getPrice} from '../../savePrice.js';
 
 
 var OrderPage = React.createClass({
+  getCheckoutList: function() {
+    console.log("this.props.basket:", this.props.basket);
+    var wholeMenu = this.props.basket;
+    var filterer = this.props.helpers.filterMenu;
+    var quantityFilterer = this.props.helpers.filterMenuByQuantity;
+    var structurer = this.props.helpers.orderMenu;
+    var quantityFilteredMenu = quantityFilterer(wholeMenu);
+    return structurer(quantityFilteredMenu, "restaurant");
+  },
+
+  getDeliveryFee: function(menu) {
+    var result = [];
+    var fee = menu.map(function(menuitem){
+      return menuitem.restaurant;
+    }).forEach(function(item) {
+        if(result.indexOf(item) <= 0 ) {
+         result.push(item);
+        }
+      });
+      return result.length * 150;
+  },
+
   render: function() {
     // var calculatePrice = this.props.helpers.totalPriceOfItemsInBasket;
     // var price = calculatePrice(this.props.basket);
@@ -11,6 +33,12 @@ var OrderPage = React.createClass({
       fontSize: '1em',
       marginTop: '-0.05em'
     };
+    var menu = this.getCheckoutList();
+    var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    console.log("*****______*****", foodSubtotal);
+    var deliveryFee = this.getDeliveryFee(menu);
+    var total = foodSubtotal + deliveryFee;
+    console.log(total);
     return (
       <div>
         <div className="content-wrapper">
@@ -27,7 +55,7 @@ var OrderPage = React.createClass({
           your Hamper's inside.
           <br/>
           <br/>
-          Total Amount: {this.props.helpers.formatPrice(getPrice())}
+          Total Amount: {this.props.helpers.formatPrice(total)}
           <br/>
           <br/>
           <b>We hope you enjoy your Piccnicc and wish you a safe flight.</b>
