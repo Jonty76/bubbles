@@ -5,6 +5,15 @@ import {setPrice} from './../savePrice.js';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import StaticContainer from 'react-static-container'
 import { createHistory, useBasename } from 'history'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { red600 } from "material-ui/styles/colors"
+
+const muiTheme = getMuiTheme({
+    palette: {
+      accent1Color: '#E12534'
+    }
+})
 
 
 let getId = (function() {
@@ -440,6 +449,7 @@ let Basket = React.createClass({
   render: function() {
 
     return (
+      <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <Header />
         <RouteCSSTransitionGroup
@@ -450,6 +460,7 @@ let Basket = React.createClass({
             <div className='margin-main-content'>{this.getChildrenWithActions()}</div>
         </RouteCSSTransitionGroup>
       </div>
+      </MuiThemeProvider>
     );
   }
 });

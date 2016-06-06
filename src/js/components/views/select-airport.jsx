@@ -1,30 +1,11 @@
 import React from 'react';
-import Formsy from 'formsy-react';
-import { Select } from 'formsy-react-components';
+// import Formsy from 'formsy-react';
+// import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 let FlightDetails  = require('./select-flight.jsx').Page
-
-let Selector = React.createClass({
- render: function() {
-   let airportOptions = [
-     {label : "Select Airport"},
-     {label : "Heathrow Airport - LHR"},
-     {label : "Gatwick Airport - LGW"},
-     {label : "Luton - LTN"},
-     {label : "Stanstead - STN"}
-   ];
-   return (
-       <Select
-         name="airportSelector"
-         options={airportOptions}
-         onChange={this.props.onChange}
-       />
-  );
- }
-});
-
-
 
 let AirportNotServedButton = React.createClass({
   render: function() {
@@ -40,18 +21,18 @@ let AirportNotServedButton = React.createClass({
 let Page = React.createClass({
   getInitialState: function() {
     return {
-      selectedAirport: null
+      selectedAirport: "none"
     };
   },
 
-  selectorChange: function(name, value) {
+  selectorChange: function(event, index, value) {
     this.setState({
       selectedAirport: value
     })
   },
 
   renderFlightDetailsOrRedirect: function() {
-    if(this.state.selectedAirport === 'Gatwick Airport - LGW') {
+    if(this.state.selectedAirport === 'gatwick') {
       return <FlightDetails />
     } else {
       return AirportNotServedButton
@@ -59,24 +40,25 @@ let Page = React.createClass({
   },
 
   render: function() {
+    console.log(this.state.selectedAirport);
     return (
       <div>
         <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
-        <Formsy.Form>
-          <fieldset>
-            <Selector onChange={this.selectorChange}/>
-          </fieldset>
-        </Formsy.Form>
-        <AirportNotServedButton />
+            <div>
+              <SelectField primaryText={this.state.selectedAirport} onChange={this.selectorChange}>
+                <MenuItem value="select-airport" primaryText="Select Aiport" disabled/>
+                <MenuItem value="heathrow" primaryText="Heathrow - LHR" />
+                <MenuItem value="gatwick" primaryText="Gatwick - LGW" />
+                <MenuItem value="stanstead" primaryText="Stanstead - STN" />
+                <MenuItem value="luton" primaryText="Luton - LTN" />
+              </SelectField >
+            </div>
+
+            <AirportNotServedButton />
         {this.renderFlightDetailsOrRedirect()}
       </div>
     );
   }
 });
 
-module.exports = {
-  Page,
-  Components: {
-    Selector
-  }
-}
+module.exports = Page

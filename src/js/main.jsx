@@ -3,6 +3,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, Link, IndexRoute } from 'react-router';
+import injectTapEventPlugin from "react-tap-event-plugin";
 
 let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
@@ -15,10 +16,10 @@ let CreateAccount     = require('./components/views/create-account.jsx').Page;
 let Payment           = require('./components/views/pay.jsx');
 let OrderConfirmation = require('./components/views/order-confirmation.jsx');
 let SelectMenu        = require('./components/views/select-menu.jsx');
-let SelectAirport     = require('./components/views/select-airport.jsx').Page;
+let SelectAirport     = require('./components/views/select-airport.jsx');
 
 
-
+injectTapEventPlugin();
 
 
 
