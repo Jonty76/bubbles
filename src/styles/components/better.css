@@ -1,0 +1,21 @@
+/*Header Bar*/
+
+.header {
+  background-color: white;
+}
+
+#brand-logo {
+  color: black;
+  font-weight: 300;
+  font-size: 1.5em;  
+}
+
+.menu-icon {
+  margin-right: 0.5em;
+  color: #E12534;
+}
+
+.account-icon {
+  margin-left: 0.5em;
+  color: #E12534;
+}
