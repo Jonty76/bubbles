@@ -4,14 +4,16 @@ import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
 import Slogan from '../slogan.jsx';
 
-
+let FlightDetails  = require('./select-flight.jsx').Page
 
 let Selector = React.createClass({
  render: function() {
    let airportOptions = [
      {label : "Select Airport"},
      {label : "Heathrow Airport - LHR"},
-     {label : "Gatwick Airport - LGW"}
+     {label : "Gatwick Airport - LGW"},
+     {label : "Luton - LTN"},
+     {label : "Stanstead - STN"}
    ];
    return (
        <Select
@@ -23,32 +25,38 @@ let Selector = React.createClass({
  }
 });
 
-let LinkToFlightDetails = React.createClass({
+
+
+let AirportNotServedButton = React.createClass({
   render: function() {
     return (
-      <Link to={this.props.nextLink}>
-        <div className="next-button"> GO </div>
+      <Link to='/airport-not-served'>
+        <div className="next-button"> NEXT </div>
       </Link>
     );
   }
 });
 
+
 let Page = React.createClass({
   getInitialState: function() {
     return {
-      nextLink: '/airport-not-served'
+      selectedAirport: null
     };
   },
 
-  selectAirport: function(airport) {
-    var link = (airport === 'Gatwick Airport - LGW') ? '/select-flight' : '/airport-not-served';
+  selectorChange: function(name, value) {
     this.setState({
-      nextLink: link
-    });
+      selectedAirport: value
+    })
   },
 
-  selectorChange: function(name, value) {
-    this.selectAirport(value);
+  renderFlightDetailsOrRedirect: function() {
+    if(this.state.selectedAirport === 'Gatwick Airport - LGW') {
+      return <FlightDetails />
+    } else {
+      return AirportNotServedButton
+    }
   },
 
   render: function() {
@@ -61,7 +69,8 @@ let Page = React.createClass({
             <Selector onChange={this.selectorChange}/>
           </fieldset>
         </Formsy.Form>
-        <LinkToFlightDetails nextLink={this.state.nextLink} />
+        <AirportNotServedButton />
+        {this.renderFlightDetailsOrRedirect()}
       </div>
     );
   }

@@ -246,7 +246,7 @@ let DetailsController = React.createClass({
             flightDate={newProps.flightDate}
           />
         <Link to="/basket/select-menu">
-            <div className="next-button" onClick={this.props.clearBasket}>CONFIRM</div>
+            <div className="next-button">NEXT</div>
           </Link>
           </div>
       )
@@ -363,12 +363,14 @@ let Page = React.createClass({
           isAirlineSelected= {this.state.isUserAirlineSelected}
           isDateSelected= {this.state.isUserFlightDateSelected}
           isFlightNumberSelected= {this.state.isUserFlightNumberSelected}
-          clearBasket={this.props.actions.clearBasket}
+
         />
       </div>
     );
   }
 });
+
+// clearBasket={this.props.actions.clearBasket}
 
 module.exports = ({
   Page,

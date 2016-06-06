@@ -6,7 +6,6 @@ import { Router, Route, Link, IndexRoute } from 'react-router';
 
 let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
-let SelectAirport     = require('./components/views/select-airport.jsx').Page;
 let SelectFlight      = require('./components/views/select-flight.jsx').Page;
 let BasketPage        = require('./components/views/basket-page.jsx');
 let Menu              = require('./components/views/menu.jsx');
@@ -16,6 +15,7 @@ let CreateAccount     = require('./components/views/create-account.jsx').Page;
 let Payment           = require('./components/views/pay.jsx');
 let OrderConfirmation = require('./components/views/order-confirmation.jsx');
 let SelectMenu        = require('./components/views/select-menu.jsx');
+let SelectAirport     = require('./components/views/select-airport.jsx').Page;
 
 
 
@@ -32,7 +32,6 @@ render((
       <IndexRoute component={SelectAirport} />
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
-      <Route path="select-airport" component={SelectAirport} />
       <Route path="select-flight" component={SelectFlight} />
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
