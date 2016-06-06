@@ -21,7 +21,7 @@ let AirportNotServedButton = React.createClass({
 let Page = React.createClass({
   getInitialState: function() {
     return {
-      selectedAirport: "none"
+      selectedAirport: "Select Airport"
     };
   },
 
@@ -45,8 +45,7 @@ let Page = React.createClass({
       <div>
         <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
             <div>
-              <SelectField primaryText={this.state.selectedAirport} onChange={this.selectorChange}>
-                <MenuItem value="select-airport" primaryText="Select Aiport" disabled/>
+              <SelectField value={this.state.selectedAirport} floatingLabelText="Select Airport" onChange={this.selectorChange}>
                 <MenuItem value="heathrow" primaryText="Heathrow - LHR" />
                 <MenuItem value="gatwick" primaryText="Gatwick - LGW" />
                 <MenuItem value="stanstead" primaryText="Stanstead - STN" />
