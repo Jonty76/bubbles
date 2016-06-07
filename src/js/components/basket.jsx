@@ -457,7 +457,7 @@ let Basket = React.createClass({
           transitionName="example"
           transitionEnterTimeout={200}
           transitionLeaveTimeout={200}>
-            <div className='margin-main-content'>{this.getChildrenWithActions()}</div>
+            <div className=''>{this.getChildrenWithActions()}</div>
         </RouteCSSTransitionGroup>
       </div>
       </MuiThemeProvider>

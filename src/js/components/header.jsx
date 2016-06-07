@@ -10,7 +10,7 @@ var Header = React.createClass({
             <a href="#" className="brand-logo center" id="brand-logo">Piccnicc</a>
               <ul>
                 <li className="right"><i className="menu-icon material-icons">menu</i></li>
-                <li className="left"><i className="account-icon material-icons">account_circle</i></li>
+                <li className="left"><i className="back-icon material-icons">arrow_back</i></li>
               </ul>
           </div>
         </nav>

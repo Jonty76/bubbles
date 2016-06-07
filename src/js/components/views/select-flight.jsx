@@ -2,8 +2,9 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import {Select, Input} from 'formsy-react-components';
 import { Link } from 'react-router';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import Moment from 'moment';
+import DatePicker from 'material-ui/DatePicker';
 
 let Selector = React.createClass({
   render: function() {
@@ -331,7 +332,10 @@ let Page = React.createClass({
     };
     return (
       <div>
-        <p className="view-text">PLEASE ENTER YOUR FLIGHT DETAILS</p>
+        <p className="standard-question-style">Which date are you flying on?</p>
+        <DatePicker hintText="Select the date of your flight" />
+
+
         <Formsy.Form style={paddingLeft}>
           <fieldset>
             <Selector onChange={this.selectorChange} />
@@ -339,15 +343,7 @@ let Page = React.createClass({
         </Formsy.Form>
         <p style={paddingLeft}>Date of Flight</p>
         <div style={paddingDate}>
-        <DatePicker
-            onChange={this.calendarInputChange}
-            date={this.state.userFlightDate}
-            placeholderText={this.state.userFlightDate}
-            format="DD/MM/YYYY"
-            dateFormatCalendar= 'DD/MM/YYYY'
-            minDate={this.state.minDate}
-            readOnly='true'
-          />
+  
         </div>
         <Formsy.Form style={paddingLeft}>
         <FlightNumberSelector

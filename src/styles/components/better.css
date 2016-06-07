@@ -7,7 +7,7 @@
 #brand-logo {
   color: black;
   font-weight: 300;
-  font-size: 1.5em;  
+  font-size: 1.5em;
 }
 
 .menu-icon {
@@ -15,7 +15,37 @@
   color: #E12534;
 }
 
-.account-icon {
+.back-icon {
   margin-left: 0.5em;
   color: #E12534;
+}
+
+/*Body and General*/
+
+/*.margin-main-content {
+  margin-left: 10%;
+}*/
+
+.base-button {
+  background-color: #E12534;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.body-container {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.standard-question-style {
+  margin-top: 2.5em;
+  font-weight: 350;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown {
+  text-align: left;
 }
