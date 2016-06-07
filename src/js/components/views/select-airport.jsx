@@ -44,7 +44,7 @@ let Page = React.createClass({
           <div className="container center-align">
             <div className="body-container">
               <div className="col 12">
-                <p className="standard-question-style"> Which airport are you flying from? </p>
+                <p className="standard-question-style"> Piccnicc Slogan goes here! </p>
               </div>
                 <div className="left-align">
                   <SelectField className="dropdown" value={this.state.selectedAirport} floatingLabelText="Select Airport" onChange={this.selectorChange}>
