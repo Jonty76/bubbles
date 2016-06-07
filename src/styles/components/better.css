@@ -7,7 +7,7 @@
 #brand-logo {
   color: black;
   font-weight: 300;
-  font-size: 1.5em;  
+  font-size: 1.5em;
 }
 
 .menu-icon {
@@ -18,4 +18,42 @@
 .account-icon {
   margin-left: 0.5em;
   color: #E12534;
+}
+
+/* Select Restuarant Page */
+
+.restaurant-option {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.restaurant-name {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.restaurant-decription {
+  font-size: 0.8em;
+  margin: 0;
+  color: grey;
+}
+
+a {
+  color: black;
+}
+
+#food-search {
+  margin-bottom: 0;
+  border-bottom-color: #E12534;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #E12534;
+  box-shadow: 0 1px 0 0 #E12534;
+}
+
+.no-margin {
+  margin: 0;
 }

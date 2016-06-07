@@ -4,7 +4,9 @@ import { Link } from 'react-router';
 let MenuComponent = require('../menu.jsx');
 let BasketBar = require('../basket-bar.jsx');
 
-let SelectMenu = React.createClass({
+let restaurantData = require('../../data/restaurant-logos.jsx');
+
+let selectRestaurant = React.createClass({
 
   getInitialState: function(){
     return {
@@ -13,6 +15,29 @@ let SelectMenu = React.createClass({
       filteredMenu: this.props.basket,
       searchText: ""
     };
+  },
+
+  getRestaurantList: function() {
+    var getUniqueTags = this.props.helpers.getUniqueTags;
+    var uniqueTags = getUniqueTags(this.props.basket, "restaurant");
+    return uniqueTags.map(function(restaurantName){
+      return (
+        <Link to="/basket/menu">
+          <div className="section restaurant-option" onClick={event => this.goToRestaurant(event, restaurantName)}>
+            <div className="row no-margin">
+              <div className="col s8">
+                <p className="restaurant-name">{restaurantName}</p>
+                <p className="restaurant-decription">Description</p>
+              </div>
+              <div className="col s4 right-align">
+                {restaurantData[restaurantName]}
+              </div>
+            </div>
+          </div>
+          <div className="divider"></div>
+        </Link>
+      )
+    }.bind(this));
   },
 
   goToRestaurant: function(e, restaurantName) {
@@ -29,49 +54,6 @@ let SelectMenu = React.createClass({
     });
   },
 
-  getRestaurantList: function() {
-    var getUniqueTags = this.props.helpers.getUniqueTags;
-    var uniqueTags = getUniqueTags(this.props.basket, "restaurant");
-    return uniqueTags.map(function(restaurantName){
-
-      var yoSushiImage= (
-      <img className = "restaurant-logo"
-        onClick={event => this.goToRestaurant(event, restaurantName)}
-        src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
-      );
-
-      var pretImage = (
-        <img className = "restaurant-logo"
-          src = "https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg"/>
-      );
-
-      var grainStoreImage = (
-        <img className = "restaurant-logo"
-          onClick={event => this.goToRestaurant(event, restaurantName)}
-          src = "https://cloud.githubusercontent.com/assets/11833296/11897909/719aeb9a-a58b-11e5-8680-99488d69bef1.jpeg"/>
-      );
-
-      return (
-        <Link to="/basket/menu">
-          <div className = "restaurant-logo-wrapper"   onClick={event => this.goToRestaurant(event, restaurantName)}>
-          {restaurantName === "Pret A Manger"? pretImage : restaurantName === "Yo! Sushi"? yoSushiImage : grainStoreImage}
-          <h3 className = "restaurant-name"> {restaurantName}</h3>
-          </div>
-        </Link>
-      )
-    }.bind(this));
-  },
-
-
-  renderSelectRestaurant: function() {
-    var restaurantList = this.getRestaurantList();
-    return (
-      <div>
-          {restaurantList}
-      </div>
-    )
-  },
-
   getFoodTypeList: function() {
     var getUniqueTags = this.props.helpers.getUniqueTags;
     var filteredMenu = this.getFilteredMenu()
@@ -79,14 +61,14 @@ let SelectMenu = React.createClass({
     return uniqueTags.map(function(foodTypeName){
       return (
         <Link to="/basket/menu">
-          <button className="food-type-list"
-            onClick={event => this.goToFoodType(event, foodTypeName)}><span className="glyphicon glyphicon-tag pull-left tag"></span>{foodTypeName}</button>
+          <div className="section restaurant-option" onClick={event => this.goToFoodType(event, foodTypeName)}>
+            <p className="restaurant-name">{foodTypeName}</p>
+          </div>
+          <div className="divider"></div>
         </Link>
       )
     }.bind(this));
   },
-
-
 
   renderSelectFoodType: function() {
     var foodTypeList = this.getFoodTypeList();
@@ -131,16 +113,16 @@ let SelectMenu = React.createClass({
 
 
   render: function(){
-    var searchResult;
+    var restaurantList;
     var orderer = this.props.helpers.orderMenu;
     if (this.state.view === "selectRestaurant") {
-      searchResult = this.renderSelectRestaurant()
+      restaurantList = this.getRestaurantList()
     } else if (this.state.view === "inputBoxFocused") {
       if (this.state.searching === false){
-        searchResult = this.renderSelectFoodType()
+        restaurantList = this.renderSelectFoodType()
       } else {
         var basket = orderer(this.getFilteredMenu(), "restaurant")
-        searchResult = (
+        restaurantList = (
           <div>
             <MenuComponent menu={basket} actions={this.props.actions} />
             {this.renderSelectFoodType()}
@@ -154,14 +136,15 @@ let SelectMenu = React.createClass({
         <span className="input-group-addon">
       <i className="glyphicon glyphicon-search"></i>
       </span>
-        <input className="food-search"
+        <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}
           type="text"
           placeholder=" Search here by food type or name...">
         </input>
-        {searchResult}
 
+        {restaurantList}
+        
         <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     )
@@ -169,4 +152,4 @@ let SelectMenu = React.createClass({
 
 });
 
-module.exports = SelectMenu;
+module.exports = selectRestaurant;
