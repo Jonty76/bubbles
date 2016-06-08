@@ -31,14 +31,14 @@ let Page = React.createClass({
 
   renderFlightDetailsOrRedirect: function() {
     if(this.state.selectedAirport === 'gatwick') {
-      return <FlightDetails />
+      return <FlightDetails setTerminal={this.props.actions.setTerminal} />
     } else {
       return <AirportNotServedButton />
     }
   },
 
   render: function() {
-    console.log(this.state.selectedAirport);
+    console.log("select aiport file", this.state.selectedAirport);
     return (
       <div className="">
           <div className="container center-align">
@@ -54,7 +54,7 @@ let Page = React.createClass({
                     <MenuItem value="luton" primaryText="Luton - LTN" />
                   </SelectField >
                 </div>
-                
+
               </div>
             </div>
           {this.renderFlightDetailsOrRedirect()}

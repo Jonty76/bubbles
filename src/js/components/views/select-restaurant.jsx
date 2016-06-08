@@ -144,7 +144,7 @@ let selectRestaurant = React.createClass({
         </input>
 
         {restaurantList}
-        
+
         <BasketBar helpers={this.props.helpers} menu={this.props.basket}/>
       </div>
     )

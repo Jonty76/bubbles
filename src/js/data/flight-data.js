@@ -2,6 +2,7 @@ var flightData = {
   airlineOptions: ["British Airways", "Iberia", "Air Berlin", "Norwegian Air"],
   flightsByAirline: {
     BritishAirways: {
+      terminal: "south",
       flightNumbers: ["BA2540", "BA2740", "BA2612"],
       BA2540: {
         Status: "Approved",
@@ -20,6 +21,7 @@ var flightData = {
       }
     },
     Iberia: {
+      terminal: "south",
       flightNumbers: ["IB5660", "IB3717", "IB5855"],
       IB5660: {
         Status: "Approved",
@@ -38,6 +40,7 @@ var flightData = {
       }
     },
     AirBerlin: {
+      terminal: "north",
       flightNumbers: ["AB5198", "AB5208", "AB5189"],
       AB5198: {
         Status: "Approved",
@@ -56,6 +59,7 @@ var flightData = {
       }
     },
     NorwegianAir: {
+      terminal: "north",
       flightNumbers: ["DY7015", "DY4442", "DY1341"],
       DY7015: {
         Status: "Approved",
