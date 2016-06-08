@@ -50,6 +50,10 @@
   text-align: left;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 /* Select Restuarant Page */
 
 .restaurant-option {
@@ -84,6 +88,29 @@ input[type=text]:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 #E12534;
 }
 
-.no-margin {
-  margin: 0;
+/* Restaurant Menu Page */
+
+/*.restaurant-logo-menu{
+  height:18em;
+  width:110%;
+  margin-left:-1em;
+  right:0;
 }
+
+.restaurant-name-on-menu{
+  position:absolute;
+  top:1em;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align:center;
+}
+
+.restaurant-description-on-menu {
+  position:absolute;
+  top:6em;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align:center;
+}*/

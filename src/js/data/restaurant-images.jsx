@@ -36,6 +36,18 @@ var grainStoreLogo = (
   <img src = "http://www.grainstore.com/images/grain-store-logo.png" height="40"/>
 );
 
+var yoSushiImage= (
+  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
+);
+
+var pretImage = (
+  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg"/>
+);
+
+var grainStoreImage = (
+  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11897909/719aeb9a-a58b-11e5-8680-99488d69bef1.jpeg"/>
+);
+
 module.exports = {
   "Yo! Sushi": yoSushiLogo,
   "Pret A Manger": pretLogo,
@@ -45,5 +57,8 @@ module.exports = {
   "Wagamama": wagamamaLogo,
   "Nandos": nandosLogo,
   "Wonder Tree": wonderTreeLogo,
-  "Grain Store": grainStoreLogo
+  "Grain Store": grainStoreLogo,
+  "Yo! Sushi Image": yoSushiImage,
+  "Pret A Manger Image": pretImage,
+  "Grain Store Image": grainStoreImage
 }
