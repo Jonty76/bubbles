@@ -61,10 +61,6 @@
   margin-top: 1em;
 }
 
-.calander {
-  background-color: red;
-}
-
 #gate {
   color:  #E12534;
 }
@@ -88,6 +84,19 @@
   border-bottom: 1px solid;
   border-color: #E12534;
 }
+
+.no-margin {
+  margin: 0;
+}
+
+.red-color {
+  color: #E12534;
+}
+
+.custom-container {
+  margin-bottom: 4em;
+}
+
 /* Select Restuarant Page */
 
 .restaurant-option {
@@ -122,6 +131,41 @@ input[type=text]:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 #E12534;
 }
 
-.no-margin {
-  margin: 0;
+/* Restaurant Menu Page */
+
+.restaurant-logo-menu{
+  height:15em;
+  width:100%;
+  opacity: 0.3;
+}
+
+.restaurant-name-on-menu{
+  position:absolute;
+  top:2em;
+  left: 0;
+  width: 100%;
+  text-align:center;
+}
+
+.restaurant-description-on-menu {
+  position:absolute;
+  top:8em;
+  left: 0;
+  width: 100%;
+  text-align:center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  line-height: 1.5em;
+}
+
+.menu-background {
+  background-color: #E12534;
+}
+
+.food-title {
+  padding-left: 1em;
+}
+
+#basket-bar-cart {
+  padding-top: 1.2em;
 }

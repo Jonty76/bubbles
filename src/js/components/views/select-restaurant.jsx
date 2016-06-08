@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 let MenuComponent = require('../menu.jsx');
 let BasketBar = require('../basket-bar.jsx');
 
-let restaurantData = require('../../data/restaurant-logos.jsx');
+let restaurantImages = require('../../data/restaurant-images.jsx');
 
 let selectRestaurant = React.createClass({
 
@@ -30,7 +30,7 @@ let selectRestaurant = React.createClass({
                 <p className="restaurant-decription">Description</p>
               </div>
               <div className="col s4 right-align">
-                {restaurantData[restaurantName]}
+                {restaurantImages[restaurantName]}
               </div>
             </div>
           </div>
@@ -76,8 +76,7 @@ let selectRestaurant = React.createClass({
     return (
       <div>
         {foodTypeList}
-        <button className="food-type-list"
-                onClick={event => this.replaceState(this.getInitialState())}><span className="glyphicon glyphicon-tag pull-left tag"></span>Order By Restaurant</button>
+        <div onClick={event => this.replaceState(this.getInitialState())} className="btn-large base-button"> FILTER BY RESTAURANT </div>
       </div>
     );
   },
@@ -132,10 +131,7 @@ let selectRestaurant = React.createClass({
     }
 
     return (
-      <div className='pull-out'>
-        <span className="input-group-addon">
-      <i className="glyphicon glyphicon-search"></i>
-      </span>
+      <div>
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

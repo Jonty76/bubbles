@@ -15,7 +15,7 @@ var AddItem = React.createClass({
     };
     var showButton = (
         <div style={buttonStyle} onClick={this.addItem}>
-          <span className="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+          <span className="red-color glyphicon glyphicon-menu-up" aria-hidden="true"></span>
         </div>
     );
     var hideButton = (
@@ -44,7 +44,7 @@ var RemoveItem = React.createClass({
     };
     var showButton = (
       <div style={buttonStyle} onClick={this.removeItem}>
-        <span className="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+        <span className="red-color glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       </div>
     );
     var hideButton = (
@@ -102,7 +102,7 @@ var Price = React.createClass({
 var NumberOrdered = React.createClass({
    render: function() {
      var atLeastOne = (
-        <span>{this.props.numberOrdered+"x"}</span>
+        <span className="red-color">{this.props.numberOrdered+"x"}</span>
       );
      var zero = (
        <div></div>

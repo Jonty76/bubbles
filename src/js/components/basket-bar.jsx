@@ -17,11 +17,15 @@ var BasketBar = React.createClass({
 
     var notEmptyBasket = (
         <Link to='/basket/page'>
-          <div className="basket-bar">
-            <span className ="basket-bar-text">VIEW HAMPER</span>
-            <span className='pull-right basket-bar-text'>{subtotal}</span>
-            <span className='pull-right glyphicon glyphicon-shopping-cart basket-bar-cart'>{itemsInBasket}</span>
+          <div className="btn-large base-button">
+            <div className="row">
+              <div className="col s8 left-align">VIEW HAMPER</div>
+              <div id="basket-bar-cart" className="col s1 glyphicon glyphicon-shopping-cart">{itemsInBasket}</div>
+              <div className="col s3">{subtotal}</div>
+            </div>
           </div>
+
+
         </Link>
     );
     return (
