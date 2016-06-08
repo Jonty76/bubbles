@@ -7,7 +7,6 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 
 let About             = require('./components/views/about.jsx');
 let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
-let SelectFlight      = require('./components/views/select-flight.jsx').Page;
 let BasketPage        = require('./components/views/basket-page.jsx');
 let Menu              = require('./components/views/menu.jsx');
 let Basket            = require('./components/basket.jsx');
@@ -33,7 +32,6 @@ render((
       <IndexRoute component={SelectAirport} />
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
-      <Route path="select-flight" component={SelectFlight} />
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />

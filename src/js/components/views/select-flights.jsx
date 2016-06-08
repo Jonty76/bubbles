@@ -166,7 +166,7 @@ let flightDetails = React.createClass({
     return (
       <div>
         <SelectAirline />
-        <Link to='/basket/select-menu'>
+        <Link to='/basket/select-restaurant'>
           <div className="btn-large base-button"> NEXT </div>
         </Link>
     </div>
