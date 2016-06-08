@@ -131,10 +131,7 @@ let selectRestaurant = React.createClass({
     }
 
     return (
-      <div className='pull-out'>
-        <span className="input-group-addon">
-      <i className="glyphicon glyphicon-search"></i>
-      </span>
+      <div>
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}
