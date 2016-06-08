@@ -1,75 +1,66 @@
 import React from 'react';
-import Formsy from 'formsy-react';
-import { Select } from 'formsy-react-components';
 import { Link } from 'react-router';
-import Slogan from '../slogan.jsx';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
+let FlightDetails  = require('./select-flights.jsx');
 
-
-let Selector = React.createClass({
- render: function() {
-   let airportOptions = [
-     {label : "Select Airport"},
-     {label : "Heathrow Airport - LHR"},
-     {label : "Gatwick Airport - LGW"}
-   ];
-   return (
-       <Select
-         name="airportSelector"
-         options={airportOptions}
-         onChange={this.props.onChange}
-       />
-  );
- }
-});
-
-let LinkToFlightDetails = React.createClass({
+let AirportNotServedButton = React.createClass({
   render: function() {
     return (
-      <Link to={this.props.nextLink}>
-        <div className="next-button"> GO </div>
+      <Link to='/airport-not-served'>
+        <div className="btn-large base-button"> NEXT </div>
       </Link>
     );
   }
 });
 
+
 let Page = React.createClass({
   getInitialState: function() {
     return {
-      nextLink: '/airport-not-served'
+      selectedAirport: "Select Airport"
     };
   },
 
-  selectAirport: function(airport) {
-    var link = (airport === 'Gatwick Airport - LGW') ? '/select-flight' : '/airport-not-served';
+  selectorChange: function(event, index, value) {
     this.setState({
-      nextLink: link
-    });
+      selectedAirport: value
+    })
   },
 
-  selectorChange: function(name, value) {
-    this.selectAirport(value);
+  renderFlightDetailsOrRedirect: function() {
+    if(this.state.selectedAirport === 'gatwick') {
+      return <FlightDetails />
+    } else {
+      return <AirportNotServedButton />
+    }
   },
 
   render: function() {
+    console.log(this.state.selectedAirport);
     return (
-      <div>
-        <Slogan />
-        <p className="view-text"> WHICH AIRPORT ARE YOU FLYING FROM? </p>
-        <Formsy.Form>
-          <fieldset>
-            <Selector onChange={this.selectorChange}/>
-          </fieldset>
-        </Formsy.Form>
-        <LinkToFlightDetails nextLink={this.state.nextLink} />
+      <div className="">
+          <div className="container center-align">
+            <div className="body-container">
+              <div className="col 12">
+                <p className="standard-question-style"> Piccnicc Slogan goes here! </p>
+              </div>
+                <div className="left-align">
+                  <SelectField className="dropdown" value={this.state.selectedAirport} floatingLabelText="Select Airport" onChange={this.selectorChange}>
+                    <MenuItem value="heathrow" primaryText="Heathrow - LHR" />
+                    <MenuItem value="gatwick" primaryText="Gatwick - LGW" />
+                    <MenuItem value="stanstead" primaryText="Stanstead - STN" />
+                    <MenuItem value="luton" primaryText="Luton - LTN" />
+                  </SelectField >
+                </div>
+                
+              </div>
+            </div>
+          {this.renderFlightDetailsOrRedirect()}
       </div>
     );
   }
 });
 
-module.exports = {
-  Page,
-  Components: {
-    Selector
-  }
-}
+module.exports = Page

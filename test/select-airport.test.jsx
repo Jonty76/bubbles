@@ -11,7 +11,7 @@ var appRender = shallowRenderer.getRenderOutput();
 
 test('Testing dropdown menu in select-airport.jsx', t => {
   var options = appRender.props.options;
-  t.equal(options.length, 3, 'Two options in Selector');
+  t.equal(options.length, 5, 'Two options in Selector');
   t.equal(options[2].label, "Gatwick Airport - LGW", 'Gatwick is third option');
   t.end();
 });
