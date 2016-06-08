@@ -28,7 +28,7 @@
 
 .base-button {
   background-color: #E12534;
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
@@ -52,6 +52,14 @@
 
 .no-margin {
   margin: 0;
+}
+
+.red-color {
+  color: #E12534;
+}
+
+.custom-container {
+  margin-bottom: 4em;
 }
 
 /* Select Restuarant Page */
@@ -90,27 +98,39 @@ input[type=text]:focus:not([readonly]) {
 
 /* Restaurant Menu Page */
 
-/*.restaurant-logo-menu{
-  height:18em;
-  width:110%;
-  margin-left:-1em;
-  right:0;
+.restaurant-logo-menu{
+  height:15em;
+  width:100%;
+  opacity: 0.3;
 }
 
 .restaurant-name-on-menu{
   position:absolute;
-  top:1em;
+  top:2em;
   left: 0;
   width: 100%;
-  color: white;
   text-align:center;
 }
 
 .restaurant-description-on-menu {
   position:absolute;
-  top:6em;
+  top:8em;
   left: 0;
   width: 100%;
-  color: white;
   text-align:center;
-}*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  line-height: 1.5em;
+}
+
+.menu-background {
+  background-color: #E12534;
+}
+
+.food-title {
+  padding-left: 1em;
+}
+
+#basket-bar-cart {
+  padding-top: 1.2em;
+}

@@ -4,7 +4,7 @@ import { FoodItem } from './food-item.jsx';
 var Title = React.createClass({render: function() {
     return (
       <div>
-        <h2>{this.props.title}</h2>
+        <h3 className="food-title">{this.props.title}</h3>
       </div>
     )
   }

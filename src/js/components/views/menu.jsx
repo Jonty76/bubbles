@@ -23,14 +23,14 @@ var Menu = React.createClass({
 
   render: function() {
     var menu = this.getStructuredMenu();
-    var restauant = this.props.tagValue + " Image"
+    var restaurant = this.props.tagValue + " Image"
 
     return (
-      <div>
+      <div className="custom-container">
           <div>
-            {restaurantImages[restauant]}
-            <h1 className = "restaurant-name-on-menu">{this.props.tagValue}</h1>
-            <h4 className = "restaurant-description-on-menu">{this.props.helpers.getDescription(this.props.tagValue)}</h4>
+            {restaurantImages[restaurant]}
+              <h2 className = "restaurant-name-on-menu">{this.props.tagValue}</h2>
+              <h5 className = "restaurant-description-on-menu">{this.props.helpers.getDescription(this.props.tagValue)}</h5>
           </div>
           <MenuComponent
             menu={menu}

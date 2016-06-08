@@ -22,6 +22,7 @@ var getDescription = function(name) {
   if (name === "Pret A Manger") return "Pret A Manger creates handmade, natural food, avoiding the obscure chemicals, additives andpreservatives found in much of the ‘prepared’and ‘fast’ food on the market today.";
   if (name === "Yo! Sushi") return "Rock and Roll conveyor belt sushi ninjas. Serving up sashimi, maki, noodles, handrolls, katsu curry and more. Nom nom nom.";
   if (name === "Grain Store") return "Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.";
+  if (name !== "Pret A Manager" || name !== "Yo! Sushi" || name !== "Grain Store") return "Description"
 }
 
 
