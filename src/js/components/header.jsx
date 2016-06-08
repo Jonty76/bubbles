@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 var Header = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="navbar-fixed">
         <nav>
           <div className="header nav-wrapper">
             <a href="#" className="brand-logo center" id="brand-logo">Piccnicc</a>

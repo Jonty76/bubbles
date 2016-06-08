@@ -2,6 +2,7 @@
 
 .header {
   background-color: white;
+  position: fixed;
 }
 
 #brand-logo {
@@ -22,9 +23,9 @@
 
 /*Body and General*/
 
-/*.margin-main-content {
-  margin-left: 10%;
-}*/
+.margin-main-content {
+  margin-left: 2.6em;
+}
 
 .base-button {
   background-color: #E12534;
@@ -38,16 +39,50 @@
   padding-right: 1.5em;
 }
 
-.standard-question-style {
+.question-container {
   margin-top: 2.5em;
+}
+
+.standard-question-style {
   font-weight: 350;
   font-size: 1.2em;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  color: #E12534;
 }
 
 .dropdown {
   text-align: left;
+}
+
+/* Landing Page */
+
+.date-picker-container {
+  margin-top: 1em;
+}
+
+#gate {
+  color:  #E12534;
+}
+
+.flight-detail {
+  margin: 0;
+}
+
+.flight-detail-label {
+  font-weight: bold;
+}
+
+.flight-detail-container {
+  text-align: center;
+  width: 65%;
+  margin-top: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #E12534;
 }
 
 .no-margin {

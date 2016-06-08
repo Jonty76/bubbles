@@ -41,6 +41,7 @@
     "history": "~1.17.0",
     "hoek": "^3.0.1",
     "inert": "^3.2.0",
+    "intl-locales-supported": "^1.0.0",
     "jsx-loader": "^0.13.2",
     "material-ui": "^0.15.0",
     "moment": "^2.10.6",

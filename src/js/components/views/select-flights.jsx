@@ -4,7 +4,20 @@ import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+//import areIntlLocalesSupported from 'intl-locales-supported';
+
 let FlightData  = require('../../data/flight-data.js');
+let DateTimeFormat;
+
+// if (areIntlLocalesSupported('en-GB')) {
+//   DateTimeFormat = global.Intl.DateTimeFormat;
+// } else {
+//   const IntlPolyfill = require('intl');
+//   require('intl/locale-data/jsonp/en-GB');
+//
+//   DateTimeFormat = IntlPolyfill.DateTimeFormat;
+// }
+
 
 var renderInputFields = function(details) {
   return details.map(function(detail) {
@@ -30,7 +43,7 @@ let SelectAirline = React.createClass({
     var terminal = FlightData.flightsByAirline[airline].terminal
     this.props.setTerminal(terminal);
   },
-  
+
   renderFlightDate: function(){
     if(this.state.selectedAirline !== ""){
       return <SelectDate setTerminal={this.props.setTerminal} selectedAirline={this.state.selectedAirline}/>
@@ -41,7 +54,7 @@ let SelectAirline = React.createClass({
 
   render: function() {
     return (
-    <div>
+    <div className="center-align">
       <SelectField className="dropdown" value={this.state.selectedAirline} floatingLabelText="Select Airline" onChange={this.selectorChange}>
         {renderInputFields(FlightData.airlineOptions)}
       </ SelectField>
@@ -75,10 +88,15 @@ let SelectDate = React.createClass({
 
   render:function() {
     return(
-      <div>
-        <DatePicker hintText="Select the date of your flight" onChange={this.datePickerChange}/>
+      <div className="center-align">
+        <div className="date-picker-container">
+          <DatePicker
+            hintText="Select the date of your flight"
+            onChange={this.datePickerChange}
+           />
+        </div>
         {this.renderFlightNumber()}
-    </div>
+      </div>
     )
   }
 });
@@ -118,6 +136,7 @@ let SelectFlightNumber = React.createClass({
     if(this.state.selectedFlightNumber === ""){
       return (<div></div>)
     } else {
+    var airlineSpace = this.state.lookUpAirline
     var airline = (this.state.lookUpAirline).replace(/\s+/g, '');
     var flight = this.state.selectedFlightNumber
     var date = (this.state.date).toUTCString().split('23:00')[0];
@@ -125,15 +144,18 @@ let SelectFlightNumber = React.createClass({
 
     if(flightLookUp.Status === "Approved") {
       return (
-        <div>
-          <p>Airline: {airline}</p>
-          <p>{flight}</p>
-          <p>From: LGW London Gatwick</p>
-          <p>To: {flightLookUp.To}</p>
-          <p>Date: {date}</p>
-          <p>Time: {flightLookUp.Time}</p>
-          <p>Gate: [tbc]</p>
+        <div className="flight-detail-container">
+          <div className="">
+            <div className="center-align">
+              <p className="flight-detail flight-detail-label">{airlineSpace} | {flight}</p>
+              <p className="flight-detail"><span className="flight-detail-label">From: </span> LGW London Gatwick</p>
+              <p className="flight-detail"><span className="flight-detail-label">To: </span> {flightLookUp.To}</p>
+              <p className="flight-detail"><span className="flight-detail-label">On: </span> {date}</p>
+              <p className="flight-detail"><span className="flight-detail-label">Time: </span> {flightLookUp.Time}</p>
+              <p className="flight-detail" id="gate"><span className="flight-detail-label">Gate: </span> [tbc]</p>
+            </div>
         </div>
+      </div>
       )
     } else {
       return (
@@ -157,7 +179,9 @@ let SelectFlightNumber = React.createClass({
         <SelectField className="dropdown" value={this.state.selectedFlightNumber} floatingLabelText="Select Flight" onChange={this.selectorChange}>
           {renderInputFields(this.renderCorrespondingFlightNumbers())}
         </ SelectField>
-        {this.renderFullFlightDetails()}
+        <div className="">
+          {this.renderFullFlightDetails()}
+        </div>
       </div>
     )
   }
@@ -171,7 +195,9 @@ let flightDetails = React.createClass({
   render: function() {
     return (
       <div>
-        <SelectAirline setTerminal={this.props.setTerminal}/>
+        <div className="">
+          <SelectAirline setTerminal={this.props.setTerminal}/>
+        </div>
         <Link to='/basket/select-restaurant'>
           <div className="btn-large base-button"> NEXT </div>
         </Link>

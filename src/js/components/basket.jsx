@@ -7,7 +7,6 @@ import StaticContainer from 'react-static-container'
 import { createHistory, useBasename } from 'history'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import { red600 } from "material-ui/styles/colors"
 
 var getMenu = require('../data/restaurant-data.js');
 
