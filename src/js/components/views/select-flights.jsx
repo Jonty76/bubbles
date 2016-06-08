@@ -21,6 +21,7 @@ let SelectAirline = React.createClass({
       selectedAirline: ""
     };
   },
+
   selectorChange: function(event, index, value) {
     this.setState({
       selectedAirline: value
@@ -28,7 +29,7 @@ let SelectAirline = React.createClass({
   },
   renderFlightDate: function(){
     if(this.state.selectedAirline !== ""){
-      return <SelectDate selectedAirline={this.state.selectedAirline}/>
+      return <SelectDate setTerminal={this.props.setTerminal} selectedAirline={this.state.selectedAirline}/>
     } else {
       return (<div></div>)
     }
@@ -54,6 +55,13 @@ let SelectDate = React.createClass({
       selectedDate: 2
     };
   },
+
+  componentWillReceiveProps: function(nextProps){
+    var airline = nextProps.selectedAirline.replace(/\s+/g, '')
+    var terminal = FlightData.flightsByAirline[airline].terminal
+    // this.props.setTerminal(terminal);
+  },
+
   datePickerChange: function(event, date) {
     this.setState({
       selectedDate: date
@@ -165,7 +173,7 @@ let flightDetails = React.createClass({
   render: function() {
     return (
       <div>
-        <SelectAirline />
+        <SelectAirline setTerminal={this.props.setTerminal}/>
         <Link to='/basket/select-menu'>
           <div className="btn-large base-button"> NEXT </div>
         </Link>

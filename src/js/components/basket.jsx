@@ -83,6 +83,12 @@ RouteCSSTransitionGroup.contextTypes = {
 
 let Basket = React.createClass({
 
+  setTerminal: function(terminal){
+    this.setState({
+      terminal: terminal
+    })
+  },
+
   setMenuType: function(tagName, tagValue) {
     this.setState({
       tagName: tagName,
@@ -242,7 +248,8 @@ let Basket = React.createClass({
         removeItem: this.removeItem,
         clearBasket: this.clearBasket,
         clearQuantityOfItem: this.clearQuantityOfItem,
-        setMenuType: this.setMenuType
+        setMenuType: this.setMenuType,
+        setTerminal: this.setTerminal
       },
       helpers: {
         filterMenu: this.filterMenu,
