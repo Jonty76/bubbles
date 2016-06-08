@@ -15,12 +15,6 @@ var BasketBar = React.createClass({
       <div></div>
     );
 
-    // <div className="basket-bar">
-    //   <span className ="basket-bar-text">VIEW HAMPER</span>
-    //   <span className='pull-right basket-bar-text'>{subtotal}</span>
-    //   <span className='pull-right glyphicon glyphicon-shopping-cart basket-bar-cart'>{itemsInBasket}</span>
-    // </div>
-
     var notEmptyBasket = (
         <Link to='/basket/page'>
           <div className="btn-large base-button">
