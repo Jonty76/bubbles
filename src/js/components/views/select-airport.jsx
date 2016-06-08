@@ -33,7 +33,7 @@ let Page = React.createClass({
     if(this.state.selectedAirport === 'gatwick') {
       return <FlightDetails />
     } else {
-      return AirportNotServedButton
+      return <AirportNotServedButton />
     }
   },
 
@@ -54,11 +54,10 @@ let Page = React.createClass({
                     <MenuItem value="luton" primaryText="Luton - LTN" />
                   </SelectField >
                 </div>
-                {this.renderFlightDetailsOrRedirect()}
+                
               </div>
             </div>
-
-        <AirportNotServedButton />
+          {this.renderFlightDetailsOrRedirect()}
       </div>
     );
   }
