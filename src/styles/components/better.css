@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .question-container {
-  margin-top: 2.5em;
+  padding-top: 2.5em;
 }
 
 .standard-question-style {
@@ -72,15 +72,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custom-container {
-  margin-bottom: 4em;
+  padding-bottom: 4.5em;
 }
 
 .larger-custom-container {
   margin-bottom: 5em;
-}
-
-.margin-right {
-  margin-right: 1em;
 }
 
 .small-text {
@@ -187,19 +183,62 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .menu-background {
-  background-color: #E12534;
+  background-color: #f9f9f9;
 }
 
 .food-title {
   padding-left: 1em;
+  margin: 0;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 20px;
 }
 
 #basket-bar-cart {
   padding-top: 1.2em;
 }
 
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.list-group-item {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-right: 0px;
+  border-left: 0px;
+}
+
 /* VIEW HAMPER PAGE */
 
 .x-button {
   margin-left: 0.6em;
+}
+
+.total {
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+/* PAY PAGE */
+
+.cvv-input-div {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cvv-input {
+  height: 3.5rem;
+  font-size: 1.5rem;
+}
+
+.active {
+  color: #E12534 !important;
 }

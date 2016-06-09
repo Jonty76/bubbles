@@ -1,78 +1,52 @@
 import React from 'react';
-import Formsy from 'formsy-react';
-import { Select, Input } from 'formsy-react-components';
 import { Link } from 'react-router';
-
-let Selector = React.createClass({
- render: function() {
-   let cardOptions = [
-     {label : "Choose card"},
-     {label : "Visa ending in --1234"},
-     {label : "Mastercard ending in --5678"}
-   ];
-
-   var fontSize = {
-     fontSize: '2em'
-   };
-   return (
-    <div>
-      <div className='padding-top padding' style={fontSize}>PAY</div>
-         <Formsy.Form className='padding'>
-             <Select
-              name="cardSelector"
-              options={cardOptions}
-              onChange={this.props.onChange}
-             />
-        </Formsy.Form>
-    </div>
-
-  );
- }
-});
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 let Page = React.createClass({
 
   getInitialState: function() {
     return {
-      cardSelected: false
+      cardSelected: false,
+      card: ""
     };
   },
 
-  onChange: function() {
+  onChange: function(event, index, value) {
     this.setState({
-      cardSelected: true
+      cardSelected: true,
+      card: value
     });
   },
 
+  renderCVV: function () {
+    if(this.state.cardSelected) {
+      return (
+        <div className="input-field cvv-input-div">
+          <input id="cvv-input" type="text" />
+          <label>CVV</label>
+        </div>
+      )
+    }
+  },
+
   render: function() {
-    var sharedProps = {
-      layout: 'horizontal',
-      validatePristine: true
-    };
     return (
+
       <div>
-        <Selector onChange={this.onChange} />
-        {!this.state.cardSelected ? (
-          <p className='padding'>Please choose a card</p>
-        ) : (
-          <div>
-          <Formsy.Form className='padding'>
-            <Input
-              {...sharedProps}
-              name="cvv"
-              value=""
-              type="text"
-              label="CVV"
-              help="Enter three digits"
-              required
-              validations={{matchRegexp: /^(\d\d\d)$/}}
-              />
-          </Formsy.Form>
-          <Link to="/order-confirmation">
-            <div className="next-button">PAY</div>
-          </Link>
-          </div>
-        )}
+        <div className="center-align">
+          <SelectField className="dropdown" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
+            <MenuItem value="Visa ending in --1234" primaryText="Visa ending in --1234" />
+            <MenuItem value="Mastercard ending in --5678" primaryText="Mastercard ending in --5678" />
+          </SelectField >
+        </div>
+
+        {this.renderCVV()}
+
+        <Link to="/order-confirmation">
+          <div className="btn-large base-button"> PAY </div>
+        </Link>
+
       </div>
     );
   }
