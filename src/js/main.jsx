@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, Link, IndexRoute } from 'react-router';
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 import injectTapEventPlugin from "react-tap-event-plugin";
 
 let About             = require('./components/views/about.jsx');
@@ -26,7 +26,7 @@ require('../styles/main.js');
 let rootElement       = document.getElementById('react-content');
 
 render((
-  <Router>
+  <Router history={hashHistory}>
     <Route path="/" component={Basket}>
       <IndexRoute component={SelectAirport} />
       <Route path="about" component={About} />

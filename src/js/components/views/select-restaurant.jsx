@@ -112,6 +112,7 @@ let selectRestaurant = React.createClass({
 
 
   render: function(){
+
     var restaurantList;
     var orderer = this.props.helpers.orderMenu;
     if (this.state.view === "selectRestaurant") {
