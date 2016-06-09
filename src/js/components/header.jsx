@@ -5,7 +5,6 @@ var Header = React.createClass({
 
   componentDidMount: function (){
     document.getElementById('back-button').addEventListener('click', function(){
-      console.log("hiiiiiiii!!!!");
       hashHistory.goBack();
     })
   },
