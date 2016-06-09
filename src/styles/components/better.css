@@ -105,6 +105,24 @@ h1, h2, h3, h4, h5, h6 {
   color:  #E12534;
 }
 
+.modal-return-div {
+  display: none;
+}
+
+#flight-too-soon-modal {
+  height: 325px;
+  top: 0% !important;
+}
+
+.flight-too-soon-text {
+  margin: 1em;
+}
+
+.flight-too-soon-top-line {
+  color: #E12534;
+  margin-top: 2em;
+}
+
 .flight-detail {
   margin: 0;
 }

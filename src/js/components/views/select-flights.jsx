@@ -104,6 +104,7 @@ let SelectDate = React.createClass({
 
 //Select Flight Number, looks up in JSON object
 let SelectFlightNumber = React.createClass({
+
   getInitialState: function() {
     return {
       selectedFlightNumber: "",
@@ -159,16 +160,11 @@ let SelectFlightNumber = React.createClass({
       </div>
       )
     } else {
+
+      $('#flight-too-soon-modal').openModal()
+
       return (
-        <div>
-          <p className = 'view-text'> Your flight departs in less than one hour. Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered in good time for you to board, so we can't accept your order this time.
-            Please try again next time you fly, just give us a little bit more notice - you can book any time up to 60 minutes before scheduled take-off.
-
-            Have  a safe flight,
-
-            Piccnicc
-          </p>
-        </div>
+        <div className="modal-return-div"></div>
       )
     }
   }
@@ -182,6 +178,19 @@ let SelectFlightNumber = React.createClass({
         </ SelectField>
         <div className="">
           {this.renderFullFlightDetails()}
+          <div id="flight-too-soon-modal" className="modal">
+            <div className="flight-too-soon-content">
+                <div className="flight-too-soon-text">
+                  <p className="flight-too-soon-top-line">Your flight departs in less than one hour.</p>
+
+                  <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered in good time for you to board.</p>
+                  <p>Please try again next time you fly - you can book any time up to 60 minutes before scheduled take-off.</p>
+
+                  <p>Have  a safe flight</p>
+                  <a href="#!" className="modal-action modal-close btn-flat">Close</a>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     )
