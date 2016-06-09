@@ -181,7 +181,7 @@ let SelectFlightNumber = React.createClass({
           <div id="flight-too-soon-modal" className="modal">
             <div className="flight-too-soon-content">
                 <div className="flight-too-soon-text">
-                  <p className="flight-too-soon-top-line">Your flight departs in less than one hour.</p>
+                  <p className="top-line">Your flight departs in less than one hour.</p>
 
                   <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered in good time for you to board.</p>
                   <p>Please try again next time you fly - you can book any time up to 60 minutes before scheduled take-off.</p>
