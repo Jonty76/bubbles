@@ -93,6 +93,7 @@ let SelectDate = React.createClass({
           <DatePicker
             hintText="Select the date of your flight"
             onChange={this.datePickerChange}
+            id="datePickerTag"
            />
         </div>
         {this.renderFlightNumber()}

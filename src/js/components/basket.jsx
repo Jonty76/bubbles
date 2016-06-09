@@ -12,8 +12,15 @@ var getMenu = require('../data/restaurant-data.js');
 
 const muiTheme = getMuiTheme({
     palette: {
-      accent1Color: '#E12534'
+      accent1Color: '#E12534',
+      pickerHeaderColor:'#E12534',
+      primary1Color: '#E12534',
+      primary2Color: '#E12534',
+    },
+    datePicker: {
+      height: '20em',
     }
+
 })
 
 
