@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
+import Header from '../header.jsx';
 
 let MenuComponent = require('../menu.jsx');
 let BasketBar = require('../basket-bar.jsx');
@@ -133,6 +134,7 @@ let selectRestaurant = React.createClass({
 
     return (
       <div className="custom-container">
+        <Header text={"Select Restaurant"} />
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Header from '../header.jsx';
 
 let MenuComponent = require('../menu.jsx');
 let BasketBar = require('../basket-bar.jsx');
@@ -27,6 +28,7 @@ var Menu = React.createClass({
 
     return (
       <div className="custom-container">
+        <Header text={"Menu"} />
           <div>
             {restaurantImages[restaurant]}
               <h2 className = "restaurant-name-on-menu">{this.props.tagValue}</h2>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Header from '../header.jsx';
 
 let MenuComponent = require('../menu.jsx');
 
@@ -34,6 +35,7 @@ var BasketPage = React.createClass({
     var total = deliveryFee + foodSubtotal;
     return (
       <div className="custom-container menu-background">
+        <Header text={"Your Hamper"} />
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
         <div className="total right-align">

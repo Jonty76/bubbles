@@ -2,6 +2,7 @@ import React from 'react';
 import Formsy from 'formsy-react';
 import { Input } from 'formsy-react-components';
 import { Link } from 'react-router';
+import Header from '../header.jsx';
 
 
 let Page = React.createClass({
@@ -49,6 +50,8 @@ let Page = React.createClass({
       </Formsy.Form>
     );
     return (
+      <div>
+      <Header text={"Piccnicc"}/>
       <div className="center-align">
         <div className="airport-not-served-container">
           <p className='top-line'>Sorry, you can't get Piccnicc at that Airport yet.</p>
@@ -64,6 +67,7 @@ let Page = React.createClass({
          </div>
        </div>
     </div>
+  </div>
     );
   }
 });

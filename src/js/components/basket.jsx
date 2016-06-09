@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router';
-import Header from './header.jsx';
 import {setPrice} from './../savePrice.js';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import StaticContainer from 'react-static-container'
@@ -286,7 +285,6 @@ let Basket = React.createClass({
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        <Header />
         <RouteCSSTransitionGroup
           component="div"
           transitionName="example"
