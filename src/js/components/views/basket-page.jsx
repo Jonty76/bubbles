@@ -32,35 +32,24 @@ var BasketPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
-    var basketDivStyle = {
-      paddingTop: '1.5em'
-    };
-    var centreText = {
-      width: '100%',
-      textAlign: 'center'
-    };
     return (
-      <div style={basketDivStyle}>
-        <div style={centreText}>
-        <h3>HAMPER</h3>
-        </div>
+      <div className="custom-container">
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
-        <div>
-          <div className="basket-prices pull-right">
-            <div>Subtotal: {formatPrice(foodSubtotal)}</div>
-            <div>Delivery Fee: {formatPrice(deliveryFee)}</div>
-            <div>Total: {formatPrice(total)}</div>
-          </div>
-          <Link to='/basket/select-menu'>
-            <div
-              className="order-more-link pull-left"
-            >
-              <h4>Order More</h4>
-            </div>
-          </Link>
+
+        <div className="margin-right right-align">
+          <p>Subtotal: {formatPrice(foodSubtotal)}</p>
+          <p>Delivery Fee: {formatPrice(deliveryFee)}</p>
+          <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>
+
+        <Link to='/basket/select-restaurant'>
+          <br/>
+          <p className="small-text"><u>Add to your order from another restaurant?</u></p>
+          <br/>
+        </Link>
+
         <Link to='/login'>
-          <div className='next-button'>CHECKOUT</div>
+          <div className="btn-large base-button"> CHECKOUT </div>
         </Link>
       </div>
     );

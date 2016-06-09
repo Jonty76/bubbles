@@ -131,7 +131,7 @@ let selectRestaurant = React.createClass({
     }
 
     return (
-      <div>
+      <div className="custom-container">
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

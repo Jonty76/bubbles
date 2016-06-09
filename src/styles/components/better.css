@@ -1,4 +1,12 @@
-/*Header Bar*/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+/* Header Bar */
 
 .header {
   background-color: white;
@@ -55,6 +63,38 @@
   text-align: left;
 }
 
+.no-margin {
+  margin: 0;
+}
+
+.red-color {
+  color: #E12534;
+}
+
+.custom-container {
+  margin-bottom: 4em;
+}
+
+.larger-custom-container {
+  margin-bottom: 5em;
+}
+
+.margin-right {
+  margin-right: 1em;
+}
+
+.small-text {
+  margin-left: 1em;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.fixed-above-button {
+  bottom: 0;
+  position: fixed;
+  margin-bottom: 4em;
+}
+
 /* Landing Page */
 
 .date-picker-container {
@@ -83,18 +123,6 @@
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: #E12534;
-}
-
-.no-margin {
-  margin: 0;
-}
-
-.red-color {
-  color: #E12534;
-}
-
-.custom-container {
-  margin-bottom: 4em;
 }
 
 /* Select Restuarant Page */
@@ -168,4 +196,10 @@ input[type=text]:focus:not([readonly]) {
 
 #basket-bar-cart {
   padding-top: 1.2em;
+}
+
+/* VIEW HAMPER PAGE */
+
+.x-button {
+  margin-left: 0.6em;
 }
