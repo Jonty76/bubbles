@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
+.base-button:hover, .base-button:focus, .base-button:active {
+  background-color: #F04E5A;
+}
+
 .body-container {
   padding-left: 1.5em;
   padding-right: 1.5em;
