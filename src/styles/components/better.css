@@ -35,6 +35,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 2.6em;
 }
 
+.top-line {
+  color: #E12534;
+  margin-top: 2em;
+}
+
+.p-top-margin {
+  margin-top: 1em;
+}
+
 .base-button {
   background-color: #E12534;
   position: fixed;
@@ -118,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em;
 }
 
-.flight-too-soon-top-line {
+.top-line {
   color: #E12534;
   margin-top: 2em;
 }
@@ -143,6 +152,22 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #E12534;
 }
 
+/* Airport Not Served*/
+
+.airport-not-served-container {
+  margin: 2em;
+}
+
+.terms {
+  margin-top: 2em;
+}
+
+.airportSubmitted {
+  margin-top: 2em;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #E12534;
+}
 /* Select Restuarant Page */
 
 .restaurant-option {
