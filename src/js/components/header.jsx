@@ -1,7 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 var Header = React.createClass({
+
+  componentDidMount: function (){
+    document.getElementById('back-button').addEventListener('click', function(){
+      hashHistory.goBack();
+    })
+  },
+
   render: function() {
     return (
       <div className="navbar-fixed">
@@ -10,7 +17,7 @@ var Header = React.createClass({
             <a href="#" className="brand-logo center" id="brand-logo">Piccnicc</a>
               <ul>
                 <li className="right"><i className="menu-icon material-icons">menu</i></li>
-                <li className="left"><i className="back-icon material-icons">arrow_back</i></li>
+                <li className="left"><i id="back-button" className="back-icon material-icons">arrow_back</i></li>
               </ul>
           </div>
         </nav>
