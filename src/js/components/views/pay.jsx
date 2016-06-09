@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Header from '../header.jsx';
 
 let Page = React.createClass({
 
@@ -34,6 +35,7 @@ let Page = React.createClass({
     return (
 
       <div>
+        <Header text={"Pay"} />
         <div className="center-align">
           <SelectField className="dropdown" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
             <MenuItem value="Visa ending in --1234" primaryText="Visa ending in --1234" />
