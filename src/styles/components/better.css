@@ -97,12 +97,6 @@
   margin-bottom: 4em;
 }
 
-#datePickerTag:first-child {
-  background-color: red !important;
-  color: red !important;
-  height: 10em !important;
-}
-
 /* Select Restuarant Page */
 
 .restaurant-option {
