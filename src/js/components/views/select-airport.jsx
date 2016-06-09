@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Header from '../header.jsx';
 
 let FlightDetails  = require('./select-flights.jsx');
 
@@ -41,6 +42,7 @@ let Page = React.createClass({
     console.log("select aiport file", this.state.selectedAirport);
     return (
       <div className="custom-container">
+          <Header text={"Piccnicc"}/>
           <div className="container">
             <div className="body-container">
               <div className="question-container">
