@@ -12,7 +12,7 @@ var Title = React.createClass({render: function() {
 
 var FoodItems = React.createClass({render: function() {
     return (
-      <div className='list-group'>
+      <div>
         {this.props.items.map(function(item) {
             return (
               <div className='list-group-item pull-out'>

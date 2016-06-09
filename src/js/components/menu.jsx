@@ -25,7 +25,7 @@ let ChooseMore = React.createClass({
 let Menu = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="menu-background">
         {this.props.menu.map(function(foodType) {
           return (
             <div className="menu-section">

@@ -33,10 +33,10 @@ var BasketPage = React.createClass({
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
     return (
-      <div className="custom-container">
-        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
+      <div className="custom-container menu-background">
 
-        <div className="margin-right right-align">
+        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
+        <div className="total right-align">
           <p>Subtotal: {formatPrice(foodSubtotal)}</p>
           <p>Delivery Fee: {formatPrice(deliveryFee)}</p>
           <p><strong>Total: {formatPrice(total)}</strong></p>
@@ -48,7 +48,7 @@ var BasketPage = React.createClass({
           <br/>
         </Link>
 
-        <Link to='/login'>
+        <Link to='/payment'>
           <div className="btn-large base-button"> CHECKOUT </div>
         </Link>
       </div>

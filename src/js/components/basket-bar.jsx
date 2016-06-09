@@ -12,7 +12,7 @@ var BasketBar = React.createClass({
     var itemsInBasket = this.props.helpers.numberOfItemsInBasket(this.props.menu);
 
     var emptyBasket = (
-      <div></div>
+      <div className="menu-background"></div>
     );
 
     var notEmptyBasket = (
