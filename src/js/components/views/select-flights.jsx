@@ -187,8 +187,6 @@ let SelectFlightNumber = React.createClass({
                   <p>Please try again next time you fly - you can book any time up to 60 minutes before scheduled take-off.</p>
 
                   <p>Have  a safe flight</p>
-                </div>
-                <div className="modal-footer">
                   <a href="#!" className="modal-action modal-close btn-flat">Close</a>
                 </div>
             </div>

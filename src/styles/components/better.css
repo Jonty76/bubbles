@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #flight-too-soon-modal {
-  max-height: 45%;
+  height: 325px;
   top: 0% !important;
 }
 
