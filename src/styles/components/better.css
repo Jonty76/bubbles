@@ -305,3 +305,30 @@ input[type=text]:focus:not([readonly]) {
 .order-confirmed-container > p {
   margin-top: 2em;
 }
+
+/* Order Track */
+.order-circle-icon {
+  color: #E12534;
+  margin-right: 0.5em;
+}
+
+.order-track-container {
+  margin: 1.5em;
+}
+
+.order-status {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+
+
+.items-container {
+  height: 30em;
+  width:auto;
+}
+
+.center-this {
+  margin-left: auto;
+  margin-right: auto;
+}

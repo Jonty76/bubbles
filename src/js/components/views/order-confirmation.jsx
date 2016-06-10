@@ -47,8 +47,8 @@ var OrderPage = React.createClass({
           <p>Should you need to change or cancel your order for any reason, please change your order from the menu button above and make your changes up to an hour before boarding.</p>
         </div>
 
-        <Link to="/">
-          <div className="base-button btn-large" onClick={this.props.actions.clearBasket}>Track Your Order</div>
+        <Link to="/order-track">
+          <div className="base-button btn-large">Track Your Order</div>
         </Link>
       </div>
     );
