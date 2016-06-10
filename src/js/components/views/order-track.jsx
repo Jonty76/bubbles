@@ -8,7 +8,7 @@ let OrderIcon = React.createClass({
   render: function() {
     return(
       <div className="center-align" >
-        <span><i className="large material-icons">shopping_cart</i></span>
+        <span><i className="order-status-icon material-icons">shopping_cart</i></span>
       </div>
     )
   }
@@ -19,7 +19,7 @@ let OrderCircle = React.createClass({
     return(
       <div>
         <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <span><i className="small order-circle-icon material-icons">radio_button_checked</i></span>
         <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
         <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
         <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
