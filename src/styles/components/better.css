@@ -294,3 +294,14 @@ input[type=text]:focus:not([readonly]) {
 .active {
   color: #E12534 !important;
 }
+
+/* Order Confirmed */
+
+.order-confirmed-container {
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+}
+
+.order-confirmed-container > p {
+  margin-top: 2em;
+}

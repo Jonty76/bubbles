@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {getPrice} from '../../savePrice.js';
+import Header from '../header.jsx';
 
 
 var OrderPage = React.createClass({
@@ -28,48 +29,26 @@ var OrderPage = React.createClass({
   render: function() {
     // var calculatePrice = this.props.helpers.totalPriceOfItemsInBasket;
     // var price = calculatePrice(this.props.basket);
-    var smallerFont = {
-      fontSize: '1em',
-      marginTop: '-0.05em'
-    };
+
     var menu = this.getCheckoutList();
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var deliveryFee = this.getDeliveryFee(menu);
     var total = foodSubtotal + deliveryFee;
     return (
-      <div>
         <div className="content-wrapper">
-        <p className="view-text" style={smallerFont}>
-          <br/>
-          <br/>
-          <b>Excellent. Your order has been confirmed*</b>
-          <br/>
-          <br/>
-          One of our Piccnicc Delivery Angels will deliver it to your gate between
-          40 and 20 minutes before boarding closes for your flight. They'll leave
-          it in a Piccnicc Hamper in one of our cool branded lockers at the gate
-          - you'll receive a code by SMS (and email) to open the locker as soon as
-          your Hamper's inside.
-          <br/>
-          <br/>
-          Total Amount: {this.props.helpers.formatPrice(total)}
-          <br/>
-          <br/>
-          <b>We hope you enjoy your Piccnicc and wish you a safe flight.</b>
-          <br/>
-          <br/>
-            <div style={smallerFont} className='view-text'>Piccnicc - Hampers of Happiness, Delivered</div>
-            <div style={smallerFont} className='view-text'>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></div>
-            <div style={smallerFont} className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</div>
-          <br/>
-          <b>*Should you need to change or cancel your order for any reason, please
-          select your order from our menu and make your changes. Just don't leave it
-          to the last minute, as there comes a point - basically, an hour before boarding
-          closes - when it's too late for us to change anything.</b>
-        </p>
+        <Header text={"Order Confirmed"}/>
+        <div className="order-confirmed-container center-align">
+          <p className="top-line">Delicious!</p>
+
+          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve sent emailed you your recciept with all the usual garnish!</p>
+
+          <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
+
+          <p>Should you need to change or cancel your order for any reason, please change your order from the menu button above and make your changes up to an hour before boarding.</p>
         </div>
-        <Link to="/select-airport">
-          <div className="next-button" onClick={this.props.actions.clearBasket}>ORDER AGAIN</div>
+
+        <Link to="/">
+          <div className="base-button btn-large" onClick={this.props.actions.clearBasket}>Track Your Order</div>
         </Link>
       </div>
     );
