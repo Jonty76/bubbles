@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+nav {
+  background-color: white;
+}
+
 /* Header Bar */
 
 .header {
@@ -202,6 +206,15 @@ input[type=text]:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 #E12534;
 }
 
+.white-background {
+  background-color: #ffffff;
+}
+
+.grey-background {
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
 /* Restaurant Menu Page */
 
 .restaurant-logo-menu{
@@ -336,8 +349,54 @@ input[type=text]:focus:not([readonly]) {
   font-weight: bold;
 }
 
-
 .center-this {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ORDER HISTORY PAGE */
+
+.subtitle-text {
+  margin-left: 1em;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  color: #d4d4d4;
+}
+
+.sub-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  color: #d4d4d4;
+}
+
+.plane-icon {
+  color: #d4d4d4;
+}
+
+.order-option {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 85%;
+  display: inline-block;
+}
+
+.past-arrow-div {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1.2em;
+  font-size: 3rem;
+  color: #d4d4d4;
+}
+
+.active-arrow-div {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1.2em;
+  font-size: 3rem;
+  color: #E12534;
 }

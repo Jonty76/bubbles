@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {getPrice} from '../../savePrice.js';
+import { getPrice } from '../../savePrice.js';
 import Header from '../header.jsx';
 
+var orders = [];
 
 var OrderPage = React.createClass({
   getCheckoutList: function() {
@@ -11,7 +12,9 @@ var OrderPage = React.createClass({
     var quantityFilterer = this.props.helpers.filterMenuByQuantity;
     var structurer = this.props.helpers.orderMenu;
     var quantityFilteredMenu = quantityFilterer(wholeMenu);
-    return structurer(quantityFilteredMenu, "restaurant");
+    var result = structurer(quantityFilteredMenu, "restaurant");
+    orders.push(result);
+    return result;
   },
 
   getDeliveryFee: function(menu) {
@@ -55,4 +58,7 @@ var OrderPage = React.createClass({
   }
 });
 
-module.exports = OrderPage;
+module.exports = {
+  OrderPage : OrderPage,
+  orders: orders
+}
