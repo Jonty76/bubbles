@@ -24,7 +24,7 @@ let Page = React.createClass({
     if(this.state.cardSelected) {
       return (
         <div className="input-field cvv-input-div">
-          <input id="cvv-input" type="text" />
+          <input className="left-align" id="cvv-input" type="text" />
           <label>CVV</label>
         </div>
       )
@@ -36,13 +36,12 @@ let Page = React.createClass({
 
       <div>
         <Header text={"Pay"} />
-        <div className="center-align">
-          <SelectField className="dropdown" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
+        <div className="pay-container center-align">
+          <SelectField className="dropdown center-align" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
             <MenuItem value="Visa ending in --1234" primaryText="Visa ending in --1234" />
             <MenuItem value="Mastercard ending in --5678" primaryText="Mastercard ending in --5678" />
           </SelectField >
         </div>
-
         {this.renderCVV()}
 
         <Link to="/order-confirmation">

@@ -275,8 +275,13 @@ input[type=text]:focus:not([readonly]) {
 
 /* PAY PAGE */
 
+.pay-container {
+  margin-top: 1em;
+}
+
 .cvv-input-div {
-  width: 80%;
+  margin-top: 1.5em;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -288,4 +293,51 @@ input[type=text]:focus:not([readonly]) {
 
 .active {
   color: #E12534 !important;
+}
+
+/* Order Confirmed */
+
+.order-confirmed-container {
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+}
+
+.order-confirmed-container > p {
+  margin-top: 2em;
+}
+
+/* Order Track */
+
+.items-container {
+  height: 30em;
+  width:auto;
+}
+
+.order-track-container {
+  margin: 1.5em;
+}
+
+.order-status-icon {
+  font-size: 7.5em;
+  color: #E12534;
+}
+
+.order-circle-icon {
+  color: #E12534;
+  margin-right: 0.5em;
+  margin-top: 3em;
+}
+
+
+.order-status {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+
+.center-this {
+  margin-left: auto;
+  margin-right: auto;
 }
