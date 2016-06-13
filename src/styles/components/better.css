@@ -124,6 +124,16 @@ nav {
   margin-bottom: 4em;
 }
 
+/* Login Screen */
+
+.login-container {
+  padding-top: 3em;
+}
+
+#password {
+
+}
+
 /* Landing Page */
 
 .date-picker-container {
@@ -219,7 +229,7 @@ a {
 
 input[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid #E12534;
-  box-shadow: 0 1px 0 0 #E12534;
+  box-shadow: 0 0px 0 0 #E12534;
 }
 
 .white-background {
