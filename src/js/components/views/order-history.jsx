@@ -5,7 +5,6 @@ import Header from '../header.jsx';
 let ActiveOrders = React.createClass({
   render: function() {
     var activeOrders = require('./order-confirmation.jsx').orders;
-    console.log("activeOrders",activeOrders);
 
     if (activeOrders.length === 0){
       return (

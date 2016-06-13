@@ -24,13 +24,21 @@ nav {
 }
 
 .menu-icon {
-  margin-right: 0.5em;
+  margin-right: 1em;
   color: #E12534;
 }
 
 .back-icon {
-  margin-left: 0.5em;
+  margin-left: 1em;
   color: #E12534;
+}
+
+.red-nav {
+  background-color: #E12534;
+}
+
+.white-text {
+  color: #ffffff;
 }
 
 /*Body and General*/

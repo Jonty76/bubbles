@@ -17,6 +17,7 @@ let OrderTrack        = require('./components/views/order-track.jsx');
 let OrderHistory      = require('./components/views/order-history.jsx');
 let selectRestaurant  = require('./components/views/select-restaurant.jsx');
 let SelectAirport     = require('./components/views/select-airport.jsx');
+let PiccniccerOrders  = require('./components/views/piccniccer-orders.jsx');
 
 
 injectTapEventPlugin();
@@ -42,5 +43,8 @@ render((
       <Route path="login" component={Login} />
       <Route path="payment" component={Payment} />
     </Route>
+
+    <Route path="/piccniccer-orders" component={PiccniccerOrders} />
+
   </Router>
 ),rootElement);
