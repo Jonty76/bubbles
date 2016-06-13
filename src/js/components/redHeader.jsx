@@ -10,8 +10,8 @@ var Header = React.createClass({
           <div className="header nav-wrapper red-nav">
             <p className="brand-logo center white-text" id="brand-logo">{this.props.text}</p>
               <ul>
-                <li className="right"><i className="done-icon material-icons white-text">done</i></li>
-                <li className="left"><i className="settings-icon material-icons white-text">settings</i></li>
+                <li className="right"><i className="settings-icon material-icons white-text">settings</i></li>
+                <li className="left"><i className="error-icon material-icons white-text">error_outline</i></li>
               </ul>
           </div>
         </nav>
