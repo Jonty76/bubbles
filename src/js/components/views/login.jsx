@@ -1,53 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Input } from 'formsy-react-components';
+import RedHeader from '../red-header.jsx';
+import BaseButton from '../base-button.jsx';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
 
-var Page = React.createClass({
+var Login = React.createClass({
+  getInitialState: function() {
+    return {
+      userType: ""
+    };
+  },
+
+  selectorChange: function(event, index, value) {
+    this.setState({
+      userType: value
+    })
+  },
+
+  renderUserLink: function() {
+    if(this.state.userType === 'piccniccer') {
+      return <BaseButton buttonLink={"/piccniccer-orders"} buttonText={"Piccniccer Login"}/>
+    } else if (this.state.userType === 'retailer'){
+      return <BaseButton buttonLink={"/retailer-orders"} buttonText={"Retailer Login"}/>
+    } else {
+      return <BaseButton buttonLink={"/"} buttonText={"Login"}/>
+    }
+  },
+
   render: function() {
-    var sharedProps = {
-      layout: 'horizontal',
-      validatePristine: true
-    };
-    var colorText = {
-      color: 'grey',
-      textDecoration: 'underline'
-    };
-    var fontSize = {
-      fontSize: '2em'
-    };
     return (
       <div>
-      <div className='padding-top' style={fontSize}>LOGIN</div>
-      <div className='padding-top'>
-        <Formsy.Form>
-          <Input
-            {...sharedProps}
-            name="email"
-            value=""
-            label="Email"
-            type="email"
-            validations="isEmail"
-            placeholder="Enter your email"
-          />
-          <Input
-            {...sharedProps}
-            name="password1"
-            value=""
-            label="Password"
-            type="password"
-            placeholder="Enter password"
-          />
-        </Formsy.Form>
-        <Link to="/payment">
-          <div className="next-button">LOG IN</div>
-        </Link>
-        <Link to="create-account">
-          <div style={colorText}>Or click here to create an account</div>
-        </Link>
+        <div className="custom-container">
+          <RedHeader text={"Piccnicc"} iconRight={""} iconLeft={""} />
+
+          <div className="row login-container">
+            <div className="center-align">
+              <SelectField className="dropdown" value={this.state.userType} floatingLabelText="Username" onChange={this.selectorChange}>
+                  <MenuItem value="piccniccer" primaryText="Piccniccer" />
+                  <MenuItem value="retailer" primaryText="Retailer" />
+              </SelectField >
+              <TextField id="password" hintText="Password" floatingLabelText="Password" />
+            </div>
+          </div>
+
+          {this.renderUserLink()}
       </div>
     </div>
     );
   }
 });
 
-module.exports = Page;
+module.exports = Login;
