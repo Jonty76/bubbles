@@ -9,7 +9,9 @@ let RetailerOrders = React.createClass({
 
     return (
       <div className="custom-container">
-        Hello retailers
+        <RedHeader text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} />
+
+
       </div>
     )
   }
