@@ -52,7 +52,7 @@ let Page = React.createClass({
             <SelectField className="dropdown" value={this.state.selectedAirport} floatingLabelText="Select Airport" onChange={this.selectorChange}>
                 <MenuItem value="heathrow" primaryText="Heathrow - LHR" />
                 <MenuItem value="gatwick" primaryText="Gatwick - LGW" />
-                <MenuItem value="stanstead" primaryText="Stanstead - STN" />
+                <MenuItem value="stansted" primaryText="Stansted - STN" />
                 <MenuItem value="luton" primaryText="Luton - LTN" />
               </SelectField >
             </div>

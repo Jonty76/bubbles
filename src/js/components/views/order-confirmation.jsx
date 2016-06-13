@@ -43,7 +43,7 @@ var OrderPage = React.createClass({
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>
 
-          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve sent emailed you your recciept with all the usual garnish!</p>
+          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve sent emailed you your receipt with all the usual garnish!</p>
 
           <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
 
