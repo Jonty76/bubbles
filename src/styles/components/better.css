@@ -28,7 +28,7 @@ nav {
   color: #E12534;
 }
 
-.done-icon {
+.settings-icon {
   margin-right: 1em;
 }
 
@@ -37,7 +37,7 @@ nav {
   color: #E12534;
 }
 
-.settings-icon {
+.error-icon {
   margin-left: 1em;
 }
 
@@ -406,4 +406,36 @@ input[type=text]:focus:not([readonly]) {
   padding-top: 1.2em;
   font-size: 3rem;
   color: #E12534;
+}
+
+/* Piccniccer Page */
+
+.grey-text {
+  color: #d4d4d4;
+}
+
+.piccniccer-title-text {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.piccniccer-text {
+  font-size: 0.8em;
+  margin: 0;
+  margin-top: 1.2em;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.icon-margin {
+  margin-top: 0.3em;
+}
+
+.padding {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
