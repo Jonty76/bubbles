@@ -126,13 +126,10 @@ nav {
 
 /* Login Screen */
 
-.login-container {
+.top-container {
   padding-top: 3em;
 }
 
-#password {
-
-}
 
 /* Landing Page */
 
@@ -313,22 +310,6 @@ input[type=text]:focus:not([readonly]) {
 }
 
 /* PAY PAGE */
-
-.pay-container {
-  margin-top: 1em;
-}
-
-.cvv-input-div {
-  margin-top: 1.5em;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#cvv-input {
-  height: 3.5rem;
-  font-size: 1.5rem;
-}
 
 .active {
   color: #E12534 !important;
