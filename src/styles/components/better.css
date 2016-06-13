@@ -24,13 +24,29 @@ nav {
 }
 
 .menu-icon {
-  margin-right: 0.5em;
+  margin-right: 1em;
   color: #E12534;
 }
 
+.done-icon {
+  margin-right: 1em;
+}
+
 .back-icon {
-  margin-left: 0.5em;
+  margin-left: 1em;
   color: #E12534;
+}
+
+.settings-icon {
+  margin-left: 1em;
+}
+
+.red-nav {
+  background-color: #E12534;
+}
+
+.white-text {
+  color: #ffffff;
 }
 
 /*Body and General*/
