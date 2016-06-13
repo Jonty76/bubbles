@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-var Header = React.createClass({
+var RedHeader = React.createClass({
 
   render: function() {
     return (
@@ -10,8 +10,8 @@ var Header = React.createClass({
           <div className="header nav-wrapper red-nav">
             <p className="brand-logo center white-text" id="brand-logo">{this.props.text}</p>
               <ul>
-                <li className="right"><i className="done-icon material-icons white-text">done</i></li>
-                <li className="left"><i className="settings-icon material-icons white-text">settings</i></li>
+                <li className="right"><i className="done-icon material-icons white-text">{this.props.iconRight}</i></li>
+                <li className="left"><i className="settings-icon material-icons white-text">{this.props.iconLeft}</i></li>
               </ul>
           </div>
         </nav>
@@ -20,4 +20,4 @@ var Header = React.createClass({
   }
 });
 
-module.exports = Header;
+module.exports = RedHeader;

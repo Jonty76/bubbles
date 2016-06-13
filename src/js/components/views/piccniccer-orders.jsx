@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-import RedHeader from '../redHeader.jsx';
+import RedHeader from '../red-header.jsx';
 
 let restaurantImages = require('../../data/restaurant-images.jsx');
 
