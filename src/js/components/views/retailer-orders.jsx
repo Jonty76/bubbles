@@ -11,6 +11,35 @@ let RetailerOrders = React.createClass({
       <div className="custom-container">
         <RedHeader text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} />
 
+
+          <div className="row no-margin restaurant-option menu-background">
+            <div className="col s2">
+              <p className="grey-text piccniccer-title-text"><strong>Due.</strong></p>
+            </div>
+            <div className="col s2">
+              <p className="grey-text piccniccer-title-text">Order</p>
+            </div>
+            <div className="col s3">
+              <p className="grey-text piccniccer-title-text">Name</p>
+            </div>
+            <div className="col s2 right-align">
+              <p className="grey-text piccniccer-title-text">Items</p>
+            </div>
+            <div className="col s2 right-align">
+              <p className="grey-text piccniccer-title-text">Status</p>
+            </div>
+          </div>
+          <div className="divider"></div>
+
+
+          <div className="row no-margin restaurant-option menu-background">
+            <div className="col s12">
+              <p className="grey-text piccniccer-title-text">Orders For Next Batch</p>
+            </div>
+          </div>
+          <div className="divider"></div>
+
+
         <ul className="collapsible" data-collapsible="expandable">
           <li>
             <div className="collapsible-header">First<i className="material-icons right-align">check_circle</i></div>
