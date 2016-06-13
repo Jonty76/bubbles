@@ -431,3 +431,25 @@ input[type=text]:focus:not([readonly]) {
   padding-left: 1em;
   padding-right: 1em;
 }
+
+/* Retailer Page */
+
+.retailer-order-details {
+  padding-left: 2em;
+}
+
+.processed {
+  float: right !important;
+}
+
+.retailer-quantity {
+  color: #E12534;
+}
+
+.retailer-line-item {
+  color: black;
+}
+
+.retailer-price {
+  color: black;
+}
