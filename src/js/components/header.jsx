@@ -16,8 +16,8 @@ var Header = React.createClass({
           <div className="header nav-wrapper">
             <p className="brand-logo center" id="brand-logo">{this.props.text}</p>
               <ul>
-                <li className="right"><i className="menu-icon material-icons">menu</i></li>
-                <li className="left"><i id="back-button" className="back-icon material-icons">arrow_back</i></li>
+                <li className="right"><i className="icon-right material-icons">menu</i></li>
+                <li className="left"><i id="back-button" className="icon-left material-icons">arrow_back</i></li>
               </ul>
           </div>
         </nav>

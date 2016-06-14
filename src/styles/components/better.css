@@ -6,43 +6,35 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-nav {
-  background-color: white;
-}
-
 /* Header Bar */
 
 .header {
-  background-color: white;
   position: fixed;
-}
-
-#brand-logo {
-  color: black;
   font-weight: 300;
   font-size: 1.5em;
 }
 
-.menu-icon {
+#brand-logo {
+  color: black;
+}
+
+.icon-right {
   margin-right: 1em;
-  color: #E12534;
 }
 
-.settings-icon {
-  margin-right: 1em;
-}
-
-.back-icon {
-  margin-left: 1em;
-  color: #E12534;
-}
-
-.error-icon {
+.icon-left {
   margin-left: 1em;
 }
+
 
 .red-nav {
   background-color: #E12534;
+  color: #ffffff;
+}
+
+.white-nav {
+  background-color: #ffffff;
+  color: #E12534;
 }
 
 .white-text {
@@ -438,4 +430,26 @@ input[type=text]:focus:not([readonly]) {
   padding-bottom: 1.5em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+/* Retailer Page */
+
+.retailer-order-details {
+  padding-left: 2em;
+}
+
+.processed {
+  float: right !important;
+}
+
+.retailer-quantity {
+  color: #E12534;
+}
+
+.retailer-line-item {
+  color: black;
+}
+
+.retailer-price {
+  color: black;
 }

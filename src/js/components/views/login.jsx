@@ -37,11 +37,15 @@ var Login = React.createClass({
 
           <div className="row login-container">
             <div className="center-align">
-              <SelectField className="dropdown" value={this.state.userType} floatingLabelText="Username" onChange={this.selectorChange}>
-                  <MenuItem value="piccniccer" primaryText="Piccniccer" />
-                  <MenuItem value="retailer" primaryText="Retailer" />
-              </SelectField >
-              <TextField id="password" hintText="Password" floatingLabelText="Password" />
+              <div className="row">
+                <SelectField className="dropdown" value={this.state.userType} floatingLabelText="Username" onChange={this.selectorChange}>
+                    <MenuItem value="piccniccer" primaryText="Piccniccer" />
+                    <MenuItem value="retailer" primaryText="Retailer" />
+                </SelectField >
+              </div>
+              <div className="row">
+                <TextField id="password" hintText="Password" floatingLabelText="Password" />
+              </div>
             </div>
           </div>
 
