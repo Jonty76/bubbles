@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router';
 import RedHeader from './red-header.jsx';
+import Issue from './issue.jsx';
 
 let PiccniccerSingleOrder = require('./piccniccer-single-order.jsx');
 let restaurantImages = require('../data/restaurant-images.jsx');
@@ -19,7 +20,7 @@ function updateOrders (key, callback) {
   })
 }
 
-function resetObject (page){ 
+function resetObject (page){
   if (page === "/piccniccer-orders") {
     Object.keys(orders).forEach(function(key) {
       orders[key].pickedUp = false;
@@ -40,6 +41,13 @@ let Piccniccer = React.createClass({
   },
 
   componentDidMount: function (){
+    var triggers = document.getElementsByClassName("modal-trigger");
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].addEventListener('click', function(){
+        $('#issue-modal').openModal()
+      })
+    }
+
     var that = this;
     var done = document.getElementsByClassName("done");
     for (var i = 0; i < done.length; i++) {
@@ -81,8 +89,8 @@ let Piccniccer = React.createClass({
           : imageOrPoint = restaurantImages[order.restaurant]
 
           order.issue ?
-            isError = (<i className="material-icons red-text icon-margin">error_outline</i>)
-          : isError = (<i className="material-icons grey-text icon-margin">error_outline</i>)
+            isError = (<i className="modal-trigger material-icons red-text icon-margin">error_outline</i>)
+          : isError = (<i className="modal-trigger material-icons grey-text icon-margin">error_outline</i>)
 
           return (
             <div>
@@ -113,8 +121,8 @@ let Piccniccer = React.createClass({
         : imageOrPoint = restaurantImages[order.restaurant]
 
         order.issue ?
-          isError = (<i className="material-icons red-text icon-margin">error_outline</i>)
-        : isError = (<i className="material-icons grey-text icon-margin">error_outline</i>)
+          isError = (<i className="modal-trigger material-icons red-text icon-margin">error_outline</i>)
+        : isError = (<i className="modal-trigger material-icons grey-text icon-margin">error_outline</i>)
 
         return (
           <div>
@@ -175,7 +183,7 @@ let Piccniccer = React.createClass({
           <div className="divider"></div>
 
           {this.renderPickedUpOrders()}
-
+          <Issue />
           {this.renderButton()}
       </div>
     )

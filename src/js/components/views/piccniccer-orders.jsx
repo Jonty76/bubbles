@@ -1,10 +1,8 @@
 import React from "react";
-import { Link } from 'react-router';
 
 let Piccniccer = require('../piccniccer.jsx');
 
-let piccniccerOrders = React.createClass({
-
+let PiccniccerOrders = React.createClass({
   render: function(){
     return (
       <div>
@@ -21,7 +19,6 @@ let piccniccerOrders = React.createClass({
       </div>
     )
   }
-
 });
 
-module.exports = piccniccerOrders;
+module.exports = PiccniccerOrders;
