@@ -437,6 +437,10 @@ input[type=text]:focus:not([readonly]) {
   max-height: 26em;
 }
 
+.issue-list {
+  
+}
+
 .issue-modal-container {
   margin: 2em;
   margin-top: 0;

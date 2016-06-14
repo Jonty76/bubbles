@@ -6,6 +6,7 @@ var orders = {
     restaurant: "Wagamama",
     issue: false,
     pickedUp: false,
+    delivered: false,
     time: "9.00 am",
     point: "N1",
     details: [
@@ -32,6 +33,7 @@ var orders = {
     restaurant: "Pret A Manger",
     issue: false,
     pickedUp: false,
+    delivered: false,
     time: "9.00 am",
     point: "N1",
     details: [
@@ -53,6 +55,7 @@ var orders = {
     restaurant: "Pret A Manger",
     issue: false,
     pickedUp: false,
+    delivered: false,
     time: "9.00 am",
     point: "N1",
     details: [
@@ -79,8 +82,9 @@ var orders = {
     restaurant: "Yo! Sushi",
     issue: false,
     pickedUp: true,
+    delivered: false,
     time: "9.00 am",
-    point: "N1",
+    point: "N2",
     details: [
       {
         quantity: "2",
@@ -109,26 +113,33 @@ var orders = {
     name:"Molly Downs",
     restaurant: "Pret A Manger",
     issue: false,
-    pickedUp: false
+    pickedUp: false,
+    delivered: false,
+    point: "N1"
   },
   "21265" : {
     name:"Mark Underwood",
     restaurant: "Pret A Manger",
     issue: false,
-    pickedUp: false
+    pickedUp: false,
+    delivered: false,
+    point: "N2"
   },
   "65434" : {
     name:"Jessie Knight",
     restaurant: "Caviar House",
     issue: false,
-    pickedUp: false
+    pickedUp: false,
+    delivered: false,
+    point: "N2"
   },
   "75424" : {
-    orderNo: "75424",
     name:"Paul Wheels",
     restaurant: "Jamies",
     issue: false,
-    pickedUp: false
+    pickedUp: false,
+    delivered: false,
+    point: "N2"
   }
 }
 
