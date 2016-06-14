@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import RedHeader from '../red-header.jsx';
 
 let restaurantImages = require('../../data/restaurant-images.jsx');
-let orderNumbers = require('../../data/piccniccer-data.js').orderNumbers;
-let orders = require('../../data/piccniccer-data.js').orders;
+let orderNumbers = require('../../data/order-data.js').orderNumbers;
+let orders = require('../../data/order-data.js').orders;
 
 function updateOrders (callback) {
   var outstandingOrders = Object.assign({}, orders);

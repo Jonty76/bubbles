@@ -1,6 +1,34 @@
 import React from "react";
 import { Link } from 'react-router';
 import RedHeader from '../red-header.jsx';
+let orderNumbers = require('../../data/order-data.js').orderNumbers;
+let orders = require('../../data/order-data.js').orders;
+
+
+let orderHeader = React.createClass({
+  render: function(){
+    <div className="collapsible-header">
+        <div className="row padding no-margin">
+          <div className="col s2 m2 left-align">
+            <p>{this.props.time}</p>
+          </div>
+          <div className="col s2 m2">
+            <p>{this.props.orderNumber}</p>
+          </div>
+          <div className="col s3 m3">
+            <p>{this.props.name}</p>
+          </div>
+          <div className="col s2 m2 right-align">
+            <p>{this.props.pickUp}</p>
+          </div>
+          <div className="col s2 m2">
+            <div className=""><i className="processed material-icons grey-text">check_circle</i></div>
+          </div>
+        </div>
+      </div>
+  }
+})
+
 
 
 let RetailerOrders = React.createClass({
@@ -11,6 +39,7 @@ let RetailerOrders = React.createClass({
       });
     });
   },
+
 
   render: function(){
 
