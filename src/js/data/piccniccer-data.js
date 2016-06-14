@@ -5,7 +5,7 @@ var orders = {
     name:"Lucy Smith",
     restaurant: "Wagamama",
     issue: false,
-    pickedUp: false
+    pickedUp: false,
   },
   "19253" : {
     name:"Frank Jones",

@@ -5,20 +5,21 @@ import { render } from 'react-dom';
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 import injectTapEventPlugin from "react-tap-event-plugin";
 
-let About             = require('./components/views/about.jsx');
-let AirportNotServed  = require('./components/views/airport-not-served.jsx').Page;
-let BasketPage        = require('./components/views/basket-page.jsx');
-let Menu              = require('./components/views/menu.jsx');
-let Basket            = require('./components/basket.jsx');
-let Login             = require('./components/views/login.jsx');
-let Payment           = require('./components/views/pay.jsx');
-let OrderConfirmation = require('./components/views/order-confirmation.jsx').OrderPage;
-let OrderTrack        = require('./components/views/order-track.jsx');
-let OrderHistory      = require('./components/views/order-history.jsx');
-let selectRestaurant  = require('./components/views/select-restaurant.jsx');
-let SelectAirport     = require('./components/views/select-airport.jsx');
-let PiccniccerOrders  = require('./components/views/piccniccer-orders.jsx');
-let RetailerOrders    = require('./components/views/retailer-orders.jsx');
+let About                 = require('./components/views/about.jsx');
+let AirportNotServed      = require('./components/views/airport-not-served.jsx').Page;
+let BasketPage            = require('./components/views/basket-page.jsx');
+let Menu                  = require('./components/views/menu.jsx');
+let Basket                = require('./components/basket.jsx');
+let Login                 = require('./components/views/login.jsx');
+let Payment               = require('./components/views/pay.jsx');
+let OrderConfirmation     = require('./components/views/order-confirmation.jsx').OrderPage;
+let OrderTrack            = require('./components/views/order-track.jsx');
+let OrderHistory          = require('./components/views/order-history.jsx');
+let selectRestaurant      = require('./components/views/select-restaurant.jsx');
+let SelectAirport         = require('./components/views/select-airport.jsx');
+let PiccniccerOrders      = require('./components/views/piccniccer-orders.jsx');
+let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.jsx');
+let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 
 
 injectTapEventPlugin();
@@ -45,7 +46,9 @@ render((
       <Route path="payment" component={Payment} />
     </Route>
 
+    <Route path="/piccniccer-deliveries" component={PiccniccerDeliveries} />
     <Route path="/piccniccer-orders" component={PiccniccerOrders} />
+
     <Route path="/retailer-orders" component={RetailerOrders} />
 
   </Router>
