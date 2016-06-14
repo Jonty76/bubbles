@@ -28,7 +28,7 @@ var Menu = React.createClass({
 
     return (
       <div className="custom-container">
-        <Header text={"Menu"} />
+          <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"}/>
           <div>
             {restaurantImages[restaurant]}
               <h2 className = "restaurant-name-on-menu">{this.props.tagValue}</h2>

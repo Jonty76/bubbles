@@ -37,7 +37,7 @@ let Page = React.createClass({
 
       <div>
         <div className="custom-container">
-          <Header text={"Pay"} />
+          <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"}/>
 
           <div className="row top-container">
             <div className="center-align">

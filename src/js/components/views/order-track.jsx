@@ -45,7 +45,7 @@ let OrderTrack = React.createClass({
   render: function() {
     return (
       <div>
-        <Header text={"Track Order"}/>
+        <Header headerTheme={"whiteNav"} text={"Track Order"} iconRight={"menu"} iconLeft={"arrow_back"}/>
         <div className="order-track-container center-align">
           <div className="valign-wrapper items-container">
           <div className="valign center-this">

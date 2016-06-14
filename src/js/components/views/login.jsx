@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import RedHeader from '../red-header.jsx';
+import Header from '../header.jsx';
 import BaseButton from '../base-button.jsx';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
@@ -33,8 +33,7 @@ var Login = React.createClass({
     return (
       <div>
         <div className="custom-container">
-          <RedHeader text={"Piccnicc"} iconRight={""} iconLeft={""} />
-
+          <Header headerTheme={"redNav"} text={"Piccnicc"} iconRight={""} iconLeft={""}/>
           <div className="row login-container">
             <div className="center-align">
               <div className="row">

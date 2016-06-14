@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-import RedHeader from '../red-header.jsx';
+import Header from '../header.jsx';
 let orderNumbers = require('../../data/order-data.js').orderNumbers;
 let orders = require('../../data/order-data.js').orders;
 
@@ -45,7 +45,7 @@ let RetailerOrders = React.createClass({
 
     return (
       <div className="custom-container">
-        <RedHeader text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} />
+        <Header text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} />
 
 
           <div className="row no-margin restaurant-option menu-background">
