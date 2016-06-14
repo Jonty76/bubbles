@@ -432,6 +432,27 @@ input[type=text]:focus:not([readonly]) {
   padding-right: 1em;
 }
 
+#issue-modal {
+  color: black;
+  max-height: 26em;
+}
+
+.issue-modal-container {
+  margin: 2em;
+  margin-top: 0;
+}
+
+.issue-description {
+  height: 5em;
+  width: 80%;
+}
+
+.issue-description:focus {
+  outline: 0px;
+  -webkit-appearance:none;
+}
+
+
 /* Retailer Page */
 
 .retailer-order-details {

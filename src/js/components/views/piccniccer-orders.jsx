@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router';
 import RedHeader from '../red-header.jsx';
+import Issue from '../issue.jsx';
 
 let restaurantImages = require('../../data/restaurant-images.jsx');
 let orderNumbers = require('../../data/order-data.js').orderNumbers;
@@ -26,6 +27,16 @@ let PiccniccerOrders = React.createClass({
   },
 
   componentDidMount: function (){
+    console.log("on mount")
+    var triggers = document.getElementsByClassName("modal-trigger");
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].addEventListener('click', function(){
+        $('#issue-modal').openModal()
+        console.log("trigger")
+      })
+    }
+
+
     var that = this;
     var done = document.getElementsByClassName("done");
     for (var i = 0; i < done.length; i++) {
@@ -59,8 +70,8 @@ let PiccniccerOrders = React.createClass({
         if (order.pickedUp === false) {
           var error;
           order.issue ?
-            error = (<i className="material-icons red-text icon-margin">error_outline</i>)
-          : error = (<i className="material-icons grey-text icon-margin">error_outline</i>)
+            error = (<i className="modal-trigger issue material-icons red-text icon-margin">error_outline</i>)
+          : error = (<i className="modal-trigger issue material-icons grey-text icon-margin">error_outline</i>)
 
           return (
             <div>
@@ -97,8 +108,8 @@ let PiccniccerOrders = React.createClass({
       if (order.pickedUp) {
         var error;
         order.issue ?
-          error = (<i className="material-icons red-text icon-margin">error_outline</i>)
-        : error = (<i className="material-icons grey-text icon-margin">error_outline</i>)
+          error = (<i className="modal-trigger material-icons red-text icon-margin">error_outline</i>)
+        : error = (<i className="modal-trigger material-icons grey-text icon-margin">error_outline</i>)
 
         return (
           <div>
@@ -170,9 +181,15 @@ let PiccniccerOrders = React.createClass({
           </div>
           <div className="divider"></div>
 
+
+
           {this.renderPickedUpOrders()}
 
+          <Issue />
+
           {this.renderButton()}
+
+
       </div>
     )
   }
