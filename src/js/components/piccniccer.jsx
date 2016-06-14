@@ -4,18 +4,31 @@ import RedHeader from './red-header.jsx';
 
 let PiccniccerSingleOrder = require('./piccniccer-single-order.jsx');
 let restaurantImages = require('../data/restaurant-images.jsx');
-let orderNumbers = require('../data/piccniccer-data.js').orderNumbers;
-let orders = require('../data/piccniccer-data.js').orders;
+let orderNumbers = require('../data/order-data.js').orderNumbers;
+let orders = require('../data/order-data.js').orders;
 
-function updateOrders (callback) {
+function updateOrders (key, callback) {
   var outstandingOrders = Object.assign({}, orders);
   orderNumbers.map(function(elem){
     var order = outstandingOrders[elem];
-    if (order.pickedUp) {
+    var pickedUpOrDeliveredKey = key
+    if (order[pickedUpOrDeliveredKey]) {
       delete outstandingOrders[elem];
       callback(outstandingOrders)
     }
   })
+}
+
+function resetObject (page){ 
+  if (page === "/piccniccer-orders") {
+    Object.keys(orders).forEach(function(key) {
+      orders[key].pickedUp = false;
+    });
+  } else {
+    Object.keys(orders).forEach(function(key) {
+      orders[key].delivered = false;
+    });
+  }
 }
 
 let Piccniccer = React.createClass({
@@ -32,8 +45,9 @@ let Piccniccer = React.createClass({
     for (var i = 0; i < done.length; i++) {
       done[i].addEventListener('click', function(){
         var orderNo = this.id;
-        orders[orderNo].pickedUp = true;
-        updateOrders(function(outstandingOrders){
+        var pickedUpOrDeliveredKey = that.props.pickedUpOrDeliveredKey
+        orders[orderNo][pickedUpOrDeliveredKey] = true;
+        updateOrders(pickedUpOrDeliveredKey, function(outstandingOrders){
           that.setState({
             outstandingOrders: outstandingOrders
           });
@@ -50,7 +64,7 @@ let Piccniccer = React.createClass({
       return (
         <div>
           <div className="padding">
-            <h4 className="red-color center-align">No orders to pick up</h4>
+            <h4 className="red-color center-align">{this.props.message}</h4>
           </div>
           <div className="divider"></div>
         </div>
@@ -58,11 +72,12 @@ let Piccniccer = React.createClass({
     } else {
       return orderNumbers.map(function(elem){
         var order = orders[elem];
-        if (order.pickedUp === false) {
+        var pickedUpOrDeliveredKey = that.props.pickedUpOrDeliveredKey
+        if (order[pickedUpOrDeliveredKey] === false) {
           var imageOrPoint;
           var isError;
           that.props.imageOrPoint === "Point" ?
-            imageOrPoint = order.pickUpPoint
+            imageOrPoint = order.point
           : imageOrPoint = restaurantImages[order.restaurant]
 
           order.issue ?
@@ -89,11 +104,12 @@ let Piccniccer = React.createClass({
     var that = this;
     return orderNumbers.map(function(elem){
       var order = orders[elem];
-      if (order.pickedUp) {
+      var pickedUpOrDeliveredKey = that.props.pickedUpOrDeliveredKey
+      if (order[pickedUpOrDeliveredKey]) {
         var imageOrPoint;
         var isError;
         that.props.imageOrPoint === "Point" ?
-          imageOrPoint = order.pickUpPoint
+          imageOrPoint = order.point
         : imageOrPoint = restaurantImages[order.restaurant]
 
         order.issue ?
@@ -117,10 +133,11 @@ let Piccniccer = React.createClass({
 
   renderButton: function(){
     var outstandingOrdersCheck = Object.keys(this.state.outstandingOrders).length
+    var page = this.props.link;
     if (outstandingOrdersCheck === 0) {
       return (
-        <Link to='/piccniccer-deliveries'>
-          <div className="btn-large base-button">ALL PICKED UP</div>
+        <Link to={page}>
+          <div onClick={resetObject(page)} className="btn-large base-button">{this.props.buttonMessage}</div>
         </Link>
       )
     }

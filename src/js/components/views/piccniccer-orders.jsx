@@ -9,8 +9,14 @@ let piccniccerOrders = React.createClass({
     return (
       <div>
         <Piccniccer
+          headerText={"Pick Ups"}
+          subheading={"PICKED UP"}
           restaurantOrPickup={"Restaurant"}
-          imageOrPoint={"image"}
+          imageOrPoint={"Image"}
+          pickedUpOrDeliveredKey={"pickedUp"}
+          message={"No orders to pick up"}
+          buttonMessage={"ALL PICKED UP"}
+          link={"/piccniccer-deliveries"}
         />
       </div>
     )

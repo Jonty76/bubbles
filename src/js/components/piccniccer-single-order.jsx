@@ -1,8 +1,20 @@
 import React from "react";
 
 let PiccniccerSingleOrder = React.createClass({
+
+  componentDidMount: function (){
+    var imageOrPointClass;
+    document.getElementById(this.props.orderNumber).classList.add(this.props.done)
+
+    if (this.props.imageOrPoint === "N1" || this.props.imageOrPoint === "N2") {
+      var imageOrPoint = document.getElementsByClassName("imageOrPoint");
+      for (var i = 0; i < imageOrPoint.length; i++) {
+        imageOrPoint[i].classList.add("piccniccer-text")
+      }
+    }
+  },
+
   render: function () {
-    var doneClassNames = this.props.done + " material-icons icon-margin"
     return (
       <div>
         <div className="section restaurant-option">
@@ -16,11 +28,11 @@ let PiccniccerSingleOrder = React.createClass({
             <div className="col s3">
               <p className="piccniccer-text">{this.props.name}</p>
             </div>
-            <div className="col s3 center-align">
+            <div className="col s3 center-align imageOrPoint">
               {this.props.imageOrPoint}
             </div>
             <div id={this.props.orderNumber} className="col s2 right-align done">
-              <i className={doneClassNames}>done</i>
+              <i className="material-icons icon-margin">done</i>
             </div>
           </div>
         </div>

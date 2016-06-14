@@ -13,6 +13,10 @@ let piccniccerDeliveries = React.createClass({
           subheading={"DELIVERED"}
           restaurantOrPickup={"Point"}
           imageOrPoint={"Point"}
+          pickedUpOrDeliveredKey={"delivered"}
+          message={"No orders to deliver"}
+          buttonMessage={"ALL DELIVERED"}
+          link={"/piccniccer-orders"}
         />
       </div>
     )
