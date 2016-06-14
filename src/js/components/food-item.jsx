@@ -118,8 +118,11 @@ var NumberOrdered = React.createClass({
 
 var FoodItem = React.createClass({
   clickHandler: function(event) {
-    // event.preventDefault(); //
     event.stopPropagation();
+    var addClass = document.getElementsByClassName("add");
+    for (var i = 0; i < addClass.length; i++) {
+      addClass[i].style.display = "none"
+    }
     this.props.actions.addItem(this.props.id);
   },
 
@@ -135,12 +138,12 @@ var FoodItem = React.createClass({
       width: '8%'
     };
 
-    var contentStyle = {
+    var content = {
       display: 'inline-block',
       width: '70%',
       position: 'absolute',
       top: '50%',
-      transform: 'translateY(-50%)'
+      transform: 'translateY(-50%)',
     };
 
     var priceStyle = {
@@ -148,12 +151,29 @@ var FoodItem = React.createClass({
       position: 'absolute',
       top: '50%',
       left: '85%',
-      transform: 'translateY(-50%)'
+      transform: 'translateY(-50%)',
+      fontWeight: '300'
     };
+
+    var description = {
+      color: '#d4d4d4',
+      fontSize: '0.8em',
+      fontWeight: 'lighter'
+    };
+
+    var title = {
+      fontWeight: '300'
+    }
+
+    var add = {
+      paddingTop: '1em',
+      color: '#d4d4d4'
+    }
 
     return (
       <div onClick={this.clickHandler}>
         <div style={buttonsStyle}>
+          <i style={add} className="material-icons add">add</i>
           <AddItem
             addItem={this.props.actions.addItem}
             id={this.props.id}
@@ -168,7 +188,10 @@ var FoodItem = React.createClass({
             numberOrdered={this.props.quantityOrdered}
           />
         </div>
-        <span style={contentStyle}> {this.props.name} </span>
+        <div style={content}>
+          <h5 style={title}> {this.props.name} </h5>
+          <p style={description}>{this.props.description}</p>
+        </div>
         <div style={priceStyle} className='pull-right'>
           <Price
             price={this.props.price}
