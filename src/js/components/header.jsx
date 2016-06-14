@@ -13,7 +13,7 @@ var Header = React.createClass({
     return (
       <div className="navbar-fixed">
         <nav>
-          <div className="header nav-wrapper">
+          <div className="header nav-wrapper white-nav">
             <p className="brand-logo center" id="brand-logo">{this.props.text}</p>
               <ul>
                 <li className="right"><i className="icon-right material-icons">menu</i></li>
