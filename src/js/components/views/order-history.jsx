@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 import Header from '../header.jsx';
 
 let ActiveOrders = React.createClass({
-  render: function() {
-    var activeOrders = require('./order-confirmation.jsx').orders;
 
+  render: function() {
+    var activeOrders = require('./order-confirmation.jsx').activeOrder;
     if (activeOrders.length === 0){
       return (
         <div className="white-background">
@@ -17,16 +17,24 @@ let ActiveOrders = React.createClass({
         </div>
       )
     } else {
+      var name;
+      if (activeOrders[0].length > 1) {
+        name = activeOrders[0][0].name + " &..."
+      } else {
+        name = activeOrders[0][0].name
+      }
       return (
         <div className="white-background">
           <div className="divider"></div>
           <div className="order-option">
-            <h4>{activeOrders[0][0].name}</h4>
+            <h4>{name}</h4>
               <i className="small plane-icon material-icons">flight_takeoff</i>
               <p className="sub-text">LAX - 1 July</p>
           </div>
           <div className="active-arrow-div">
-            <i className="material-icons">arrow_forward</i>
+            <Link className="red-text" to="/order-track">
+              <i className="material-icons">arrow_forward</i>
+            </Link>
           </div>
           <div className="divider"></div>
         </div>
@@ -36,6 +44,7 @@ let ActiveOrders = React.createClass({
 });
 
 let PastOrders = React.createClass({
+
   render: function() {
     return (
       <div className="white-background">
@@ -46,7 +55,9 @@ let PastOrders = React.createClass({
             <p className="sub-text">CDG - 3 April</p>
         </div>
         <div className="past-arrow-div">
-          <i className="material-icons">arrow_forward</i>
+          <Link className="grey-text" to="/order-track-complete">
+            <i className="material-icons">arrow_forward</i>
+          </Link>
         </div>
         <div className="divider"></div>
           <div className="order-option">
@@ -55,7 +66,9 @@ let PastOrders = React.createClass({
             <p className="sub-text">NRB - 24 March</p>
           </div>
           <div className="past-arrow-div">
-            <i className="material-icons">arrow_forward</i>
+            <Link className="grey-text" to="/order-track-complete">
+              <i className="material-icons">arrow_forward</i>
+            </Link>
           </div>
           <div className="divider"></div>
       </div>
