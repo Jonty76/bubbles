@@ -7,39 +7,43 @@ import {
   Stepper,
   StepLabel,
 } from 'material-ui/Stepper';
-import RaisedButton from 'material-ui/RaisedButton';
 
 
 let orderStatusObject = [
   {
     orderIcon: "shopping_basket",
-    orderCircle: "1",
+    orderCircle: 0,
     orderStatus: "Order Confirmed",
-    orderExplainer: "We've recieved your order"
+    orderExplainer: "We've recieved your order.",
+    orderExplainerTwo: "Watch here to see it's progress!"
   },
   {
     orderIcon: "kitchen",
-    orderCircle: "2",
+    orderCircle: 1,
     orderStatus: "Being Freshly Prepared",
-    orderExplainer: "Your order is being made up by your chosen restaurant"
+    orderExplainer: "Your order is being made up",
+    orderExplainerTwo: "by your chosen restaurant"
   },
   {
     orderIcon: "directions_run",
-    orderCircle: "3",
+    orderCircle: 2,
     orderStatus: "Hamper On Its Way",
-    orderExplainer: "Our piccniccers are taking your order to your pick up"
+    orderExplainer: "Our piccniccers are delivering your",
+    orderExplainerTwo: "Piccnicc to your pick up point"
   },
   {
     orderIcon: "local_dining",
-    orderCircle: "4",
+    orderCircle: 3,
     orderStatus: "Piccnicc Time",
-    orderExplainer: "Pick up your order when you are ready"
+    orderExplainer: "Your order is ready.",
+    orderExplainerTwo: "Collect it from your pick up point!"
   },
   {
     orderIcon: "check_box",
-    orderCircle: "5",
+    orderCircle: 4,
     orderStatus: "Already Picced Up!",
-    orderExplainer: "This order has been picked up"
+    orderExplainer: "This order has been picked up",
+    orderExplainerTwo: "Happy Travels!"
   }
 ]
 
@@ -54,26 +58,44 @@ let OrderIcon = React.createClass({
   }
 })
 
+
 let OrderCircle = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <div style={{width: '70%'}}>
+        <Stepper activeStep={this.props.stepIndex}>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+        </Stepper>
+        </div>
+      </div>
+    );
+  }
+})
+
+
+let OrderStatus = React.createClass({
   render: function() {
     return(
       <div>
-        <HorizontalLinearStepper />
+        <div className="order-status">{this.props.status}</div>
+        <div className="order-explainer">{this.props.explainer}</div>
+        <div className="order-explainer">{this.props.explainerTwo}</div>
       </div>
-
-
     )
   }
 })
 
 
-let HorizontalLinearStepper = React.createClass({
-
-  getInitialState: function(){
-    return {
-        finished: false,
+let OrderTrack = React.createClass({
+  getInitialState: function() {
+      return {
         stepIndex: 0
-      }
+      };
   },
 
   componentDidMount: function(){
@@ -92,67 +114,28 @@ let HorizontalLinearStepper = React.createClass({
     });
   },
 
-
-  render: function() {
-    const {stepIndex} = this.state;
-
-    return (
-      <div style={{width: '70%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper activeStep={stepIndex}>
-          <Step><StepLabel></StepLabel></Step>
-          <Step><StepLabel></StepLabel></Step>
-          <Step><StepLabel></StepLabel></Step>
-          <Step><StepLabel></StepLabel></Step>
-          <Step><StepLabel></StepLabel></Step>
-        </Stepper>
-      </div>
-    );
-  }
-})
-
-
-
-let OrderStatus = React.createClass({
-  render: function() {
-    return(
-      <div>
-        <div className="order-status">{this.props.status}</div>
-        <div className="order-explainer">{this.props.explainer}</div>
-      </div>
-    )
-  }
-})
-
-
-let OrderTrack = React.createClass({
-  getInitialState: function() {
-      return {
-        orderPosition: "2"
-      };
-  },
-
-  renderOrderPosition: function() {
-    var orderPosition = this.state.orderPosition
+  renderstepIndex: function() {
+    var stepIndex = this.state.stepIndex
 
     var activeStatus = orderStatusObject.find(function(status){
-      console.log("key>>>>", status, orderPosition)
-
-      if (orderPosition === status.orderCircle) {
-        console.log("it works", status.orderStatus)
+      if (stepIndex === status.orderCircle) {
         return status
       }
    })
 
    return (
        <div className="valign center-this">
-         <OrderIcon icon={activeStatus.orderIcon} />
-         <OrderCircle circleNumber={activeStatus.orderCircle} />
-         <OrderStatus status={activeStatus.orderStatus} explainer={activeStatus.orderExplainer}/>
+         <OrderIcon icon={activeStatus.orderIcon} stepIndex={this.state.stepIndex}/>
+         <OrderCircle circleNumber={activeStatus.orderCircle} stepIndex={this.state.stepIndex}/>
+         <OrderStatus
+           status={activeStatus.orderStatus}
+           explainer={activeStatus.orderExplainer}
+           explainerTwo={activeStatus.orderExplainerTwo}
+           stepIndex={this.state.stepIndex}
+          />
        </div>
 
    )
-
-   console.log("active status>>>>>>", activeStatus);
 
 },
 
@@ -162,12 +145,14 @@ let OrderTrack = React.createClass({
     return (
       <div>
         <Header text={"Track Order"}/>
+
         <div id="order-track-page" className="order-track-container center-align">
           <div className="valign-wrapper items-container">
-            {this.renderOrderPosition()}
+            {this.renderstepIndex()}
           </div>
           <div>Click to see map of pick up points here</div>
         </div>
+
         <Link to="/">
           <div className="base-button btn-large">View Order Details</div>
         </Link>

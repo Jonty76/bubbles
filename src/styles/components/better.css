@@ -321,7 +321,7 @@ input[type=text]:focus:not([readonly]) {
 /* Order Track */
 
 .items-container {
-  height: 30em;
+  height: 28em;
   width:auto;
 }
 
@@ -438,7 +438,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .issue-list {
-  
+
 }
 
 .issue-modal-container {
