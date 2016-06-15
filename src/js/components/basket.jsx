@@ -257,8 +257,7 @@ let Basket = React.createClass({
         clearBasket: this.clearBasket,
         clearQuantityOfItem: this.clearQuantityOfItem,
         setMenuType: this.setMenuType,
-        setTerminal: this.setTerminal,
-        setStepIndex: this.setStepIndex
+        setTerminal: this.setTerminal
       },
       helpers: {
         filterMenu: this.filterMenu,
