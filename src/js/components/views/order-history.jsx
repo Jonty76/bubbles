@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Header from '../header.jsx';
 
 let ActiveOrders = React.createClass({
+
   render: function() {
     var activeOrders = require('./order-confirmation.jsx').activeOrder;
     console.log("activeOrders",activeOrders);
@@ -32,7 +33,9 @@ let ActiveOrders = React.createClass({
               <p className="sub-text">LAX - 1 July</p>
           </div>
           <div className="active-arrow-div">
-            <i className="material-icons">arrow_forward</i>
+            <Link className="red-text" to="/order-track">
+              <i className="material-icons">arrow_forward</i>
+            </Link>
           </div>
           <div className="divider"></div>
         </div>
@@ -42,6 +45,7 @@ let ActiveOrders = React.createClass({
 });
 
 let PastOrders = React.createClass({
+
   render: function() {
     return (
       <div className="white-background">
@@ -52,7 +56,9 @@ let PastOrders = React.createClass({
             <p className="sub-text">CDG - 3 April</p>
         </div>
         <div className="past-arrow-div">
-          <i className="material-icons">arrow_forward</i>
+          <Link className="grey-text" to="/order-track-complete">
+            <i className="material-icons">arrow_forward</i>
+          </Link>
         </div>
         <div className="divider"></div>
           <div className="order-option">
@@ -61,7 +67,9 @@ let PastOrders = React.createClass({
             <p className="sub-text">NRB - 24 March</p>
           </div>
           <div className="past-arrow-div">
-            <i className="material-icons">arrow_forward</i>
+            <Link className="grey-text" to="/order-track-complete">
+              <i className="material-icons">arrow_forward</i>
+            </Link>
           </div>
           <div className="divider"></div>
       </div>

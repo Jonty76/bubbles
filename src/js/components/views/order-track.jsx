@@ -93,8 +93,17 @@ let OrderStatus = React.createClass({
 
 let OrderTrack = React.createClass({
   getInitialState: function() {
+
+      //this if block is for demo purposes only - see comment in order-track-complete.jsx
+      var stepIndex;
+      if (this.props.stepIndex === 4) {
+        stepIndex = this.props.stepIndex;
+      } else {
+        stepIndex = 0;
+      }
+
       return {
-        stepIndex: 0
+        stepIndex: stepIndex
       };
   },
 
