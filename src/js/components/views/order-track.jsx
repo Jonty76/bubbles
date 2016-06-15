@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 import Header from '../header.jsx';
 
+import {
+  Step,
+  Stepper,
+  StepLabel,
+} from 'material-ui/Stepper';
+import RaisedButton from 'material-ui/RaisedButton';
+
+
 let orderStatusObject = [
   {
     orderIcon: "shopping_basket",
@@ -50,15 +58,58 @@ let OrderCircle = React.createClass({
   render: function() {
     return(
       <div>
-        <span><i id="1" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i id="2" className="small order-circle-icon material-icons">radio_button_checked</i></span>
-        <span><i id="3" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i id="4" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i id="5" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <HorizontalLinearStepper />
       </div>
+
+
     )
   }
 })
+
+
+let HorizontalLinearStepper = React.createClass({
+
+  getInitialState: function(){
+    return {
+        finished: false,
+        stepIndex: 0
+      }
+  },
+
+  componentDidMount: function(){
+    console.log("on mount")
+    var that = this
+    document.getElementById('order-track-page').addEventListener("click", function(){
+      console.log("on click")
+      that.handleNext()
+    })
+  },
+
+  handleNext: function() {
+    const {stepIndex} = this.state;
+    this.setState({
+      stepIndex: stepIndex + 1
+    });
+  },
+
+
+  render: function() {
+    const {stepIndex} = this.state;
+
+    return (
+      <div style={{width: '70%', maxWidth: 700, margin: 'auto'}}>
+        <Stepper activeStep={stepIndex}>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+          <Step><StepLabel></StepLabel></Step>
+        </Stepper>
+      </div>
+    );
+  }
+})
+
 
 
 let OrderStatus = React.createClass({
@@ -76,7 +127,7 @@ let OrderStatus = React.createClass({
 let OrderTrack = React.createClass({
   getInitialState: function() {
       return {
-        orderPosition: "1"
+        orderPosition: "2"
       };
   },
 
@@ -93,13 +144,12 @@ let OrderTrack = React.createClass({
    })
 
    return (
-     <div>
        <div className="valign center-this">
          <OrderIcon icon={activeStatus.orderIcon} />
          <OrderCircle circleNumber={activeStatus.orderCircle} />
          <OrderStatus status={activeStatus.orderStatus} explainer={activeStatus.orderExplainer}/>
        </div>
-     </div>
+
    )
 
    console.log("active status>>>>>>", activeStatus);
@@ -112,7 +162,7 @@ let OrderTrack = React.createClass({
     return (
       <div>
         <Header text={"Track Order"}/>
-        <div className="order-track-container center-align">
+        <div id="order-track-page" className="order-track-container center-align">
           <div className="valign-wrapper items-container">
             {this.renderOrderPosition()}
           </div>
