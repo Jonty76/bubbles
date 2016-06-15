@@ -9,24 +9,36 @@ h1, h2, h3, h4, h5, h6 {
 /* Header Bar */
 
 .header {
-  background-color: white;
   position: fixed;
-}
-
-#brand-logo {
-  color: black;
   font-weight: 300;
   font-size: 1.5em;
 }
 
-.menu-icon {
-  margin-right: 0.5em;
+#brand-logo {
+  color: black;
+}
+
+.icon-right {
+  margin-right: 1em;
+}
+
+.icon-left {
+  margin-left: 1em;
+}
+
+
+.red-nav {
+  background-color: #E12534;
+  color: #ffffff;
+}
+
+.white-nav {
+  background-color: #ffffff;
   color: #E12534;
 }
 
-.back-icon {
-  margin-left: 0.5em;
-  color: #E12534;
+.white-text {
+  color: #ffffff;
 }
 
 /*Body and General*/
@@ -103,6 +115,13 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   margin-bottom: 4em;
 }
+
+/* Login Screen */
+
+.top-container {
+  padding-top: 3em;
+}
+
 
 /* Landing Page */
 
@@ -199,7 +218,16 @@ a {
 
 input[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid #E12534;
-  box-shadow: 0 1px 0 0 #E12534;
+  box-shadow: 0 0px 0 0 #E12534;
+}
+
+.white-background {
+  background-color: #ffffff;
+}
+
+.grey-background {
+  background-color: #f9f9f9;
+  height: 100vh;
 }
 
 /* Restaurant Menu Page */
@@ -250,7 +278,7 @@ input[type=text]:focus:not([readonly]) {
   border-bottom-left-radius: 0px;
 }
 
-.list-group-item:last-child {
+.list-group-item:first-child {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
@@ -274,22 +302,6 @@ input[type=text]:focus:not([readonly]) {
 }
 
 /* PAY PAGE */
-
-.pay-container {
-  margin-top: 1em;
-}
-
-.cvv-input-div {
-  margin-top: 1.5em;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#cvv-input {
-  height: 3.5rem;
-  font-size: 1.5rem;
-}
 
 .active {
   color: #E12534 !important;
@@ -336,8 +348,133 @@ input[type=text]:focus:not([readonly]) {
   font-weight: bold;
 }
 
-
 .center-this {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ORDER HISTORY PAGE */
+
+.subtitle-text {
+  margin-left: 1em;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  color: #d4d4d4;
+}
+
+.sub-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  color: #d4d4d4;
+}
+
+.plane-icon {
+  color: #d4d4d4;
+}
+
+.order-option {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 85%;
+  display: inline-block;
+}
+
+.past-arrow-div {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1.2em;
+  font-size: 3rem;
+  color: #d4d4d4;
+}
+
+.active-arrow-div {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1.2em;
+  font-size: 3rem;
+  color: #E12534;
+}
+
+/* Piccniccer Page */
+
+.grey-text {
+  color: #d4d4d4;
+}
+
+.piccniccer-title-text {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.piccniccer-text {
+  font-size: 0.8em;
+  margin: 0;
+  margin-top: 1.2em;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.icon-margin {
+  margin-top: 0.3em;
+}
+
+.padding {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#issue-modal {
+  color: black;
+  max-height: 26em;
+}
+
+.issue-list {
+  
+}
+
+.issue-modal-container {
+  margin: 2em;
+  margin-top: 0;
+}
+
+.issue-description {
+  height: 5em;
+  width: 80%;
+}
+
+.issue-description:focus {
+  outline: 0px;
+  -webkit-appearance:none;
+}
+
+
+/* Retailer Page */
+
+.retailer-order-details {
+  padding-left: 2em;
+}
+
+.processed {
+  float: right !important;
+}
+
+.retailer-quantity {
+  color: #E12534;
+}
+
+.retailer-line-item {
+  color: black;
+}
+
+.retailer-price {
+  color: black;
 }

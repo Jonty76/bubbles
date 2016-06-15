@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Header from '../header.jsx';
+import BaseButton from '../base-button.jsx';
+import TextField from 'material-ui/TextField';
 
 let Page = React.createClass({
 
@@ -23,9 +25,8 @@ let Page = React.createClass({
   renderCVV: function () {
     if(this.state.cardSelected) {
       return (
-        <div className="input-field cvv-input-div">
-          <input className="left-align" id="cvv-input" type="text" />
-          <label>CVV</label>
+        <div className="">
+          <TextField id="password" hintText="CVV" floatingLabelText="CVV Number" />
         </div>
       )
     }
@@ -35,20 +36,21 @@ let Page = React.createClass({
     return (
 
       <div>
-        <Header text={"Pay"} />
-        <div className="pay-container center-align">
-          <SelectField className="dropdown center-align" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
-            <MenuItem value="Visa ending in --1234" primaryText="Visa ending in --1234" />
-            <MenuItem value="Mastercard ending in --5678" primaryText="Mastercard ending in --5678" />
-          </SelectField >
+        <div className="custom-container">
+          <Header text={"Pay"} />
+
+          <div className="row top-container">
+            <div className="center-align">
+              <SelectField className="dropdown" value={this.state.card} floatingLabelText="Select a Card" onChange={this.onChange}>
+                <MenuItem value="Visa ending in --1234" primaryText="Visa ending in --1234" />
+                <MenuItem value="Mastercard ending in --5678" primaryText="Mastercard ending in --5678" />
+              </SelectField >
+              {this.renderCVV()}
+            </div>
+          </div>
+          <BaseButton buttonLink={"/order-confirmation"} buttonText={"Pay"}/>
         </div>
-        {this.renderCVV()}
-
-        <Link to="/order-confirmation">
-          <div className="btn-large base-button"> PAY </div>
-        </Link>
-
-      </div>
+    </div>
     );
   }
 });
