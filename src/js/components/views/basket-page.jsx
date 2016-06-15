@@ -35,7 +35,7 @@ var BasketPage = React.createClass({
     var total = deliveryFee + foodSubtotal;
     return (
       <div className="custom-container menu-background">
-        <Header text={"Your Hamper"} />
+        <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
         <div className="total right-align">

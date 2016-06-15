@@ -68,7 +68,7 @@ let OrderHistory = React.createClass({
   render: function() {
     return (
       <div className="grey-background">
-        <Header text={"Your Orders"}/>
+        <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"}/>
         <h6 className="subtitle-text">ACTIVE</h6>
         <ActiveOrders />
         <h6 className="subtitle-text">PAST</h6>

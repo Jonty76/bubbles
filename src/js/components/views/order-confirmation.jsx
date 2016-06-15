@@ -39,7 +39,7 @@ var OrderPage = React.createClass({
     var total = foodSubtotal + deliveryFee;
     return (
         <div className="content-wrapper">
-        <Header text={"Order Confirmed"}/>
+        <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"}/>
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>
 
