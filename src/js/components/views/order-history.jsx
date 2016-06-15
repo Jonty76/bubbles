@@ -6,7 +6,6 @@ let ActiveOrders = React.createClass({
 
   render: function() {
     var activeOrders = require('./order-confirmation.jsx').activeOrder;
-    console.log("activeOrders",activeOrders);
     if (activeOrders.length === 0){
       return (
         <div className="white-background">
