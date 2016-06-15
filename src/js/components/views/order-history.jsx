@@ -4,8 +4,8 @@ import Header from '../header.jsx';
 
 let ActiveOrders = React.createClass({
   render: function() {
-    var activeOrders = require('./order-confirmation.jsx').orders;
-
+    var activeOrders = require('./order-confirmation.jsx').activeOrder;
+    console.log("activeOrders",activeOrders);
     if (activeOrders.length === 0){
       return (
         <div className="white-background">
@@ -17,11 +17,17 @@ let ActiveOrders = React.createClass({
         </div>
       )
     } else {
+      var name;
+      if (activeOrders[0].length > 1) {
+        name = activeOrders[0][0].name + " &..."
+      } else {
+        name = activeOrders[0][0].name
+      }
       return (
         <div className="white-background">
           <div className="divider"></div>
           <div className="order-option">
-            <h4>{activeOrders[0][0].name}</h4>
+            <h4>{name}</h4>
               <i className="small plane-icon material-icons">flight_takeoff</i>
               <p className="sub-text">LAX - 1 July</p>
           </div>
