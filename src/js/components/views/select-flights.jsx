@@ -145,7 +145,8 @@ let SelectFlightNumber = React.createClass({
     var flightLookUp = FlightData.flightsByAirline[airline][flight]
 
     if(flightLookUp.Status === "Approved") {
-      return 
+
+      return (
         <div className="flight-detail-container">
           <div className="">
             <div className="center-align">
@@ -158,6 +159,7 @@ let SelectFlightNumber = React.createClass({
             </div>
         </div>
       </div>
+    )
 
     } else {
 

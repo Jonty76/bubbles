@@ -3,7 +3,6 @@ import { Link, hashHistory } from 'react-router';
 
 var Header = React.createClass({
   componentDidMount: function (){
-    console.log("header component props", this.props)
     if(this.props.iconLeft === "error_outline") {
       document.getElementById('icon-left').classList.add("modal-trigger")
 
@@ -14,10 +13,8 @@ var Header = React.createClass({
     }
 
     if(this.props.headerTheme === "redNav") {
-      console.log(this.props.headerTheme)
       document.getElementById('header').classList.add("red-nav")
     } else {
-      console.log("white nav")
       document.getElementById('header').classList.add("white-nav")
     }
   },
