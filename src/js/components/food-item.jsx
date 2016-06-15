@@ -156,18 +156,18 @@ var FoodItem = React.createClass({
     };
 
     var description = {
-      color: '#d4d4d4',
+      color: 'grey',
       fontSize: '0.8em',
       fontWeight: 'lighter'
     };
 
     var title = {
-      fontWeight: '300'
+      fontWeight: '330'
     }
 
     var add = {
       paddingTop: '1em',
-      color: '#d4d4d4'
+      color: 'grey'
     }
 
     return (

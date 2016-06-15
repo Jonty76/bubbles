@@ -165,21 +165,21 @@ var northMenu = function() {
     name: "Proper Porridge",
     description: "With either fresh market berries; banana & toasted coconut; or stewed bramble fruit, topped with golden syrup, honey or brown sugar",
     foodType: "Get Your Oats",
-    restaurant: "Jamie's",
+    restaurant: "Jamies",
     price: "450"
   }, {
     id: getId(),
     name: "Bacon Buttie",
     description: "With free-range smoked bacon",
     foodType: "Breakfast Butties",
-    restaurant: "Jamie's",
+    restaurant: "Jamies",
     price: "495"
   }, {
     id: getId(),
     name: "American Pancakes - Blueberry",
     description: "Thick, fluffy pancake stack topped with blueberry compote",
     foodType: "Toast, Pastries & Sweet Things",
-    restaurant: "Jamie's",
+    restaurant: "Jamies",
     price: "6.50"
   }];
 
