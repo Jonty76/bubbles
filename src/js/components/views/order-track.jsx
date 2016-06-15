@@ -2,38 +2,38 @@ import React from 'react';
 import { Link } from 'react-router';
 import Header from '../header.jsx';
 
-let orderStatusObject = {
-  "1": {
+let orderStatusObject = [
+  {
     orderIcon: "shopping_basket",
-    orderCircle: "",
+    orderCircle: "1",
     orderStatus: "Order Confirmed",
     orderExplainer: "We've recieved your order"
   },
-  "2": {
+  {
     orderIcon: "kitchen",
-    orderCircle: "",
+    orderCircle: "2",
     orderStatus: "Being Freshly Prepared",
     orderExplainer: "Your order is being made up by your chosen restaurant"
   },
-  "3": {
+  {
     orderIcon: "directions_run",
-    orderCircle: "",
+    orderCircle: "3",
     orderStatus: "Hamper On Its Way",
     orderExplainer: "Our piccniccers are taking your order to your pick up"
   },
-  "4": {
+  {
     orderIcon: "local_dining",
-    orderCircle: "",
+    orderCircle: "4",
     orderStatus: "Piccnicc Time",
     orderExplainer: "Pick up your order when you are ready"
   },
-  "5": {
+  {
     orderIcon: "check_box",
-    orderCircle: "",
+    orderCircle: "5",
     orderStatus: "Already Picced Up!",
     orderExplainer: "This order has been picked up"
   }
-}
+]
 
 
 let OrderIcon = React.createClass({
@@ -50,11 +50,11 @@ let OrderCircle = React.createClass({
   render: function() {
     return(
       <div>
-        <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i className="small order-circle-icon material-icons">radio_button_checked</i></span>
-        <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
-        <span><i className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <span><i id="1" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <span><i id="2" className="small order-circle-icon material-icons">radio_button_checked</i></span>
+        <span><i id="3" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <span><i id="4" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
+        <span><i id="5" className="small order-circle-icon material-icons">radio_button_unchecked</i></span>
       </div>
     )
   }
@@ -76,34 +76,35 @@ let OrderStatus = React.createClass({
 let OrderTrack = React.createClass({
   getInitialState: function() {
       return {
-        orderPosition: "2"
+        orderPosition: "1"
       };
   },
 
   renderOrderPosition: function() {
-    var statusKeys = Object.keys(orderStatusObject)
     var orderPosition = this.state.orderPosition
 
-    statusKeys.map(function(key, i){
-      console.log(key, orderPosition)
-      if (orderPosition === key) {
-        var orderPositionKey = key
-        console.log("it works!", orderPositionKey)
-        console.log(orderStatusObject[orderPositionKey].orderStatus)
-        return (
-          <div className="valign center-this">
-            <OrderIcon icon={orderStatusObject[orderPositionKey].icon} />
-            <OrderCircle circleNumber={"77"} />
-            <OrderStatus status={orderStatusObject[orderPositionKey].orderStatus} explainer={orderStatusObject[orderPositionKey].orderExplainer}/>
-          </div>
-        )
-      } else {
-        console.log("else")
-        return (
-          <div className="rednerrrr">this isn't rendering</div>
-        )
+    var activeStatus = orderStatusObject.find(function(status){
+      console.log("key>>>>", status, orderPosition)
+
+      if (orderPosition === status.orderCircle) {
+        console.log("it works", status.orderStatus)
+        return status
       }
-   })},
+   })
+
+   return (
+     <div>
+       <div className="valign center-this">
+         <OrderIcon icon={activeStatus.orderIcon} />
+         <OrderCircle circleNumber={activeStatus.orderCircle} />
+         <OrderStatus status={activeStatus.orderStatus} explainer={activeStatus.orderExplainer}/>
+       </div>
+     </div>
+   )
+
+   console.log("active status>>>>>>", activeStatus);
+
+},
 
 
 
