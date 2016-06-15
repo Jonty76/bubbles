@@ -68,7 +68,11 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
-.base-button:hover, .base-button:focus, .base-button:active {
+.base-button:focus, .base-button:active, .base-button:visited {
+  background-color: #E12534;
+}
+
+.base-button:hover {
   background-color: #F04E5A;
 }
 
