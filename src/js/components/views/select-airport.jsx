@@ -42,7 +42,7 @@ let Page = React.createClass({
     console.log("select aiport file", this.state.selectedAirport);
     return (
       <div>
-          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={""} iconLeft={""}/>
+          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""}/>
           <div className="question-container">
             <p className="standard-question-style"> Piccnicc Slogan goes here! </p>
           </div>

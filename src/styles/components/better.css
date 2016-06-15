@@ -14,9 +14,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5em;
 }
 
-#brand-logo {
-  color: black;
-}
 
 .icon-right {
   margin-right: 1em;
@@ -32,9 +29,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+.red-nav > p {
+  color: white;
+}
+
 .white-nav {
   background-color: #ffffff;
   color: #E12534;
+}
+
+.white-nav > p {
+  color: black;
 }
 
 .white-text {
