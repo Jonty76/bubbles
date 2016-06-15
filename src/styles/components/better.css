@@ -278,7 +278,7 @@ input[type=text]:focus:not([readonly]) {
   border-bottom-left-radius: 0px;
 }
 
-.list-group-item:last-child {
+.list-group-item:first-child {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
@@ -321,7 +321,7 @@ input[type=text]:focus:not([readonly]) {
 /* Order Track */
 
 .items-container {
-  height: 30em;
+  height: 28em;
   width:auto;
 }
 
@@ -438,7 +438,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .issue-list {
-  
+
 }
 
 .issue-modal-container {
