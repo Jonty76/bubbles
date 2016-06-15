@@ -7,7 +7,7 @@ var BaseButton = React.createClass({
     return (
       <div className="">
         <Link to={this.props.buttonLink}>
-          <div className="base-button btn-large">{this.props.buttonText}</div>
+          <div className="waves-effect waves-light base-button btn-large">{this.props.buttonText}</div>
         </Link>
       </div>
     );
