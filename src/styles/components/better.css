@@ -58,6 +58,18 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
 }
 
+.red-side-nav{
+  background-color: #E12534;
+}
+
+.red-side-nav.fixed a {
+  color: #ffffff;
+}
+
+.white-side-nav.fixed a {
+  color: black;
+}
+
 /*Body and General*/
 
 .margin-main-content {

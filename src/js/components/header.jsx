@@ -22,8 +22,10 @@ var Header = React.createClass({
 
     if(this.props.headerTheme === "redNav") {
       document.getElementById('header').classList.add("red-nav")
+      document.getElementById('mobile-demo').classList.add("white-side-nav")
     } else {
       document.getElementById('header').classList.add("white-nav")
+      document.getElementById('mobile-demo').classList.add("red-side-nav")
     }
   },
 
@@ -37,9 +39,9 @@ var Header = React.createClass({
               <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i id="icon-right" className="material-icons icon-right">menu</i></ul>
                 <ul className="side-nav fixed" id="mobile-demo">
                   <li>Hidden</li>
-                  <li><Link className="burger-menu-item right" to="/about">About</Link></li>
-                  <li><Link className="burger-menu-item right" to="/order-history">Order History</Link></li>
-                  <li><Link className="burger-menu-item right" to='/login'>Logout</Link></li>
+                  <li><Link className="right" to="/about">About</Link></li>
+                  <li><Link className="right" to="/order-history">Order History</Link></li>
+                  <li><Link className="right" to='/login'>Logout</Link></li>
                 </ul>
                 <ul className="left"><i id="icon-left" className="material-icons icon-left">{this.props.iconLeft}</i></ul>
           </div>

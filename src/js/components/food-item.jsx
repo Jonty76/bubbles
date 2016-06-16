@@ -117,6 +117,16 @@ var NumberOrdered = React.createClass({
 
 
 var FoodItem = React.createClass({
+  componentDidMount: function (){
+    var foodItemSelected = $(".glyphicon-menu-up").is(":visible");
+    if (foodItemSelected) {
+      var addClass = document.getElementsByClassName("add");
+      for (var i = 0; i < addClass.length; i++) {
+        addClass[i].style.display = "none"
+      }
+    }
+  },
+
   clickHandler: function(event) {
     event.stopPropagation();
     var addClass = document.getElementsByClassName("add");
@@ -156,7 +166,7 @@ var FoodItem = React.createClass({
     };
 
     var description = {
-      color: '#d4d4d4',
+      color: 'grey',
       fontSize: '0.8em',
       fontWeight: 'lighter'
     };
@@ -167,7 +177,7 @@ var FoodItem = React.createClass({
 
     var add = {
       paddingTop: '1em',
-      color: '#d4d4d4'
+      color: '#E12534'
     }
 
     return (
