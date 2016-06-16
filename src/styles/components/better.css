@@ -46,6 +46,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+.side-nav a {
+  font-size: medium;
+}
+
+.nav-class {
+  z-index: 1;
+}
+
+.side-nav {
+  z-index: -1;
+}
+
 /*Body and General*/
 
 .margin-main-content {

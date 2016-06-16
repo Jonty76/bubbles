@@ -3,6 +3,14 @@ import { Link, hashHistory } from 'react-router';
 
 var Header = React.createClass({
   componentDidMount: function (){
+    $(document).ready(function(){
+      $("#button-collapse").sideNav({
+        menuWidth: 180,
+        edge: 'right',
+        closeOnClick: true
+      });
+    })
+
     if(this.props.iconLeft === "error_outline") {
       document.getElementById('icon-left').classList.add("modal-trigger")
 
@@ -23,13 +31,17 @@ var Header = React.createClass({
   render: function() {
     return (
       <div className="navbar-fixed">
-        <nav>
+        <nav className="nav-class">
           <div id="header" className="header nav-wrapper">
             <p className="brand-logo center" id="brand-logo">{this.props.text}</p>
-              <ul>
-                <li className="left"><i id="icon-left" className="icon-left material-icons">{this.props.iconLeft}</i></li>
-                <li className="right"><i id="icon-right" className="icon-right material-icons">{this.props.iconRight}</i></li>
-              </ul>
+              <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i id="icon-right" className="material-icons icon-right">menu</i></ul>
+                <ul className="side-nav fixed" id="mobile-demo">
+                  <li>Hidden</li>
+                  <li><Link className="burger-menu-item right" to="/about">About</Link></li>
+                  <li><Link className="burger-menu-item right" to="/order-history">Order History</Link></li>
+                  <li><Link className="burger-menu-item right" to='/login'>Logout</Link></li>
+                </ul>
+                <ul className="left"><i id="icon-left" className="material-icons icon-left">{this.props.iconLeft}</i></ul>
           </div>
         </nav>
       </div>
