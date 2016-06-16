@@ -40,6 +40,7 @@ var Login = React.createClass({
                 <SelectField className="dropdown" value={this.state.userType} floatingLabelText="Username" onChange={this.selectorChange}>
                     <MenuItem value="piccniccer" primaryText="Piccniccer" />
                     <MenuItem value="retailer" primaryText="Retailer" />
+                    <MenuItem value="customer" primaryText="Customer" />
                 </SelectField >
               </div>
               <div className="row">
