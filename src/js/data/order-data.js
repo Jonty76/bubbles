@@ -12,17 +12,17 @@ var orders = {
     details: [
       {
         quantity: "1",
-        itemDescription: "Dehydrated crisp vegetable, fruit & mushroom salad in prune vinegar dressing & wood pigeon",
+        itemDescription: "Dehydrated crisp vegetable, fruit & mushroom.",
         price: "£9.00"
       },
       {
         quantity: "1",
-        itemDescription: "Butternut squash ravioli, mustard apricots, rocket & pumpkin seeds",
+        itemDescription: "Butternut squash ravioli, mustard apricots.",
         price: "£7.00"
       },
       {
         quantity: "2",
-        itemDescription: "Hot seaweed sushi, glazed pak choi, black garlic purée, hake à la plancha, vanilla butter",
+        itemDescription: "Hot seaweed sushi, glazed pak choi, black garlic purée.",
         price: "£15.00"
       },
     ],
@@ -111,19 +111,47 @@ var orders = {
   },
   "11235" : {
     name:"Molly Downs",
-    restaurant: "Pret A Manger",
+    restaurant: "Jamies",
     issue: false,
     pickedUp: false,
     delivered: false,
-    point: "N1"
+    time: "10.30 am",
+    point: "N1",
+    details: [
+      {
+        quantity: "1",
+        itemDescription: "Proper Porridge",
+        price: "£4.50"
+      },
+      {
+        quantity: "1",
+        itemDescription: "Bacon Buttie",
+        price: "£4.95"
+      },
+    ],
+    total: "£9.45"
   },
   "21265" : {
     name:"Mark Underwood",
-    restaurant: "Pret A Manger",
+    restaurant: "Wagamama",
     issue: false,
     pickedUp: false,
     delivered: false,
-    point: "N2"
+    point: "N2",
+    time: "10.30 am",
+    details: [
+      {
+        quantity: "1",
+        itemDescription: "Yaki Udon",
+        price: "£9.50"
+      },
+      {
+        quantity: "1",
+        itemDescription: "Mini Yasai Yaki Soba",
+        price: "£4.00"
+      },
+    ],
+    total: "£13.50"
   },
   "65434" : {
     name:"Jessie Knight",
@@ -131,15 +159,33 @@ var orders = {
     issue: false,
     pickedUp: false,
     delivered: false,
-    point: "N2"
+    point: "N2",
+    time: "10.30 am",
+    details: [
+      {
+        quantity: "1",
+        itemDescription: "Tsarina",
+        price: "£29.00"
+      },
+    ],
+    total: "£10.90"
   },
   "75424" : {
     name:"Paul Wheels",
-    restaurant: "Jamies",
+    restaurant: "Comptoir Libanais",
     issue: false,
     pickedUp: false,
     delivered: false,
-    point: "N2"
+    point: "N2",
+    time: "10.30 am",
+    details: [
+      {
+        quantity: "2",
+        itemDescription: "Falafel Wrap",
+        price: "£5.45"
+      },
+    ],
+    total: "£10.90"
   }
 }
 
