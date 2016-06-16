@@ -15,7 +15,6 @@ let RetailerSingleOrder = React.createClass({
   },
 
   render: function () {
-    console.log("rener single order", this.props)
     return (
         <li>
           <div className="collapsible-header">
