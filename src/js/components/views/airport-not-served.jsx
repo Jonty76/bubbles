@@ -49,7 +49,7 @@ let Page = React.createClass({
         </div>
       </Formsy.Form>
     );
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
 
     return (
       <div>

@@ -152,7 +152,7 @@ let Piccniccer = React.createClass({
   },
 
   render: function(){
-    var burgerMenuOptions = ["About+/about", "Logout+/logout"]
+    var burgerMenuOptions = ["About+/about", "Logout+/login"]
 
     return (
       <div className="custom-container">

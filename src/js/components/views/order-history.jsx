@@ -79,7 +79,7 @@ let PastOrders = React.createClass({
 
 let OrderHistory = React.createClass({
   render: function() {
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
 
     return (
       <div className="grey-background">
