@@ -132,9 +132,11 @@ let selectRestaurant = React.createClass({
       }
     }
 
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+
     return (
       <div className="custom-container">
-        <Header text={"Select Restaurant"} headerTheme={"whiteNav"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+        <Header text={"Select Restaurant"} headerTheme={"whiteNav"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}

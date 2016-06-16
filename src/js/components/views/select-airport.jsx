@@ -39,10 +39,10 @@ let Page = React.createClass({
   },
 
   render: function() {
-    console.log("select aiport file", this.state.selectedAirport);
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
     return (
-      <div>
-          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""}/>
+      <div className="desktop-container">
+          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
           <div className="question-container">
             <p className="standard-question-style"> Piccnicc Slogan goes here! </p>
           </div>

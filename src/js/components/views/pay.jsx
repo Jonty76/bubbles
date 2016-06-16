@@ -33,11 +33,13 @@ let Page = React.createClass({
   },
 
   render: function() {
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+
     return (
 
       <div>
         <div className="custom-container">
-          <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+          <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
           <div className="row top-container">
             <div className="center-align">

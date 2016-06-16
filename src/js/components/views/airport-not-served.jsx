@@ -49,9 +49,11 @@ let Page = React.createClass({
         </div>
       </Formsy.Form>
     );
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+
     return (
       <div>
-      <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+      <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
       <div className="center-align">
         <div className="airport-not-served-container">
           <p className='top-line'>Sorry, you can't get Piccnicc at that Airport yet.</p>
