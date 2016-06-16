@@ -26,6 +26,7 @@ var orders = {
         price: "£15.00"
       },
     ],
+    items: "4",
     total: "£31.00"
   },
   "19253" : {
@@ -48,6 +49,7 @@ var orders = {
         price: "£7.00"
       },
     ],
+    items: "3",
     total: "£10.30"
   },
   "17733" : {
@@ -75,6 +77,7 @@ var orders = {
         price: "£3.50"
       },
     ],
+    items: "3",
     total: "£8.84"
   },
   "76524" : {
@@ -107,6 +110,7 @@ var orders = {
         price: "£4.10"
       },
     ],
+    items: "6",
     total: "£17.30"
   },
   "11235" : {
@@ -129,6 +133,7 @@ var orders = {
         price: "£4.95"
       },
     ],
+    items: "2",
     total: "£9.45"
   },
   "21265" : {
@@ -151,6 +156,7 @@ var orders = {
         price: "£4.00"
       },
     ],
+    items: "2",
     total: "£13.50"
   },
   "65434" : {
@@ -168,6 +174,7 @@ var orders = {
         price: "£29.00"
       },
     ],
+    items: "1",
     total: "£10.90"
   },
   "75424" : {
@@ -185,6 +192,7 @@ var orders = {
         price: "£5.45"
       },
     ],
+    items: "1",
     total: "£10.90"
   }
 }
