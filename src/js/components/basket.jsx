@@ -285,13 +285,7 @@ let Basket = React.createClass({
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        <RouteCSSTransitionGroup
-          component="div"
-          transitionName="example"
-          transitionEnterTimeout={200}
-          transitionLeaveTimeout={200}>
-            <div className=''>{this.getChildrenWithActions()}</div>
-        </RouteCSSTransitionGroup>
+        <div className=''>{this.getChildrenWithActions()}</div>
       </div>
       </MuiThemeProvider>
     );

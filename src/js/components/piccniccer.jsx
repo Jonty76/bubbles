@@ -152,10 +152,11 @@ let Piccniccer = React.createClass({
   },
 
   render: function(){
+    var burgerMenuOptions = ["About+/about", "Logout+/logout"]
 
     return (
       <div className="custom-container">
-        <Header headerTheme={"redNav"} text={this.props.headerText} iconRight={"settings"} iconLeft={"error_outline"}/>
+        <Header headerTheme={"redNav"} text={this.props.headerText} iconRight={"settings"} iconLeft={"error_outline"} burgerMenuOptions={burgerMenuOptions}/>
 
           <div className="row no-margin restaurant-option menu-background">
             <div className="col s3 offset-s1">

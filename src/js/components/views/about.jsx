@@ -9,7 +9,7 @@ var About = React.createClass({
     };
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={""} iconLeft={"arrow_back"} burgerMenuOptions={""}/>
         <div className="center-align">
           <div className="airport-not-served-container">
             <p style={fontSize} className='view-text'> Piccnicc is an online ordering service, which delivers tasty food from airport restaurants to passengers at the gate. </p>

@@ -48,6 +48,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .side-nav a {
   font-size: medium;
+  width: 100%;
+  text-align: right;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
 }
 
 .nav-class {

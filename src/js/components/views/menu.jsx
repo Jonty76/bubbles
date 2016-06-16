@@ -25,10 +25,11 @@ var Menu = React.createClass({
   render: function() {
     var menu = this.getStructuredMenu();
     var restaurant = this.props.tagValue + " Image"
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
 
     return (
       <div className="custom-container">
-          <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+          <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
           <div>
             {restaurantImages[restaurant]}
               <h2 className = "restaurant-name-on-menu">{this.props.tagValue}</h2>

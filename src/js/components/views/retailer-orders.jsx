@@ -35,10 +35,11 @@ let RetailerOrders = React.createClass({
 
 
   render: function(){
+    var burgerMenuOptions = ["About+/about", "Logout+/logout"]
 
     return (
       <div className="custom-container">
-        <Header text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} />
+        <Header text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
 
           <div className="row no-margin restaurant-option menu-background">

@@ -79,9 +79,11 @@ let PastOrders = React.createClass({
 
 let OrderHistory = React.createClass({
   render: function() {
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
+
     return (
       <div className="grey-background">
-        <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+        <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <h6 className="subtitle-text">ACTIVE</h6>
         <ActiveOrders />
         <h6 className="subtitle-text">PAST</h6>

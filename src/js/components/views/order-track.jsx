@@ -151,9 +151,10 @@ let OrderTrack = React.createClass({
 
 
   render: function() {
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/logout"]
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"Track Order"} iconRight={"menu"} iconLeft={"arrow_back"}/>
+        <Header headerTheme={"whiteNav"} text={"Track Order"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div id="order-track-page" className="order-track-container center-align">
           <div className="valign-wrapper items-container">
             {this.renderstepIndex()}
