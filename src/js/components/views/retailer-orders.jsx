@@ -8,16 +8,55 @@ let orders = require('../../data/order-data.js').orders;
 
 
 let RetailerOrders = React.createClass({
+
+  getInitialState: function() {
+    return {
+      batchOne: [],
+      batchTwo: []
+    }
+  },
+
+  componentWillMount: function() {
+    var that = this
+    var batchOne = []
+    var batchTwo = []
+
+    orderNumbers.map(function(number){
+      var orderNo = number
+      var order = orders[number]
+
+      if (order.time === "9.00 am") {
+        batchOne.push(orderNo)
+        console.log("if one")
+      } else if (order.time === "10.30 am"){
+        batchTwo.push(orderNo)
+        console.log("if two >>>")
+      } else {
+        console.log("No batches")
+      }
+
+      if (batchOne.length === 4) {
+        that.setState({
+          batchOne: batchOne,
+          batchTwo: batchTwo
+        })
+      }
+    })
+  },
+
+
   componentDidMount: function() {
     $(document).ready(function(){
       $('.collapsible').collapsible({
-        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-      });
-    });
+        accordion : false
+      })
+
+    })
   },
 
-  renderOrders: function() {
-    return orderNumbers.map(function(number){
+
+  renderOrders: function(batch) {
+    return batch.map(function(number){
       var orderNo = number
       var order = orders[number]
       return (
@@ -36,7 +75,6 @@ let RetailerOrders = React.createClass({
 
   render: function(){
     var burgerMenuOptions = ["About+/about", "Logout+/logout"]
-
     return (
       <div className="custom-container">
         <Header text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
@@ -64,7 +102,7 @@ let RetailerOrders = React.createClass({
           <div className="divider"></div>
 
           <ul className="collapsible" data-collapsible="expandable">
-            {this.renderOrders()}
+            {this.renderOrders(this.state.batchOne)}
           </ul>
 
 
@@ -75,20 +113,8 @@ let RetailerOrders = React.createClass({
           </div>
 
           <ul className="collapsible" data-collapsible="expandable">
-            <li>
-              <div className="collapsible-header">First<i className="material-icons right-align">check_circle</i></div>
-              <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div className="collapsible-header"><i className="material-icons">place</i>Second</div>
-              <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div className="collapsible-header"><i className="material-icons">whatshot</i>Third</div>
-              <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
+            {this.renderOrders(this.state.batchTwo)}
           </ul>
-
 
       </div>
     )

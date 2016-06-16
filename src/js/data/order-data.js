@@ -29,6 +29,29 @@ var orders = {
     items: "4",
     total: "£31.00"
   },
+  "21265" : {
+    name:"Mark Underwood",
+    restaurant: "Wagamama",
+    issue: false,
+    pickedUp: false,
+    delivered: false,
+    point: "N2",
+    time: "10.30 am",
+    details: [
+      {
+        quantity: "1",
+        itemDescription: "Yaki Udon",
+        price: "£9.50"
+      },
+      {
+        quantity: "1",
+        itemDescription: "Mini Yasai Yaki Soba",
+        price: "£4.00"
+      },
+    ],
+    items: "2",
+    total: "£13.50"
+  },
   "19253" : {
     name:"Frank Jones",
     restaurant: "Pret A Manger",
@@ -136,29 +159,7 @@ var orders = {
     items: "2",
     total: "£9.45"
   },
-  "21265" : {
-    name:"Mark Underwood",
-    restaurant: "Wagamama",
-    issue: false,
-    pickedUp: false,
-    delivered: false,
-    point: "N2",
-    time: "10.30 am",
-    details: [
-      {
-        quantity: "1",
-        itemDescription: "Yaki Udon",
-        price: "£9.50"
-      },
-      {
-        quantity: "1",
-        itemDescription: "Mini Yasai Yaki Soba",
-        price: "£4.00"
-      },
-    ],
-    items: "2",
-    total: "£13.50"
-  },
+
   "65434" : {
     name:"Jessie Knight",
     restaurant: "Caviar House",
