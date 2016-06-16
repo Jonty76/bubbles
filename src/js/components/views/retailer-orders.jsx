@@ -1,34 +1,10 @@
 import React from "react";
 import { Link } from 'react-router';
 import Header from '../header.jsx';
+
+let RetailerSingleOrder = require('../retailer-single-order.jsx');
 let orderNumbers = require('../../data/order-data.js').orderNumbers;
 let orders = require('../../data/order-data.js').orders;
-
-
-let orderHeader = React.createClass({
-  render: function(){
-    <div className="collapsible-header">
-        <div className="row padding no-margin">
-          <div className="col s2 m2 left-align">
-            <p>{this.props.time}</p>
-          </div>
-          <div className="col s2 m2">
-            <p>{this.props.orderNumber}</p>
-          </div>
-          <div className="col s3 m3">
-            <p>{this.props.name}</p>
-          </div>
-          <div className="col s2 m2 right-align">
-            <p>{this.props.pickUp}</p>
-          </div>
-          <div className="col s2 m2">
-            <div className=""><i className="processed material-icons grey-text">check_circle</i></div>
-          </div>
-        </div>
-      </div>
-  }
-})
-
 
 
 let RetailerOrders = React.createClass({
@@ -38,6 +14,23 @@ let RetailerOrders = React.createClass({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
       });
     });
+  },
+
+  renderOrders: function() {
+    return orderNumbers.map(function(number){
+      var orderNo = number
+      var order = orders[number]
+      return (
+        <RetailerSingleOrder
+          time={order.time}
+          orderNumber={orderNo}
+          name={order.name}
+          items={order.items}
+          details={order.details}
+          total={order.total}
+        />
+      )
+    })
   },
 
 
@@ -70,59 +63,7 @@ let RetailerOrders = React.createClass({
           <div className="divider"></div>
 
           <ul className="collapsible" data-collapsible="expandable">
-            <li>
-              <div className="collapsible-header">
-                  <div className="row padding no-margin">
-                    <div className="col s2 m2 left-align">
-                      <p>9.00 am</p>
-                    </div>
-                    <div className="col s2 m2">
-                      <p>82834.</p>
-                    </div>
-                    <div className="col s3 m3">
-                      <p>Lucy Marbles</p>
-                    </div>
-                    <div className="col s2 m2 right-align">
-                      <p>4</p>
-                    </div>
-                    <div className="col s2 m2">
-                      <div className=""><i className="processed material-icons grey-text">check_circle</i></div>
-                    </div>
-                  </div>
-                </div>
-
-              <div className="collapsible-body">
-                <div className="retailer-order-details row no-margin padding">
-                  <div className="row">
-                    <div className="retailer-quantity col s2 m2 left-align"><span>1 x </span></div>
-                    <div className="retailer-line-item col s4 m4"><span>Dehydrated crisp vegetable, fruit & mushroom salad in prune vinegar dressing & wood pigeon</span></div>
-                    <div className="retailer-price col s1 m1 right-align"><span>£9.00</span></div>
-                  </div>
-                  <div className="row">
-                    <div className="retailer-quantity col s2 m2 left-align"><span>1 x </span></div>
-                    <div className="retailer-line-item col s4 m4"><span>Butternut squash ravioli, mustard apricots, rocket & pumpkin seeds</span></div>
-                    <div className="retailer-price col s1 m1 right-align"><span>£7.50</span></div>
-                  </div>
-                  <div className="row">
-                    <div className="retailer-quantity col s2 m2 left-align"><span>2 x </span></div>
-                    <div className="retailer-line-item col s4 m4"><span>Hot seaweed sushi, glazed pak choi, black garlic purée, hake à la plancha, vanilla butter</span></div>
-                    <div className="retailer-price col s1 m1 right-align"><span>£24.00</span></div>
-                  </div>
-                  <div className="row">
-                    <div className="retailer-price col offset-s4 offset-m4 s2 m2 right-align"><span><b>Total: </b></span></div>
-                    <div className="retailer-price col s1 m1 right-align"><span> £24.00</span></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="collapsible-header"><i className="material-icons">place</i>Second</div>
-              <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div className="collapsible-header"><i className="material-icons">whatshot</i>Third</div>
-              <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
+            {this.renderOrders()}
           </ul>
 
 
