@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 
 var BasketBar = React.createClass({
+
   render: function(){
     var getPrice = this.props.helpers.totalPriceOfItemsInBasket;
     var formatPrice = this.props.helpers.formatPrice;

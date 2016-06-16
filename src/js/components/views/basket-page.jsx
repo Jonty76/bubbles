@@ -6,6 +6,13 @@ let MenuComponent = require('../menu.jsx');
 
 var BasketPage = React.createClass({
 
+  componentDidMount: function(){
+    var addClass = document.getElementsByClassName("add");
+    for (var i = 0; i < addClass.length; i++) {
+      addClass[i].style.display = "none"
+    }
+  },
+
   getCheckoutList: function() {
     var wholeMenu = this.props.basket;
     var filterer = this.props.helpers.filterMenu;
