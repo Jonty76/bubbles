@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 import Header from '../header.jsx';
 
+var activeOrders = require('./order-confirmation.jsx').activeOrder;
 
 let GetOrder = React.createClass({
+  componentDidUpdate: function (nextProps, nextState){
+
+  },
+
   renderLineItem: function (details) {
     return details.map(function(lineItem){
       return (
@@ -16,9 +21,20 @@ let GetOrder = React.createClass({
     })
   },
 
+  renderOrderByRestaurant: function(order){
+    var that = this
+    return order.map(function(elem){
+      var items = elem.items
+      return (
+        <div>
+          <h3>{elem.name}</h3>
+          {that.renderLineItem(items)}
+        </div>
+      )
+    })
+  },
+
   render: function() {
-    var activeOrders = require('./order-confirmation.jsx').activeOrder;
-        console.log(activeOrders)
     if (activeOrders.length === 0) {
       return (
         <div className="white-background">
@@ -30,23 +46,28 @@ let GetOrder = React.createClass({
       </div>
     )
   } else {
-
-    var order = activeOrders[0][0].items
-
+    var order = activeOrders[0]
     return (
     <div>
       <h1>Order</h1>
-      {this.renderLineItem(order)}
+      {this.renderOrderByRestaurant(order)}
     </div>
     )
   }
 }
-
 })
 
 
-
 let OrderDetails = React.createClass({
+  emptyArray: function(){
+    activeOrders = [];
+  },
+
+  onClick: function (){
+    this.props.actions.clearBasket()
+    this.emptyArray()
+  },
+
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
 
@@ -54,6 +75,8 @@ let OrderDetails = React.createClass({
       <div className="grey-background">
         <Header headerTheme={"whiteNav"} text={"Order Details"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <GetOrder />
+        <button>Edit Order</button>
+        <button onClick={this.onClick}>Cancel Order</button>
     </div>
     );
   }
