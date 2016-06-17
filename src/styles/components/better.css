@@ -577,8 +577,21 @@ input[type=text]:focus:not([readonly]) {
   padding-left: 2em;
 }
 
-.processed {
+.processed-icon {
   float: right !important;
+}
+
+.processed-icon-style {
+  color: #E12534;
+}
+
+.processed {
+  color: #E12534;
+}
+
+#next-batch {
+  opacity: 0.35;
+  color: black !important;
 }
 
 .retailer-quantity {
