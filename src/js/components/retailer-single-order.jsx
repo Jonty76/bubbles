@@ -2,9 +2,6 @@ import React from "react";
 
 let RetailerSingleOrder = React.createClass({
 
-  componentDidMount: function() {
-
-  },
 
   renderLineItem: function (details) {
     return details.map(function(lineItem){
