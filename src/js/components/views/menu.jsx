@@ -56,7 +56,4 @@ var Menu = React.createClass({
   }
 });
 
-// {restaurantImages[restaurant]}
-
-
 module.exports = Menu;
