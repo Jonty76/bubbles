@@ -102,10 +102,8 @@ let SelectDate = React.createClass({
   render:function() {
     return(
       <div className="center-align">
-        <div className="date-picker-container">
           <label className="select-date-label">Select Date</label>
           <input type="date" id="datepicker" className="datepicker"></input>
-        </div>
         {this.renderFlightNumber()}
       </div>
     )
