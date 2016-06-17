@@ -41,7 +41,7 @@ var yoSushiImage= (
 );
 
 var pretImage = (
-  <img className = "restaurant-image" src = "https://odcdn2.zenedge.com/pretamanger-usa/About_Pret/Sandwiches_desktop.jpg"/>
+  <img className = "restaurant-image" src = "https://cloud.githubusercontent.com/assets/13667174/16146338/6edb138e-3475-11e6-962a-504e73dccc4d.jpg"/>
 );
 
 var grainStoreImage = (
@@ -69,7 +69,7 @@ var nandosImage = (
 );
 
 var wonderTreeImage = (
-  <img className = "restaurant-image" src = "http://www.hospitalityandcateringnews.com/wp-content/uploads/2014/06/Wondertree-opens-at-Heathrow-Terminal-22.jpg"/>
+  <img className = "restaurant-image" src = "https://cloud.githubusercontent.com/assets/13667174/16146343/73571106-3475-11e6-8d9f-6650dcb6b27d.jpg"/>
 );
 
 module.exports = {
