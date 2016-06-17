@@ -422,9 +422,9 @@ input[type=text]:focus:not([readonly]) {
 
 /* PAY PAGE */
 
-.active {
+/*.active {
   color: #b8b8b8 !important;
-}
+}*/
 
 /* Order Confirmed */
 

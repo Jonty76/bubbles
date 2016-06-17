@@ -87,6 +87,7 @@ let SelectDate = React.createClass({
 
   datePickerChange: function(date) {
     var formattedDate = new Date(date)
+    $("label").removeClass("active")
     this.setState({
       selectedDate: formattedDate
     })
@@ -102,7 +103,7 @@ let SelectDate = React.createClass({
   render:function() {
     return(
       <div className="center-align">
-          <label className="select-date-label">Select Date</label>
+          <label id="label" className="select-date-label">Select Date</label>
           <input type="date" id="datepicker" className="datepicker"></input>
         {this.renderFlightNumber()}
       </div>
