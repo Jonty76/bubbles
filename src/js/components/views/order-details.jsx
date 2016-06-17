@@ -15,6 +15,13 @@ let OrderDetails = React.createClass({
     return structurer(quantityFilteredMenu, "restaurant");
   },
 
+  onClick: function(){
+    var confirmCancel = confirm("Are you sure you want to cancel your order?");
+      if (confirmCancel == true) {
+        this.props.actions.clearBasket()
+      }
+  },
+
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
     var menu = this.getCheckoutList();
@@ -24,8 +31,15 @@ let OrderDetails = React.createClass({
         <Header headerTheme={"whiteNav"} text={"Order Details"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
-        <Link to='/basket/select-restaurant'><button>Edit Order</button></Link>
-        <button onClick={this.props.actions.clearBasket}>Cancel Order</button>
+
+      <div className="button-wrapper center-align">
+        <Link to='/basket/select-restaurant'>
+          <div className="edit-button btn-large">Edit Order</div>
+        </Link>
+        <Link to='/order-history'>
+          <div onClick={this.onClick} className="cancel-button btn-large">Cancel Order</div>
+        </Link>
+      </div>
     </div>
     );
   }

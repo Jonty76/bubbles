@@ -5,8 +5,7 @@ import Header from '../header.jsx';
 let ActiveOrders = React.createClass({
 
   render: function() {
-    var activeOrders = require('./order-confirmation.jsx').activeOrder;
-    if (activeOrders.length === 0){
+    if (this.props.order.length === 0){
       return (
         <div className="white-background">
           <div className="divider"></div>
@@ -18,10 +17,10 @@ let ActiveOrders = React.createClass({
       )
     } else {
       var name;
-      if (activeOrders[0].length > 1) {
-        name = activeOrders[0][0].name + " &..."
+      if (this.props.order.length > 1) {
+        name = this.props.order[0].name + " &..."
       } else {
-        name = activeOrders[0][0].name
+        name = this.props.order[0].name
       }
       return (
         <div className="white-background">
@@ -78,14 +77,23 @@ let PastOrders = React.createClass({
 
 
 let OrderHistory = React.createClass({
+  getCheckoutList: function() {
+    var wholeMenu = this.props.basket;
+    var filterer = this.props.helpers.filterMenu;
+    var quantityFilterer = this.props.helpers.filterMenuByQuantity;
+    var structurer = this.props.helpers.orderMenu;
+    var quantityFilteredMenu = quantityFilterer(wholeMenu);
+    return structurer(quantityFilteredMenu, "restaurant");
+  },
+
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
-
+    var order = this.getCheckoutList()
     return (
       <div className="grey-background">
         <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <h6 className="subtitle-text">ACTIVE</h6>
-        <ActiveOrders />
+        <ActiveOrders order={order}/>
         <h6 className="subtitle-text">PAST</h6>
         <PastOrders />
       </div>
