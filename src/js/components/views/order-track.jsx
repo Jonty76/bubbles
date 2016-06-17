@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Header from '../header.jsx';
+import MapModal from '../map.jsx'
 
 import {
   Step,
@@ -159,7 +160,8 @@ let OrderTrack = React.createClass({
           <div className="valign-wrapper items-container">
             {this.renderstepIndex()}
           </div>
-          <div>Click to see map of pick up points here</div>
+          <MapModal terminal={this.props.terminal}/>
+
         </div>
 
         <Link to="/order-details">
