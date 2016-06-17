@@ -253,6 +253,9 @@ a {
 #food-search {
   margin-bottom: 0;
   border-bottom-color: #E12534;
+  height: 5rem;
+  font-size: 1em;
+  padding-left: 1em;
 }
 
 input[type=text]:focus:not([readonly]) {
@@ -318,8 +321,8 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .list-group-item:first-child {
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+     border-top-left-radius: 0px;
+     border-top-right-radius: 0px;
 }
 
 .list-group-item {
@@ -516,4 +519,27 @@ input[type=text]:focus:not([readonly]) {
 
 .retailer-price {
   color: black;
+}
+
+.restaurant-image-container {
+  position: relative;
+}
+
+.restaurant-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 80%;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+}
+
+.restaurant-description {
+  line-height: 1.4;
 }

@@ -29,12 +29,22 @@ var Menu = React.createClass({
 
     return (
       <div className="custom-container">
-          <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
-          <div>
-            {restaurantImages[restaurant]}
-              <h2 className = "restaurant-name-on-menu">{this.props.tagValue}</h2>
-              <h5 className = "restaurant-description-on-menu">{this.props.helpers.getDescription(this.props.tagValue)}</h5>
+        <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+
+          <div className="center-align">
+            <div className="valign-wrapper">
+            <div className="valign center-this">
+              <div className="restaurant-image-container">
+                {restaurantImages[restaurant]}
+                <div className="restaurant-info">
+                  <h2 className="no-margin">{this.props.tagValue}</h2>
+                  <h5 className="restaurant-description">{this.props.helpers.getDescription(this.props.tagValue)}</h5>
+                </div>
+              </div>
+            </div>
+            </div>
           </div>
+
           <MenuComponent
             menu={menu}
             actions={this.props.actions}

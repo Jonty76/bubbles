@@ -168,11 +168,11 @@ var FoodItem = React.createClass({
     var description = {
       color: 'grey',
       fontSize: '0.8em',
-      fontWeight: 'lighter'
+      fontWeight: '330'
     };
 
     var title = {
-      fontWeight: '300'
+      fontWeight: '330'
     }
 
     var add = {
