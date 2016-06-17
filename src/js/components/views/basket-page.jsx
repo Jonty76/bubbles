@@ -47,7 +47,7 @@ var BasketPage = React.createClass({
       marginTop: "15px"
     }
     return (
-      <div className="menu-background">
+      <div className="grey-background">
         <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"basket-page"}/>
