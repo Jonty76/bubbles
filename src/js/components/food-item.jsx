@@ -125,6 +125,18 @@ var FoodItem = React.createClass({
         addClass[i].style.display = "none"
       }
     }
+
+    if(this.props.page === "order-details"){
+      var cancelItemIcon = document.getElementsByClassName("cancelItem");
+      for (var i = 0; i < cancelItemIcon.length; i++) {
+        cancelItemIcon[i].style.display = "none"
+      }
+
+      var leftIcons = document.getElementsByClassName("leftIcons");
+      for (var i = 0; i < leftIcons.length; i++) {
+        leftIcons[i].style.display = "none"
+      }
+    }
   },
 
   clickHandler: function(event) {
@@ -145,7 +157,8 @@ var FoodItem = React.createClass({
     var buttonsStyle = {
       display: 'inline-block',
       height: '5em',
-      width: '8%'
+      width: '8%',
+      paddingTop: '0.7em'
     };
 
     var content = {
@@ -176,13 +189,13 @@ var FoodItem = React.createClass({
     }
 
     var add = {
-      paddingTop: '1em',
+      paddingTop: '1.3em',
       color: '#E12534'
     }
 
     return (
       <div onClick={this.clickHandler}>
-        <div style={buttonsStyle}>
+        <div className="leftIcons" style={buttonsStyle}>
           <i style={add} className="material-icons add">add</i>
           <AddItem
             addItem={this.props.actions.addItem}
@@ -208,12 +221,14 @@ var FoodItem = React.createClass({
             subtotal={this.props.quantityOrdered * this.props.price}
             inCheckout={this.props.inCheckout}
           />
+        <div className="cancelItem">
           <ClearQuantityOfItem
             clearQuantityOfItem={this.props.actions.clearQuantityOfItem}
             inCheckout={this.props.inCheckout}
             id={this.props.id}
             numberOrdered={this.props.quantityOrdered}
           />
+          </div>
         </div>
       </div>
     );

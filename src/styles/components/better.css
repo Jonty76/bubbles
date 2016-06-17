@@ -362,6 +362,7 @@ input[type=text]:focus:not([readonly]) {
   border-top: 1px solid #ddd;
   border-right: 0px;
   border-left: 0px;
+  height: 8em;
 }
 
 /* VIEW HAMPER PAGE */

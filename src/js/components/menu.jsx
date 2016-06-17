@@ -9,7 +9,7 @@ let Menu = React.createClass({
         {this.props.menu.map(function(foodType) {
           return (
             <div className="menu-section">
-              <FoodType {...foodType} actions={this.props.actions} inCheckout={this.props.inCheckout} />
+              <FoodType {...foodType} actions={this.props.actions} inCheckout={this.props.inCheckout} page={this.props.page}/>
             </div>
           );
         }.bind(this))}

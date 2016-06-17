@@ -30,7 +30,7 @@ let OrderDetails = React.createClass({
       <div className="grey-background">
         <Header headerTheme={"whiteNav"} text={"Order Details"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
-        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
+        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"order-details"}/>
 
       <div className="button-wrapper center-align">
         <Link to='/basket/select-restaurant'>

@@ -125,7 +125,7 @@ let selectRestaurant = React.createClass({
         var basket = orderer(this.getFilteredMenu(), "restaurant")
         restaurantList = (
           <div>
-            <MenuComponent menu={basket} actions={this.props.actions} />
+            <MenuComponent menu={basket} actions={this.props.actions} page={"select-restaurant"}/>
             {this.renderSelectFoodType()}
           </div>
         )

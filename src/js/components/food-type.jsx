@@ -10,7 +10,18 @@ var Title = React.createClass({render: function() {
   }
 });
 
-var FoodItems = React.createClass({render: function() {
+var FoodItems = React.createClass({
+
+  componentDidMount: function(){
+    if(this.props.page === "order-details"){
+      var classname = document.getElementsByClassName("list-group-item");
+      for (var i = 0; i < classname.length; i++) {
+        classname[i].style.height = "8em"
+      }
+    }
+  },
+
+  render: function() {
     return (
       <div>
         {this.props.items.map(function(item) {
@@ -20,6 +31,7 @@ var FoodItems = React.createClass({render: function() {
                   {...item}
                   actions={this.props.actions}
                   inCheckout={this.props.inCheckout}
+                  page={this.props.page}
                   />
               </div>
             );
@@ -33,7 +45,7 @@ var FoodType = React.createClass({render: function() {
     return (
       <div>
         <Title title={this.props.name}/>
-        <FoodItems items={this.props.items} actions={this.props.actions} inCheckout={this.props.inCheckout} />
+        <FoodItems items={this.props.items} actions={this.props.actions} inCheckout={this.props.inCheckout} page={this.props.page}/>
       </div>
     );
   }

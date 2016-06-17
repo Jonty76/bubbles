@@ -45,7 +45,7 @@ var BasketPage = React.createClass({
       <div className="custom-container menu-background">
         <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
-        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
+        <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"basket-page"}/>
         <div className="total right-align">
           <p>Subtotal: {formatPrice(foodSubtotal)}</p>
           <p>Delivery Fee: {formatPrice(deliveryFee)}</p>
