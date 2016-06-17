@@ -28,7 +28,6 @@ let selectRestaurant = React.createClass({
             <div className="row no-margin">
               <div className="col s8">
                 <p className="restaurant-name">{restaurantName}</p>
-                <p className="restaurant-decription">Description</p>
               </div>
               <div className="col s4 right-align">
                 {restaurantImages[restaurantName]}
