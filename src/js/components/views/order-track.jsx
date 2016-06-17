@@ -162,7 +162,7 @@ let OrderTrack = React.createClass({
           <div>Click to see map of pick up points here</div>
         </div>
 
-        <Link to="/">
+        <Link to="/order-details">
           <div className="base-button btn-large">View Order Details</div>
         </Link>
       </div>
