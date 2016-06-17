@@ -27,7 +27,12 @@ var getDescription = function(name) {
   if (name === "Pret A Manger") return "Pret A Manger creates handmade, natural food, avoiding the obscure chemicals, additives andpreservatives found in much of the ‘prepared’and ‘fast’ food on the market today.";
   if (name === "Yo! Sushi") return "Rock and Roll conveyor belt sushi ninjas. Serving up sashimi, maki, noodles, handrolls, katsu curry and more. Nom nom nom.";
   if (name === "Grain Store") return "Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.";
-  if (name !== "Pret A Manager" || name !== "Yo! Sushi" || name !== "Grain Store") return "Description"
+  if (name === "Wagamama") return "Bringing the fresh, nourishing, flavours of Asia to all - inspired by fast-paced, Japanese ramen bars.";
+  if (name === "Nandos") return "Specialising in chicken dishes with lemon and herb, mango and lime, medium, hot, extra hot or extra extra hot piri-piri marinades.";
+  if (name === "Wonder Tree") return "A colourful, contemporary family restaurant offering fresh and exciting world food, great Fairtrade coffee and independent wines.";
+  if (name === "Caviar House") return "Proud manufacturers of the finest caviar and smoked salmon in the world.";
+  if (name === "Comptoir Libanais") return "Providing the people of the Western World the opportunity to experience real, wholesome and healthy Lebanese food.";
+  if (name === "Jamies") return "Perfect for anything from a sandwich or freshly baked slice of pizza to a delicious cake or pastry.";
 }
 
 

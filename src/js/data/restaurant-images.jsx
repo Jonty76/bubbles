@@ -37,39 +37,39 @@ var grainStoreLogo = (
 );
 
 var yoSushiImage= (
-  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11876966/475301e4-a4e4-11e5-8207-92838be02f37.jpg"/>
+  <img className = "restaurant-image" src = "http://www.irishtimes.com/polopoly_fs/1.2203402.1430991105!/image/image.jpg_gen/derivatives/landscape_620/image.jpg"/>
 );
 
 var pretImage = (
-  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11877105/161c52a0-a4e5-11e5-94b4-8217e73260a6.jpg"/>
+  <img className = "restaurant-image" src = "https://odcdn2.zenedge.com/pretamanger-usa/About_Pret/Sandwiches_desktop.jpg"/>
 );
 
 var grainStoreImage = (
-  <img className = "restaurant-logo-menu" src = "https://cloud.githubusercontent.com/assets/11833296/11897909/719aeb9a-a58b-11e5-8680-99488d69bef1.jpeg"/>
+  <img className = "restaurant-image" src = "http://www.hot-dinners.com/images/stories/blog/2016/gsgatwick/gs-view.jpg"/>
 );
 
 var jamiesImage = (
-  <img className = "restaurant-logo-menu" src = "http://www.gatwickairport.com/contentassets/230d27d41df14e9882a70833527e736c/jamiesitalian_image_480x300.jpg"/>
+  <img className = "restaurant-image" src = "http://www.gatwickairport.com/contentassets/230d27d41df14e9882a70833527e736c/jamiesitalian_image_480x300.jpg"/>
 );
 
 var caviarHouseImage = (
-  <img className = "restaurant-logo-menu" src = "http://www.baenzigercoles.com.au/uploads/images/caviar-house/1-Caviar-House.jpg"/>
+  <img className = "restaurant-image" src = "http://www.fluidnetwork.co.uk/gfx/venues/17410/caviar_house_prunier_mayfair_fish_restaurant_london_04.jpg"/>
 );
 
 var comptoirLibanaisImage = (
-  <img className = "restaurant-logo-menu" src = "http://londonliving.at/wp-content/uploads/2012/04/28_comptoir-libanais-1.jpg"/>
+  <img className = "restaurant-image" src = "http://cheriecity.co.uk/wp-content/uploads/2012/01/ComptoirSouthKen-restaurant-3jpg.jpg"/>
 );
 
 var wagamamaImage = (
-  <img className = "restaurant-logo-menu" src = "http://www.wagamama.com/~/media/WagamamaMainsite/hero-pod-images/delivery_hero_gradient.jpg"/>
+  <img className = "restaurant-image" src = "http://www.wagamama.com/~/media/WagamamaMainsite/hero-pod-images/delivery_hero_gradient.jpg"/>
 );
 
 var nandosImage = (
-  <img className = "restaurant-logo-menu" src = "http://eu-static.bullring.co.uk.s3.amazonaws.com/Live/ResizedImages/storefronts/ye0bu4wx1vg/Gallery_Image/nandos.jpg"/>
+  <img className = "restaurant-image" src = "http://eu-static.bullring.co.uk.s3.amazonaws.com/Live/ResizedImages/storefronts/ye0bu4wx1vg/Gallery_Image/nandos.jpg"/>
 );
 
 var wonderTreeImage = (
-  <img className = "restaurant-logo-menu" src = "http://granddesignblinds.com/wp-content/uploads/2015/06/wonder-tree-04.jpg"/>
+  <img className = "restaurant-image" src = "http://www.hospitalityandcateringnews.com/wp-content/uploads/2014/06/Wondertree-opens-at-Heathrow-Terminal-22.jpg"/>
 );
 
 module.exports = {
