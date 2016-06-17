@@ -2,6 +2,10 @@ import React from "react";
 
 let RetailerSingleOrder = React.createClass({
 
+  componentDidMount: function() {
+
+  },
+
   renderLineItem: function (details) {
     return details.map(function(lineItem){
       return (
@@ -19,6 +23,9 @@ let RetailerSingleOrder = React.createClass({
         <li>
           <div className="collapsible-header">
               <div className="row padding no-margin">
+                <div className="col s1 m1 left-align">
+                  <div className=""><i className="modal-trigger material-icons grey-text">error_outline</i></div>
+                </div>
                 <div className="col s2 m2 left-align">
                   <p>{this.props.time}</p>
                 </div>
@@ -32,7 +39,7 @@ let RetailerSingleOrder = React.createClass({
                   <p>{this.props.items}</p>
                 </div>
                 <div className="col s2 m2">
-                  <div className=""><i className="processed material-icons grey-text">check_circle</i></div>
+                  <div className=""><i className="processed-icon material-icons">check_circle</i></div>
                 </div>
               </div>
             </div>
@@ -51,5 +58,6 @@ let RetailerSingleOrder = React.createClass({
     )
   }
 })
+
 
 module.exports = RetailerSingleOrder;
