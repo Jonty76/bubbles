@@ -288,6 +288,14 @@ a {
   height: 5rem;
   font-size: 1em;
   padding-left: 1em;
+  color: grey;
+}
+
+
+
+input::-webkit-input-placeholder {
+    color: grey;
+    font-weight: 400;
 }
 
 input[type=text]:focus:not([readonly]) {
