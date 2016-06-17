@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router';
 import Header from '../header.jsx';
+import Issue from '../issue.jsx';
 
 let RetailerSingleOrder = require('../retailer-single-order.jsx');
 let orderNumbers = require('../../data/order-data.js').orderNumbers;
@@ -27,10 +28,8 @@ let RetailerOrders = React.createClass({
 
       if (order.time === "9.00 am") {
         batchOne.push(orderNo)
-        console.log("if one")
       } else if (order.time === "10.30 am"){
         batchTwo.push(orderNo)
-        console.log("if two >>>")
       } else {
         console.log("No batches")
       }
@@ -47,12 +46,27 @@ let RetailerOrders = React.createClass({
 
   componentDidMount: function() {
     $(document).ready(function(){
-      $('.collapsible').collapsible({
-        accordion : false
-      })
+        $('.collapsible').collapsible({
+          accordion : false
+        })
+
+        var triggers = document.getElementsByClassName("modal-trigger");
+        for (var i = 0; i < triggers.length; i++) {
+          var trigger = triggers[i]
+          trigger.addEventListener('click', function(){
+            $('#issue-modal').openModal()
+          })
+        }
+
+
+        $(".processed-icon").click(function(){
+          $(this).toggleClass("processed-icon-style")
+          $(this).closest("li").toggleClass("processed")
+        })
 
     })
   },
+
 
 
   renderOrders: function(batch) {
@@ -77,10 +91,13 @@ let RetailerOrders = React.createClass({
     var burgerMenuOptions = ["About+/about", "Logout+/login"]
     return (
       <div className="custom-container">
-        <Header text={"Orders"} iconRight={"error_outline"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header headerTheme={"redNav"} text={"Orders"} iconRight={"menu"} iconLeft={"error_outline"} burgerMenuOptions={burgerMenuOptions}/>
 
 
           <div className="row no-margin restaurant-option menu-background">
+            <div className="col s1 m1">
+              <p className="grey-text piccniccer-title-text"><strong>Issue</strong></p>
+            </div>
             <div className="col s2 m2">
               <p className="grey-text piccniccer-title-text"><strong>Due.</strong></p>
             </div>
@@ -112,9 +129,11 @@ let RetailerOrders = React.createClass({
             </div>
           </div>
 
-          <ul className="collapsible" data-collapsible="expandable">
+          <ul id="next-batch" className="collapsible" data-collapsible="expandable">
             {this.renderOrders(this.state.batchTwo)}
           </ul>
+
+          <Issue />
 
       </div>
     )
