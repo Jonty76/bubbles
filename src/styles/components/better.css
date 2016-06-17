@@ -107,15 +107,15 @@ a:focus, a:hover {
 }
 
 .button-wrapper {
-  position: fixed;
   bottom: 0;
   width: 90%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
+  margin-top: 35px;
 }
 
-.cancel-button {
+.white-button {
   background-color: #ffffff;
   border: 1px solid #E12534;
   width: 100%;
@@ -123,18 +123,18 @@ a:focus, a:hover {
   color: black;
 }
 
-.cancel-button:focus, .cancel-button:active, .cancel-button:visited {
+.white-button:focus, .white-button:active, .white-button:visited {
   background-color: #ffffff;
 }
 
-.edit-button {
+.red-button {
   background-color: #E12534;
   width: 100%;
   bottom: 0;
   margin-bottom: 15px;
 }
 
-.edit-button:focus, .edit-button:active, .edit-button:visited {
+.red-button:focus, .red-button:active, .red-button:visited {
   background-color: #E12534;
 }
 
