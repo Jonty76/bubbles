@@ -34,10 +34,10 @@ let OrderDetails = React.createClass({
 
       <div className="button-wrapper center-align">
         <Link to='/basket/select-restaurant'>
-          <div className="edit-button btn-large">Edit Order</div>
+          <div className="red-button btn-large">Edit Order</div>
         </Link>
         <Link to='/order-history'>
-          <div onClick={this.onClick} className="cancel-button btn-large">Cancel Order</div>
+          <div onClick={this.onClick} className="white-button btn-large">Cancel Order</div>
         </Link>
       </div>
     </div>

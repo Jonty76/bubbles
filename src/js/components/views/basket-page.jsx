@@ -41,8 +41,13 @@ var BasketPage = React.createClass({
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
+
+    var adjustMargin = {
+      marginBottom: "0",
+      marginTop: "15px"
+    }
     return (
-      <div className="custom-container menu-background">
+      <div className="menu-background">
         <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"basket-page"}/>
@@ -52,15 +57,14 @@ var BasketPage = React.createClass({
           <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>
 
-        <Link to='/basket/select-restaurant'>
-          <br/>
-          <p className="small-text"><u>Add to your order from another restaurant?</u></p>
-          <br/>
-        </Link>
-
-        <Link to='/payment'>
-          <div className="btn-large base-button"> CHECKOUT </div>
-        </Link>
+        <div className="button-wrapper center-align">
+          <Link to='/basket/select-restaurant'>
+            <div className="white-button btn-large">Edit Order</div>
+          </Link>
+          <Link to='/payment'>
+            <div style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>
+          </Link>
+        </div>
       </div>
     );
   }
