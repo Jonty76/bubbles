@@ -13,6 +13,7 @@ let Basket                = require('./components/basket.jsx');
 let Login                 = require('./components/views/login.jsx');
 let Payment               = require('./components/views/pay.jsx');
 let OrderConfirmation     = require('./components/views/order-confirmation.jsx').OrderPage;
+let OrderDetails          = require('./components/views/order-details.jsx')
 let OrderTrack            = require('./components/views/order-track.jsx');
 let OrderTrackComplete    = require('./components/views/order-track-complete.jsx');
 let OrderHistory          = require('./components/views/order-history.jsx');
@@ -41,6 +42,7 @@ render((
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
+      <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
       <Route path="/order-track-complete" component={OrderTrackComplete} />
       <Route path="/order-history" component={OrderHistory} />

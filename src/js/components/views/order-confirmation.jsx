@@ -3,8 +3,6 @@ import { Link } from 'react-router';
 import { getPrice } from '../../savePrice.js';
 import Header from '../header.jsx';
 
-var activeOrder = []; //to carry to order history page
-
 var OrderPage = React.createClass({
   getCheckoutList: function() {
     var wholeMenu = this.props.basket;
@@ -13,7 +11,6 @@ var OrderPage = React.createClass({
     var structurer = this.props.helpers.orderMenu;
     var quantityFilteredMenu = quantityFilterer(wholeMenu);
     var result = structurer(quantityFilteredMenu, "restaurant");
-    activeOrder.push(result); //to carry to order history page
     return result;
   },
 
@@ -61,5 +58,4 @@ var OrderPage = React.createClass({
 
 module.exports = {
   OrderPage : OrderPage,
-  activeOrder: activeOrder //to carry to order history page
 }
