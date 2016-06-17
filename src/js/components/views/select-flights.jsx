@@ -73,9 +73,23 @@ let SelectDate = React.createClass({
     };
   },
 
-  datePickerChange: function(event, date) {
+  componentDidMount: function(){
+    var that = this;
+    $('.datepicker').pickadate({
+      selectMonths: true,
+      selectYears: 15,
+      close: 'Done',
+      onSet: function(context) {
+         that.datePickerChange(context.select)
+       }
+    });
+  },
+
+  datePickerChange: function(date) {
+    var formattedDate = new Date(date)
+    $("label").removeClass("active")
     this.setState({
-      selectedDate: date
+      selectedDate: formattedDate
     })
   },
   renderFlightNumber: function() {
@@ -89,13 +103,8 @@ let SelectDate = React.createClass({
   render:function() {
     return(
       <div className="center-align">
-        <div className="date-picker-container">
-          <DatePicker
-            hintText="Select the date of your flight"
-            onChange={this.datePickerChange}
-            id="datePickerTag"
-           />
-        </div>
+          <label id="label" className="select-date-label">Select Date</label>
+          <input type="date" id="datepicker" className="datepicker"></input>
         {this.renderFlightNumber()}
       </div>
     )

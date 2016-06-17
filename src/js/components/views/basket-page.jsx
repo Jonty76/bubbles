@@ -59,7 +59,7 @@ var BasketPage = React.createClass({
 
         <div className="button-wrapper center-align">
           <Link to='/basket/select-restaurant'>
-            <div className="white-button btn-large">Edit Order</div>
+            <div className="white-button btn-large">Order from elsewhere</div>
           </Link>
           <Link to='/payment'>
             <div style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>

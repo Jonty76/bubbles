@@ -6,6 +6,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+label {
+  font-size: 1em;
+  font-weight: 400;
+}
+
 /* Header Bar */
 
 .header {
@@ -193,12 +198,7 @@ a:focus, a:hover {
   padding-top: 3em;
 }
 
-
 /* Landing Page */
-
-.date-picker-container {
-  margin-top: 1em;
-}
 
 #gate {
   color:  #E12534;
@@ -240,6 +240,50 @@ a:focus, a:hover {
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: #E12534;
+}
+
+/* datepicker */
+
+.picker__date-display {
+  background-color: #E12534;
+}
+
+.picker__weekday-display {
+  background-color: #E12534;
+}
+
+.picker__day.picker__day--today {
+  color: #E12534;
+}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+  background-color: #E12534;
+}
+
+.picker__close, .picker__today {
+  color: #E12534;
+}
+
+#datepicker {
+  width: 256px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+.picker__wrap {
+  margin-top: 1em;
+}
+
+.select-date-label {
+  margin-top: 1em;
+  margin-right: 15em;
+  margin-bottom: 0;
+  font-size: 0.9em;
+}
+
+.select-date-label:active{
+  color: grey;
 }
 
 /* Airport Not Served*/
@@ -386,6 +430,9 @@ input[type=text]:focus:not([readonly]) {
 
 /* PAY PAGE */
 
+/*.active {
+  color: #b8b8b8 !important;
+}*/
 
 /* Order Confirmed */
 
