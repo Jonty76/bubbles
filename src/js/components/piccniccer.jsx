@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-import RedHeader from './red-header.jsx';
+import Header from './header.jsx';
 import Issue from './issue.jsx';
 
 let PiccniccerSingleOrder = require('./piccniccer-single-order.jsx');
@@ -152,10 +152,11 @@ let Piccniccer = React.createClass({
   },
 
   render: function(){
+    var burgerMenuOptions = ["About+/about", "Logout+/login"]
 
     return (
       <div className="custom-container">
-        <RedHeader text={this.props.headerText} iconRight={"settings"} iconLeft={"error_outline"}/>
+        <Header headerTheme={"redNav"} text={this.props.headerText} iconRight={"settings"} iconLeft={"error_outline"} burgerMenuOptions={burgerMenuOptions}/>
 
           <div className="row no-margin restaurant-option menu-background">
             <div className="col s3 offset-s1">

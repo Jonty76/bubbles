@@ -6,6 +6,13 @@ let MenuComponent = require('../menu.jsx');
 
 var BasketPage = React.createClass({
 
+  componentDidMount: function(){
+    var addClass = document.getElementsByClassName("add");
+    for (var i = 0; i < addClass.length; i++) {
+      addClass[i].style.display = "none"
+    }
+  },
+
   getCheckoutList: function() {
     var wholeMenu = this.props.basket;
     var filterer = this.props.helpers.filterMenu;
@@ -33,9 +40,10 @@ var BasketPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
     return (
       <div className="custom-container menu-background">
-        <Header text={"Your Hamper"} />
+        <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} />
         <div className="total right-align">

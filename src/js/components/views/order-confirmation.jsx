@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { getPrice } from '../../savePrice.js';
 import Header from '../header.jsx';
 
-var orders = [];
+var activeOrder = []; //to carry to order history page
 
 var OrderPage = React.createClass({
   getCheckoutList: function() {
@@ -13,7 +13,7 @@ var OrderPage = React.createClass({
     var structurer = this.props.helpers.orderMenu;
     var quantityFilteredMenu = quantityFilterer(wholeMenu);
     var result = structurer(quantityFilteredMenu, "restaurant");
-    orders.push(result);
+    activeOrder.push(result); //to carry to order history page
     return result;
   },
 
@@ -37,9 +37,10 @@ var OrderPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var deliveryFee = this.getDeliveryFee(menu);
     var total = foodSubtotal + deliveryFee;
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
     return (
         <div className="content-wrapper">
-        <Header text={"Order Confirmed"}/>
+        <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>
 
@@ -60,5 +61,5 @@ var OrderPage = React.createClass({
 
 module.exports = {
   OrderPage : OrderPage,
-  orders: orders
+  activeOrder: activeOrder //to carry to order history page
 }

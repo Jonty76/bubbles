@@ -14,9 +14,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5em;
 }
 
-#brand-logo {
-  color: black;
-}
 
 .icon-right {
   margin-right: 1em;
@@ -32,13 +29,51 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+.red-nav > p {
+  color: white;
+}
+
 .white-nav {
   background-color: #ffffff;
   color: #E12534;
 }
 
+.white-nav > p {
+  color: black;
+}
+
 .white-text {
   color: #ffffff;
+}
+
+.side-nav a {
+  font-size: medium;
+  width: 100%;
+  text-align: right;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+}
+
+.nav-class {
+  z-index: 1;
+}
+
+.side-nav {
+  z-index: -1;
+}
+
+.red-side-nav{
+  background-color: #E12534;
+}
+
+.red-side-nav.fixed a {
+  color: #ffffff;
+}
+
+.white-side-nav.fixed a {
+  color: black;
 }
 
 /*Body and General*/
@@ -63,7 +98,11 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
-.base-button:hover, .base-button:focus, .base-button:active {
+.base-button:focus, .base-button:active, .base-button:visited {
+  background-color: #E12534;
+}
+
+.base-button:hover {
   background-color: #F04E5A;
 }
 
@@ -324,7 +363,7 @@ input[type=text]:focus:not([readonly]) {
 /* Order Track */
 
 .items-container {
-  height: 30em;
+  height: 28em;
   width:auto;
 }
 

@@ -145,6 +145,7 @@ let SelectFlightNumber = React.createClass({
     var flightLookUp = FlightData.flightsByAirline[airline][flight]
 
     if(flightLookUp.Status === "Approved") {
+
       return (
         <div className="flight-detail-container">
           <div className="">
@@ -158,7 +159,8 @@ let SelectFlightNumber = React.createClass({
             </div>
         </div>
       </div>
-      )
+    )
+
     } else {
 
       $('#flight-too-soon-modal').openModal()
