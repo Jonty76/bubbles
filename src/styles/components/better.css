@@ -192,6 +192,15 @@ a:focus, a:hover {
   margin-bottom: 4em;
 }
 
+.map-link {
+  border-bottom: #E12534 solid 1px;
+}
+
+.error-message {
+  padding: 2em;
+  color: #E12534;
+}
+
 /* Login Screen */
 
 .top-container {

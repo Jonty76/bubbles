@@ -10,6 +10,7 @@ let AirportNotServed      = require('./components/views/airport-not-served.jsx')
 let BasketPage            = require('./components/views/basket-page.jsx');
 let Menu                  = require('./components/views/menu.jsx');
 let Basket                = require('./components/basket.jsx');
+let MapView               = require('./components/views/map-view.jsx');
 let Login                 = require('./components/views/login.jsx');
 let Payment               = require('./components/views/pay.jsx');
 let OrderConfirmation     = require('./components/views/order-confirmation.jsx').OrderPage;
@@ -41,6 +42,7 @@ render((
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
+      <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />

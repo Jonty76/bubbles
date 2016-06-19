@@ -43,6 +43,8 @@ var OrderPage = React.createClass({
 
           <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve sent emailed you your receipt with all the usual garnish!</p>
 
+          <Link className="map-link" to="/map-view">Click to view pick up point</Link>
+
           <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
 
           <p>Should you need to change or cancel your order for any reason, please change your order from the menu button above and make your changes up to an hour before boarding.</p>
