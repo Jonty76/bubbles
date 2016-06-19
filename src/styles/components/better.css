@@ -30,7 +30,7 @@ label {
 
 
 .red-nav {
-  background-color: #E12534;
+  background-color: #FF0D1C;
   color: #ffffff;
 }
 
@@ -40,7 +40,7 @@ label {
 
 .white-nav {
   background-color: #ffffff;
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .white-nav > p {
@@ -70,7 +70,7 @@ a:focus, a:hover {
 }
 
 .red-side-nav{
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .red-side-nav.fixed a {
@@ -93,7 +93,7 @@ a:focus, a:hover {
 }
 
 .top-line {
-  color: #E12534;
+  color: #FF0D1C;
   margin-top: 2em;
 }
 
@@ -102,14 +102,14 @@ a:focus, a:hover {
 }
 
 .base-button {
-  background-color: #E12534;
+  background-color: #FF0D1C;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
 .base-button:focus, .base-button:active, .base-button:visited {
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .base-button:hover {
@@ -127,7 +127,7 @@ a:focus, a:hover {
 
 .white-button {
   background-color: #ffffff;
-  border: 1px solid #E12534;
+  border: 1px solid #FF0D1C;
   width: 100%;
   bottom: 0;
   color: black;
@@ -138,14 +138,14 @@ a:focus, a:hover {
 }
 
 .red-button {
-  background-color: #E12534;
+  background-color: #FF0D1C;
   width: 100%;
   bottom: 0;
   margin-bottom: 15px;
 }
 
 .red-button:focus, .red-button:active, .red-button:visited {
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .body-container {
@@ -162,7 +162,7 @@ a:focus, a:hover {
   font-size: 1.2em;
   width: 100%;
   text-align: center;
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .dropdown {
@@ -174,7 +174,7 @@ a:focus, a:hover {
 }
 
 .red-color {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .custom-container {
@@ -206,7 +206,7 @@ a:focus, a:hover {
 /* Landing Page */
 
 #gate {
-  color:  #E12534;
+  color:  #FF0D1C;
 }
 
 .modal-return-div {
@@ -223,7 +223,7 @@ a:focus, a:hover {
 }
 
 .top-line {
-  color: #E12534;
+  color: #FF0D1C;
   margin-top: 2em;
 }
 
@@ -244,29 +244,29 @@ a:focus, a:hover {
   margin-bottom: 5em;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-color: #E12534;
+  border-color: #FF0D1C;
 }
 
 /* datepicker */
 
 .picker__date-display {
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .picker__weekday-display {
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .picker__day.picker__day--today {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
-  background-color: #E12534;
+  background-color: #FF0D1C;
 }
 
 .picker__close, .picker__today {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 #datepicker {
@@ -305,7 +305,7 @@ a:focus, a:hover {
   margin-top: 2em;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-color: #E12534;
+  border-color: #FF0D1C;
 }
 /* Select Restuarant Page */
 
@@ -333,7 +333,7 @@ a {
 
 #food-search {
   margin-bottom: 0;
-  border-bottom-color: #E12534;
+  border-bottom-color: #FF0D1C;
   height: 5rem;
   font-size: 1em;
   padding-left: 1em;
@@ -348,8 +348,8 @@ input::-webkit-input-placeholder {
 }
 
 input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #E12534;
-  box-shadow: 0 0px 0 0 #E12534;
+  border-bottom: 1px solid #FF0D1C;
+  box-shadow: 0 0px 0 0 #FF0D1C;
 }
 
 .white-background {
@@ -463,11 +463,11 @@ input[type=text]:focus:not([readonly]) {
 
 .order-status-icon {
   font-size: 7.5em;
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .order-circle-icon {
-  color: #E12534;
+  color: #FF0D1C;
   margin-right: 0.5em;
   margin-top: 3em;
 }
@@ -529,7 +529,7 @@ input[type=text]:focus:not([readonly]) {
   vertical-align: top;
   padding-top: 1.2em;
   font-size: 3rem;
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 /* Piccniccer Page */
@@ -600,11 +600,11 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .processed-icon-style {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .processed {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 #next-batch {
@@ -613,7 +613,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .retailer-quantity {
-  color: #E12534;
+  color: #FF0D1C;
 }
 
 .retailer-line-item {
