@@ -40,7 +40,7 @@ var BasketPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var formatPrice = this.props.helpers.formatPrice;
     var total = deliveryFee + foodSubtotal;
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
     var adjustMargin = {
       marginBottom: "0",

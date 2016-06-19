@@ -87,7 +87,7 @@ let OrderHistory = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var order = this.getCheckoutList()
     return (
       <div className="grey-background">
