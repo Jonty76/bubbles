@@ -67,6 +67,9 @@ let Page = React.createClass({
            <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
            <p className='view-text'>Privacy Policy: We promise never to share your email or any other details with anybody else, ever. Nobody. Never.</p>
          </div>
+         <div className="">
+           <img className="logo-container" src="/public/piccnicclogo.png" alt="Piccnicc Logo"></img>
+         </div>
        </div>
     </div>
   </div>

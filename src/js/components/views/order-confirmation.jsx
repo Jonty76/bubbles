@@ -41,12 +41,16 @@ var OrderPage = React.createClass({
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>
 
-          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve sent emailed you your receipt with all the usual garnish!</p>
+          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve emailed you your receipt with all the usual garnish!</p>
 
           <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
 
-          <p>Should you need to change or cancel your order for any reason, please change your order from the menu button above and make your changes up to an hour before boarding.</p>
-        </div>
+          <p>To change or cancel your order for any reason, you can from the menu button above, up to an hour before boarding.</p>
+            <div className="">
+              <img className="logo-container" src="/public/piccnicclogo.png" alt="Piccnicc Logo"></img>
+            </div>
+      </div>
+
 
         <Link to="/order-track">
           <div className="base-button btn-large">Track Your Order</div>
