@@ -28,10 +28,10 @@ var Menu = React.createClass({
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
     return (
-      <div className="custom-container">
+      <div className="custom-container desktop-container">
         <Header headerTheme={"whiteNav"} text={"Menu"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
-          <div className="center-align">
+          <div className="center-align outer-restaurant-container">
             <div className="valign-wrapper">
             <div className="valign center-this">
               <div className="restaurant-image-container">
@@ -43,6 +43,10 @@ var Menu = React.createClass({
               </div>
             </div>
             </div>
+          </div>
+
+          <div className="restaurant-logo">
+            {restaurantImages[this.props.tagValue]}
           </div>
 
           <MenuComponent

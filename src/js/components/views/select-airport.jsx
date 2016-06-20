@@ -41,8 +41,10 @@ let Page = React.createClass({
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
     return (
-      <div className="desktop-container">
+      <div>
           <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
+
+        <div className="desktop-container">
           <div className="question-container">
             <p className="standard-question-style">Hampers of Happiness Delivered </p>
           </div>
@@ -56,7 +58,8 @@ let Page = React.createClass({
               </SelectField >
             </div>
 
-          {this.renderFlightDetailsOrRedirect()}
+            {this.renderFlightDetailsOrRedirect()}
+        </div>
       </div>
     );
   }
