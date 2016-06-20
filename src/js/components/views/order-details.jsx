@@ -6,6 +6,13 @@ let MenuComponent = require('../menu.jsx')
 
 let OrderDetails = React.createClass({
 
+  componentDidMount: function() {
+    $(".modal-trigger").click(function(){
+      $('#cancel-modal').openModal()
+    })
+
+  },
+
   getCheckoutList: function() {
     var wholeMenu = this.props.basket;
     var filterer = this.props.helpers.filterMenu;
@@ -16,11 +23,12 @@ let OrderDetails = React.createClass({
   },
 
   onClick: function(){
-    var confirmCancel = confirm("Are you sure you want to cancel your order?");
-      if (confirmCancel == true) {
-        this.props.actions.clearBasket()
-      }
+    this.props.actions.clearBasket()
+    $('#cancel-modal').closeModal()
+    console.log("Cleared")
   },
+
+
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
@@ -36,10 +44,23 @@ let OrderDetails = React.createClass({
         <Link to='/basket/select-restaurant'>
           <div className="red-button btn-large">Edit Order</div>
         </Link>
-        <Link to='/order-history'>
-          <div onClick={this.onClick} className="white-button btn-large">Cancel Order</div>
-        </Link>
+        <div>
+          <div className="modal-trigger white-button btn-large">Cancel Order</div>
+        </div>
+
+
       </div>
+
+        <div id="cancel-modal" className="modal">
+          <div className="cancel-modal-container">
+            <p className="cancel-modal-text center-align">Are you sure you want to cancel your order?</p>
+            <Link to='/order-history'>
+              <button className="yes-cancel btn-flat" onClick={this.onClick}>Yes</button>
+            </Link>
+            <button className="no-cancel btn-flat modal-close">No!</button>
+          </div>
+        </div>
+
     </div>
     );
   }

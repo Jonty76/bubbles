@@ -128,7 +128,7 @@ a:focus, a:hover {
   color: black;
 }
 
-.white-button:focus, .white-button:active, .white-button:visited {
+.white-button:focus, .white-button:active, .white-button:visited, .white-button:hover {
   background-color: #ffffff;
 }
 
@@ -525,6 +525,45 @@ input[type=text]:focus:not([readonly]) {
   padding-top: 1.2em;
   font-size: 3rem;
   color: #E12534;
+}
+
+/* Order Details Page */
+
+#cancel-modal {
+  height: 10em;
+}
+
+.cancel-modal-container {
+  padding: 1em;
+}
+
+.cancel-modal-container > p {
+  color: #E12534;
+  font-size: 1.3em;
+  padding-bottom: 0.5em;
+}
+
+.yes-cancel:hover, .yes-cancel:visited, .yes-cancel:active, .yes-cancel:focus {
+  background-color: #E12534;
+}
+
+.no-cancel:focus, .no-cancel:active, .no-cancel:visited, .no-cancel:hover {
+  background-color: #ffffff;
+}
+
+
+.yes-cancel {
+  background-color: #E12534;
+  color: white;
+  margin-left: 1.2em;
+}
+
+.no-cancel {
+  color: black;
+  background-color: white;
+  border: solid #E12534 1px;
+  float: right;
+  margin-right: 1.2em;
 }
 
 /* Piccniccer Page */
