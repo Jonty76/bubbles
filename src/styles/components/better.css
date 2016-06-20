@@ -11,6 +11,10 @@ label {
   font-weight: 400;
 }
 
+#brand-logo {
+  font-family: 'Pacifico', cursive;
+}
+
 /* Header Bar */
 
 .header {
@@ -500,14 +504,18 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .sub-text {
-  display: inline-block;
   vertical-align: middle;
-  padding-left: 0.5em;
   color: #d4d4d4;
+}
+
+.order-history-subtitle {
+  display: inline-block;
+  margin-left: 0.4em;
 }
 
 .plane-icon {
   color: #d4d4d4;
+  vertical-align: text-bottom;
 }
 
 .order-option {

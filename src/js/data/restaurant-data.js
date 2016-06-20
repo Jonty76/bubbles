@@ -15,88 +15,46 @@ var resetMenu = function(menu) {
 var northMenu = function() {
   var menu = [{
     id: getId(),
-    name: "Avocado Maki",
-    foodType: "Sushi",
+    name: "Salmon & Yuzu Tartar",
+    description: "Salmon, yuzu tobiko, salmon keta roe tartar, coriander dressing",
+    foodType: "Sashimi",
     restaurant: "Yo! Sushi",
-    price: "200"
+    price: "600"
   }, {
     id: getId(),
     name: "California Roll",
-    foodType: "Sushi",
+    description: "2 pieces. Surumi, avocado, mayo, sesame",
+    foodType: "Rolls",
     restaurant: "Yo! Sushi",
     price: "360"
   }, {
     id: getId(),
-    name: " Surumi, Wakame & Cucumber",
-    foodType: "Salad",
-    restaurant: "Yo! Sushi",
-    price: "270"
-  }, {
-    id: getId(),
-    name: "Edamame",
-    foodType: "Salad",
-    restaurant: "Yo! Sushi",
-    price: "200"
-  }, {
-    id: getId(),
-    name: "Spicy Chicken",
-    foodType: "Salad",
-    restaurant: "Yo! Sushi",
-    price: "410"
-  }, {
-    id: getId(),
-    name: "Yuzu Cured Salmon",
-    foodType: "Salad",
-    restaurant: "Yo! Sushi",
-    price: "500"
-  }, {
-    id: getId(),
-    name: "Spicy Tuna Mini Roll",
-    foodType: "Sushi",
+    name: "Nigiri Selection",
+    description: "1 of each. Yellowfin tuna, salmon, prawn, wasabi",
+    foodType: "Nigiri",
     restaurant: "Yo! Sushi",
     price: "450"
   }, {
     id: getId(),
-    name: "Egg & Tomato on Rye ",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "199"
-  }, {
-    id: getId(),
-    name: "Scottish Smoked Salmon Granary",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "335"
-  }, {
-    id: getId(),
-    name: "Chicken & Avocado Granary",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "335"
-  }, {
-    id: getId(),
-    name: "Teriyaki Salmon Sushi",
-    foodType: "Sushi",
+    name: "Avocado & Egg on Rye",
+    description: "Layers of freshly sliced avocado, free-range eggs and pink pickled onions on top of our German-style rye bread",
+    foodType: "Sandwiches",
     restaurant: "Pret A Manger",
     price: "450"
   }, {
     id: getId(),
-    name: "Aromatic Asian Chicken Soup",
-    foodType: "Soup",
+    name: "Pole & Line Caught Tuna & Rocket",
+    description: "Skipjack tuna mayo mashed with spring onions, chopped capers, a touch of anchovy paste and a squeeze of lemon, on malted bread",
+    foodType: "Sandwiches",
     restaurant: "Pret A Manger",
-    price: "350"
+    price: "475"
   }, {
     id: getId(),
-    name: "Lentil and Quinoa Soup",
-    foodType: "Soup",
+    name: "Chef's Italian Chicken Salad",
+    description: "Caesar dressed chicken with beautiful Spanish roasted red peppers, kalamata olives and a handful of toasted pistachios",
+    foodType: "Specials",
     restaurant: "Pret A Manger",
-    price: "350"
-  }, {
-    id: getId(),
-    name: "Leek and Potato Soup",
-    foodType: "Soup",
-    restaurant: "Pret A Manger",
-    price: "350"
+    price: "425"
   }, {
     id: getId(),
     name: "Yaki Udon",
@@ -190,94 +148,46 @@ var northMenu = function() {
 var southMenu = function() {
   var menu = [{
     id: getId(),
-    name: "Waldorf salad thin tartlet, smoked salmon",
-    foodType: "Pie",
-    restaurant: "Grain Store",
-    price: "850"
-  }, {
-    id: getId(),
-    name: "Dehydrated crisp vegetable, fruit & mushroom salad in prune vinegar dressing & wood pigeon",
-    foodType: "Salad",
-    restaurant: "Grain Store",
-    price: "900"
-  }, {
-    id: getId(),
-    name: "Dried fava beans & kishk soup, pomegranate molasses",
-    foodType: "Soup",
-    restaurant: "Grain Store",
-    price: "650"
-  }, {
-    id: getId(),
-    name: "Butternut squash ravioli, mustard apricots, rocket & pumpkin seeds",
-    foodType: "Pasta",
-    restaurant: "Grain Store",
-    price: "750"
-  }, {
-    id: getId(),
-    name: "Hot seaweed sushi, glazed pak choi, black garlic purée, hake à la plancha, vanilla butter",
-    foodType: "Sushi",
-    restaurant: "Grain Store",
-    price: "750"
-  }, {
-    id: getId(),
-    name: "Green tomato, miso, chilli & lime glazed grilled octopus",
-    foodType: "Salad",
-    restaurant: "Grain Store",
-    price: "950"
-  }, {
-    id: getId(),
-    name: "Chilli con veggie, mixed rice, sour cream",
-    foodType: "Main",
+    name: "A bowl of superfood",
+    description: "Quinoa, Beluga lentils, avocado, baby spinach, raw apple, pumpkin seeds, crumbled goat's feta",
+    foodType: "Salads",
     restaurant: "Grain Store",
     price: "1200"
   }, {
     id: getId(),
-    name: "Farro wheat, risotto, jerusalem artichokes, leeks & chestnut mushrooms",
-    foodType: "Main",
+    name: "Wild mushroom and truffle burger",
+    description: "Chicory, apple and hazelnut salad, milk bun",
+    foodType: "Homemade Burgers",
     restaurant: "Grain Store",
-    price: "1500"
+    price: "1300"
   }, {
     id: getId(),
-    name: "Egg & Tomato on Rye ",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "199"
+    name: "Smoked Haddock Kedgeree",
+    description: "With mango chutney",
+    foodType: "Specials",
+    restaurant: "Grain Store",
+    price: "1150"
   }, {
     id: getId(),
-    name: "Scottish Smoked Salmon Granary",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "335"
-  }, {
-    id: getId(),
-    name: "Chicken & Avocado Granary",
-    foodType: "Sandwich",
-    restaurant: "Pret A Manger",
-    price: "335"
-  }, {
-    id: getId(),
-    name: "Teriyaki Salmon Sushi",
-    foodType: "Sushi",
+    name: "Avocado & Egg on Rye",
+    description: "Layers of freshly sliced avocado, free-range eggs and pink pickled onions on top of our German-style rye bread",
+    foodType: "Sandwiches",
     restaurant: "Pret A Manger",
     price: "450"
   }, {
     id: getId(),
-    name: "Aromatic Asian Chicken Soup",
-    foodType: "Soup",
+    name: "Pole & Line Caught Tuna & Rocket",
+    description: "Skipjack tuna mayo mashed with spring onions, chopped capers, a touch of anchovy paste and a squeeze of lemon, on malted bread",
+    foodType: "Sandwiches",
     restaurant: "Pret A Manger",
-    price: "350"
+    price: "475"
   }, {
     id: getId(),
-    name: "Lentil and Quinoa Soup",
-    foodType: "Soup",
+    name: "Chef's Italian Chicken Salad",
+    description: "Caesar dressed chicken with beautiful Spanish roasted red peppers, kalamata olives and a handful of toasted pistachios",
+    foodType: "Specials",
     restaurant: "Pret A Manger",
-    price: "350"
-  }, {
-    id: getId(),
-    name: "Leek and Potato Soup",
-    foodType: "Soup",
-    restaurant: "Pret A Manger",
-    price: "350"
+    price: "425"
   }, {
     id: getId(),
     name: "Yaki Udon",

@@ -11,7 +11,7 @@ let OrderTrackComplete = React.createClass({
   render: function (){
     return (
       <div>
-        <OrderTrack stepIndex={4}/>
+        <OrderTrack complete={true} stepIndex={4}/>
       </div>
     )
   }
