@@ -36,7 +36,7 @@ var orders = {
     pickedUp: false,
     delivered: false,
     point: "N2",
-    time: "10.30 am",
+    time: "9.20 am",
     details: [
       {
         quantity: "1",
@@ -142,7 +142,7 @@ var orders = {
     issue: false,
     pickedUp: false,
     delivered: false,
-    time: "10.30 am",
+    time: "9.20 am",
     point: "N1",
     details: [
       {
@@ -167,7 +167,7 @@ var orders = {
     pickedUp: false,
     delivered: false,
     point: "N2",
-    time: "10.30 am",
+    time: "9.20 am",
     details: [
       {
         quantity: "1",
@@ -185,7 +185,7 @@ var orders = {
     pickedUp: false,
     delivered: false,
     point: "N2",
-    time: "10.30 am",
+    time: "9.20 am",
     details: [
       {
         quantity: "2",
