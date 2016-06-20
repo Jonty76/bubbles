@@ -34,7 +34,7 @@ label {
 
 
 .red-nav {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
   color: #ffffff;
 }
 
@@ -44,11 +44,11 @@ label {
 
 .white-nav {
   background-color: #ffffff;
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .white-nav > p {
-  color: black;
+  color: #ED2C31;
 }
 
 .white-text {
@@ -74,7 +74,7 @@ a:focus, a:hover {
 }
 
 .red-side-nav{
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .red-side-nav.fixed a {
@@ -97,7 +97,7 @@ a:focus, a:hover {
 }
 
 .top-line {
-  color: #FF0D1C;
+  color: #ED2C31;
   margin-top: 2em;
 }
 
@@ -106,14 +106,14 @@ a:focus, a:hover {
 }
 
 .base-button {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
 .base-button:focus, .base-button:active, .base-button:visited {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .base-button:hover {
@@ -131,7 +131,7 @@ a:focus, a:hover {
 
 .white-button {
   background-color: #ffffff;
-  border: 1px solid #FF0D1C;
+  border: 1px solid #ED2C31;
   width: 100%;
   bottom: 0;
   color: black;
@@ -142,14 +142,14 @@ a:focus, a:hover {
 }
 
 .red-button {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
   width: 100%;
   bottom: 0;
   margin-bottom: 15px;
 }
 
 .red-button:focus, .red-button:active, .red-button:visited {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .body-container {
@@ -166,7 +166,7 @@ a:focus, a:hover {
   font-size: 1.2em;
   width: 100%;
   text-align: center;
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .dropdown {
@@ -178,7 +178,7 @@ a:focus, a:hover {
 }
 
 .red-color {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .custom-container {
@@ -215,7 +215,7 @@ a:focus, a:hover {
 /* Landing Page */
 
 #gate {
-  color:  #FF0D1C;
+  color:  #ED2C31;
 }
 
 .modal-return-div {
@@ -232,7 +232,7 @@ a:focus, a:hover {
 }
 
 .top-line {
-  color: #FF0D1C;
+  color: #ED2C31;
   margin-top: 2em;
 }
 
@@ -253,29 +253,29 @@ a:focus, a:hover {
   margin-bottom: 5em;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-color: #FF0D1C;
+  border-color: #ED2C31;
 }
 
 /* datepicker */
 
 .picker__date-display {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .picker__weekday-display {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .picker__day.picker__day--today {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
-  background-color: #FF0D1C;
+  background-color: #ED2C31;
 }
 
 .picker__close, .picker__today {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 #datepicker {
@@ -314,7 +314,7 @@ a:focus, a:hover {
   margin-top: 2em;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-color: #FF0D1C;
+  border-color: #ED2C31;
 }
 /* Select Restuarant Page */
 
@@ -342,7 +342,7 @@ a {
 
 #food-search {
   margin-bottom: 0;
-  border-bottom-color: #FF0D1C;
+  border-bottom-color: #ED2C31;
   height: 5rem;
   font-size: 1em;
   padding-left: 1em;
@@ -357,8 +357,8 @@ input::-webkit-input-placeholder {
 }
 
 input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #FF0D1C;
-  box-shadow: 0 0px 0 0 #FF0D1C;
+  border-bottom: 1px solid #ED2C31;
+  box-shadow: 0 0px 0 0 #ED2C31;
 }
 
 .white-background {
@@ -367,7 +367,7 @@ input[type=text]:focus:not([readonly]) {
 
 .grey-background {
   background-color: #f9f9f9;
-  height: 100vh;
+  height: 100%;
 }
 
 /* Restaurant Menu Page */
@@ -472,11 +472,11 @@ input[type=text]:focus:not([readonly]) {
 
 .order-status-icon {
   font-size: 7.5em;
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .order-circle-icon {
-  color: #FF0D1C;
+  color: #ED2C31;
   margin-right: 0.5em;
   margin-top: 3em;
 }
@@ -542,7 +542,7 @@ input[type=text]:focus:not([readonly]) {
   vertical-align: top;
   padding-top: 1.2em;
   font-size: 3rem;
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 /* Order Details Page */
@@ -652,11 +652,11 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .processed-icon-style {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .processed {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 #next-batch {
@@ -665,7 +665,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .retailer-quantity {
-  color: #FF0D1C;
+  color: #ED2C31;
 }
 
 .retailer-line-item {

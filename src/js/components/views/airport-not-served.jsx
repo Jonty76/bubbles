@@ -42,7 +42,7 @@ let Page = React.createClass({
             type="submit"
             defaultValue="SUBMIT"
             style={{border: "solid red 1px",
-              backgroundColor: "#FF0D1C",
+              backgroundColor: "#ED2C31",
               color: "white",
               width: "50%"}}
             />
