@@ -32,7 +32,7 @@ var Login = React.createClass({
   render: function() {
     return (
       <div>
-        <div className="custom-container">
+        <div className="custom-container desktop-container">
           <Header headerTheme={"redNav"} text={"Piccnicc"} iconRight={""} iconLeft={""} burgerMenuOptions={""}/>
           <div className="row login-container">
             <div className="center-align">

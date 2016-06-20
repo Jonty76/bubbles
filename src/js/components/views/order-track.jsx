@@ -160,7 +160,7 @@ let OrderTrack = React.createClass({
     }
 
     return (
-      <div>
+      <div className="desktop-container">
         <Header headerTheme={"whiteNav"} text={"Track Order"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div id="order-track-page" className="order-track-container center-align">
           <div className="valign-wrapper items-container">

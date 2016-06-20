@@ -35,7 +35,7 @@ let OrderDetails = React.createClass({
     var menu = this.getCheckoutList();
 
     return (
-      <div className="grey-background">
+      <div className="grey-background desktop-container">
         <Header headerTheme={"whiteNav"} text={"Order Details"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"order-details"}/>

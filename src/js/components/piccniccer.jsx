@@ -155,7 +155,7 @@ let Piccniccer = React.createClass({
     var burgerMenuOptions = ["About+/about", "Logout+/login"]
 
     return (
-      <div className="custom-container">
+      <div className="custom-container desktop-container">
         <Header headerTheme={"redNav"} text={this.props.headerText} iconRight={"menu"} iconLeft={"error_outline"} burgerMenuOptions={burgerMenuOptions}/>
 
           <div className="row no-margin restaurant-option menu-background">

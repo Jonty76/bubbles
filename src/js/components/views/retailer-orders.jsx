@@ -90,7 +90,7 @@ let RetailerOrders = React.createClass({
   render: function(){
     var burgerMenuOptions = ["About+/about", "Logout+/login"]
     return (
-      <div className="custom-container">
+      <div className="custom-container desktop-container">
         <Header headerTheme={"redNav"} text={"Orders"} iconRight={"menu"} iconLeft={"error_outline"} burgerMenuOptions={burgerMenuOptions}/>
 
 

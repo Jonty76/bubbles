@@ -10,7 +10,7 @@ var About = React.createClass({
     return (
       <div>
         <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={""} iconLeft={"arrow_back"} burgerMenuOptions={""}/>
-        <div className="center-align">
+        <div className="center-align desktop-container">
           <div className="airport-not-served-container">
             <div className="">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
