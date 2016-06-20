@@ -15,35 +15,35 @@ let orderStatusObject = [
     orderCircle: 0,
     orderStatus: "Order Confirmed",
     orderExplainer: "We've recieved your order.",
-    orderExplainerTwo: "Watch here to see it's progress!"
+    orderExplainerTwo: "Watch here for lip-licking updates."
   },
   {
     orderIcon: "kitchen",
     orderCircle: 1,
     orderStatus: "Being Freshly Prepared",
-    orderExplainer: "Your order is being made up",
-    orderExplainerTwo: "by your chosen restaurant"
+    orderExplainer: "Your order is being made up by the restaurant(s).",
+    orderExplainerTwo: "You still have time to grab some Duty Free!"
   },
   {
     orderIcon: "directions_run",
     orderCircle: 2,
     orderStatus: "Hamper On Its Way",
-    orderExplainer: "Our piccniccers are delivering your",
-    orderExplainerTwo: "Piccnicc to your pick up point"
+    orderExplainer: "Your Hamper is winging (!) its way",
+    orderExplainerTwo: "to your Piccnicc Point."
   },
   {
     orderIcon: "local_dining",
     orderCircle: 3,
     orderStatus: "Piccnicc Time",
-    orderExplainer: "Your order is ready.",
-    orderExplainerTwo: "Collect it from your pick up point!"
+    orderExplainer: "Your Hamper Awaits!",
+    orderExplainerTwo: "Come and grab it…"
   },
   {
     orderIcon: "check_box",
     orderCircle: 4,
     orderStatus: "Already Picced Up!",
-    orderExplainer: "This order has been picked up",
-    orderExplainerTwo: "Happy Travels!"
+    orderExplainer: "Your Hamper has been collected.",
+    orderExplainerTwo: "Happy Travels…"
   }
 ]
 
@@ -63,7 +63,7 @@ let OrderCircle = React.createClass({
   render: function() {
     return (
       <div>
-        <div style={{width: '70%'}}>
+        <div style={{width: '100%', marginLeft: 'auto', marginRight: 'auto'}}>
         <Stepper activeStep={this.props.stepIndex}>
           <Step><StepLabel></StepLabel></Step>
           <Step><StepLabel></StepLabel></Step>
@@ -159,7 +159,7 @@ let OrderTrack = React.createClass({
           <div className="valign-wrapper items-container">
             {this.renderstepIndex()}
           </div>
-          <Link className="map-link" to="/map-view">Click to view pick up point</Link>
+          <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
         </div>
 
         <Link to="/order-details">

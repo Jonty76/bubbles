@@ -43,7 +43,7 @@ var OrderPage = React.createClass({
 
           <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve emailed your receipt with all the usual garnish to jonny@piccnicc.com</p>
 
-          <Link className="map-link" to="/map-view">Click to view pick up point</Link>
+          <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
 
           <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
 
