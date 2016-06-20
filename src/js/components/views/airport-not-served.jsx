@@ -42,7 +42,7 @@ let Page = React.createClass({
             type="submit"
             defaultValue="SUBMIT"
             style={{border: "solid red 1px",
-              backgroundColor: "#FF0D1C",
+              backgroundColor: "#ED2C31",
               color: "white",
               width: "50%"}}
             />
@@ -68,7 +68,7 @@ let Page = React.createClass({
            <p className='view-text'>Privacy Policy: We promise never to share your email or any other details with anybody else, ever. Nobody. Never.</p>
          </div>
          <div className="">
-           <img className="logo-container" src="/public/piccnicclogo.png" alt="Piccnicc Logo"></img>
+           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
          </div>
        </div>
     </div>

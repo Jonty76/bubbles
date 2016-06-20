@@ -46,7 +46,7 @@ let Page = React.createClass({
 
         <div className="desktop-container">
           <div className="question-container">
-            <p className="standard-question-style">Hampers of Happiness Delivered </p>
+            <p className="standard-question-style">Hampers of Happiness, Delivered </p>
           </div>
 
           <div className="center-align">
