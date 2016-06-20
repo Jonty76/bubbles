@@ -28,7 +28,7 @@ let RetailerOrders = React.createClass({
 
       if (order.time === "9.00 am") {
         batchOne.push(orderNo)
-      } else if (order.time === "10.30 am"){
+      } else if (order.time === "9.20 am"){
         batchTwo.push(orderNo)
       } else {
         console.log("No batches")
@@ -125,7 +125,7 @@ let RetailerOrders = React.createClass({
 
           <div className="row no-margin restaurant-option menu-background">
             <div className="col s12">
-              <p className="grey-text piccniccer-title-text">Orders For Next Batch</p>
+              <p className="grey-text piccniccer-title-text">Upcoming Orders</p>
             </div>
           </div>
 
