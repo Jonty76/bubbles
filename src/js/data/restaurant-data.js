@@ -64,7 +64,7 @@ var northMenu = function() {
     price: "950"
   }, {
     id: getId(),
-    name: "Warm chilli chicken salad",
+    name: "Warm Chilli Chicken Salad",
     description: "Stir-fried chicken with red peppers, mangetout, tender stem broccoli and red onion on a bed of baby gem lettuce. dressed in a sweet chilli sauce. garnished with chillies, spring onions and cashew nuts",
     foodType: "Salads",
     restaurant: "Wagamama",
@@ -197,7 +197,7 @@ var southMenu = function() {
     price: "950"
   }, {
     id: getId(),
-    name: "Warm chilli chicken salad",
+    name: "Warm Chilli Chicken Salad",
     description: "Stir-fried chicken with red peppers, mangetout, tender stem broccoli and red onion on a bed of baby gem lettuce. dressed in a sweet chilli sauce. garnished with chillies, spring onions and cashew nuts",
     foodType: "Salads",
     restaurant: "Wagamama",

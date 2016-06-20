@@ -135,12 +135,12 @@ let selectRestaurant = React.createClass({
 
     return (
       <div className="custom-container">
-        <Header text={"Select Restaurant"} headerTheme={"whiteNav"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header text={"Select Food"} headerTheme={"whiteNav"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <input id="food-search"
           onFocus={this.focusOnInputBox}
           onChange={this.searchInputChange}
           type="text"
-          placeholder=" Search here by food type or name...">
+          placeholder=" Search here by ingredient...">
         </input>
 
         {restaurantList}
