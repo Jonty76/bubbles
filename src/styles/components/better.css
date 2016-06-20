@@ -352,6 +352,10 @@ a {
   color: grey;
 }
 
+.no-image {
+ padding-top: 10em;
+}
+
 
 
 input::-webkit-input-placeholder {

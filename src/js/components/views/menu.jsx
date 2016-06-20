@@ -24,7 +24,14 @@ var Menu = React.createClass({
 
   render: function() {
     var menu = this.getStructuredMenu();
-    var restaurant = this.props.tagValue + " Image"
+    var restaurant;
+      if (this.props.tagName === "restaurant"){
+        restaurant = this.props.tagValue + " Image"
+        console.log("if one", restaurant)
+      } else {
+        restaurant = "noImage"
+        console.log("else >>>", restaurant)
+      }
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
     return (
