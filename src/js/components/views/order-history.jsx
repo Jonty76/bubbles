@@ -26,9 +26,9 @@ let ActiveOrders = React.createClass({
         <div className="white-background">
           <div className="divider"></div>
           <div className="order-option">
-            <h4>{name}</h4>
-              <i className="small plane-icon material-icons">flight_takeoff</i>
-              <p className="sub-text">LAX - 1 July</p>
+            <i className="small plane-icon material-icons">flight_takeoff</i>
+            <h4 className="order-history-subtitle">1 July - LAX</h4>
+            <p className="sub-text">{name}</p>
           </div>
           <div className="active-arrow-div">
             <Link className="red-text" to="/order-track">
@@ -49,9 +49,9 @@ let PastOrders = React.createClass({
       <div className="white-background">
         <div className="divider"></div>
         <div className="order-option">
-          <h4>Grain Store</h4>
-            <i className="small plane-icon material-icons">flight_takeoff</i>
-            <p className="sub-text">CDG - 3 April</p>
+          <i className="plane-icon material-icons">flight_takeoff</i>
+          <h4 className="order-history-subtitle">3 April - CDG</h4>
+          <p className="sub-text">Grain Store</p>
         </div>
         <div className="past-arrow-div">
           <Link className="grey-text" to="/order-track-complete">
@@ -60,9 +60,9 @@ let PastOrders = React.createClass({
         </div>
         <div className="divider"></div>
           <div className="order-option">
-            <h4>Yo! Sushi</h4>
-            <i className="small plane-icon material-icons">flight_takeoff</i>
-            <p className="sub-text">NRB - 24 March</p>
+            <i className="plane-icon material-icons">flight_takeoff</i>
+            <h4 className="order-history-subtitle" >24 March - NRB</h4>
+            <p className="sub-text">Yo! Sushi</p>
           </div>
           <div className="past-arrow-div">
             <Link className="grey-text" to="/order-track-complete">

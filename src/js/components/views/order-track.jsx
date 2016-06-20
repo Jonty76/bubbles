@@ -152,6 +152,13 @@ let OrderTrack = React.createClass({
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var mapOrRate;
+    if (this.props.complete) {
+      mapOrRate = <p>[Rate your Piccnicc]</p>
+    } else {
+      mapOrRate = <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
+    }
+
     return (
       <div>
         <Header headerTheme={"whiteNav"} text={"Track Order"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
@@ -159,7 +166,7 @@ let OrderTrack = React.createClass({
           <div className="valign-wrapper items-container">
             {this.renderstepIndex()}
           </div>
-          <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
+            {mapOrRate}
         </div>
 
         <Link to="/order-details">
