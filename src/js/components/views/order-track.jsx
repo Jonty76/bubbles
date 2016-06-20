@@ -153,10 +153,13 @@ let OrderTrack = React.createClass({
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var mapOrRate;
+    var button;
     if (this.props.complete) {
       mapOrRate = <p>[Rate your Piccnicc]</p>
+      button = <div></div>
     } else {
       mapOrRate = <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
+      button = <Link to="/order-details"><div className="base-button btn-large">View Order Details</div></Link>
     }
 
     return (
@@ -169,9 +172,7 @@ let OrderTrack = React.createClass({
             {mapOrRate}
         </div>
 
-        <Link to="/order-details">
-          <div className="base-button btn-large">View Order Details</div>
-        </Link>
+            {button}
       </div>
     );
   }

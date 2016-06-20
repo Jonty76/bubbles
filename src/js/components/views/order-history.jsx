@@ -90,7 +90,7 @@ let OrderHistory = React.createClass({
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var order = this.getCheckoutList()
     return (
-      <div className="grey-background">
+      <div className="grey-background desktop-container">
         <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <h6 className="subtitle-text">ACTIVE</h6>
         <ActiveOrders order={order}/>
