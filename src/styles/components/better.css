@@ -11,6 +11,10 @@ label {
   font-weight: 400;
 }
 
+#brand-logo {
+  font-family: 'Pacifico', cursive;
+}
+
 /* Header Bar */
 
 .header {
