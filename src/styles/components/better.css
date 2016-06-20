@@ -13,6 +13,7 @@ label {
 
 #brand-logo {
   font-family: 'Pacifico', cursive;
+  margin: 0;
 }
 
 /* Header Bar */
@@ -250,9 +251,10 @@ a:focus, a:hover {
   margin-top: 1.5em;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   border-top: 1px solid;
   border-bottom: 1px solid;
+  max-width: 250px;
   border-color: #ED2C31;
 }
 
@@ -294,6 +296,7 @@ a:focus, a:hover {
   margin-right: 15em;
   margin-bottom: 0;
   font-size: 0.9em;
+  color: #8f8f8f;
 }
 
 .select-date-label:active{
@@ -697,4 +700,61 @@ input[type=text]:focus:not([readonly]) {
 
 .restaurant-description {
   line-height: 1.4;
+}
+
+
+@media only screen and (min-width: 993px) {
+  #icon-right {
+    display: none;
+  }
+  #header {
+    margin-left: -220px;
+  }
+  .desktop-container {
+    width: -moz-calc(100% - 220px); /* Firefox */
+    width: -webkit-calc(100% - 220px); /* WebKit */
+    width: -o-calc(100% - 220px); /* Opera */
+    width: calc(100% - 220px); /* Standard */
+  }
+  .custom-container {
+    padding-bottom: 6.5em;
+  }
+  .side-nav {
+    z-index: 0;
+  }
+  .base-button {
+    margin-bottom: 20px;
+    margin-left: -220px;
+    left: 27%;
+    width: 65%;
+  }
+  .restaurant-image {
+    display: none;
+  }
+  .restaurant-info {
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    transform: none;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 5em;
+    display: inline-block;
+    width: 100%;
+  }
+  .outer-restaurant-container {
+    width: 70%;
+    text-align: left;
+    display: inline-block;
+  }
+  .restaurant-logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+  }
+  .restaurant-logo img {
+    margin-left: 7em;
+    width: 50%;
+    height: 50%;
+  }
 }
