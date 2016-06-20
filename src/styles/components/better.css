@@ -197,6 +197,11 @@ a:focus, a:hover {
   margin-bottom: 4em;
 }
 
+.map-link {
+  border-bottom: #E12534 solid 1px;
+}
+
+
 /* Login Screen */
 
 .top-container {

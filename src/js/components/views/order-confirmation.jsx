@@ -34,7 +34,7 @@ var OrderPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var deliveryFee = this.getDeliveryFee(menu);
     var total = foodSubtotal + deliveryFee;
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     return (
         <div className="content-wrapper">
         <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
@@ -42,6 +42,8 @@ var OrderPage = React.createClass({
           <p className="top-line">Delicious!</p>
 
           <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve emailed you your receipt with all the usual garnish!</p>
+
+          <Link className="map-link" to="/map-view">Click to view pick up point</Link>
 
           <p>We hope you enjoy your Piccnicc and wish you a safe flight.</p>
 
