@@ -38,7 +38,7 @@ let Page = React.createClass({
     return (
 
       <div>
-        <div className="custom-container">
+        <div className="custom-container desktop-container">
           <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
           <div className="row top-container">

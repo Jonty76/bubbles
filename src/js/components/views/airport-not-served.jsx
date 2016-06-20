@@ -54,7 +54,7 @@ let Page = React.createClass({
     return (
       <div>
       <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
-      <div className="center-align">
+      <div className="center-align desktop-container">
         <div className="airport-not-served-container">
           <p className='top-line'>Sorry, you can't get Piccnicc at that Airport yet.</p>
           <p>However, the more demand we can show for the service, the sooner we can launch it there.

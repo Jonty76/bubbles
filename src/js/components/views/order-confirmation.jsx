@@ -36,7 +36,7 @@ var OrderPage = React.createClass({
     var total = foodSubtotal + deliveryFee;
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     return (
-        <div className="custom-container">
+        <div className="custom-container desktop-container">
         <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>

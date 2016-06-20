@@ -702,6 +702,12 @@ input[type=text]:focus:not([readonly]) {
   line-height: 1.4;
 }
 
+@media only screen and (max-width: 993px) {
+  .restaurant-logo {
+    display: none;
+  }
+}
+
 
 @media only screen and (min-width: 993px) {
   #icon-right {
@@ -756,5 +762,8 @@ input[type=text]:focus:not([readonly]) {
     margin-left: 7em;
     width: 50%;
     height: 50%;
+  }
+  #frc-emailInput-1088 {
+    width: 60%;
   }
 }
