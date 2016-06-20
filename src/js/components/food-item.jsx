@@ -190,7 +190,7 @@ var FoodItem = React.createClass({
 
     var add = {
       paddingTop: '1em',
-      color: '#E12534'
+      color: '#FF0D1C'
     }
 
     return (
