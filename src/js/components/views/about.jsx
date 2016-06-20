@@ -12,6 +12,9 @@ var About = React.createClass({
         <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={""} iconLeft={"arrow_back"} burgerMenuOptions={""}/>
         <div className="center-align">
           <div className="airport-not-served-container">
+            <div className="">
+              <img className="logo-container" src="/public/piccnicclogo.png" alt="Piccnicc Logo"></img>
+            </div>
             <p style={fontSize} className='view-text'> Piccnicc is an online ordering service, which delivers tasty food from airport restaurants to passengers at the gate. </p>
             <p style={fontSize} className='view-text'>Whether you're rushing to make a connection or just don't want to wait in line, nobody should have to eat bland, unhealthy plane food. </p>
             <p style={fontSize} className='view-text'>Piccnicc is also perfect for passengers who want to eat at the gate, rather than in-flight.</p>

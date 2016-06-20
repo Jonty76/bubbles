@@ -83,6 +83,11 @@ a:focus, a:hover {
 
 /*Body and General*/
 
+.logo-container {
+  height: 100px;
+  width: 150px;
+}
+
 .margin-main-content {
   margin-left: 2.6em;
 }
