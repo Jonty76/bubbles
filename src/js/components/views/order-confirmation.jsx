@@ -49,7 +49,7 @@ var OrderPage = React.createClass({
 
           <p>Psst! Should you need to change or cancel your order, please go to Order History in the menu above and make your changes up to an hour before boarding.</p>
             <div className="">
-              <img className="logo-container" src="/../../../public/piccnicclogo.png" alt="Piccnicc Logo"></img>
+              <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
             </div>
       </div>
 
