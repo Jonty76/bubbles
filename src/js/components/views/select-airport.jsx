@@ -32,7 +32,7 @@ let Page = React.createClass({
 
   renderFlightDetailsOrRedirect: function() {
     if(this.state.selectedAirport === 'gatwick') {
-      return <FlightDetails setTerminal={this.props.actions.setTerminal} />
+      return <FlightDetails setTerminal={this.props.actions.setTerminal} setDate={this.props.actions.setDate}/>
     } else {
       return <AirportNotServedButton />
     }

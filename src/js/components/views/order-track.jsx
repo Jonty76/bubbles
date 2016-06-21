@@ -108,10 +108,8 @@ let OrderTrack = React.createClass({
   },
 
   componentDidMount: function(){
-    console.log("on mount")
     var that = this
     document.getElementById('order-track-page').addEventListener("click", function(){
-      console.log("on click")
       that.handleNext()
     })
   },

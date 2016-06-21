@@ -102,6 +102,12 @@ let Basket = React.createClass({
     })
   },
 
+  setDate: function(flightDate){
+    this.setState({
+      flightDate: flightDate
+    })
+  },
+
   setMenuType: function(tagName, tagValue) {
     this.setState({
       tagName: tagName,
@@ -262,7 +268,8 @@ let Basket = React.createClass({
         clearBasket: this.clearBasket,
         clearQuantityOfItem: this.clearQuantityOfItem,
         setMenuType: this.setMenuType,
-        setTerminal: this.setTerminal
+        setTerminal: this.setTerminal,
+        setDate: this.setDate
       },
       helpers: {
         filterMenu: this.filterMenu,
