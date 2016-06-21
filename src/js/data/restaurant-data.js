@@ -138,7 +138,7 @@ var northMenu = function() {
     description: "Thick, fluffy pancake stack topped with blueberry compote",
     foodType: "Toast, Pastries & Sweet Things",
     restaurant: "Jamie's",
-    price: "6.50"
+    price: "650"
   }];
 
   resetMenu(menu);
