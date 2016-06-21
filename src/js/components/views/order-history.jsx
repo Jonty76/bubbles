@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import Header from '../header.jsx';
 
-let ActiveOrders = React.createClass({
 
+let ActiveOrders = React.createClass({
   render: function() {
     if (this.props.order.length === 0){
       return (
@@ -17,6 +17,9 @@ let ActiveOrders = React.createClass({
       )
     } else {
       var name;
+      var utcDate = (this.props.flightDate).split('23:00')[0];
+      var monthyear = utcDate.split(',')[1];
+
       if (this.props.order.length > 1) {
         name = this.props.order[0].name + " &..."
       } else {
@@ -27,7 +30,7 @@ let ActiveOrders = React.createClass({
           <div className="divider"></div>
           <div className="order-option">
             <i className="small plane-icon material-icons">flight_takeoff</i>
-            <h4 className="order-history-subtitle">1 July - LAX</h4>
+            <h4 className="order-history-subtitle">{monthyear} - LAX</h4>
             <p className="sub-text">{name}</p>
           </div>
           <div className="active-arrow-div">
@@ -50,7 +53,7 @@ let PastOrders = React.createClass({
         <div className="divider"></div>
         <div className="order-option">
           <i className="plane-icon material-icons">flight_takeoff</i>
-          <h4 className="order-history-subtitle">3 April - CDG</h4>
+          <h4 className="order-history-subtitle">03 Apr 2016 - CDG</h4>
           <p className="sub-text">Grain Store</p>
         </div>
         <div className="past-arrow-div">
@@ -61,7 +64,7 @@ let PastOrders = React.createClass({
         <div className="divider"></div>
           <div className="order-option">
             <i className="plane-icon material-icons">flight_takeoff</i>
-            <h4 className="order-history-subtitle" >24 March - NRB</h4>
+            <h4 className="order-history-subtitle" >24 Mar 2016 - NRB</h4>
             <p className="sub-text">Yo! Sushi</p>
           </div>
           <div className="past-arrow-div">
@@ -93,7 +96,7 @@ let OrderHistory = React.createClass({
       <div className="grey-background desktop-container">
         <Header headerTheme={"whiteNav"} text={"Your Orders"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <h6 className="subtitle-text">ACTIVE</h6>
-        <ActiveOrders order={order}/>
+        <ActiveOrders order={order} flightDate={this.props.flightDate}/>
         <h6 className="subtitle-text">PAST</h6>
         <PastOrders />
       </div>

@@ -4,20 +4,8 @@ import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-//import areIntlLocalesSupported from 'intl-locales-supported';
-
 let FlightData  = require('../../data/flight-data.js');
 let DateTimeFormat;
-
-// if (areIntlLocalesSupported('en-GB')) {
-//   DateTimeFormat = global.Intl.DateTimeFormat;
-// } else {
-//   const IntlPolyfill = require('intl');
-//   require('intl/locale-data/jsonp/en-GB');
-//
-//   DateTimeFormat = IntlPolyfill.DateTimeFormat;
-// }
-
 
 var renderInputFields = function(details) {
   return details.map(function(detail) {
@@ -46,7 +34,7 @@ let SelectAirline = React.createClass({
 
   renderFlightDate: function(){
     if(this.state.selectedAirline !== ""){
-      return <SelectDate setTerminal={this.props.setTerminal} selectedAirline={this.state.selectedAirline}/>
+      return <SelectDate setTerminal={this.props.setTerminal} setDate={this.props.setDate} selectedAirline={this.state.selectedAirline} />
     } else {
       return (<div></div>)
     }
@@ -69,7 +57,8 @@ let SelectAirline = React.createClass({
 let SelectDate = React.createClass({
   getInitialState: function(date) {
     return {
-      selectedDate: 2
+      selectedDate: 2,
+      stringDate: 3,
     };
   },
 
@@ -88,10 +77,14 @@ let SelectDate = React.createClass({
   datePickerChange: function(date) {
     var formattedDate = new Date(date)
     $("label").removeClass("active")
+    var stringDate = formattedDate.toUTCString();
     this.setState({
-      selectedDate: formattedDate
+      selectedDate: formattedDate,
+      stringDate: stringDate
     })
+    this.props.setDate(stringDate)
   },
+
   renderFlightNumber: function() {
     if(this.state.selectedDate !== 2) {
       return <SelectFlightNumber selectedAirline={this.props.selectedAirline} selectedDate={this.state.selectedDate}/>
@@ -217,7 +210,7 @@ let flightDetails = React.createClass({
     return (
       <div>
         <div className="">
-          <SelectAirline setTerminal={this.props.setTerminal}/>
+          <SelectAirline setTerminal={this.props.setTerminal} setDate={this.props.setDate}/>
         </div>
         <Link to='/basket/select-restaurant'>
           <div className="btn-large base-button"> NEXT </div>
