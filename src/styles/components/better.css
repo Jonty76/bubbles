@@ -438,6 +438,10 @@ input[type=text]:focus:not([readonly]) {
   height: 8em;
 }
 
+.margin-fix {
+  margin-left: -1.5em;
+}
+
 /* VIEW HAMPER PAGE */
 
 .x-button {

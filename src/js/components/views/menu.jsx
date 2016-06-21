@@ -22,15 +22,19 @@ var Menu = React.createClass({
     }
   },
 
+  componentDidMount: function (){
+    if(this.props.tagName !== "restaurant") {
+      document.getElementById('title').classList.add("margin-fix")
+    }
+  },
+
   render: function() {
     var menu = this.getStructuredMenu();
     var restaurant;
       if (this.props.tagName === "restaurant"){
         restaurant = this.props.tagValue + " Image"
-        console.log("if one", restaurant)
       } else {
         restaurant = "noImage"
-        console.log("else >>>", restaurant)
       }
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
@@ -44,7 +48,7 @@ var Menu = React.createClass({
               <div className="restaurant-image-container">
                 {restaurantImages[restaurant]}
                 <div className="restaurant-info">
-                  <h2 className="no-margin">{this.props.tagValue}</h2>
+                  <h2 id="title" className="no-margin">{this.props.tagValue}</h2>
                   <h5 className="restaurant-description">{this.props.helpers.getDescription(this.props.tagValue)}</h5>
                 </div>
               </div>
