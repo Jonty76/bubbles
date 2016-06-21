@@ -123,21 +123,21 @@ var northMenu = function() {
     name: "Proper Porridge",
     description: "With either fresh market berries; banana & toasted coconut; or stewed bramble fruit, topped with golden syrup, honey or brown sugar",
     foodType: "Get Your Oats",
-    restaurant: "Jamies",
+    restaurant: "Jamie's",
     price: "450"
   }, {
     id: getId(),
     name: "Bacon Buttie",
     description: "With free-range smoked bacon",
     foodType: "Breakfast Butties",
-    restaurant: "Jamies",
+    restaurant: "Jamie's",
     price: "495"
   }, {
     id: getId(),
     name: "American Pancakes - Blueberry",
     description: "Thick, fluffy pancake stack topped with blueberry compote",
     foodType: "Toast, Pastries & Sweet Things",
-    restaurant: "Jamies",
+    restaurant: "Jamie's",
     price: "6.50"
   }];
 
@@ -235,21 +235,21 @@ var southMenu = function() {
     name: "1/4 Chicken Breast - 2 sides",
     description: "Quarter chicken breast, on the bone - choose 2 sides to go with",
     foodType: "On The Bone",
-    restaurant: "Nandos",
+    restaurant: "Nando's",
     price: "760"
   }, {
     id: getId(),
     name: "Portobello Mushroom and Halloumi Wrap - No Sides",
     description: "Chilli Jam and Yogurt Mayonnaise sauce options",
     foodType: "Burgers, Pittas, Wraps",
-    restaurant: "Nandos",
+    restaurant: "Nando's",
     price: "740"
   }, {
     id: getId(),
     name: "Chips - Regular",
     description: "This size included where Sides included in Main Order, e.g. Pitta + 2 Sides",
     foodType: "Sides",
-    restaurant: "Nandos",
+    restaurant: "Nando's",
     price: "240"
   }, {
     id: getId(),
