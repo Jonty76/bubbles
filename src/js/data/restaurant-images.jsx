@@ -72,6 +72,10 @@ var wonderTreeImage = (
   <img className = "restaurant-image" src = "https://cloud.githubusercontent.com/assets/13667174/16146343/73571106-3475-11e6-8d9f-6650dcb6b27d.jpg"/>
 );
 
+var noImage = (
+  <div className = "no-image center-align"></div>
+);
+
 module.exports = {
   "Yo! Sushi": yoSushiLogo,
   "Pret A Manger": pretLogo,
@@ -90,5 +94,6 @@ module.exports = {
   "Comptoir Libanais Image": comptoirLibanaisImage,
   "Wagamama Image": wagamamaImage,
   "Nandos Image": nandosImage,
-  "Wonder Tree Image": wonderTreeImage
+  "Wonder Tree Image": wonderTreeImage,
+  "noImage": noImage
 }
