@@ -30,7 +30,7 @@ let ActiveOrders = React.createClass({
           <div className="divider"></div>
           <div className="order-option">
             <i className="small plane-icon material-icons">flight_takeoff</i>
-            <h4 className="order-history-subtitle">{monthyear} - LAX</h4>
+            <h4 className="order-history-subtitle">{monthyear}</h4>
             <p className="sub-text">{name}</p>
           </div>
           <div className="active-arrow-div">

@@ -374,7 +374,7 @@ input[type=text]:focus:not([readonly]) {
 
 .grey-background {
   background-color: #f9f9f9;
-  height: 100%;
+  height: 100vh;
 }
 
 /* Restaurant Menu Page */
