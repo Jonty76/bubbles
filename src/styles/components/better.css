@@ -352,6 +352,10 @@ a {
   color: grey;
 }
 
+.no-image {
+ padding-top: 10em;
+}
+
 
 
 input::-webkit-input-placeholder {
@@ -432,6 +436,10 @@ input[type=text]:focus:not([readonly]) {
   border-right: 0px;
   border-left: 0px;
   height: 8em;
+}
+
+.margin-fix {
+  margin-left: -1.5em;
 }
 
 /* VIEW HAMPER PAGE */
@@ -765,5 +773,11 @@ input[type=text]:focus:not([readonly]) {
   }
   #frc-emailInput-1088 {
     width: 60%;
+  }
+  .no-image {
+    display: none;
+  }
+  .margin-fix {
+    margin-left: 8.5em;
   }
 }

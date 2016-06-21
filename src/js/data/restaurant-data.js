@@ -148,14 +148,14 @@ var northMenu = function() {
 var southMenu = function() {
   var menu = [{
     id: getId(),
-    name: "A bowl of superfood",
+    name: "A Bowl of Superfood",
     description: "Quinoa, Beluga lentils, avocado, baby spinach, raw apple, pumpkin seeds, crumbled goat's feta",
     foodType: "Salads",
     restaurant: "Grain Store",
     price: "1200"
   }, {
     id: getId(),
-    name: "Wild mushroom and truffle burger",
+    name: "Wild Mushroom and Truffle Burger",
     description: "Chicory, apple and hazelnut salad, milk bun",
     foodType: "Homemade Burgers",
     restaurant: "Grain Store",
