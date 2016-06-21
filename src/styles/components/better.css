@@ -774,4 +774,10 @@ input[type=text]:focus:not([readonly]) {
   #frc-emailInput-1088 {
     width: 60%;
   }
+  .no-image {
+    display: none;
+  }
+  .margin-fix {
+    margin-left: 8.5em;
+  }
 }
