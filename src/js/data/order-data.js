@@ -138,7 +138,7 @@ var orders = {
   },
   "11235" : {
     name:"Molly Downs",
-    restaurant: "Jamies",
+    restaurant: "Jamie's",
     issue: false,
     pickedUp: false,
     delivered: false,
