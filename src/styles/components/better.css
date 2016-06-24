@@ -350,6 +350,7 @@ a {
   font-size: 1em;
   padding-left: 1em;
   color: grey;
+  display: none;
 }
 
 .no-image {
