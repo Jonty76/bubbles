@@ -17,8 +17,7 @@ let ActiveOrders = React.createClass({
       )
     } else {
       var name;
-      var utcDate = (this.props.flightDate).split('23:00')[0];
-      var monthyear = utcDate.split(',')[1];
+      var date = (this.props.flightDate)
 
       if (this.props.order.length > 1) {
         name = this.props.order[0].name + " &..."
@@ -30,7 +29,7 @@ let ActiveOrders = React.createClass({
           <div className="divider"></div>
           <div className="order-option">
             <i className="small plane-icon material-icons">flight_takeoff</i>
-            <h4 className="order-history-subtitle">{monthyear}</h4>
+            <h4 className="order-history-subtitle">{date}: LGW</h4>
             <p className="sub-text">{name}</p>
           </div>
           <div className="active-arrow-div">
@@ -53,7 +52,7 @@ let PastOrders = React.createClass({
         <div className="divider"></div>
         <div className="order-option">
           <i className="plane-icon material-icons">flight_takeoff</i>
-          <h4 className="order-history-subtitle">03 Apr 2016 - CDG</h4>
+          <h4 className="order-history-subtitle">03 Apr 2016: LGW - CDG</h4>
           <p className="sub-text">Grain Store</p>
         </div>
         <div className="past-arrow-div">
@@ -64,7 +63,7 @@ let PastOrders = React.createClass({
         <div className="divider"></div>
           <div className="order-option">
             <i className="plane-icon material-icons">flight_takeoff</i>
-            <h4 className="order-history-subtitle" >24 Mar 2016 - NRB</h4>
+            <h4 className="order-history-subtitle" >24 Mar 2016: LGW - NRB</h4>
             <p className="sub-text">Yo! Sushi</p>
           </div>
           <div className="past-arrow-div">

@@ -15,11 +15,7 @@ const muiTheme = getMuiTheme({
       pickerHeaderColor:'#ED2C31',
       primary1Color: '#ED2C31',
       primary2Color: '#ED2C31',
-    },
-    datePicker: {
-      height: '20em',
     }
-
 })
 
 
