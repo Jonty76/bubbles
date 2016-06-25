@@ -14,18 +14,18 @@ var MapView = React.createClass({
     var terminal = this.props.terminal
     if (terminal === "north") {
       return (
-        <img className="materialboxed" width="400" src="https://cloud.githubusercontent.com/assets/9627463/16157776/fabdf74a-34b1-11e6-90cb-01627b05bffd.png"></img>
+        <img className="materialboxed" width={"80%"} src="https://cloud.githubusercontent.com/assets/9627463/16357503/976f8a56-3af0-11e6-885f-70ca5d310d30.png"></img>
       )
     } else if (terminal === "south"){
       return (
-        <img className="materialboxed" width="400" src="https://cloud.githubusercontent.com/assets/9627463/16157777/fabe7292-34b1-11e6-91fa-732656c75d0c.png"></img>
+        <img className="materialboxed" width={"80%"} src="https://cloud.githubusercontent.com/assets/9627463/16357504/976fa928-3af0-11e6-8d6b-1f885440ab55.png"></img>
       )
     } else {
       return (
         <div>
-          <img className="materialboxed" width="400" src="https://cloud.githubusercontent.com/assets/9627463/16157776/fabdf74a-34b1-11e6-90cb-01627b05bffd.png"></img>
+          <img className="materialboxed" width={"80%"} src="https://cloud.githubusercontent.com/assets/9627463/16357503/976f8a56-3af0-11e6-885f-70ca5d310d30.png"></img>
           <div className="divider"></div>
-          <img className="materialboxed" width="400" src="https://cloud.githubusercontent.com/assets/9627463/16157777/fabe7292-34b1-11e6-91fa-732656c75d0c.png"></img>
+          <img className="materialboxed" width={"80%"} src="https://cloud.githubusercontent.com/assets/9627463/16357504/976fa928-3af0-11e6-8d6b-1f885440ab55.png"></img>
         </div>
       )
    }
