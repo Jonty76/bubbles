@@ -44,7 +44,7 @@ let Page = React.createClass({
       <div>
           <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
 
-        <div className="desktop-container">
+        <div className="desktop-container custom-container">
           <div className="question-container">
             <p className="standard-question-style">Hampers of Happiness, Delivered </p>
           </div>
