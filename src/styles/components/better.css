@@ -596,6 +596,14 @@ input[type=text]:focus:not([readonly]) {
   margin-right: 1.2em;
 }
 
+/* Maps */
+
+#terminal-map {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
 /* Piccniccer Page */
 
 .grey-text {
@@ -780,5 +788,11 @@ input[type=text]:focus:not([readonly]) {
   }
   .margin-fix {
     margin-left: 8.5em;
+  }
+
+  .materialboxed {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
