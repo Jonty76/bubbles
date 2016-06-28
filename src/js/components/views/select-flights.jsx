@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
@@ -75,14 +74,17 @@ let SelectDate = React.createClass({
   },
 
   datePickerChange: function(date) {
-    var formattedDate = new Date(date)
+    var t = new Date(date)
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    var month = months[t.getMonth()]
+    var formattedDate = t.getDate() + " " + month + " " + t.getFullYear()
+
     $("label").removeClass("active")
-    var stringDate = formattedDate.toUTCString();
+
     this.setState({
       selectedDate: formattedDate,
-      stringDate: stringDate
     })
-    this.props.setDate(stringDate)
+    this.props.setDate(formattedDate)
   },
 
   renderFlightNumber: function() {
@@ -143,7 +145,7 @@ let SelectFlightNumber = React.createClass({
     var airlineSpace = this.state.lookUpAirline
     var airline = (this.state.lookUpAirline).replace(/\s+/g, '');
     var flight = this.state.selectedFlightNumber
-    var date = (this.state.date).toUTCString().split('23:00')[0];
+    var date = this.state.date
     var flightLookUp = FlightData.flightsByAirline[airline][flight]
 
     if(flightLookUp.Status === "Approved") {
