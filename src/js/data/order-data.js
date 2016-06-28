@@ -27,7 +27,7 @@ var orders = {
       },
     ],
     items: "4",
-    total: "£31.00"
+    total: "£46.00"
   },
   "21265" : {
     name:"Mark Underwood",
@@ -73,7 +73,7 @@ var orders = {
       },
     ],
     items: "3",
-    total: "£10.30"
+    total: "£17.35"
   },
   "17733" : {
     name:"Joe Bloggs",
@@ -134,7 +134,7 @@ var orders = {
       },
     ],
     items: "6",
-    total: "£17.30"
+    total: "£28.50"
   },
   "11235" : {
     name:"Molly Downs",
@@ -176,7 +176,7 @@ var orders = {
       },
     ],
     items: "1",
-    total: "£10.90"
+    total: "£29.00"
   },
   "75424" : {
     name:"Paul Wheels",
@@ -193,7 +193,7 @@ var orders = {
         price: "£5.45"
       },
     ],
-    items: "1",
+    items: "2",
     total: "£10.90"
   }
 }
