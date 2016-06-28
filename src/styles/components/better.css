@@ -145,8 +145,11 @@ a:focus, a:hover {
 .red-button {
   background-color: #ED2C31;
   width: 100%;
-  bottom: 0;
   margin-bottom: 15px;
+}
+
+.btn-large.red-button {
+  margin-bottom: 15px !important;
 }
 
 .red-button:focus, .red-button:active, .red-button:visited, .red-button:hover {
