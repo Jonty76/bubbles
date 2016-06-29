@@ -3,6 +3,8 @@ import Header from '../../header.jsx';
 import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import TimePicker from 'material-ui/TimePicker';
+import TextField from 'material-ui/TextField';
 
 let expoData  = require('../../../data/expo-data.js');
 
@@ -12,7 +14,11 @@ let ExpoDetails = React.createClass({
   getInitialState: function() {
     return {
       selectedExpoCentre: "",
-      selectedExpo: ""
+      selectedExpo: "",
+      selectedDeliveryDate: "",
+      selectedDeliveryTime: "",
+      selectedUserType: "",
+      deliveryPoint: ""
     };
   },
 
@@ -20,6 +26,90 @@ let ExpoDetails = React.createClass({
       var change = {};
       change[keyName] = value;
       this.setState(change);
+  },
+
+  timeChange(nothing, value){
+    var time = Date.parse(value)
+    this.setState({
+      selectedDeliveryTime: time
+    })
+  },
+
+  setStand(nothing, value){
+    this.setState({
+      deliveryPoint: value
+    })
+  },
+
+  renderDeliveryLocation: function(){
+    if (this.state.selectedUserType !== "") {
+      if (this.state.selectedUserType === "attendee") {
+        this.selectorChange.bind('mainEntrance', 'deliveryPoint')
+        return (
+          <div>
+            <p style={smallerFont}>Your delivery pick up point is here</p>
+          </div>
+        )
+      } else {
+        return (
+          <div>
+            <TextField className={"material-ui-small-font"} onChange={this.setStand} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
+            <p style={smallerFont}>We will deliver your Piccnicc to you here</p>
+          </div>
+        )
+      }
+    }
+  },
+
+  selectUserType: function(){
+    if (this.state.selectedDeliveryTime !== "") {
+      return (
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Vistor or Attendee" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
+          <MenuItem value="exhibitor" primaryText="Exhibitor" />
+          <MenuItem value="attendee" primaryText="Attendee" />
+        </SelectField>
+      )
+    }
+  },
+
+  selectDeliveryTime: function(){
+    if (this.state.selectedDeliveryDate !== "") {
+     return (
+       <div>
+       <p id="label" style={{marginRight: "21em", marginTop: "2em", fontSize: "0.6em"}} className="select-date-label">Select Delivery Time</p>
+        <TimePicker
+          className={"material-ui-small-font"}
+          onChange={this.timeChange}
+          dialogBodyStyle={{width: "180px"}}
+        />
+      </div>
+      )
+    }
+  },
+
+  renderDeliveryDateOptions: function(){
+    var dates = expoData[this.state.selectedExpoCentre][this.state.selectedExpo].dates
+    return dates.map(function(date){
+      var t = new Date(date)
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      var month = months[t.getMonth()]
+      var formattedDate = t.getDate() + " " + month + " " + t.getFullYear()
+      return (
+        <MenuItem value={date} style={smallerFont} primaryText={formattedDate} key={date}/>
+      )
+    })
+  },
+
+  selectDeliveryDate: function(){
+    if (this.state.selectedExpo !== "") {
+      return (
+        <div>
+          <SelectField className="dropdown" style={smallerFont} value={this.state.selectedDeliveryDate} floatingLabelText="Select Delivery Date" onChange={this.selectorChange.bind(this, 'selectedDeliveryDate')}>
+            {this.renderDeliveryDateOptions()}
+          </SelectField >
+        </div>
+      )
+    }
   },
 
   renderExpo: function() {
@@ -62,6 +152,14 @@ let ExpoDetails = React.createClass({
         </SelectField >
 
         {this.selectExpo()}
+
+        {this.selectDeliveryDate()}
+
+        {this.selectDeliveryTime()}
+
+        {this.selectUserType()}
+
+        {this.renderDeliveryLocation()}
 
       </div>
 
