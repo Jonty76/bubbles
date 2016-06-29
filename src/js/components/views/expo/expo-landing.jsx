@@ -6,6 +6,7 @@ import MenuItem from 'material-ui/MenuItem';
 
 let expoData  = require('../../../data/expo-data.js');
 
+let smallerFont = {fontSize: "0.8em"}
 
 let ExpoDetails = React.createClass({
   getInitialState: function() {
@@ -28,7 +29,7 @@ let ExpoDetails = React.createClass({
       var name = expoData[selectedExpoCentre][expo].name
 
       return (
-        <MenuItem value={expo} primaryText={name} key={name}/>
+        <MenuItem value={expo} style={smallerFont} primaryText={name} key={name}/>
       )
     })
   },
@@ -37,8 +38,7 @@ let ExpoDetails = React.createClass({
     if (this.state.selectedExpoCentre !== "") {
       return (
         <div>
-        <div>Select Expo</div>
-          <SelectField className="dropdown" value={this.state.selectedExpo} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
+          <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
             {this.renderExpo()}
           </SelectField >
         </div>
@@ -49,7 +49,7 @@ let ExpoDetails = React.createClass({
   renderExpoCentre: function() {
     return Object.keys(expoData).map(function(venue){
       return (
-        <MenuItem value={venue} primaryText={venue} key={venue}/>
+        <MenuItem value={venue} style={smallerFont} primaryText={venue} key={venue}/>
       )
     })
   },
@@ -57,7 +57,7 @@ let ExpoDetails = React.createClass({
   render: function() {
     return (
       <div className="center-align">
-        <SelectField className="dropdown" value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
           {this.renderExpoCentre()}
         </SelectField >
 
