@@ -37,6 +37,7 @@ var Menu = React.createClass({
         restaurant = "noImage"
       }
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var basketContent = this.props.helpers.numberOfItemsInBasket(this.props.basket)
 
     return (
       <div className="custom-container desktop-container">
@@ -61,6 +62,7 @@ var Menu = React.createClass({
           </div>
 
           <MenuComponent
+            basketContent={basketContent}
             menu={menu}
             actions={this.props.actions}
             showBackLink={this.props.tagName === 'foodType'}
