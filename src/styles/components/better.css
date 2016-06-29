@@ -722,6 +722,10 @@ input[type=text]:focus:not([readonly]) {
   line-height: 1.4;
 }
 
+.material-ui-small-font {
+  font-size: 0.8em !important;
+}
+
 @media only screen and (max-width: 993px) {
   .restaurant-logo {
     display: none;
