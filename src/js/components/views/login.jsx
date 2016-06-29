@@ -24,6 +24,8 @@ var Login = React.createClass({
       return <BaseButton buttonLink={"/piccniccer-orders"} buttonText={"Piccniccer Login"}/>
     } else if (this.state.userType === 'retailer'){
       return <BaseButton buttonLink={"/retailer-orders"} buttonText={"Retailer Login"}/>
+    } else if (this.state.userType === 'airport'){
+      return <BaseButton buttonLink={"/select-airport"} buttonText={"Airport Login"}/>
     } else {
       return <BaseButton buttonLink={"/"} buttonText={"Login"}/>
     }
@@ -40,7 +42,8 @@ var Login = React.createClass({
                 <SelectField className="dropdown" value={this.state.userType} floatingLabelText="Username" onChange={this.selectorChange}>
                     <MenuItem value="piccniccer" primaryText="Piccniccer" />
                     <MenuItem value="retailer" primaryText="Retailer" />
-                    <MenuItem value="customer" primaryText="Customer" />
+                    <MenuItem value="airport" primaryText="Airport" />
+                    <MenuItem value="exhibition" primaryText="Exhibition" />
                 </SelectField >
               </div>
               <div className="row">

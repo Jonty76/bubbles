@@ -24,6 +24,9 @@ let PiccniccerOrders      = require('./components/views/piccniccer-orders.jsx');
 let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.jsx');
 let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 
+/* Expo MVP */
+let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
+
 
 injectTapEventPlugin();
 
@@ -36,9 +39,10 @@ let rootElement       = document.getElementById('react-content');
 render((
   <Router history={hashHistory}>
     <Route path="/" component={Basket}>
-      <IndexRoute component={SelectAirport} />
+      <IndexRoute component={ExpoLanding} />
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
+      <Route path="select-airport" component={SelectAirport} />
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
