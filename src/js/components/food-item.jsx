@@ -33,6 +33,13 @@ var RemoveItem = React.createClass({
   removeItem: function(event) {
     event.stopPropagation();
     this.props.removeItem(this.props.id);
+
+    if (this.props.basketContent <= 1) {
+      var addClass = document.getElementsByClassName("add");
+      for (var i = 0; i < addClass.length; i++) {
+        addClass[i].style.display = "inline-block"
+      }
+    }
   },
 
   render: function() {
@@ -118,6 +125,7 @@ var NumberOrdered = React.createClass({
 
 var FoodItem = React.createClass({
   componentDidMount: function (){
+
     var foodItemSelected = $(".glyphicon-menu-up").is(":visible");
     if (foodItemSelected) {
       var addClass = document.getElementsByClassName("add");
@@ -141,6 +149,7 @@ var FoodItem = React.createClass({
 
   clickHandler: function(event) {
     event.stopPropagation();
+    
     var addClass = document.getElementsByClassName("add");
     for (var i = 0; i < addClass.length; i++) {
       addClass[i].style.display = "none"
@@ -209,6 +218,7 @@ var FoodItem = React.createClass({
             removeItem={this.props.actions.removeItem}
             id={this.props.id}
             numberOrdered={this.props.quantityOrdered}
+            basketContent={this.props.basketContent}
           />
         </div>
         <div style={content}>

@@ -29,6 +29,7 @@ var FoodItems = React.createClass({
               <div className='list-group-item pull-out'>
                 <FoodItem
                   {...item}
+                  basketContent={this.props.basketContent}
                   actions={this.props.actions}
                   inCheckout={this.props.inCheckout}
                   page={this.props.page}
@@ -45,7 +46,7 @@ var FoodType = React.createClass({render: function() {
     return (
       <div>
         <Title title={this.props.name}/>
-        <FoodItems items={this.props.items} actions={this.props.actions} inCheckout={this.props.inCheckout} page={this.props.page}/>
+        <FoodItems items={this.props.items} actions={this.props.actions} inCheckout={this.props.inCheckout} page={this.props.page} basketContent={this.props.basketContent}/>
       </div>
     );
   }
