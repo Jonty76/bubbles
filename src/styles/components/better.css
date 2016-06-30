@@ -609,7 +609,16 @@ input[type=text]:focus:not([readonly]) {
 
 /* Exhibition App only */
 
-
+.validation-text {
+  margin-top: 1em;
+  display: none;
+  border: 3px solid #ED2C31;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  padding: 4px;
+}
 
 
 /* Piccniccer Page */
