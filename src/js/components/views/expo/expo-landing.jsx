@@ -46,9 +46,10 @@ let ExpoLanding = React.createClass({
   },
 
   selectorChange(keyName, event, index, value){
-      var change = {};
-      change[keyName] = value;
-      this.setState(change);
+    var change = {};
+    change[keyName] = value;
+    this.setState(change);
+    this.props.actions.setExpoState(keyName, event, index, value)
   },
 
   timeChange(nothing, value){
@@ -56,12 +57,15 @@ let ExpoLanding = React.createClass({
     this.setState({
       selectedDeliveryTime: time
     })
+    this.props.actions.setTime(nothing, value)
+    this.props.actions.setExpoState("deliveryPoint", "", "", "mainEntrance")
   },
 
   setStand(nothing, value){
     this.setState({
       deliveryPoint: value
     })
+    this.props.actions.setStand(nothing, value)
   },
 
   renderDeliveryLocation: function(){
