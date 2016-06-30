@@ -90,6 +90,27 @@ RouteCSSTransitionGroup.contextTypes = {
 
 let Basket = React.createClass({
 
+  //EXPO STATE FUNCTIONS
+  setExpoState: function(keyName, event, index, value){
+    var change = {};
+    change[keyName] = value;
+    this.setState(change);
+  },
+
+  setTime: function(nothing, value){
+    var time = Date.parse(value)
+    this.setState({
+      selectedDeliveryTime: time
+    })
+  },
+
+  setStand: function(nothing, value){
+    this.setState({
+      deliveryPoint: value
+    })
+  },
+  //END OF EXPO STATE FUNCTIONS
+
   setTerminal: function(terminal){
     var menu = terminal + "Menu"
     this.setState({
@@ -265,7 +286,10 @@ let Basket = React.createClass({
         clearQuantityOfItem: this.clearQuantityOfItem,
         setMenuType: this.setMenuType,
         setTerminal: this.setTerminal,
-        setDate: this.setDate
+        setDate: this.setDate,
+        setExpoState: this.setExpoState,
+        setTime: this.setTime,
+        setStand: this.setStand
       },
       helpers: {
         filterMenu: this.filterMenu,
