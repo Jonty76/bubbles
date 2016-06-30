@@ -191,7 +191,7 @@ let ExpoLanding = React.createClass({
 
   render: function() {
 
-    var burgerMenuOptions = ["About+/about", "Logout+/login"]
+    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
 
     return (
       <div>
