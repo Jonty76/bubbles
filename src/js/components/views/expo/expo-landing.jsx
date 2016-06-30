@@ -27,6 +27,33 @@ let ExpoLanding = React.createClass({
     var that = this
 
     $("#expo-landing-page-button").click(function(){
+
+    if(that.state.selectedDeliveryTime !== ""){
+      var formattedSelectedDate = new Date(that.state.selectedDeliveryDate)
+      var formattedSelectedTime = new Date(that.state.selectedDeliveryTime)
+
+      var year = formattedSelectedDate.getFullYear()
+      var month = formattedSelectedDate.getMonth()
+      var day = formattedSelectedDate.getDate()
+
+      var hour = formattedSelectedTime.getHours()
+      var minutes = formattedSelectedTime.getMinutes()
+
+      var selectedDateTime = new Date(year, month, day, hour, minutes)
+      var parsedDate = Date.parse(selectedDateTime)
+
+      that.props.actions.setExpoState("selectedDateTime", "", "", parsedDate)
+
+      var now = new Date()
+      var diff = new Date(now.getTime() + 45*60000)
+
+      if (parsedDate < Date.parse(diff)) {
+        console.log("time selected is too soon")
+      } else {
+        console.log("that's fine")
+      }
+    }
+
     var isStateEmpty = Object.keys(that.state).map(function(elem){
         if(that.state[elem] === "") {
           return false
