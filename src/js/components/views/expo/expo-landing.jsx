@@ -180,7 +180,7 @@ let ExpoLanding = React.createClass({
               <p className="standard-question-style">Hampers of Happiness, Delivered </p>
             </div>
               <div className="center-align">
-                <strong><p id="validation-text" style={{display:"none", color:"#ED2C31", marginTop:"1em"}}>Please fill in all fields</p></strong>
+                <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
                 <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
                   {this.renderExpoCentre()}
                 </SelectField >
