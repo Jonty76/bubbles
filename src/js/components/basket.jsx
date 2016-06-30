@@ -97,6 +97,14 @@ let Basket = React.createClass({
     this.setState(change);
   },
 
+  setExpoCenter: function(event, index, value){
+    this.setState({
+      selectedExpoCentre: value,
+      selectedExpo: "",
+      selectedDeliveryDate: ""
+    })
+  },
+
   setTime: function(nothing, value){
     var time = Date.parse(value)
     this.setState({
@@ -289,7 +297,8 @@ let Basket = React.createClass({
         setDate: this.setDate,
         setExpoState: this.setExpoState,
         setTime: this.setTime,
-        setStand: this.setStand
+        setStand: this.setStand,
+        setExpoCenter: this.setExpoCenter
       },
       helpers: {
         filterMenu: this.filterMenu,

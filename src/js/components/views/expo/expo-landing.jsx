@@ -45,14 +45,14 @@ let ExpoLanding = React.createClass({
     })
   },
 
-  selectorChange(keyName, event, index, value){
+  selectorChange: function (keyName, event, index, value){
     var change = {};
     change[keyName] = value;
     this.setState(change);
     this.props.actions.setExpoState(keyName, event, index, value)
   },
 
-  timeChange(nothing, value){
+  timeChange: function (nothing, value){
     var time = Date.parse(value)
     this.setState({
       selectedDeliveryTime: time
@@ -61,11 +61,20 @@ let ExpoLanding = React.createClass({
     this.props.actions.setExpoState("deliveryPoint", "", "", "mainEntrance")
   },
 
-  setStand(nothing, value){
+  setStand: function(nothing, value){
     this.setState({
       deliveryPoint: value
     })
     this.props.actions.setStand(nothing, value)
+  },
+
+  setExpoCenter: function(event, index, value){
+    this.setState({
+      selectedExpoCentre: value,
+      selectedExpo: "",
+      selectedDeliveryDate: ""
+    })
+    this.props.actions.setExpoCenter(event, index, value)
   },
 
   renderDeliveryLocation: function(){
@@ -170,6 +179,15 @@ let ExpoLanding = React.createClass({
     })
   },
 
+  selectExpoCentre: function(){
+    return (
+      <div>
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.setExpoCenter}>
+          {this.renderExpoCentre()}
+        </SelectField >
+      </div>
+    )
+  },
 
   render: function() {
 
@@ -185,9 +203,8 @@ let ExpoLanding = React.createClass({
             </div>
               <div className="center-align">
                 <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
-                <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
-                  {this.renderExpoCentre()}
-                </SelectField >
+
+                {this.selectExpoCentre()}
 
                 {this.selectExpo()}
 
