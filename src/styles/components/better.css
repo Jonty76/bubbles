@@ -620,6 +620,10 @@ input[type=text]:focus:not([readonly]) {
   padding: 4px;
 }
 
+.margin-all {
+  margin: 2em;
+}
+
 
 /* Piccniccer Page */
 
