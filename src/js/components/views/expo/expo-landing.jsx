@@ -24,7 +24,6 @@ let ExpoLanding = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log("component did")
     var that = this
 
     $("#expo-landing-page-button").click(function(){
@@ -36,16 +35,10 @@ let ExpoLanding = React.createClass({
         }
       })
 
-
-      console.log("is state empty>>>", isStateEmpty)
-
       if(isStateEmpty.indexOf(false) > -1){
-        console.log("can't proceed")
+        $("#validation-text").show()
       } else {
-        console.log("link works")
-        $("#expo-landing-page-button-link").attr("to", "/select-restaurant")
-
-
+        window.location.href = "http://localhost:8080/public/#/basket/select-restaurant"
       }
     })
   },
@@ -185,7 +178,7 @@ let ExpoLanding = React.createClass({
               <p className="standard-question-style">Hampers of Happiness, Delivered </p>
             </div>
               <div className="center-align">
-
+                <strong><p id="validation-text" style={{display:"none", color:"#ED2C31", marginTop:"1em"}}>Please fill in all fields</p></strong>
                 <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
                   {this.renderExpoCentre()}
                 </SelectField >
@@ -208,9 +201,7 @@ let ExpoLanding = React.createClass({
         </div>
 
         <div>
-          <Link to="" id="expo-landing-page-button-link">
-            <div id="expo-landing-page-button" className="waves-effect waves-light base-button btn-large">Next</div>
-          </Link>
+          <div id="expo-landing-page-button" className="waves-effect waves-light base-button btn-large">Next</div>
         </div>
       </div>
     );
