@@ -24,7 +24,6 @@ let ExpoLanding = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log("on mount");
     var that = this
 
     $("#expo-landing-page-button").click(function(){
