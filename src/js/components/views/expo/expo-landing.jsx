@@ -126,8 +126,6 @@ let ExpoLanding = React.createClass({
     var dates = expoData[this.state.selectedExpoCentre][this.state.selectedExpo].dates
     return dates.map(function(date){
       var t = new Date(date)
-      console.log(t, "new date")
-      console.log("to date string", t.toDateString())
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       var month = months[t.getMonth()]
       var formattedDate = t.getDate() + " " + month + " " + t.getFullYear()
