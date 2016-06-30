@@ -607,6 +607,11 @@ input[type=text]:focus:not([readonly]) {
   margin-top: 1em;
 }
 
+/* Exhibition App only */
+
+
+
+
 /* Piccniccer Page */
 
 .grey-text {

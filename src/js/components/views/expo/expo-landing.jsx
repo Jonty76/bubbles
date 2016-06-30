@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../header.jsx';
+import BaseButton from '../../base-button.jsx';
 import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
@@ -10,7 +11,7 @@ let expoData  = require('../../../data/expo-data.js');
 
 let smallerFont = {fontSize: "0.8em"}
 
-let ExpoDetails = React.createClass({
+let ExpoLanding = React.createClass({
   getInitialState: function() {
     return {
       selectedExpoCentre: "",
@@ -18,8 +19,30 @@ let ExpoDetails = React.createClass({
       selectedDeliveryDate: "",
       selectedDeliveryTime: "",
       selectedUserType: "",
-      deliveryPoint: ""
+      deliveryPoint: "mainEntrance"
     };
+  },
+
+  componentDidMount: function() {
+    var that = this
+
+    $("#expo-landing-page-button").click(function(){
+    var isStateEmpty = Object.keys(that.state).map(function(elem){
+        if(that.state[elem] === "") {
+          return false
+        } else {
+          return true
+        }
+      })
+
+      if(isStateEmpty.indexOf(false) > -1){
+        $("#validation-text").show()
+      } else {
+
+        var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
+        window.location.href = location
+      }
+    })
   },
 
   selectorChange(keyName, event, index, value){
@@ -44,7 +67,6 @@ let ExpoDetails = React.createClass({
   renderDeliveryLocation: function(){
     if (this.state.selectedUserType !== "") {
       if (this.state.selectedUserType === "attendee") {
-        this.selectorChange.bind('mainEntrance', 'deliveryPoint')
         return (
           <div>
             <p style={smallerFont}>Your delivery pick up point is here</p>
@@ -144,31 +166,7 @@ let ExpoDetails = React.createClass({
     })
   },
 
-  render: function() {
-    return (
-      <div className="center-align">
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
-          {this.renderExpoCentre()}
-        </SelectField >
 
-        {this.selectExpo()}
-
-        {this.selectDeliveryDate()}
-
-        {this.selectDeliveryTime()}
-
-        {this.selectUserType()}
-
-        {this.renderDeliveryLocation()}
-
-      </div>
-
-    );
-  }
-})
-
-
-var ExpoLanding = React.createClass({
   render: function() {
 
     var burgerMenuOptions = ["About+/about", "Logout+/login"]
@@ -176,14 +174,36 @@ var ExpoLanding = React.createClass({
     return (
       <div>
         <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
-        <div className="center-align desktop-container">
+        <div className="center-align desktop-container custom-container">
           <div className="content-container">
             <div className="question-container">
               <p className="standard-question-style">Hampers of Happiness, Delivered </p>
             </div>
+              <div className="center-align">
+                <strong><p id="validation-text" style={{display:"none", color:"#ED2C31", marginTop:"1em"}}>Please fill in all fields</p></strong>
+                <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.selectorChange.bind(this, 'selectedExpoCentre')}>
+                  {this.renderExpoCentre()}
+                </SelectField >
 
-            <ExpoDetails />
+                {this.selectExpo()}
+
+                {this.selectDeliveryDate()}
+
+                {this.selectDeliveryTime()}
+
+                {this.selectUserType()}
+
+                {this.renderDeliveryLocation()}
+
+              </div>
+
+
           </div>
+
+        </div>
+
+        <div>
+          <div id="expo-landing-page-button" className="waves-effect waves-light base-button btn-large">Next</div>
         </div>
       </div>
     );
