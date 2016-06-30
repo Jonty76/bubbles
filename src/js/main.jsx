@@ -27,6 +27,7 @@ let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 /* Expo MVP */
 let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
+let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
 
 injectTapEventPlugin();
 
@@ -40,6 +41,8 @@ render((
   <Router history={hashHistory}>
     <Route path="/" component={Basket}>
       <IndexRoute component={ExpoLanding} />
+      <Route path="expo-faq" component={ExpoFaq} />
+
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
       <Route path="select-airport" component={SelectAirport} />
