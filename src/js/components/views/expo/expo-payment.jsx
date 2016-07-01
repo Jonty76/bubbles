@@ -14,8 +14,15 @@ let ExpoPayment = React.createClass({
     };
   },
 
-  formSubmit: function() {
-
+  componentDidMount: function() {
+    var form = document.getElementById('braintree-payment-form');
+    form.noValidate = true;
+    form.addEventListener('submit', function(event) {
+      if (!event.target.checkValidity()) {
+        event.preventDefault();
+        $("#validation-text").show()
+      }
+    }, false);
   },
 
   render: function() {
@@ -26,6 +33,8 @@ let ExpoPayment = React.createClass({
       <div>
         <div className="custom-container desktop-container">
           <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+
+            <p id="validation-text" className="validation-text center-align">Please fill in all required fields!</p>
 
             <form onsubmit={this.formSubmit} action="/process-payment" method="POST" id="braintree-payment-form">
               <div className="card-input-wrapper">
