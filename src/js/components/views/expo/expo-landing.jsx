@@ -25,21 +25,26 @@ let ExpoLanding = React.createClass({
 
   componentDidMount: function() {
     var that = this
-    var isStateEmpty = Object.keys(that.state).map(function(elem){
-      if(that.state[elem] === "") {
-        return false
+
+    $("#expo-landing-page-button").click(function(){
+      var isStateEmpty = Object.keys(that.state).map(function(elem){
+        if(that.state[elem] === "") {
+          return false
+        } else {
+          return true
+        }
+      })
+
+      if(isStateEmpty.indexOf(false) > -1){
+        $("#validation-text").show()
       } else {
-        return true
+
+        var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
+        window.location.href = location
+
+        console.log(location)
       }
     })
-
-    if(isStateEmpty.indexOf(false) > -1){
-      $("#validation-text").show()
-    } else {
-
-      var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
-      window.location.href = location
-    }
   },
 
   selectorChange: function (keyName, event, index, value){
