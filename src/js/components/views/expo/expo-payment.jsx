@@ -39,22 +39,22 @@ let ExpoPayment = React.createClass({
             <form onsubmit={this.formSubmit} action="/process-payment" method="POST" id="braintree-payment-form">
               <div className="card-input-wrapper">
                 <p>First Name *</p>
-                <input className="required" type="text" autocomplete="off" name='firstName' required />
+                <input type="text" autocomplete="off" name='firstName' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Last Name *</p>
-                <input className="required" type="text" autocomplete="off" name='lastName' required />
+                <input type="text" autocomplete="off" name='lastName' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Email *</p>
-                <input className="required" type="email" autocomplete="off" name='email' required />
+                <input type="email" autocomplete="off" name='email' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
-                <input className="required" type="text" autocomplete="off" name='phoneNumber' required/>
+                <input type="text" autocomplete="off" name='phoneNumber' required/>
               </div>
 
               <div className="card-input-wrapper">
@@ -64,18 +64,18 @@ let ExpoPayment = React.createClass({
 
               <div className="card-input-wrapper">
                 <p>Card Number *</p>
-                <input className="required" type="text" autocomplete="off" data-encrypted-name="number" maxlength="16" required />
+                <input type="text" autocomplete="off" data-encrypted-name="number" maxlength="16" required />
               </div>
 
               <div className="card-input-wrapper">
                 <div className="cvv-wrapper">
                   <p>CVV *</p>
-                  <input className="required" type="text" autocomplete="off" data-encrypted-name="cvv" maxlength="3" required/>
+                  <input type="text" autocomplete="off" data-encrypted-name="cvv" maxlength="3" required/>
                 </div>
                 <div className="expiration-wrapper">
                   <p>Expiration (MM/YYYY) *</p>
-                  <input className="required" id="card-month" type="text" size="2" data-encrypted-name="month" maxlength="2" required /> /
-                  <input className="required" id="card-year" type="text" size="4" data-encrypted-name="year"  maxlength="4" required/>
+                  <input id="card-month" type="text" size="2" data-encrypted-name="month" maxlength="2" required /> /
+                  <input id="card-year" type="text" size="4" data-encrypted-name="year"  maxlength="4" required/>
                 </div>
               </div>
 
