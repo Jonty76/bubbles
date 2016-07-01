@@ -14,8 +14,15 @@ let ExpoPayment = React.createClass({
     };
   },
 
-  formSubmit: function() {
-
+  componentDidMount: function() {
+    var form = document.getElementById('braintree-payment-form');
+    form.noValidate = true;
+    form.addEventListener('submit', function(event) {
+      if (!event.target.checkValidity()) {
+        event.preventDefault();
+        $("#validation-text").show()
+      }
+    }, false);
   },
 
   render: function() {
@@ -27,25 +34,27 @@ let ExpoPayment = React.createClass({
         <div className="custom-container desktop-container">
           <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
 
+            <p id="validation-text" className="validation-text center-align">Please fill in all required fields!</p>
+
             <form onsubmit={this.formSubmit} action="/process-payment" method="POST" id="braintree-payment-form">
               <div className="card-input-wrapper">
                 <p>First Name *</p>
-                <input type="text" autocomplete="off" name='firstName' required />
+                <input className="required" type="text" autocomplete="off" name='firstName' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Last Name *</p>
-                <input type="text" autocomplete="off" name='lastName' required />
+                <input className="required" type="text" autocomplete="off" name='lastName' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Email *</p>
-                <input type="email" autocomplete="off" name='email' required />
+                <input className="required" type="email" autocomplete="off" name='email' required />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
-                <input type="text" autocomplete="off" name='phoneNumber' required/>
+                <input className="required" type="text" autocomplete="off" name='phoneNumber' required/>
               </div>
 
               <div className="card-input-wrapper">
@@ -55,18 +64,18 @@ let ExpoPayment = React.createClass({
 
               <div className="card-input-wrapper">
                 <p>Card Number *</p>
-                <input type="text" autocomplete="off" data-encrypted-name="number" maxlength="16" required />
+                <input className="required" type="text" autocomplete="off" data-encrypted-name="number" maxlength="16" required />
               </div>
 
               <div className="card-input-wrapper">
                 <div className="cvv-wrapper">
                   <p>CVV *</p>
-                  <input type="text" autocomplete="off" data-encrypted-name="cvv" maxlength="3" required/>
+                  <input className="required" type="text" autocomplete="off" data-encrypted-name="cvv" maxlength="3" required/>
                 </div>
                 <div className="expiration-wrapper">
                   <p>Expiration (MM/YYYY) *</p>
-                  <input id="card-month" type="text" size="2" data-encrypted-name="month" maxlength="2" required /> /
-                  <input id="card-year" type="text" size="4" data-encrypted-name="year"  maxlength="4" required/>
+                  <input className="required" id="card-month" type="text" size="2" data-encrypted-name="month" maxlength="2" required /> /
+                  <input className="required" id="card-year" type="text" size="4" data-encrypted-name="year"  maxlength="4" required/>
                 </div>
               </div>
 

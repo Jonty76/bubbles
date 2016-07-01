@@ -367,7 +367,9 @@ input::-webkit-input-placeholder {
     font-weight: 400;
 }
 
-input[type=text]:focus:not([readonly]) {
+input[type=text]:focus:not([readonly]),
+input[type=email]:focus:not([readonly])
+{
   border-bottom: 1px solid #ED2C31;
   box-shadow: 0 0px 0 0 #ED2C31;
 }
