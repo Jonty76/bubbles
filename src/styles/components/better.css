@@ -798,6 +798,10 @@ input[type=email]:focus:not([readonly])
   width: 55%;
   margin-left: 0.5em;
 }
+
+#submit {
+  width: 100%;
+}
 /* END OF EXPO STYLING */
 
 
