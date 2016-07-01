@@ -626,6 +626,11 @@ input[type=email]:focus:not([readonly])
   margin: 2em;
 }
 
+#expo-order-too-soon-modal {
+  height: 250px;
+  top: 0% !important;
+}
+
 
 /* Piccniccer Page */
 

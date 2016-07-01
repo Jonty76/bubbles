@@ -25,24 +25,21 @@ let ExpoLanding = React.createClass({
 
   componentDidMount: function() {
     var that = this
-
-    $("#expo-landing-page-button").click(function(){
     var isStateEmpty = Object.keys(that.state).map(function(elem){
-        if(that.state[elem] === "") {
-          return false
-        } else {
-          return true
-        }
-      })
-
-      if(isStateEmpty.indexOf(false) > -1){
-        $("#validation-text").show()
+      if(that.state[elem] === "") {
+        return false
       } else {
-
-        var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
-        window.location.href = location
+        return true
       }
     })
+
+    if(isStateEmpty.indexOf(false) > -1){
+      $("#validation-text").show()
+    } else {
+
+      var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
+      window.location.href = location
+    }
   },
 
   selectorChange: function (keyName, event, index, value){
@@ -61,6 +58,33 @@ let ExpoLanding = React.createClass({
     this.props.actions.setExpoState("deliveryPoint", "", "", "mainEntrance")
   },
 
+  tooSoonCheck: function () {
+    var formattedSelectedDate = new Date(this.state.selectedDeliveryDate)
+    var formattedSelectedTime = new Date(this.state.selectedDeliveryTime)
+
+    var year = formattedSelectedDate.getFullYear()
+    var month = formattedSelectedDate.getMonth()
+    var day = formattedSelectedDate.getDate()
+
+    var hour = formattedSelectedTime.getHours()
+    var minutes = formattedSelectedTime.getMinutes()
+
+    var selectedDateTime = new Date(year, month, day, hour, minutes)
+    var parsedDate = Date.parse(selectedDateTime)
+
+    var now = new Date()
+    var diff = new Date(now.getTime() + 45*60000)
+
+    if (parsedDate < Date.parse(diff)) {
+      $('#expo-order-too-soon-modal').openModal()
+      console.log("time selected is too soon")
+      return (false)
+    } else {
+      console.log("that's fine")
+      return (true)
+    }
+  },
+
   setStand: function(nothing, value){
     this.setState({
       deliveryPoint: value
@@ -73,37 +97,48 @@ let ExpoLanding = React.createClass({
       selectedExpoCentre: value,
       selectedExpo: "",
       selectedDeliveryDate: ""
+
     })
     this.props.actions.setExpoCenter(event, index, value)
   },
 
   renderDeliveryLocation: function(){
-    if (this.state.selectedUserType !== "") {
-      if (this.state.selectedUserType === "attendee") {
-        return (
-          <div>
-            <p style={smallerFont}>Your delivery pick up point is here</p>
-          </div>
-        )
-      } else {
-        return (
-          <div>
-            <TextField className={"material-ui-small-font"} onChange={this.setStand} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
-            <p style={smallerFont}>We will deliver your Piccnicc to you here</p>
-          </div>
-        )
+    if (this.state.selectedDeliveryTime !== ""){
+      if (this.state.selectedUserType !== "") {
+        if (this.state.selectedUserType === "attendee") {
+          return (
+            <div></div>
+          )
+        } else {
+          return (
+            <div>
+              <TextField className={"material-ui-small-font"} onChange={this.setStand} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
+              <p style={smallerFont}>We will deliver your Piccnicc to you here</p>
+            </div>
+          )
+        }
       }
     }
   },
 
   selectUserType: function(){
     if (this.state.selectedDeliveryTime !== "") {
-      return (
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Vistor or Attendee" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
-          <MenuItem value="exhibitor" primaryText="Exhibitor" />
-          <MenuItem value="attendee" primaryText="Attendee" />
-        </SelectField>
-      )
+      var orderTimeValid = this.tooSoonCheck()
+        if (orderTimeValid) {
+          return (
+            <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Vistor or Attendee" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
+              <MenuItem value="exhibitor" primaryText="Exhibitor" />
+              <MenuItem value="attendee" primaryText="Attendee" />
+            </SelectField>
+          )
+        } else {
+          this.setState({
+            selectedDeliveryTime: ""
+          })
+          return (
+            <div></div>
+          )
+        }
     }
   },
 
@@ -115,7 +150,6 @@ let ExpoLanding = React.createClass({
         <TimePicker
           className={"material-ui-small-font"}
           onChange={this.timeChange}
-          dialogBodyStyle={{width: "180px"}}
         />
       </div>
       )
@@ -218,6 +252,18 @@ let ExpoLanding = React.createClass({
 
               </div>
 
+              <div id="expo-order-too-soon-modal" className="modal">
+                <div className="flight-too-soon-content">
+                    <div className="flight-too-soon-text">
+                      <p className="top-line">You're trying to order for less than forty-five minutes time.</p>
+
+                      <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered to you.</p>
+                      <p>Please select another time and try again.</p>
+
+                      <a href="#!" className="modal-action modal-close btn-flat">Close</a>
+                    </div>
+                </div>
+              </div>
 
           </div>
 

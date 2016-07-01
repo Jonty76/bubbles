@@ -1,5 +1,11 @@
 var expoData = {
     "Earls Court": {
+      TodayConf: {
+        code: "TodayConf",
+        name: "Today Conference '16: 1st July",
+        venue: "Earls Court",
+        dates: [1467370903755]
+      },
       HealthConf: {
         code: "HealthConf",
         name: "Health Conference '16: 21st & 22nd Aug",
