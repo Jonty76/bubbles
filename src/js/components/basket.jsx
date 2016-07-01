@@ -108,7 +108,8 @@ let Basket = React.createClass({
       selectedExpoCentre: value,
       selectedExpo: "",
       selectedDeliveryDate: "",
-      basket: getMenu[menu]()
+      basket: getMenu[menu](),
+      app: "expo"
     })
   },
 
@@ -130,7 +131,8 @@ let Basket = React.createClass({
     var menu = terminal + "Menu"
     this.setState({
       terminal: terminal,
-      basket: getMenu[menu]()
+      basket: getMenu[menu](),
+      app: "airport"
     })
   },
 

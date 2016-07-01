@@ -42,6 +42,13 @@ var BasketPage = React.createClass({
     var total = deliveryFee + foodSubtotal;
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
+    var buttonLink;
+    if(this.props.app === "airport") {
+      buttonLink = "/payment"
+    } else {
+      buttonLink = "/expo-payment"
+    }
+
     var adjustMargin = {
       marginBottom: "0",
       marginTop: "15px"
@@ -61,7 +68,7 @@ var BasketPage = React.createClass({
           <Link to='/basket/select-restaurant'>
             <div className="white-button btn-large">Order from elsewhere</div>
           </Link>
-          <Link to='/payment'>
+          <Link to={buttonLink}>
             <div style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>
           </Link>
         </div>
