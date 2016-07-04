@@ -14,16 +14,44 @@ test("simple server running", function(t) {
 });
 
 
-test('Does backend receive form details in payload in lib/payment.js', function(t){
-  var request = {
-    method:"POST",
-    url: "/process-payment"
-  };
+test('Does successful payment return successful page', function(t){
+  var options = {
+    method: "POST",
+    url: "/process-payment",
+    payload: {
+      firstName: 'TestFirstName',
+      lastName: 'TestSecondName',
+      email: 'email@email.com',
+      phoneNumber: '07111111111',
+      company: 'FAC',
+      total: '1390',
+      orderNumber: '14676382555371390',
+      payment_method_nonce: 'fake-valid-nonce'
+    }
+  }
+  server.inject(options, function(response) {
+    t.equal(response.payload, "payment-success", "Payment returned successful")
+    t.end()
+  });
+});
 
-  server.inject(request, function(res){
-    var actual = res.statusCode;
-    var expected = 200;
-    t.equal(expected, actual, 'server is up and running');
-    server.stop(t.end);
+test('Does failed payment return failed page', function(t){
+  var options = {
+    method: "POST",
+    url: "/process-payment",
+    payload: {
+      firstName: 'TestFirstName',
+      lastName: 'TestSecondName',
+      email: 'email@email.com',
+      phoneNumber: '07111111111',
+      company: 'Failed Payment Co',
+      total: '300000',
+      orderNumber: '14676382555371390',
+      payment_method_nonce: 'fake-processor-declined-visa-nonce'
+    }
+  }
+  server.inject(options, function(response) {
+    t.equal(response.payload, "payment-failed", "Payment returned as failed")
+    server.stop(t.end)
   });
 });
