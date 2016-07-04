@@ -78,6 +78,11 @@ let ExpoPayment = React.createClass({
               </div>
 
               <div className="card-input-wrapper">
+                <p>Name on Card</p>
+                <input data-braintree-name="cardholder_name" autocomplete="off" type="text"/>
+              </div>
+
+              <div className="card-input-wrapper">
                 <p>Card Number *</p>
                 <input data-braintree-name="number" id="card-number" type="text" autocomplete="off" maxlength="16"  />
               </div>
