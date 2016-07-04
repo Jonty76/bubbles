@@ -41,7 +41,8 @@ let ExpoPayment = React.createClass({
     var tip = this.props.tip
     var total = foodSubtotal + tip
     var orderNumber = this.generateOrderNumber(total)
-    console.log(orderNumber)
+    var stateObj = {total: total, deliveryPoint: this.props.deliveryPoint}
+    localStorage.setItem("state", JSON.stringify(stateObj))
 
     return (
 

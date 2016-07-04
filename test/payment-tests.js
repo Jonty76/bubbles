@@ -14,7 +14,7 @@ test("simple server running", function(t) {
 });
 
 
-test('Does successful payment return successful page', function(t){
+test.only('Does successful payment return successful page', function(t){
   var options = {
     method: "POST",
     url: "/process-payment",
@@ -30,7 +30,8 @@ test('Does successful payment return successful page', function(t){
     }
   }
   server.inject(options, function(response) {
-    t.equal(response.payload, "payment-success", "Payment returned successful")
+    console.log("payload>>", response)
+    t.ok(response.payload.includes("Delicious"), "Payment returned successful")
     t.end()
   });
 });
