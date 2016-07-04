@@ -33,6 +33,10 @@ let ExpoPayment = React.createClass({
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    var tip = this.props.tip
+    var total = foodSubtotal + tip
+    console.log(total)
 
     return (
 
@@ -89,6 +93,8 @@ let ExpoPayment = React.createClass({
                 <p>Postal Code *</p>
                 <input data-braintree-name="postal_code" id="postal-code" type="text" autocomplete="off"  />
               </div>
+
+              <input type="hidden" name="total" value={total}></input>
 
               <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>

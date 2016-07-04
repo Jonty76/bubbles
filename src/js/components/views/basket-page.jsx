@@ -6,11 +6,44 @@ let MenuComponent = require('../menu.jsx');
 
 var BasketPage = React.createClass({
 
+  getInitialState: function() {
+    return {
+      tip: 100
+    }
+  },
+
   componentDidMount: function(){
+    var that = this
+    var tip = this.state.tip
     var addClass = document.getElementsByClassName("add");
     for (var i = 0; i < addClass.length; i++) {
       addClass[i].style.display = "none"
     }
+    document.getElementById('add-tip').addEventListener("click", function(){
+      if(tip < 300) {
+        tip += 50
+      } else {
+        tip = 300
+      }
+      that.setState({
+        tip: tip
+      })
+      that.props.actions.setExpoState("tip", "", "", tip)
+    })
+
+    document.getElementById('remove-tip').addEventListener("click", function(){
+      if(tip > 0) {
+        tip -= 50
+      } else {
+        tip = 0
+      }
+      that.setState({
+        tip: tip
+      })
+      that.props.actions.setExpoState("tip", "", "", tip)
+    })
+
+
   },
 
   getCheckoutList: function() {
@@ -36,10 +69,12 @@ var BasketPage = React.createClass({
 
   render: function() {
     var menu = this.getCheckoutList();
-    var deliveryFee = this.getDeliveryFee(menu);
+    // var deliveryFee = this.getDeliveryFee(menu);
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var formatPrice = this.props.helpers.formatPrice;
-    var total = deliveryFee + foodSubtotal;
+    // var total = deliveryFee + foodSubtotal;
+
+    var total = foodSubtotal + this.state.tip
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
     var buttonLink;
@@ -53,6 +88,11 @@ var BasketPage = React.createClass({
       marginBottom: "0",
       marginTop: "15px"
     }
+
+    var add = {
+      color: '#ED2C31'
+    }
+
     return (
       <div className="grey-background desktop-container">
         <Header headerTheme={"whiteNav"} text={"Your Hamper"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
@@ -60,7 +100,11 @@ var BasketPage = React.createClass({
         <MenuComponent menu={menu} actions={this.props.actions} inCheckout={true} page={"basket-page"}/>
         <div className="total right-align">
           <p>Subtotal: {formatPrice(foodSubtotal)}</p>
-          <p>Delivery Fee: {formatPrice(deliveryFee)}</p>
+          <p>
+            <i id="add-tip" className="material-icons">add</i>
+            <i id="remove-tip" className="material-icons">remove</i>
+            Tip: {formatPrice(this.state.tip)}
+          </p>
           <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>
 
