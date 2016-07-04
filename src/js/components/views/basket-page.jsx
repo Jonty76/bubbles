@@ -28,6 +28,7 @@ var BasketPage = React.createClass({
       that.setState({
         tip: tip
       })
+      that.props.actions.setExpoState("tip", "", "", tip)
     })
 
     document.getElementById('remove-tip').addEventListener("click", function(){
@@ -39,6 +40,7 @@ var BasketPage = React.createClass({
       that.setState({
         tip: tip
       })
+      that.props.actions.setExpoState("tip", "", "", tip)
     })
 
 
@@ -64,7 +66,6 @@ var BasketPage = React.createClass({
       });
       return result.length * 150;
   },
-
 
   render: function() {
     var menu = this.getCheckoutList();

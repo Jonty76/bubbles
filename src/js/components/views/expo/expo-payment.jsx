@@ -15,6 +15,11 @@ let ExpoPayment = React.createClass({
   },
 
   componentDidMount: function() {
+    var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    var tip = this.props.tip
+    var total = foodSubtotal + tip
+
+    console.log("total on pay page", total)
     // var form = document.getElementById('braintree-payment-form');
     // form.noValidate = true;
     // form.addEventListener('submit', function(event) {
