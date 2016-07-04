@@ -31,12 +31,17 @@ let ExpoPayment = React.createClass({
     });
   },
 
+  generateOrderNumber: function(total) {
+    return Date.now().toString() + total.toString()
+  },
+
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var tip = this.props.tip
     var total = foodSubtotal + tip
-    console.log(total)
+    var orderNumber = this.generateOrderNumber(total)
+    console.log(orderNumber)
 
     return (
 
@@ -95,6 +100,7 @@ let ExpoPayment = React.createClass({
               </div>
 
               <input type="hidden" name="total" value={total}></input>
+              <input type="hidden" name="orderNumber" value={orderNumber}></input>
 
               <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>
