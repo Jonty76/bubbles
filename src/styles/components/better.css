@@ -798,6 +798,16 @@ input[type=email]:focus:not([readonly])
   width: 55%;
   margin-left: 0.5em;
 }
+
+#submit {
+  width: 100%;
+}
+
+#add-tip, #remove-tip {
+  color: #ED2C31;
+  border: solid 1px #ED2C31;
+}
+
 /* END OF EXPO STYLING */
 
 

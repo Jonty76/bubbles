@@ -15,18 +15,33 @@ let ExpoPayment = React.createClass({
   },
 
   componentDidMount: function() {
-    var form = document.getElementById('braintree-payment-form');
-    form.noValidate = true;
-    form.addEventListener('submit', function(event) {
-      if (!event.target.checkValidity()) {
-        event.preventDefault();
-        $("#validation-text").show()
-      }
-    }, false);
+    // var form = document.getElementById('braintree-payment-form');
+    // form.noValidate = true;
+    // form.addEventListener('submit', function(event) {
+    //   if (!event.target.checkValidity()) {
+    //     event.preventDefault();
+    //     $("#validation-text").show()
+    //   }
+    // }, false);
+
+    $.get("/get-client-token", function(data, status){
+      braintree.setup(data, 'custom', {
+        id: 'braintree-payment-form'
+      });
+    });
+  },
+
+  generateOrderNumber: function(total) {
+    return Date.now().toString() + total.toString()
   },
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+    var tip = this.props.tip
+    var total = foodSubtotal + tip
+    var orderNumber = this.generateOrderNumber(total)
+    console.log(orderNumber)
 
     return (
 
@@ -36,25 +51,25 @@ let ExpoPayment = React.createClass({
 
             <p id="validation-text" className="validation-text center-align">Please fill in all required fields!</p>
 
-            <form onsubmit={this.formSubmit} action="/process-payment" method="POST" id="braintree-payment-form">
+            <form method="POST" action="/process-payment" id="braintree-payment-form">
               <div className="card-input-wrapper">
                 <p>First Name *</p>
-                <input type="text" autocomplete="off" name='firstName' required />
+                <input type="text" autocomplete="off" name='firstName'  />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Last Name *</p>
-                <input type="text" autocomplete="off" name='lastName' required />
+                <input type="text" autocomplete="off" name='lastName'  />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Email *</p>
-                <input type="email" autocomplete="off" name='email' required />
+                <input type="email" autocomplete="off" name='email'  />
               </div>
 
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
-                <input type="text" autocomplete="off" name='phoneNumber' required/>
+                <input type="text" autocomplete="off" name='phoneNumber' />
               </div>
 
               <div className="card-input-wrapper">
@@ -63,21 +78,34 @@ let ExpoPayment = React.createClass({
               </div>
 
               <div className="card-input-wrapper">
+                <p>Name on Card</p>
+                <input data-braintree-name="cardholder_name" autocomplete="off" type="text"/>
+              </div>
+
+              <div className="card-input-wrapper">
                 <p>Card Number *</p>
-                <input type="text" autocomplete="off" data-encrypted-name="number" maxlength="16" required />
+                <input data-braintree-name="number" id="card-number" type="text" autocomplete="off" maxlength="16"  />
               </div>
 
               <div className="card-input-wrapper">
                 <div className="cvv-wrapper">
                   <p>CVV *</p>
-                  <input type="text" autocomplete="off" data-encrypted-name="cvv" maxlength="3" required/>
+                  <input data-braintree-name="cvv" id="cvv" type="text" autocomplete="off" maxlength="4" />
                 </div>
                 <div className="expiration-wrapper">
                   <p>Expiration (MM/YYYY) *</p>
-                  <input id="card-month" type="text" size="2" data-encrypted-name="month" maxlength="2" required /> /
-                  <input id="card-year" type="text" size="4" data-encrypted-name="year"  maxlength="4" required/>
+                  <input data-braintree-name="expiration_month" id="card-month" type="text" size="2" maxlength="2"  /> /
+                  <input data-braintree-name="expiration_year" id="card-year" type="text" size="4"  maxlength="4" required/>
                 </div>
               </div>
+
+              <div className="card-input-wrapper">
+                <p>Postal Code *</p>
+                <input data-braintree-name="postal_code" id="postal-code" type="text" autocomplete="off"  />
+              </div>
+
+              <input type="hidden" name="total" value={total}></input>
+              <input type="hidden" name="orderNumber" value={orderNumber}></input>
 
               <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>
