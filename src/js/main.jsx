@@ -28,6 +28,7 @@ let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
 let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
+let ExpoOrderConfirmed    = require('./components/views/expo/expo-order-confirmed-page.jsx')
 
 injectTapEventPlugin();
 
@@ -51,6 +52,7 @@ render((
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
       <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
+      <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
       <Route path="/order-track-complete" component={OrderTrackComplete} />

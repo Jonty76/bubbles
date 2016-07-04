@@ -40,6 +40,7 @@
     "formsy-react": "^0.17.0",
     "formsy-react-components": "^0.6.2",
     "hapi": "^11.1.0",
+    "hapi-react": "^5.0.0",
     "history": "~1.17.0",
     "hoek": "^3.0.1",
     "inert": "^3.2.0",
@@ -47,6 +48,7 @@
     "jsx-loader": "^0.13.2",
     "material-ui": "^0.15.0",
     "moment": "^2.10.6",
+    "path": "^0.12.7",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
@@ -54,6 +56,7 @@
     "react-static-container": "^1.0.1",
     "react-tap-event-plugin": "^1.0.0",
     "style-loader": "^0.13.0",
+    "vision": "^4.1.0",
     "webpack": "^1.12.2"
   },
   "devDependencies": {

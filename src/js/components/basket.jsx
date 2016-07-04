@@ -109,7 +109,8 @@ let Basket = React.createClass({
       selectedExpo: "",
       selectedDeliveryDate: "",
       basket: getMenu[menu](),
-      app: "expo"
+      app: "expo",
+      tip: 100
     })
   },
 

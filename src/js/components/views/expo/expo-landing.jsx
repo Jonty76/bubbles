@@ -19,7 +19,7 @@ let ExpoLanding = React.createClass({
       selectedDeliveryDate: "",
       selectedDeliveryTime: "",
       selectedUserType: "",
-      deliveryPoint: "mainEntrance"
+      deliveryPoint: "Main Entrance"
     };
   },
 
@@ -57,7 +57,7 @@ let ExpoLanding = React.createClass({
       selectedDeliveryTime: time
     })
     this.props.actions.setTime(nothing, value)
-    this.props.actions.setExpoState("deliveryPoint", "", "", "mainEntrance")
+    this.props.actions.setExpoState("deliveryPoint", "", "", "Main Entrance")
   },
 
   tooSoonCheck: function () {

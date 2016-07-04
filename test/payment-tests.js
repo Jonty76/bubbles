@@ -30,7 +30,7 @@ test('Does successful payment return successful page', function(t){
     }
   }
   server.inject(options, function(response) {
-    t.equal(response.payload, "payment-success", "Payment returned successful")
+    t.equal(response.headers.location, "/#/expo-order-confirmed-page", "Payment should be returned successful")
     t.end()
   });
 });
@@ -51,7 +51,7 @@ test('Does failed payment return failed page', function(t){
     }
   }
   server.inject(options, function(response) {
-    t.equal(response.payload, "payment-failed", "Payment returned as failed")
+    t.equal(response.payload, "payment-failed", "Payment should be returned as failed")
     server.stop(t.end)
   });
 });
