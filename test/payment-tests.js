@@ -14,7 +14,7 @@ test("simple server running", function(t) {
 });
 
 
-test.only('Does successful payment return successful page', function(t){
+test('Does successful payment return successful page', function(t){
   var options = {
     method: "POST",
     url: "/process-payment",
@@ -30,8 +30,7 @@ test.only('Does successful payment return successful page', function(t){
     }
   }
   server.inject(options, function(response) {
-    console.log("payload>>", response)
-    t.ok(response.payload.includes("Delicious"), "Payment returned successful")
+    t.equal(response.headers.location, "/#/expo-order-confirmed-page", "Payment should be returned successful")
     t.end()
   });
 });
@@ -52,7 +51,7 @@ test('Does failed payment return failed page', function(t){
     }
   }
   server.inject(options, function(response) {
-    t.equal(response.payload, "payment-failed", "Payment returned as failed")
+    t.equal(response.payload, "payment-failed", "Payment should be returned as failed")
     server.stop(t.end)
   });
 });
