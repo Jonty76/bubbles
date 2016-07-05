@@ -21,7 +21,7 @@ var BasketPage = React.createClass({
     }
     document.getElementById('add-tip').addEventListener("click", function(){
       if(tip < 300) {
-        tip += 50
+        tip += 100
       } else {
         tip = 300
       }
@@ -33,7 +33,7 @@ var BasketPage = React.createClass({
 
     document.getElementById('remove-tip').addEventListener("click", function(){
       if(tip > 0) {
-        tip -= 50
+        tip -= 100
       } else {
         tip = 0
       }
