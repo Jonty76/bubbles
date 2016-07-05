@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../header.jsx';
 import { Link } from 'react-router';
 
-var ExpoFaq = React.createClass({
+var ExpoAbout = React.createClass({
   render: function() {
     var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
 
@@ -28,4 +28,4 @@ var ExpoFaq = React.createClass({
   }
 });
 
-module.exports = ExpoFaq;
+module.exports = ExpoAbout;
