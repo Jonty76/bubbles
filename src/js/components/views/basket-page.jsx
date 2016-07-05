@@ -103,7 +103,7 @@ var BasketPage = React.createClass({
           <p>
             <i id="add-tip" className="material-icons">add</i>
             <i id="remove-tip" className="material-icons">remove</i>
-            Tip: {formatPrice(this.state.tip)}
+            <p className="tip">Tip: {formatPrice(this.state.tip)}</p>
           </p>
           <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>
