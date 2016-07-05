@@ -802,6 +802,14 @@ input[type=email]:focus:not([readonly])
 #add-tip, #remove-tip {
   color: #ED2C31;
   border: solid 1px #ED2C31;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.tip {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
 }
 
 /* END OF EXPO STYLING */
