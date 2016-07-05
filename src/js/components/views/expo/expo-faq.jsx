@@ -3,6 +3,17 @@ import Header from '../../header.jsx';
 import { Link } from 'react-router';
 
 var ExpoFaq = React.createClass({
+
+  componentDidMount: function() {
+    $('#mail-gun-trigger').click(function(){
+      $.post("/mail-test", function(data, status){
+
+        console.log("data", data, "status", status)
+      });
+    })
+  },
+
+
   render: function() {
     var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
 
@@ -21,6 +32,8 @@ var ExpoFaq = React.createClass({
             <p className='view-text'>Piccnicc - Hampers of Happiness, Delivered</p>
             <p className='view-text'>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
             <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+
+            <button id="mail-gun-trigger">Test button</button>
           </div>
         </div>
       </div>
