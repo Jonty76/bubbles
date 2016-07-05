@@ -52,6 +52,6 @@ test('Does failed payment return failed page', function(t){
   }
   server.inject(options, function(response) {
     t.equal(response.payload, "payment-failed", "Payment should be returned as failed")
-    server.stop(t.end)
+    server.stop(t.end);
   });
 });
