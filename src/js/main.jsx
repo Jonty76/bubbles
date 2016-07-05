@@ -29,6 +29,9 @@ let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
 let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
 let ExpoOrderConfirmed    = require('./components/views/expo/expo-order-confirmed-page.jsx')
+let ExpoCancelOrder       = require('./components/views/expo/expo-cancel-order-page.jsx')
+let ExpoTooSoon           = require('./components/views/expo/expo-cancel-too-soon-page.jsx')
+
 
 injectTapEventPlugin();
 
@@ -53,6 +56,8 @@ render((
       <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
+      <Route path="expo-cancel-order-page" component={ExpoCancelOrder} />
+      <Route path="expo-cancel-too-soon-page" component={ExpoTooSoon} />
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
       <Route path="/order-track-complete" component={OrderTrackComplete} />

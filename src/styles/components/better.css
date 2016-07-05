@@ -91,6 +91,7 @@ a:focus, a:hover {
 .logo-container {
   height: 100px;
   width: 150px;
+  margin-top: 3em;
 }
 
 .margin-main-content {
@@ -751,7 +752,9 @@ input[type=email]:focus:not([readonly])
   font-size: 0.8em !important;
 }
 
-
+#top-margin {
+  margin-top: 6em;
+}
 
 /* EXPO STYLING */
 #braintree-payment-form {
