@@ -5,6 +5,12 @@ import { Link } from 'react-router';
 var ExpoFaq = React.createClass({
 
   componentDidMount: function() {
+    $(document).ready(function(){
+      $('.collapsible').collapsible({
+        accordion : false
+      });
+    });
+
     $('#mail-gun-trigger').click(function(){
       $.post("/mail-test", function(data, status){
 
@@ -181,8 +187,6 @@ var ExpoFaq = React.createClass({
 
                 </ul>
               </div>
-
->>>>>>> master
           </div>
         </div>
       </div>
