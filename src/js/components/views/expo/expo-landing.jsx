@@ -8,7 +8,6 @@ import TimePicker from 'material-ui/TimePicker';
 import TextField from 'material-ui/TextField';
 
 let expoData  = require('../../../data/expo-data.js');
-
 let smallerFont = {fontSize: "0.8em"}
 
 let ExpoLanding = React.createClass({
@@ -226,56 +225,70 @@ let ExpoLanding = React.createClass({
   },
 
   render: function() {
-
     var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
-
-    return (
-      <div>
-        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
-        <div className="center-align desktop-container custom-container">
-          <div className="content-container">
-            <div className="question-container">
-              <p className="standard-question-style">Hampers of Happiness, Delivered </p>
-            </div>
-              <div className="center-align">
-                <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
-
-                {this.selectExpoCentre()}
-
-                {this.selectExpo()}
-
-                {this.selectDeliveryDate()}
-
-                {this.selectDeliveryTime()}
-
-                {this.selectUserType()}
-
-                {this.renderDeliveryLocation()}
-
+    try {
+      localStorage.setItem("privateBrowsing", false)
+      return (
+        <div>
+          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
+          <div className="center-align desktop-container custom-container">
+            <div className="content-container">
+              <div className="question-container">
+                <p className="standard-question-style">Hampers of Happiness, Delivered </p>
               </div>
+                <div className="center-align">
+                  <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
 
-              <div id="expo-order-too-soon-modal" className="modal">
-                <div className="flight-too-soon-content">
-                    <div className="flight-too-soon-text">
-                      <p className="top-line">You're trying to order for less than forty-five minutes time.</p>
+                  {this.selectExpoCentre()}
 
-                      <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered to you.</p>
-                      <p>Please select another time and try again.</p>
+                  {this.selectExpo()}
 
-                      <a href="#!" className="modal-action modal-close btn-flat">Close</a>
-                    </div>
+                  {this.selectDeliveryDate()}
+
+                  {this.selectDeliveryTime()}
+
+                  {this.selectUserType()}
+
+                  {this.renderDeliveryLocation()}
+
                 </div>
-              </div>
+
+                <div id="expo-order-too-soon-modal" className="modal">
+                  <div className="flight-too-soon-content">
+                      <div className="flight-too-soon-text">
+                        <p className="top-line">You're trying to order for less than forty-five minutes time.</p>
+                        <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered to you.</p>
+                        <p>Please select another time and try again.</p>
+
+                        <a href="#!" className="modal-action modal-close btn-flat">Close</a>
+                      </div>
+                  </div>
+                </div>
+
+            </div>
 
           </div>
 
+          <div>
+            <div id="expo-landing-page-button" className="waves-effect waves-light base-button btn-large">Next</div>
+          </div>
         </div>
-
+      )
+    } catch(err) {
+      return (
         <div>
-          <div id="expo-landing-page-button" className="waves-effect waves-light base-button btn-large">Next</div>
+          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
+          <div className="center-align">
+
+            <p id="top-margin">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
+
+            <div className="">
+              <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+            </div>
+          </div>
         </div>
-      </div>
-    );
+      )
+    }
   }
 });
 
