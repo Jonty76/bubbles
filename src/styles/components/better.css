@@ -835,7 +835,7 @@ input[type=email]:focus:not([readonly])
   color: #ED2C31;
   border: solid 1px #ED2C31;
   cursor: pointer;
-  padding: 2px;
+  margin-right: 2px;
 }
 
 .tip {

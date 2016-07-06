@@ -74,6 +74,8 @@ let ExpoLanding = React.createClass({
     var selectedDateTime = new Date(year, month, day, hour, minutes)
     var parsedDate = Date.parse(selectedDateTime)
 
+    localStorage.setItem("deliveryTime", parsedDate)
+
     var now = new Date()
     var diff = new Date(now.getTime() + 45*60000)
 
