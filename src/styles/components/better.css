@@ -610,6 +610,32 @@ input[type=email]:focus:not([readonly])
   margin-top: 1em;
 }
 
+
+
+/* FAQ Page - currently expo only*/
+
+.faq-number {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
+  color: #ED2C31;
+  margin-right: 0.5em;
+}
+
+.faq-body a {
+  color: #ED2C31;
+}
+
+.faq-body {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.faq-body p {
+  padding: 0;
+}
+
 /* Exhibition App only */
 
 .validation-text {
@@ -755,6 +781,9 @@ input[type=email]:focus:not([readonly])
 #top-margin {
   margin-top: 6em;
 }
+
+
+
 
 /* EXPO STYLING */
 #braintree-payment-form {
