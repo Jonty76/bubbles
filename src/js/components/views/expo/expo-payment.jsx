@@ -31,6 +31,15 @@ let ExpoPayment = React.createClass({
     });
   },
 
+  getCheckoutList: function() {
+    var wholeMenu = this.props.basket;
+    var filterer = this.props.helpers.filterMenu;
+    var quantityFilterer = this.props.helpers.filterMenuByQuantity;
+    var structurer = this.props.helpers.orderMenu;
+    var quantityFilteredMenu = quantityFilterer(wholeMenu);
+    return structurer(quantityFilteredMenu, "restaurant");
+  },
+
   generateOrderNumber: function(total) {
     return Date.now().toString() + total.toString()
   },
@@ -41,8 +50,11 @@ let ExpoPayment = React.createClass({
     var tip = this.props.tip
     var total = foodSubtotal + tip
     var orderNumber = this.generateOrderNumber(total)
+    var order = JSON.stringify(this.getCheckoutList());
+    var deliveryTime = localStorage.getItem("deliveryTime");
     var stateObj = {total: total, deliveryPoint: this.props.deliveryPoint}
     localStorage.setItem("state", JSON.stringify(stateObj))
+    localStorage.setItem("order", JSON.stringify(order))
 
     return (
 
@@ -107,6 +119,9 @@ let ExpoPayment = React.createClass({
 
               <input type="hidden" name="total" value={total}></input>
               <input type="hidden" name="orderNumber" value={orderNumber}></input>
+              <input type="hidden" name="deliveryPoint" value={this.props.deliveryPoint}></input>
+              <input type="hidden" name="deliveryTime" value={deliveryTime}></input>
+              <input type="hidden" name="order" value={order}></input>
 
               <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>
