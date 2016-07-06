@@ -117,6 +117,7 @@ let ExpoPayment = React.createClass({
                 <input data-braintree-name="postal_code" id="postal-code" type="text" autocomplete="off"  />
               </div>
 
+              <input type="hidden" name="tip" value={this.props.tip}></input>
               <input type="hidden" name="total" value={total}></input>
               <input type="hidden" name="orderNumber" value={orderNumber}></input>
               <input type="hidden" name="deliveryPoint" value={this.props.deliveryPoint}></input>
