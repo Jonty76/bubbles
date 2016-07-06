@@ -51,7 +51,9 @@ test('Does failed payment return failed page', function(t){
     }
   }
   server.inject(options, function(response) {
-    t.equal(response.payload, "payment-failed", "Payment should be returned as failed")
+    t.equal(response.headers.location, "/#/expo-order-confirmed-page", "Payment should be returned successful")
     server.stop(t.end);
   });
 });
+
+reply.redirect('/#/expo-order-failed')
