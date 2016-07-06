@@ -19,8 +19,8 @@ var ExpoOrderConfirmedPage = React.createClass({
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
         </div>
 
-        </div>
       </div>
+    </div>
     );
   }
 });
