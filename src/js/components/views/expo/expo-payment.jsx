@@ -46,15 +46,35 @@ let ExpoPayment = React.createClass({
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
-    var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
-    var tip = this.props.tip
-    var total = foodSubtotal + tip
-    var orderNumber = this.generateOrderNumber(total)
-    var order = JSON.stringify(this.getCheckoutList());
     var deliveryTime = localStorage.getItem("deliveryTime").toString();
-    var stateObj = {total: total, deliveryPoint: this.props.deliveryPoint}
-    localStorage.setItem("state", JSON.stringify(stateObj))
-    localStorage.setItem("order", JSON.stringify(order))
+    var order = JSON.stringify(this.getCheckoutList());
+    var sendOrder, deliveryPoint, total, tip, orderNumber;
+
+    if (order.length === 2){ //.length is 2 because it's a string
+      console.log("flow broken");
+      sendOrder = localStorage.getItem("order")
+      deliveryPoint = localStorage.getItem("deliveryPoint")
+      total = localStorage.getItem("total")
+      tip = localStorage.getItem("tip")
+      orderNumber = localStorage.getItem("orderNumber")
+    } else {
+      console.log("in the flow");
+      var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
+      sendOrder = order;
+      deliveryPoint = this.props.deliveryPoint;
+      tip = this.props.tip
+      total = foodSubtotal + tip
+      orderNumber = this.generateOrderNumber(total)
+
+      localStorage.setItem("orderNumber", JSON.stringify(orderNumber))
+      localStorage.setItem("order", JSON.stringify(order))
+      localStorage.setItem("deliveryPoint", JSON.stringify(deliveryPoint))
+      localStorage.setItem("total", JSON.stringify(total))
+      localStorage.setItem("tip", JSON.stringify(tip))
+    }
+
+    console.log("order",order);
+    console.log("order.length",order.length);
 
     return (
 
@@ -117,12 +137,12 @@ let ExpoPayment = React.createClass({
                 <input data-braintree-name="postal_code" id="postal-code" type="text" autocomplete="off"  />
               </div>
 
-              <input type="hidden" name="tip" value={this.props.tip}></input>
+              <input type="hidden" name="tip" value={tip}></input>
               <input type="hidden" name="total" value={total}></input>
               <input type="hidden" name="orderNumber" value={orderNumber}></input>
-              <input type="hidden" name="deliveryPoint" value={this.props.deliveryPoint}></input>
+              <input type="hidden" name="deliveryPoint" value={deliveryPoint}></input>
               <input type="hidden" name="deliveryTime" value={deliveryTime}></input>
-              <input type="hidden" name="order" value={order}></input>
+              <input type="hidden" name="order" value={sendOrder}></input>
 
               <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>
