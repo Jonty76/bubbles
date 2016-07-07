@@ -25,6 +25,8 @@ let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.js
 let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 
 /* Expo MVP */
+let ExpoAbout             = require('./components/views/expo/expo-about.jsx');
+let ExpoOrderDetails      = require('./components/views/expo/expo-order-details.jsx');
 let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
 let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
@@ -52,12 +54,14 @@ render((
 
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
-      <Route path="select-airport" component={SelectAirport} />
+      <Route path="airport" component={SelectAirport} />
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
       <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
+      <Route path='expo-about' component={ExpoAbout} />
+      <Route path='expo-order-details' component={ExpoOrderDetails} />
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-order-not-taken-page" component={ExpoOrderNotTaken} />
       <Route path="expo-order-failed" component={ExpoOrderFailed} />

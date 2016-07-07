@@ -3,7 +3,11 @@ import React from 'react';
 
 var AddItem = React.createClass({
   addItem: function() {
-    this.props.addItem(this.props.id);
+    if (this.props.page === "order-details") {
+      console.log("order details")
+    } else {
+      this.props.addItem(this.props.id);
+    }
   },
 
   render: function() {
@@ -14,7 +18,7 @@ var AddItem = React.createClass({
       fontSize: '1.4em',
     };
     var showButton = (
-        <div style={buttonStyle} onClick={this.addItem}>
+        <div className="leftIcons" style={buttonStyle} onClick={this.addItem}>
           <span className="red-color glyphicon glyphicon-menu-up" aria-hidden="true"></span>
         </div>
     );
@@ -50,7 +54,7 @@ var RemoveItem = React.createClass({
       fontSize: '1.4em',
     };
     var showButton = (
-      <div style={buttonStyle} onClick={this.removeItem}>
+      <div className="leftIcons" style={buttonStyle} onClick={this.removeItem}>
         <span className="red-color glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       </div>
     );
@@ -108,6 +112,13 @@ var Price = React.createClass({
 
 var NumberOrdered = React.createClass({
    render: function() {
+     var paddingCustom;
+     if (this.props.page === "order-details") {
+       paddingCustom = {marginTop: '2em'}
+     } else {
+       paddingCustom = {}
+     }
+
      var atLeastOne = (
         <span className="red-color">{this.props.numberOrdered+"x"}</span>
       );
@@ -115,7 +126,7 @@ var NumberOrdered = React.createClass({
        <div></div>
      );
      return (
-       <div>
+       <div style={paddingCustom}>
          {this.props.numberOrdered > 0 ? atLeastOne : zero}
        </div>
      );
@@ -149,12 +160,17 @@ var FoodItem = React.createClass({
 
   clickHandler: function(event) {
     event.stopPropagation();
-    
+
     var addClass = document.getElementsByClassName("add");
     for (var i = 0; i < addClass.length; i++) {
       addClass[i].style.display = "none"
     }
-    this.props.actions.addItem(this.props.id);
+
+    if (this.props.page === "order-details") {
+      console.log("order details")
+    } else {
+      this.props.actions.addItem(this.props.id);
+    }
   },
 
   render: function() {
@@ -204,15 +220,17 @@ var FoodItem = React.createClass({
 
     return (
       <div onClick={this.clickHandler}>
-        <div className="leftIcons" style={buttonsStyle}>
+        <div style={buttonsStyle}>
           <i style={add} className="material-icons add">add</i>
           <AddItem
             addItem={this.props.actions.addItem}
             id={this.props.id}
             numberOrdered={this.props.quantityOrdered}
+            page={this.props.page}
           />
           <NumberOrdered
             numberOrdered={this.props.quantityOrdered}
+            page={this.props.page}
           />
           <RemoveItem
             removeItem={this.props.actions.removeItem}
