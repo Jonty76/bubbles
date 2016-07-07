@@ -5,21 +5,16 @@ import { Link } from 'react-router';
 
 var ExpoAbout = React.createClass({
   render: function() {
-    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq", "About+/expo-about"]
+    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq", "About+/expo-about", "Order Details+/expo-order-details"]
 
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"About Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header headerTheme={"whiteNav"} text={"Order Details"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="center-align desktop-container">
           <div className="content-container margin-all">
-            <p>Piccnicc is an online ordering service, which delivers tasty food from nearby restaurants to exhibitors and attendees.</p>
-            <p>Whether you're stuck to your stand or just don't want to wait in line for a blandwich, Piccnicc will bring you your choice of food, when you want it.*</p>
-            <p>So, what are you waiting for? </p>
-            <Link to="/">
-              <div className="red-button btn about-place-order">Place your order now</div>
-            </Link>
-
-            <p><i>* Orders must be placed at least 45 minutes before requested delivery time. No maximum time limit</i></p>
+            <p className="">To view or cancel your order if you've made one, please check your email address for an email from Piccnicc.com and cancel using the link in the email.</p>
+            <br></br>
+            <p>Orders must be cancelled at least 45 minutes before requested delivery time or no refund can be given</p>
             <div className="piccnicc-sig-style">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
               <p className="piccnicc-slogan">Piccnicc - Hampers of Happiness, Delivered</p>
