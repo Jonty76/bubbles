@@ -40,7 +40,16 @@ test("test order details email is sent to user", function(t) {
   sendEmail(payload, "userReciept", function(error){
     var actual = typeof error;
     var expected = "undefined";
-    t.equal(actual, expected, "Order details email to user should hav been sent");
+    t.equal(actual, expected, "Order details email to user should have been sent");
+    t.end()
+  })
+});
+
+test("test cancel order email is sent to", function(t) {
+  sendEmail("ORDER-NUMBER", "piccniccCancelledOrder", function(error){
+    var actual = typeof error;
+    var expected = "undefined";
+    t.equal(actual, expected, "Cancel email should have been sent");
     t.end()
   })
 });
