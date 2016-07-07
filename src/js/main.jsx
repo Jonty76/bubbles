@@ -31,6 +31,8 @@ let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
 let ExpoOrderConfirmed    = require('./components/views/expo/expo-order-confirmed-page.jsx')
 let ExpoOrderNotTaken     = require('./components/views/expo/expo-order-not-taken-page.jsx')
 let ExpoCancelOrder       = require('./components/views/expo/expo-cancel-order.jsx')
+let ExpoOrderFailed       = require('./components/views/expo/expo-order-failed.jsx')
+
 
 
 
@@ -58,6 +60,7 @@ render((
       <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-order-not-taken-page" component={ExpoOrderNotTaken} />
+      <Route path="expo-order-failed" component={ExpoOrderFailed} />
       <Route path="/expo-cancel-order/:orderNumber/:deliveryTime" component={ExpoCancelOrder}/>
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
