@@ -14,11 +14,14 @@ var ExpoOrderFailedPage = React.createClass({
       <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
       <div className="order-confirmed-container center-align">
 
-        <p>There was an issue with your payment, please try again.</p>
+        <p id="large-p">There was an issue with your payment, please try again.</p>
 
-          <div className="">
-            <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+          <div className="button-wrapper center-align">
+            <Link to="/expo-payment">
+              <div className="btn-large red-button"> TRY PAYMENT AGAIN </div>
+            </Link>
           </div>
+
         </div>
 
       </div>

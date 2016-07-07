@@ -282,7 +282,7 @@ let ExpoLanding = React.createClass({
           <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
           <div className="center-align">
 
-            <p id="top-margin">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
+            <p id="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
 
             <div className="">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
