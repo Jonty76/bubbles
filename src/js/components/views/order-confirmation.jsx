@@ -41,7 +41,7 @@ var OrderPage = React.createClass({
         <div className="order-confirmed-container center-align">
           <p className="top-line">Delicious!</p>
 
-          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve emailed your receipt with all the usual garnish to jonny@piccnicc.com</p>
+          <p>Your order for {this.props.helpers.formatPrice(total)} is confirmed and we’ve emailed your receipt with all the usual garnish to <a href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a></p>
 
           <Link className="map-link" to="/map-view">Picc Up Your Hamper Here</Link>
 
