@@ -25,7 +25,7 @@ var Login = React.createClass({
     } else if (this.state.userType === 'retailer'){
       return <BaseButton buttonLink={"/retailer-orders"} buttonText={"Retailer Login"}/>
     } else if (this.state.userType === 'airport'){
-      return <BaseButton buttonLink={"/select-airport"} buttonText={"Airport Login"}/>
+      return <BaseButton buttonLink={"/airport"} buttonText={"Airport Login"}/>
     } else {
       return <BaseButton buttonLink={"/"} buttonText={"Login"}/>
     }
