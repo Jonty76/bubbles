@@ -33,6 +33,7 @@ let ExpoOrderNotTaken     = require('./components/views/expo/expo-order-not-take
 let ExpoCancelOrder       = require('./components/views/expo/expo-cancel-order-page.jsx')
 let ExpoTooSoon           = require('./components/views/expo/expo-cancel-too-soon-page.jsx')
 
+let ExpoCancelOrderTest       = require('./components/views/expo/cancel-order.jsx')
 
 injectTapEventPlugin();
 
@@ -59,6 +60,7 @@ render((
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-order-not-taken-page" component={ExpoOrderNotTaken} />
       <Route path="expo-cancel-order-page" component={ExpoCancelOrder} />
+      <Route path="/cancel-order/:orderNumber/:deliveryTime" component={ExpoCancelOrderTest}/>
       <Route path="expo-cancel-too-soon-page" component={ExpoTooSoon} />
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
