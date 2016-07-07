@@ -15,9 +15,6 @@ let ExpoPayment = React.createClass({
   },
 
   componentDidMount: function() {
-    $("#braintree-payment-form").submit(function(){
-      $(this).find('input[type=submit]').prop('disabled', true);
-    });
     // var form = document.getElementById('braintree-payment-form');
     // form.noValidate = true;
     // form.addEventListener('submit', function(event) {
