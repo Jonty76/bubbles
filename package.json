@@ -46,6 +46,7 @@
     "inert": "^3.2.0",
     "intl-locales-supported": "^1.0.0",
     "jsx-loader": "^0.13.2",
+    "mailgun-js": "^0.7.11",
     "material-ui": "^0.15.0",
     "moment": "^2.10.6",
     "path": "^0.12.7",

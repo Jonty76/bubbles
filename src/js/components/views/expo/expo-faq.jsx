@@ -3,6 +3,23 @@ import Header from '../../header.jsx';
 import { Link } from 'react-router';
 
 var ExpoFaq = React.createClass({
+
+  componentDidMount: function() {
+    $(document).ready(function(){
+      $('.collapsible').collapsible({
+        accordion : false
+      });
+    });
+
+    $('#mail-gun-trigger').click(function(){
+      $.post("/mail-test", function(data, status){
+
+        console.log("data", data, "status", status)
+      });
+    })
+  },
+
+
   render: function() {
     var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
 
@@ -12,9 +29,10 @@ var ExpoFaq = React.createClass({
         <div className="left-align desktop-container">
           <div className="content-container margin-all">
               <div>
-
+                <button id="mail-gun-trigger">Test button</button>
               </div>
               <div>
+
                  <ul className="collapsible" data-collapsible="expandable">
                   <li>
                     <div className="collapsible-header faq-header">
@@ -169,7 +187,6 @@ var ExpoFaq = React.createClass({
 
                 </ul>
               </div>
-
           </div>
         </div>
       </div>

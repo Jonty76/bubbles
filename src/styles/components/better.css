@@ -798,8 +798,10 @@ input[type=email]:focus:not([readonly])
   font-size: 0.8em !important;
 }
 
-#top-margin {
-  margin-top: 6em;
+#large-p {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  font-size: x-large;
 }
 
 
@@ -855,7 +857,7 @@ input[type=email]:focus:not([readonly])
   color: #ED2C31;
   border: solid 1px #ED2C31;
   cursor: pointer;
-  padding: 2px;
+  margin-right: 2px;
 }
 
 .tip {
