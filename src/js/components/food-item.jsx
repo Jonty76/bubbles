@@ -3,7 +3,11 @@ import React from 'react';
 
 var AddItem = React.createClass({
   addItem: function() {
-    this.props.addItem(this.props.id);
+    if (this.props.page === "order-details") {
+      console.log("order details")
+    } else {
+      this.props.addItem(this.props.id);
+    }
   },
 
   render: function() {
@@ -149,12 +153,17 @@ var FoodItem = React.createClass({
 
   clickHandler: function(event) {
     event.stopPropagation();
-    
+
     var addClass = document.getElementsByClassName("add");
     for (var i = 0; i < addClass.length; i++) {
       addClass[i].style.display = "none"
     }
-    this.props.actions.addItem(this.props.id);
+
+    if (this.props.page === "order-details") {
+      console.log("order details")
+    } else {
+      this.props.actions.addItem(this.props.id);
+    }
   },
 
   render: function() {
@@ -210,6 +219,7 @@ var FoodItem = React.createClass({
             addItem={this.props.actions.addItem}
             id={this.props.id}
             numberOrdered={this.props.quantityOrdered}
+            page={this.props.page}
           />
           <NumberOrdered
             numberOrdered={this.props.quantityOrdered}
