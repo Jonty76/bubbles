@@ -49,7 +49,7 @@ render((
 
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
-      <Route path="select-airport" component={SelectAirport} />
+      <Route path="airport" component={SelectAirport} />
       <Route path="/basket/page" component={BasketPage} />
       <Route path="/basket/menu" component={Menu} />
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
