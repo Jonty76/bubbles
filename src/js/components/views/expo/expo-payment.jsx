@@ -15,6 +15,9 @@ let ExpoPayment = React.createClass({
   },
 
   componentDidMount: function() {
+    $("#braintree-payment-form").submit(function(){
+      $(this).find('input[type=submit]').prop('disabled', true);
+    });
     // var form = document.getElementById('braintree-payment-form');
     // form.noValidate = true;
     // form.addEventListener('submit', function(event) {
@@ -40,41 +43,34 @@ let ExpoPayment = React.createClass({
     return structurer(quantityFilteredMenu, "restaurant");
   },
 
-  generateOrderNumber: function(total) {
-    return Date.now().toString() + total.toString()
+  generateOrderNumber: function() {
+    return Date.now().toString() + parseInt((Math.random() * 9999)).toString();
   },
 
   render: function() {
     var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var deliveryTime = localStorage.getItem("deliveryTime").toString();
     var order = JSON.stringify(this.getCheckoutList());
-    var sendOrder, deliveryPoint, total, tip, orderNumber;
+    var orderNumber = this.generateOrderNumber()
+    var sendOrder, deliveryPoint, total, tip;
 
     if (order.length === 2){ //.length is 2 because it's a string
-      console.log("flow broken");
       sendOrder = localStorage.getItem("order")
       deliveryPoint = localStorage.getItem("deliveryPoint")
       total = localStorage.getItem("total")
       tip = localStorage.getItem("tip")
-      orderNumber = localStorage.getItem("orderNumber")
     } else {
-      console.log("in the flow");
       var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
       sendOrder = order;
       deliveryPoint = this.props.deliveryPoint;
       tip = this.props.tip
       total = foodSubtotal + tip
-      orderNumber = this.generateOrderNumber(total)
 
-      localStorage.setItem("orderNumber", JSON.stringify(orderNumber))
-      localStorage.setItem("order", JSON.stringify(order))
-      localStorage.setItem("deliveryPoint", JSON.stringify(deliveryPoint))
-      localStorage.setItem("total", JSON.stringify(total))
-      localStorage.setItem("tip", JSON.stringify(tip))
+      localStorage.setItem("order", order)
+      localStorage.setItem("deliveryPoint", deliveryPoint)
+      localStorage.setItem("total", total)
+      localStorage.setItem("tip", tip)
     }
-
-    console.log("order",order);
-    console.log("order.length",order.length);
 
     return (
 

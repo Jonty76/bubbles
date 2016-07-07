@@ -39,7 +39,7 @@ var ExpoCancelOrder = React.createClass({
   renderTooSoonComponent: function(){
     return (
       <div className="custom-container desktop-container center-align">
-        <p id="top-margin">Your order cannot be cancelled less than 45 minutes before your delivery time.</p>
+        <p id="large-p">Your order cannot be cancelled less than 45 minutes before your delivery time.</p>
         <div className="">
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
         </div>
@@ -50,7 +50,7 @@ var ExpoCancelOrder = React.createClass({
   renderCancelComponent: function(){
     return (
       <div className="custom-container desktop-container center-align">
-        <p id="top-margin">Your order has been successfully cancelled.</p>
+        <p id="large-p">Your order has been successfully cancelled.</p>
         <div className="">
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
         </div>
@@ -61,7 +61,7 @@ var ExpoCancelOrder = React.createClass({
   renderCancelFailedComponent: function(){
     return (
       <div className="custom-container desktop-container center-align">
-        <p id="top-margin">Your order cannot be cancelled at this time. Please contact jonny@piccnicc.com directly to cancel your order. Please quote your order number when cancelling.</p>
+        <p id="large-p">Your order cannot be cancelled at this time. Please contact jonny@piccnicc.com directly to cancel your order. Please quote your order number when cancelling.</p>
         <div className="">
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
         </div>
