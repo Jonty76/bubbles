@@ -36,7 +36,7 @@ test("test second email to Jonny with payment processed confirmation sends", fun
   })
 });
 
-test.only("test order details email is sent to user", function(t) {
+test("test order details email is sent to user", function(t) {
   sendEmail(payload, "userReciept", function(error){
     var actual = typeof error;
     var expected = "undefined";
