@@ -25,6 +25,7 @@ let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.js
 let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 
 /* Expo MVP */
+let ExpoAbout             = require('./components/views/expo/expo-about.jsx');
 let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
 let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
@@ -55,6 +56,7 @@ render((
       <Route path="/basket/select-restaurant" component={selectRestaurant} />
       <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
+      <Route path='expo-about' component={ExpoAbout} />
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-cancel-order-page" component={ExpoCancelOrder} />
       <Route path="expo-cancel-too-soon-page" component={ExpoTooSoon} />

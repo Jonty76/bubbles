@@ -2,25 +2,29 @@ import React from 'react';
 import Header from '../../header.jsx';
 import { Link } from 'react-router';
 
+
 var ExpoAbout = React.createClass({
   render: function() {
-    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq", "About+/expo-about"]
 
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header headerTheme={"whiteNav"} text={"About Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="center-align desktop-container">
           <div className="content-container margin-all">
-            <div className="">
-              <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
-            </div>
-            <h2>FAQ</h2>
-            <p className='view-text'> Piccnicc is an online ordering service, which delivers tasty food from restaurants to exhbitiors and attendees. </p>
-            <p className='view-text'>Whether you're stuck to your stand or just don't want to wait in line, nobody should have to eat bland, unhealthy convienience food. </p>
+            <p>Piccnicc is an online ordering service, which delivers tasty food from nearby restaurants to exhibitors and attendees.</p>
+            <p>Whether you're stuck to your stand or just don't want to wait in line for a blandwich, Piccnicc will bring you your choice of food, when you want it.</p>
+            <p>So, what are you waiting for? </p>
+            <Link to="/">
+              <div className="red-button btn about-place-order">Place your order now</div>
+            </Link>
 
-            <p className='view-text'>Piccnicc - Hampers of Happiness, Delivered</p>
-            <p className='view-text'>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
-            <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+            <div className="piccnicc-sig-style">
+              <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+              <p className="piccnicc-slogan">Piccnicc - Hampers of Happiness, Delivered</p>
+              <p>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
+              <p>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+            </div>
           </div>
         </div>
       </div>

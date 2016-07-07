@@ -88,6 +88,20 @@ a:focus, a:hover {
 
 /*Body and General*/
 
+.piccnicc-sig-style {
+
+}
+
+.piccnicc-sig-style .piccnicc-slogan {
+  font-family: 'Pacifico', cursive;
+  color: #ED2C31;
+  font-size: 1.2em;
+}
+
+.piccnicc-sig-style a {
+  color: #ED2C31
+}
+
 .logo-container {
   height: 100px;
   width: 150px;
@@ -147,6 +161,12 @@ a:focus, a:hover {
   background-color: #ED2C31;
   width: 100%;
   margin-bottom: 15px;
+}
+
+.red-button.about-place-order {
+  margin-top: 2.5em;
+  color: white;
+  width: 80%;
 }
 
 .btn-large.red-button {
