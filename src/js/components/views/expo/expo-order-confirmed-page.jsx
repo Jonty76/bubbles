@@ -12,9 +12,9 @@ var ExpoOrderConfirmedPage = React.createClass({
   },
 
   render: function() {
-    var stateObj = JSON.parse(localStorage.getItem("state"))
-    var total = stateObj.total
-    var deliveryPoint = stateObj.deliveryPoint
+    var total = Number(localStorage.getItem("total"))
+    var deliveryPoint = localStorage.getItem("deliveryPoint")
+    localStorage.removeItem("order")
 
     var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
 

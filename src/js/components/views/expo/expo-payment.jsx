@@ -176,7 +176,8 @@ let ExpoPayment = React.createClass({
   },
 
   generateOrderNumber: function() {
-    return Date.now().toString() + parseInt((Math.random() * 9999)).toString();
+    var longNumber = Date.now().toString() + parseInt((Math.random() * 9999)).toString();
+    return longNumber.substr(longNumber.length - 8);
   },
 
   render: function() {
