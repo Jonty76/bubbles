@@ -20,8 +20,10 @@ var ExpoOrderNotTakenPage = React.createClass({
 
         <p>Please try ordering again. If that doesn't work email <a href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a> and we'll see what we can do.</p>
 
-          <div className="">
-            <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+          <div className="button-wrapper center-align">
+            <Link to="/">
+              <div className="btn-large red-button"> TRY ORDER AGAIN </div>
+            </Link>
           </div>
         </div>
 

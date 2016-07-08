@@ -4,6 +4,17 @@ import Header from '../../header.jsx';
 
 var ExpoOrderFailedPage = React.createClass({
 
+  componentDidMount: function(){
+    var isOrder = localStorage.getItem("order");
+
+    if (isOrder === null){
+      console.log("no order");
+    } else {
+      this.props.actions.setExpoState("completed", "", "", "completed")
+      this.props.actions.setExpoState("app", "", "", "expo")
+    }
+  },
+
   render: function() {
 
     var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
