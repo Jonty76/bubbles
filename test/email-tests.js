@@ -18,23 +18,24 @@ var payload = {
   payment_method_nonce: 'fake-valid-nonce'
 }
 
-// test("test first email to Jonny with order details send", function(t) {
-//   sendEmail(payload, "piccniccReciept", function(error){
-//     var actual = typeof error;
-//     var expected = "undefined";
-//     t.equal(actual, expected, "First email to Jonny should have been sent");
-//     t.end()
-//   })
-// });
-//
-// test("test second email to Jonny with payment processed confirmation sends", function(t) {
-//   sendEmail(payload, "piccniccProccessedPayment", function(error){
-//     var actual = typeof error;
-//     var expected = "undefined";
-//     t.equal(actual, expected, "Second email to Jonny should have been sent");
-//     t.end()
-//   })
-// });
+test.only("test first email to Jonny with order details send", function(t) {
+  sendEmail(payload, "piccniccReciept", function(error){
+    console.log(error)
+    var actual = typeof error;
+    var expected = "undefined";
+    t.equal(actual, expected, "First email to Jonny should have been sent");
+    t.end()
+  })
+});
+
+test("test second email to Jonny with payment processed confirmation sends", function(t) {
+  sendEmail(payload, "piccniccProccessedPayment", function(error){
+    var actual = typeof error;
+    var expected = "undefined";
+    t.equal(actual, expected, "Second email to Jonny should have been sent");
+    t.end()
+  })
+});
 
 test("test order details email is sent to user", function(t) {
   sendEmail(payload, "userReciept", function(error){
