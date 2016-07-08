@@ -75,13 +75,14 @@ var BasketPage = React.createClass({
     // var total = deliveryFee + foodSubtotal;
 
     var total = foodSubtotal + this.state.tip
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
 
-    var buttonLink;
+    var buttonLink, burgerMenuOptions;
     if(this.props.app === "airport") {
       buttonLink = "/payment"
+      burgerMenuOptions = ["About+/about", "Create Order+/select-airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     } else {
       buttonLink = "/expo-payment"
+      burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     }
 
     var adjustMargin = {

@@ -227,7 +227,7 @@ let ExpoLanding = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq", "About+/expo-about", "Order Details+/expo-order-details"]
+    var burgerMenuOptions = ["About+/expo-about", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     try {
       localStorage.setItem("privateBrowsing", false)
       return (

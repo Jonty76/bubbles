@@ -20,12 +20,11 @@ var payload = {
 
 test("test first email to Jonny with order details send", function(t) {
   sendEmail(payload, "piccniccReciept", function(error){
-    console.log(error);
     var actual = typeof error;
     var expected = "undefined";
     t.equal(actual, expected, "First email to Jonny should have been sent");
-    t.end();
-  });
+    t.end()
+  })
 });
 
 test("test second email to Jonny with payment processed confirmation sends", function(t) {
