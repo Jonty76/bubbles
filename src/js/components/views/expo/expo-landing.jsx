@@ -110,13 +110,17 @@ let ExpoLanding = React.createClass({
       if (this.state.selectedUserType !== "") {
         if (this.state.selectedUserType === "attendee") {
           return (
-            <div></div>
+            <div>
+              <br></br>
+              <p style={smallerFont}>We will deliver your Piccnicc to you</p>
+              <p style={smallerFont}>at the Main Entrance to the Exhibition Hall.</p>
+            </div>
           )
         } else {
           return (
             <div>
               <TextField className={"material-ui-small-font"} onChange={this.setStand} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
-              <p style={smallerFont}>We will deliver your Piccnicc to you here</p>
+              <p style={smallerFont}>We will deliver your Piccnicc to your Exhibition Stand.</p>
             </div>
           )
         }
@@ -129,9 +133,9 @@ let ExpoLanding = React.createClass({
       var orderTimeValid = this.tooSoonCheck()
         if (orderTimeValid) {
           return (
-            <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Vistor or Attendee" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
-              <MenuItem value="exhibitor" primaryText="Exhibitor" />
-              <MenuItem value="attendee" primaryText="Attendee" />
+            <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Are you an Exhibitor?" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
+              <MenuItem value="exhibitor" primaryText="Yes" />
+              <MenuItem value="attendee" primaryText="No" />
             </SelectField>
           )
         } else {
