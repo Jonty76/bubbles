@@ -35,6 +35,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.1.2",
     "braintree": "^1.40.0",
+    "card-validator": "^2.2.8",
     "css-loader": "^0.21.0",
     "env2": "^2.1.0",
     "formsy-react": "^0.17.0",
