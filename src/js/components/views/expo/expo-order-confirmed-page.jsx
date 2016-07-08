@@ -16,7 +16,7 @@ var ExpoOrderConfirmedPage = React.createClass({
     var total = stateObj.total
     var deliveryPoint = stateObj.deliveryPoint
 
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
 
     return (
 

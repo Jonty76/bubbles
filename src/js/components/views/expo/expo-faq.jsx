@@ -21,7 +21,7 @@ var ExpoFaq = React.createClass({
 
 
   render: function() {
-    var burgerMenuOptions = ["Logout+/login", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "FAQ+/expo-faq"]
 
     return (
       <div>
