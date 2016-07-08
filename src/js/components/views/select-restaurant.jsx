@@ -132,7 +132,7 @@ let selectRestaurant = React.createClass({
     }
 
     if (this.props.app === "airport"){
-      var burgerMenuOptions = ["About+/about", "Create Order+/select-airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+      var burgerMenuOptions = ["About+/about", "Create Order+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     } else {
       var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     }

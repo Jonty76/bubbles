@@ -92,7 +92,7 @@ var BasketPage = React.createClass({
 
     var burgerMenuOptions;
     if(this.props.app === "airport") {
-      burgerMenuOptions = ["About+/about", "Create Order+/select-airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+      burgerMenuOptions = ["About+/about", "Create Order+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     } else if (this.props.app === "expo") {
       burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     } else {
