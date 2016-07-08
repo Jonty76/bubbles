@@ -22,7 +22,7 @@ var ExpoOrderNotTakenPage = React.createClass({
 
           <div className="button-wrapper center-align">
             <Link to="/">
-              <div className="btn-large red-button"> ORDER AGAIN </div>
+              <div className="btn-large red-button"> TRY ORDER AGAIN </div>
             </Link>
           </div>
         </div>
