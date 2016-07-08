@@ -42,7 +42,7 @@ let SelectAirline = React.createClass({
   render: function() {
     return (
     <div className="center-align">
-      <SelectField className="dropdown" value={this.state.selectedAirline} floatingLabelText="Select Airline" onChange={this.selectorChange}>
+      <SelectField className="dropdown" value={this.state.selectedAirline} floatingLabelText="2/4: Select Airline" onChange={this.selectorChange}>
         {renderInputFields(FlightData.airlineOptions)}
       </ SelectField>
         {this.renderFlightDate()}
@@ -98,7 +98,7 @@ let SelectDate = React.createClass({
   render:function() {
     return(
       <div className="center-align">
-          <p id="label" className="select-date-label">Select Date</p>
+          <p id="label" className="select-date-label">3/4: Select Date</p>
           <input type="date" id="datepicker" className="datepicker"></input>
         {this.renderFlightNumber()}
       </div>
@@ -179,7 +179,7 @@ let SelectFlightNumber = React.createClass({
   render:function() {
     return(
       <div>
-        <SelectField className="dropdown" value={this.state.selectedFlightNumber} floatingLabelText="Select Flight" onChange={this.selectorChange}>
+        <SelectField className="dropdown" value={this.state.selectedFlightNumber} floatingLabelText="4/4: Select Flight" onChange={this.selectorChange}>
           {renderInputFields(this.renderCorrespondingFlightNumbers())}
         </ SelectField>
         <div className="">
