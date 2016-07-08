@@ -67,6 +67,20 @@ var BasketPage = React.createClass({
       return result.length * 150;
   },
 
+  onClick: function(){
+    if(this.props.app === "airport") {
+      var location = window.location.origin + window.location.pathname + "#/payment"
+      window.location.href = location
+    } else if (this.props.app === "expo") {
+      this.props.actions.setExpoState("completed", "", "", "completed")
+      var location = window.location.origin + window.location.pathname + "#/expo-payment"
+      window.location.href = location
+    } else {
+      var location = window.location.origin + window.location.pathname + "#/"
+      window.location.href = location
+    }
+  },
+
   render: function() {
     var menu = this.getCheckoutList();
     // var deliveryFee = this.getDeliveryFee(menu);
@@ -76,12 +90,12 @@ var BasketPage = React.createClass({
 
     var total = foodSubtotal + this.state.tip
 
-    var buttonLink, burgerMenuOptions;
+    var burgerMenuOptions;
     if(this.props.app === "airport") {
-      buttonLink = "/payment"
       burgerMenuOptions = ["About+/about", "Create Order+/select-airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    } else if (this.props.app === "expo") {
+      burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     } else {
-      buttonLink = "/expo-payment"
       burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     }
 
@@ -113,9 +127,7 @@ var BasketPage = React.createClass({
           <Link to='/basket/select-restaurant'>
             <div className="white-button btn-large">Order from elsewhere</div>
           </Link>
-          <Link to={buttonLink}>
-            <div style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>
-          </Link>
+            <div onClick={this.onClick} style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>
         </div>
       </div>
     );

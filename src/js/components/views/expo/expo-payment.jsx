@@ -28,6 +28,23 @@ let ExpoPayment = React.createClass({
     };
   },
 
+  componentWillMount: function(){
+    if (this.props.app !== "expo") {
+      if(this.props.completed !== "completed"){
+        var location = window.location.origin + window.location.pathname
+        window.location.href = location
+      }
+    }
+
+    if (this.props.app === "expo") {
+        if(this.props.completed !== "completed"){
+        var location = window.location.origin + window.location.pathname
+        window.location.href = location
+      }
+    }
+
+  },
+
   componentDidMount: function() {
     var that = this;
     var form = document.getElementById('braintree-payment-form');
@@ -44,6 +61,7 @@ let ExpoPayment = React.createClass({
       console.log("cardValid",cardValid);
       if (!event.target.checkValidity() || cardValid.indexOf(false) > -1) {
         event.preventDefault();
+        event.stopPropagation();
         $("#validation-text").show()
       }
     }, false);
