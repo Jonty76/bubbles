@@ -179,6 +179,8 @@ let ExpoLanding = React.createClass({
            <MenuItem value="13" primaryText="13" />
            <MenuItem value="14" primaryText="14" />
            <MenuItem value="15" primaryText="15" />
+           <MenuItem value="16" primaryText="16" />
+           <MenuItem value="17" primaryText="17" />
          </SelectField>
 
        <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
