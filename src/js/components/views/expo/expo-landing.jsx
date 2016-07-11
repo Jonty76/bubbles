@@ -13,7 +13,6 @@ let smallerFont = {fontSize: "0.8em"}
 let ExpoLanding = React.createClass({
   getInitialState: function() {
     return {
-      selectedExpoCentre: "",
       selectedExpo: "",
       selectedDeliveryDate: "",
       selectedDeliveryTime: "",
@@ -95,16 +94,6 @@ let ExpoLanding = React.createClass({
     this.props.actions.setStand(nothing, value)
   },
 
-  setExpoCenter: function(event, index, value){
-    this.setState({
-      selectedExpoCentre: value,
-      selectedExpo: "",
-      selectedDeliveryDate: ""
-
-    })
-    this.props.actions.setExpoCenter(event, index, value)
-  },
-
   renderDeliveryLocation: function(){
     if (this.state.selectedDeliveryTime !== ""){
       if (this.state.selectedUserType !== "") {
@@ -163,8 +152,8 @@ let ExpoLanding = React.createClass({
     }
   },
 
-  renderDeliveryDateOptions: function(){
-    var dates = expoData[this.state.selectedExpoCentre][this.state.selectedExpo].dates
+  renderDeliveryDateOptions: function(expoCenter){
+    var dates = expoData[expoCenter][this.state.selectedExpo].dates
     return dates.map(function(date){
       var t = new Date(date)
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -176,23 +165,22 @@ let ExpoLanding = React.createClass({
     })
   },
 
-  selectDeliveryDate: function(){
+  selectDeliveryDate: function(expoCenter){
     if (this.state.selectedExpo !== "") {
       return (
         <div>
           <SelectField className="dropdown" style={smallerFont} value={this.state.selectedDeliveryDate} floatingLabelText="Select Delivery Date" onChange={this.selectorChange.bind(this, 'selectedDeliveryDate')}>
-            {this.renderDeliveryDateOptions()}
+            {this.renderDeliveryDateOptions(expoCenter)}
           </SelectField >
         </div>
       )
     }
   },
 
-  renderExpo: function() {
-    var selectedExpoCentre = this.state.selectedExpoCentre
-    var filteredExpos = Object.keys(expoData[selectedExpoCentre])
+  renderExpo: function(selectedExpoCenter) {
+    var filteredExpos = Object.keys(expoData[selectedExpoCenter])
     return filteredExpos.map(function(expo){
-      var name = expoData[selectedExpoCentre][expo].name
+      var name = expoData[selectedExpoCenter][expo].name
 
       return (
         <MenuItem value={expo} style={smallerFont} primaryText={name} key={name}/>
@@ -200,40 +188,20 @@ let ExpoLanding = React.createClass({
     })
   },
 
-  selectExpo: function() {
-    if (this.state.selectedExpoCentre !== "") {
+  selectExpo: function(expoCenter) {
       return (
         <div>
           <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
-            {this.renderExpo()}
+            {this.renderExpo(expoCenter)}
           </SelectField >
         </div>
       )
-    }
-  },
-
-  renderExpoCentre: function() {
-    return Object.keys(expoData).map(function(venue){
-      return (
-        <MenuItem value={venue} style={smallerFont} primaryText={venue} key={venue}/>
-      )
-    })
-  },
-
-  selectExpoCentre: function(){
-    return (
-      <div>
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.setExpoCenter}>
-          {this.renderExpoCentre()}
-        </SelectField >
-      </div>
-    )
   },
 
   render: function() {
     var burgerMenuOptions = ["About+/expo-about", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
-    try {
-      localStorage.setItem("privateBrowsing", false)
+    var expoCenter = this.props.selectedExpoCenter;
+
       return (
         <div>
           <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
@@ -245,11 +213,9 @@ let ExpoLanding = React.createClass({
                 <div className="center-align">
                   <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
 
-                  {this.selectExpoCentre()}
+                  {this.selectExpo(expoCenter)}
 
-                  {this.selectExpo()}
-
-                  {this.selectDeliveryDate()}
+                  {this.selectDeliveryDate(expoCenter)}
 
                   {this.selectDeliveryTime()}
 
@@ -280,21 +246,7 @@ let ExpoLanding = React.createClass({
           </div>
         </div>
       )
-    } catch(err) {
-      return (
-        <div>
-          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
-          <div className="center-align">
 
-            <p id="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
-
-            <div className="">
-              <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
-            </div>
-          </div>
-        </div>
-      )
-    }
   }
 });
 
