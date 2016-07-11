@@ -203,7 +203,7 @@ let ExpoPayment = React.createClass({
       tip = this.props.tip;
       total = foodSubtotal + tip;
       expoName = this.props.selectedExpo;
-      expoCenter = this.props.selectedExpoCentre;
+      expoCenter = this.props.selectedExpoCenter;
 
       localStorage.setItem("order", order);
       localStorage.setItem("deliveryPoint", deliveryPoint);

@@ -15,7 +15,7 @@ var expoData = {
       MoneyConf: {
         code: "MoneyConf",
         name: "Money Conference '16: 1st & 2nd Sept",
-        venue: "Excel Centre",
+        venue: "Excel Center",
         dates: [1472684400000, 1472770800000]
       }
     },
