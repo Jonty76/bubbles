@@ -98,14 +98,14 @@ let Basket = React.createClass({
   },
 
   setExpoCenter: function(event, index, value){
-    var expoCentre = value.replace(/\s/g, '')
-    console.log('expoCentre', expoCentre)
-    var menu = expoCentre + "Menu"
+    var expoCenter = value.replace(/\s/g, '')
+    console.log('expoCenter', expoCenter)
+    var menu = expoCenter + "Menu"
     console.log(menu)
 
 
     this.setState({
-      selectedExpoCentre: value,
+      selectedExpoCenter: value,
       selectedExpo: "",
       selectedDeliveryDate: "",
       basket: getMenu[menu](),

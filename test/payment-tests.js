@@ -29,6 +29,8 @@ test('Does successful payment return successful page', function(t){
         orderNumber: '14678013129742600',
         deliveryPoint: 'Main Entrance',
         deliveryTime: '1474428840000',
+        expoCenter: 'Earls Court',
+        expoName: 'Tech Conf',
         order: '[{"name":"Grain Store","description":"Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.","items":[{"id":18,"name":"A Bowl of Superfood","description":"Quinoa, Beluga lentils, avocado, baby spinach, raw apple, pumpkin seeds, crumbled goat\'s feta","foodType":"Salads","restaurant":"Grain Store","price":"1200","quantityOrdered":1},{"id":19,"name":"Wild Mushroom and Truffle Burger","description":"Chicory, apple and hazelnut salad, milk bun","foodType":"Homemade Burgers","restaurant":"Grain Store","price":"1300","quantityOrdered":1}]}]',
         payment_method_nonce: 'fake-valid-nonce'
       }
@@ -54,6 +56,8 @@ test('Does failed payment return failed page', function(t){
       orderNumber: '14676382555371390',
       deliveryPoint: 'Main Entrance',
       deliveryTime: '1474428840000',
+      expoCenter: 'Earls Court',
+      expoName: 'Tech Conf',
       order: '[{"name":"Grain Store","description":"Grain Store is an innovative and sustainable restaurant and bar by celebrated chef Bruno Loubet, drinks pioneer Tony Conigliaro and the Zetter Group. Grain Store was awarded Menu of the Year at the Cateys in 2014.","items":[{"id":18,"name":"A Bowl of Superfood","description":"Quinoa, Beluga lentils, avocado, baby spinach, raw apple, pumpkin seeds, crumbled goat\'s feta","foodType":"Salads","restaurant":"Grain Store","price":"1200","quantityOrdered":1},{"id":19,"name":"Wild Mushroom and Truffle Burger","description":"Chicory, apple and hazelnut salad, milk bun","foodType":"Homemade Burgers","restaurant":"Grain Store","price":"1300","quantityOrdered":1}]}]',
       payment_method_nonce: 'fake-processor-declined-visa-nonce'
     }

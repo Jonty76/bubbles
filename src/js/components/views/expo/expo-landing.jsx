@@ -14,7 +14,7 @@ let smallerField = {fontSize: "0.8em", width: "100px", marginRight: "2em"}
 let ExpoLanding = React.createClass({
   getInitialState: function() {
     return {
-      selectedExpoCentre: "",
+      selectedExpoCenter: "",
       selectedExpo: "",
       selectedDeliveryDate: "",
       selectedDeliveryTime: "",
@@ -114,7 +114,7 @@ let ExpoLanding = React.createClass({
 
   setExpoCenter: function(event, index, value){
     this.setState({
-      selectedExpoCentre: value,
+      selectedExpoCenter: value,
       selectedExpo: "",
       selectedDeliveryDate: ""
 
@@ -202,7 +202,7 @@ let ExpoLanding = React.createClass({
   },
 
   renderDeliveryDateOptions: function(){
-    var dates = expoData[this.state.selectedExpoCentre][this.state.selectedExpo].dates
+    var dates = expoData[this.state.selectedExpoCenter][this.state.selectedExpo].dates
     return dates.map(function(date){
       var t = new Date(date)
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -227,10 +227,10 @@ let ExpoLanding = React.createClass({
   },
 
   renderExpo: function() {
-    var selectedExpoCentre = this.state.selectedExpoCentre
-    var filteredExpos = Object.keys(expoData[selectedExpoCentre])
+    var selectedExpoCenter = this.state.selectedExpoCenter
+    var filteredExpos = Object.keys(expoData[selectedExpoCenter])
     return filteredExpos.map(function(expo){
-      var name = expoData[selectedExpoCentre][expo].name
+      var name = expoData[selectedExpoCenter][expo].name
 
       return (
         <MenuItem value={expo} style={smallerFont} primaryText={name} key={name}/>
@@ -239,7 +239,7 @@ let ExpoLanding = React.createClass({
   },
 
   selectExpo: function() {
-    if (this.state.selectedExpoCentre !== "") {
+    if (this.state.selectedExpoCenter !== "") {
       return (
         <div>
           <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
@@ -250,7 +250,7 @@ let ExpoLanding = React.createClass({
     }
   },
 
-  renderExpoCentre: function() {
+  renderExpoCenter: function() {
     return Object.keys(expoData).map(function(venue){
       return (
         <MenuItem value={venue} style={smallerFont} primaryText={venue} key={venue}/>
@@ -258,11 +258,11 @@ let ExpoLanding = React.createClass({
     })
   },
 
-  selectExpoCentre: function(){
+  selectExpoCenter: function(){
     return (
       <div>
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCentre} floatingLabelText="Select Exhibition Centre" onChange={this.setExpoCenter}>
-          {this.renderExpoCentre()}
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCenter} floatingLabelText="Select Exhibition Center" onChange={this.setExpoCenter}>
+          {this.renderExpoCenter()}
         </SelectField >
       </div>
     )
@@ -283,7 +283,7 @@ let ExpoLanding = React.createClass({
                 <div className="center-align">
                   <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
 
-                  {this.selectExpoCentre()}
+                  {this.selectExpoCenter()}
 
                   {this.selectExpo()}
 

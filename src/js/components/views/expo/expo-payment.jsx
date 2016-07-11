@@ -187,24 +187,30 @@ let ExpoPayment = React.createClass({
     var deliveryTime = localStorage.getItem("deliveryTime").toString();
     var order = JSON.stringify(this.getCheckoutList());
     var orderNumber = this.generateOrderNumber();
-    var sendOrder, deliveryPoint, total, tip;
+    var sendOrder, deliveryPoint, total, tip, expoName, expoCenter;
 
     if (order.length === 2){ //.length is 2 because it's a string
       sendOrder = localStorage.getItem("order");
       deliveryPoint = localStorage.getItem("deliveryPoint");
       total = localStorage.getItem("total");
       tip = localStorage.getItem("tip");
+      expoName = localStorage.getItem("expoName")
+      expoCenter = localStorage.getItem("expoCenter")
     } else {
       var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
       sendOrder = order;
       deliveryPoint = this.props.deliveryPoint;
       tip = this.props.tip;
       total = foodSubtotal + tip;
+      expoName = this.props.selectedExpo;
+      expoCenter = this.props.selectedExpoCenter;
 
       localStorage.setItem("order", order);
       localStorage.setItem("deliveryPoint", deliveryPoint);
       localStorage.setItem("total", total);
       localStorage.setItem("tip", tip);
+      localStorage.setItem("expoName", expoName);
+      localStorage.setItem("expoCenter", expoCenter);
     }
 
     return (
@@ -268,6 +274,8 @@ let ExpoPayment = React.createClass({
                 <input data-braintree-name="postal_code" id="postal-code" type="text" autocomplete="off"  />
               </div>
 
+              <input type="hidden" name="expoCenter" value={expoCenter}></input>
+              <input type="hidden" name="expoName" value={expoName}></input>
               <input type="hidden" name="tip" value={tip}></input>
               <input type="hidden" name="total" value={total}></input>
               <input type="hidden" name="orderNumber" value={orderNumber}></input>
