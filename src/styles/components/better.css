@@ -871,6 +871,11 @@ input[type="submit"] {
   margin-left: 0.5em;
 }
 
+.date-field{
+  width: 50%;
+  display: inline-block;
+}
+
 /* END OF EXPO STYLING */
 
 
