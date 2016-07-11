@@ -58,11 +58,13 @@ let ExpoPayment = React.createClass({
           return true
         }
       })
-      console.log("cardValid",cardValid);
+
       if (!event.target.checkValidity() || cardValid.indexOf(false) > -1) {
         event.preventDefault();
-        event.stopPropagation();
         $("#validation-text").show()
+      } else {
+        ("disable submit")
+        document.getElementById("submit-order-button").disabled = true;
       }
     }, false);
 
@@ -273,7 +275,7 @@ let ExpoPayment = React.createClass({
               <input type="hidden" name="deliveryTime" value={deliveryTime}></input>
               <input type="hidden" name="order" value={sendOrder}></input>
 
-              <input type="submit" id="submit" value="PAY" className="waves-effect waves-light base-button btn-large"/>
+              <input type="submit" id="submit-order-button" value="PAY" className="waves-effect waves-light base-button btn-large"/>
             </form>
 
         </div>
