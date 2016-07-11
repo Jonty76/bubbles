@@ -15,6 +15,19 @@ var LandingPage = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var that = this;
+
+    $("#landing-button").click(function(){
+      if(that.state.selectedExpoCenter === ""){
+        $("#landing-validation-text").show()
+      } else {
+        var location = window.location.origin + window.location.pathname + "#/select-expo"
+        window.location.href = location
+      }
+    })
+  },
+
   setExpoCenter: function(event, index, value){
     this.setState({
       selectedExpoCenter: value,
@@ -52,7 +65,12 @@ var LandingPage = React.createClass({
     <div className="custom-container desktop-container">
       <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
       <h2>Landing Page</h2>
+      <p id="landing-validation-text" className="validation-text center-align">Please select an exhibition centre</p>
       {this.selectExpoCenter()}
+
+      <div>
+        <div id="landing-button" className="waves-effect waves-light base-button btn-large">Piccnicc Time</div>
+      </div>
 
     </div>
     );
