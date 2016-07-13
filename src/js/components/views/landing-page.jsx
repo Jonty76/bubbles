@@ -76,8 +76,8 @@ var LandingPage = React.createClass({
       <div className="landing-background">
       <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons landing-menu-icon">menu</i></ul>
         <ul className="side-nav fixed landing-menu" id="mobile-demo">
-          <li>About</li>
-          <li>FAQs</li>
+          <li className="landing-menu-links"><Link to='/expo-about'>About</Link></li>
+          <li className="landing-menu-links"><Link to='/expo-faq'>FAQs</Link></li>
         </ul>
 
         <img className="landing-logo-container" src="./piccnicclogo.png" alt="Piccnicc Logo"></img>
