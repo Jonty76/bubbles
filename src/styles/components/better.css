@@ -812,7 +812,7 @@ input[type="submit"] {
 /* LANDING PAGE */
 .landing-background {
   height: 100vh;
-  background: url('https://cloud.githubusercontent.com/assets/13667174/16800182/e6312470-48eb-11e6-9a93-316408a48f43.jpg') center center no-repeat fixed
+  background: url('https://cloud.githubusercontent.com/assets/13667174/16808720/8541e5da-4915-11e6-82f0-6de06be1c210.png') center center no-repeat fixed
 }
 
 .landing-logo-container {
@@ -949,6 +949,11 @@ input[type="submit"] {
   display: inline-block;
   vertical-align: middle;
   margin-left: 0.5em;
+}
+
+.date-field{
+  width: 50%;
+  display: inline-block;
 }
 
 /* END OF EXPO STYLING */

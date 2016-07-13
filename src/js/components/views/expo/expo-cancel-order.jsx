@@ -4,19 +4,6 @@ import { Link } from 'react-router';
 
 var ExpoCancelOrder = React.createClass({
 
-  sendCancelEmail: function(route, callback){
-    var that = this;
-    $.post(route, function(data, status){
-      if (status === "success"){
-        var component = that.renderCancelComponent();
-        callback(component);
-      } else {
-        var component = that.renderCancelFailedComponent();
-        callback(component);
-      }
-    });
-  },
-
   checkTooSoon: function(deliveryTime){
     var now = new Date().getTime()
     var diff = now + 45*60000
@@ -28,11 +15,6 @@ var ExpoCancelOrder = React.createClass({
       $.post(route, function(data, status){
       });
       return this.renderCancelComponent();
-
-      //NEED TO GET ASYNC STUFF WORKING TO RETURN COMPONENT OUT OF HERE!!
-      // this.sendCancelEmail(route, function(component){
-      //   return component
-      // })
     }
   },
 

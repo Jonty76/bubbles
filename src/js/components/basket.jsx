@@ -115,7 +115,7 @@ let Basket = React.createClass({
     })
   },
 
-  setTime: function(nothing, value){
+  setTime: function(value){
     var time = Date.parse(value)
     this.setState({
       selectedDeliveryTime: time

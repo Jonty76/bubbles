@@ -4,11 +4,12 @@ import BaseButton from '../../base-button.jsx';
 import { Link } from 'react-router';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import TimePicker from 'material-ui/TimePicker';
 import TextField from 'material-ui/TextField';
 
 let expoData  = require('../../../data/expo-data.js');
 let smallerFont = {fontSize: "0.8em"}
+let smallerField = {fontSize: "0.8em", width: "100px", marginRight: "2em"}
+
 
 let ExpoLanding = React.createClass({
   getInitialState: function() {
@@ -16,6 +17,8 @@ let ExpoLanding = React.createClass({
       selectedExpo: "",
       selectedDeliveryDate: "",
       selectedDeliveryTime: "",
+      selectedDeliveryHour: "",
+      selectedDeliveryMin: "",
       selectedUserType: "",
       deliveryPoint: "Main Entrance"
     };
@@ -49,18 +52,32 @@ let ExpoLanding = React.createClass({
     this.props.actions.setExpoState(keyName, event, index, value)
   },
 
-  timeChange: function (nothing, value){
-    var time = Date.parse(value)
+  timeSelectorChange: function(keyName, event, index, value){
+    var change = {};
+    change[keyName] = value;
+    this.setState(change, function(){
+      this.timeChange();
+    });
+  },
+
+  timeChange: function (){
+    console.log(this.state.selectedDeliveryHour);
+    console.log(this.state.selectedDeliveryMin);
+    var dateObj = new Date('Sun, 21 Aug 2016 ' + this.state.selectedDeliveryHour + ':' + this.state.selectedDeliveryMin)
+    console.log('dateObj',dateObj);
+    var time = Date.parse(dateObj)
+    // time variable needs to be in local time
     this.setState({
       selectedDeliveryTime: time
     })
-    this.props.actions.setTime(nothing, value)
+    this.props.actions.setTime(dateObj)
     this.props.actions.setExpoState("deliveryPoint", "", "", "Main Entrance")
   },
 
   tooSoonCheck: function () {
     var formattedSelectedDate = new Date(this.state.selectedDeliveryDate)
     var formattedSelectedTime = new Date(this.state.selectedDeliveryTime)
+    console.log(formattedSelectedTime);
 
     var year = formattedSelectedDate.getFullYear()
     var month = formattedSelectedDate.getMonth()
@@ -118,7 +135,7 @@ let ExpoLanding = React.createClass({
   },
 
   selectUserType: function(){
-    if (this.state.selectedDeliveryTime !== "") {
+    if (this.state.selectedDeliveryMin !== "") {
       var orderTimeValid = this.tooSoonCheck()
         if (orderTimeValid) {
           return (
@@ -143,10 +160,31 @@ let ExpoLanding = React.createClass({
      return (
        <div>
        <p id="label" style={{marginRight: "21em", marginTop: "2em", fontSize: "0.6em"}} className="select-date-label">Select Delivery Time</p>
-        <TimePicker
-          className={"material-ui-small-font"}
-          onChange={this.timeChange}
-        />
+
+         <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryHour} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryHour')}>
+           <MenuItem value="10" primaryText="10" />
+           <MenuItem value="11" primaryText="11" />
+           <MenuItem value="12" primaryText="12" />
+           <MenuItem value="13" primaryText="13" />
+           <MenuItem value="14" primaryText="14" />
+           <MenuItem value="15" primaryText="15" />
+         </SelectField>
+
+       <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
+         <MenuItem value="00" primaryText="00" />
+         <MenuItem value="05" primaryText="05" />
+         <MenuItem value="10" primaryText="10" />
+         <MenuItem value="15" primaryText="15" />
+         <MenuItem value="20" primaryText="20" />
+         <MenuItem value="25" primaryText="25" />
+         <MenuItem value="30" primaryText="30" />
+         <MenuItem value="35" primaryText="35" />
+         <MenuItem value="40" primaryText="40" />
+         <MenuItem value="45" primaryText="45" />
+         <MenuItem value="50" primaryText="50" />
+         <MenuItem value="55" primaryText="55" />
+       </SelectField>
+
       </div>
       )
     }
@@ -189,13 +227,13 @@ let ExpoLanding = React.createClass({
   },
 
   selectExpo: function(expoCenter) {
-      return (
-        <div>
-          <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
-            {this.renderExpo(expoCenter)}
-          </SelectField >
-        </div>
-      )
+    return (
+      <div>
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
+          {this.renderExpo(expoCenter)}
+        </SelectField >
+      </div>
+    )
   },
 
   render: function() {
