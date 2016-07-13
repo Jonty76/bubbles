@@ -890,6 +890,14 @@ input[type="submit"] {
   color: #fff;
 }
 
+.landing-menu-links {
+  width: 180px;
+}
+
+.landing-menu.fixed a {
+  color: #fff;
+}
+
 
 
 /* EXPO STYLING */
