@@ -23,6 +23,8 @@ let SelectAirport         = require('./components/views/select-airport.jsx');
 let PiccniccerOrders      = require('./components/views/piccniccer-orders.jsx');
 let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.jsx');
 let RetailerOrders        = require('./components/views/retailer-orders.jsx');
+let LandingPage           = require('./components/views/landing-page.jsx');
+
 
 /* Expo MVP */
 let ExpoAbout             = require('./components/views/expo/expo-about.jsx');
@@ -49,9 +51,9 @@ let rootElement       = document.getElementById('react-content');
 render((
   <Router history={hashHistory}>
     <Route path="/" component={Basket}>
-      <IndexRoute component={ExpoLanding} />
+      <IndexRoute component={LandingPage} />
       <Route path="expo-faq" component={ExpoFaq} />
-
+      <Route path="select-expo" component={ExpoLanding} />
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
       <Route path="airport" component={SelectAirport} />
