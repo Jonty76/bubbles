@@ -809,6 +809,86 @@ input[type="submit"] {
   font-size: x-large;
 }
 
+/* LANDING PAGE */
+.landing-background {
+  height: 100vh;
+  background: url('https://cloud.githubusercontent.com/assets/13667174/16800182/e6312470-48eb-11e6-9a93-316408a48f43.jpg') center center no-repeat fixed
+}
+
+.landing-logo-container {
+  position:absolute;
+  width: 170px;
+  left: -25px;
+}
+
+.landing-content-container {
+  height: 75%;
+  width: 100vw;
+  text-align: center;
+}
+
+.landing-content {
+  color: #fff;
+  width: 100%;
+}
+
+.landing-dropdown {
+  width: 270px;
+  height: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.landing-dropdown hr {
+  display: none;
+}
+
+.landing-dropdown-label {
+  margin-top: 2em;
+  margin-right: 8.5em;
+}
+
+#landing-button {
+  background-color: #ED2C31;
+  width: 270px;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.landing-menu-icon {
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  float: right;
+  font-size: 3em;
+  color: #ED2C31;
+  cursor: pointer;
+}
+
+.landing-menu {
+  z-index: 1000 !important;
+  text-align: right;
+  padding-right: 2em;
+  color: #fff;
+  background-color: #ED2C31;
+  display: none;
+}
+
+#landing-validation-text {
+  margin-top: 1em;
+  font-size: 1.3em;
+  margin-bottom: 0;
+  color: #ED2C31;
+  display: none;
+}
+
+.bottom-text {
+  position: fixed;
+  bottom: 0;
+  padding-left: 2em;
+  color: #fff;
+}
 
 
 

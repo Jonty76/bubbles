@@ -5,7 +5,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 let expoData  = require('../../data/expo-data.js');
-let smallerFont = {fontSize: "0.8em"}
+let smallerFont = {fontSize: "1em"}
 
 var LandingPage = React.createClass({
 
@@ -17,6 +17,17 @@ var LandingPage = React.createClass({
 
   componentDidMount: function() {
     var that = this;
+
+    $(document).ready(function(){
+      $("#button-collapse").sideNav({
+        menuWidth: 170,
+        edge: 'right',
+        closeOnClick: true
+      });
+      $("#button-collapse").click(function(){
+        $(".landing-menu").css("display", "block")
+      })
+    })
 
     $("#landing-button").click(function(){
       if(that.state.selectedExpoCenter === ""){
@@ -48,8 +59,8 @@ var LandingPage = React.createClass({
 
   selectExpoCenter: function(){
     return (
-      <div>
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCenter} floatingLabelText="Select Exhibition Center" onChange={this.setExpoCenter}>
+      <div className="landing-dropdown">
+        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpoCenter} onChange={this.setExpoCenter}>
           {this.renderExpoCenter()}
         </SelectField >
       </div>
@@ -58,21 +69,32 @@ var LandingPage = React.createClass({
 
   render: function() {
     var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+
     try {
       localStorage.setItem("privateBrowsing", false)
     return (
+      <div className="landing-background">
+      <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons landing-menu-icon">menu</i></ul>
+        <ul className="side-nav fixed landing-menu" id="mobile-demo">
+          <li>About</li>
+          <li>FAQs</li>
+        </ul>
 
-    <div className="custom-container desktop-container">
-      <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
-      <h2>Landing Page</h2>
-      <p id="landing-validation-text" className="validation-text center-align">Please select an exhibition centre</p>
-      {this.selectExpoCenter()}
-
-      <div>
-        <div id="landing-button" className="waves-effect waves-light base-button btn-large">Piccnicc Time</div>
+        <img className="landing-logo-container" src="./piccnicclogo.png" alt="Piccnicc Logo"></img>
+        <p className="bottom-text">© Piccnicc Ltd 2016</p>
+        <div className="valign-wrapper landing-content-container">
+          <div className="landing-content">
+            <h2>Delivering Great Food</h2>
+            <h2>to People on the Move</h2>
+            <h5 className="landing-dropdown-label">Select Exhibition Center</h5>
+            {this.selectExpoCenter()}
+            <p id="landing-validation-text">You must select an exhibition centre</p>
+            <div>
+              <div id="landing-button" className="waves-effect waves-light btn-large">Piccnicc Time</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
     );
   } catch(err) {
     return (
