@@ -172,17 +172,11 @@ let ExpoLanding = React.createClass({
 
        <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
          <MenuItem value="00" primaryText="00" />
-         <MenuItem value="05" primaryText="05" />
          <MenuItem value="10" primaryText="10" />
-         <MenuItem value="15" primaryText="15" />
          <MenuItem value="20" primaryText="20" />
-         <MenuItem value="25" primaryText="25" />
          <MenuItem value="30" primaryText="30" />
-         <MenuItem value="35" primaryText="35" />
          <MenuItem value="40" primaryText="40" />
-         <MenuItem value="45" primaryText="45" />
          <MenuItem value="50" primaryText="50" />
-         <MenuItem value="55" primaryText="55" />
        </SelectField>
 
       </div>

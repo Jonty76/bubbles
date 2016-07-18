@@ -38,9 +38,9 @@ var Menu = React.createClass({
       }
 
       if (this.props.app === "airport"){
-        burgerMenuOptions = ["About+/about", "Create Order+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+        burgerMenuOptions = ["About+/about", "Start Again+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
       } else {
-        burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+        burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
       }
     var basketContent = this.props.helpers.numberOfItemsInBasket(this.props.basket)
 
