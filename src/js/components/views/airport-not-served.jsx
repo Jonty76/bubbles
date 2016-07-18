@@ -62,7 +62,7 @@ let Page = React.createClass({
          </p>
          {this.state.emailSubmitted ? submittedText : submitForm}
         <div className="terms">
-           <p className='view-text'>Piccnicc - Hampers of Happiness, Delivered</p>
+           <p className='view-text'>Hampers of Happiness, Delivered</p>
            <p className='view-text'>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
            <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
            <p className='view-text'>Privacy Policy: We promise never to share your email or any other details with anybody else, ever. Nobody. Never.</p>
