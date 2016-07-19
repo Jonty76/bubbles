@@ -38,6 +38,7 @@ var ExpoOrderConfirmedPage = React.createClass({
 
           <div className="">
             <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+            <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
           </div>
         </div>
 

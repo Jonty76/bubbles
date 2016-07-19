@@ -9,7 +9,7 @@ var ExpoAbout = React.createClass({
 
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"About Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header headerTheme={"whiteNav"} text={"About"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="center-align desktop-container">
           <div className="content-container margin-all">
             <p>Piccnicc is an online ordering service, which delivers delicious food from nearby restaurants to exhibitors and attendees.</p>
@@ -22,7 +22,7 @@ var ExpoAbout = React.createClass({
             <p><i>* Orders must be placed at least 45 minutes before requested delivery time. No maximum time limit</i></p>
             <div className="piccnicc-sig-style">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
-              <p className="piccnicc-slogan">Piccnicc - Hampers of Happiness, Delivered</p>
+              <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
               <p>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
               <p>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
             </div>

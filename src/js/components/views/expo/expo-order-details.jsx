@@ -17,7 +17,7 @@ var ExpoAbout = React.createClass({
             <p>Orders must be cancelled at least 45 minutes before requested delivery time or no refund can be given</p>
             <div className="piccnicc-sig-style">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
-              <p className="piccnicc-slogan">Piccnicc - Hampers of Happiness, Delivered</p>
+              <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
               <p>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
               <p>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
             </div>

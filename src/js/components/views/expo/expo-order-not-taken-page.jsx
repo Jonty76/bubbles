@@ -11,7 +11,7 @@ var ExpoOrderNotTakenPage = React.createClass({
     return (
 
     <div className="custom-container desktop-container">
-      <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+      <Header headerTheme={"whiteNav"} text={"Oops..."} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
       <div className="order-confirmed-container center-align">
 
         <p className="top-line">Sorry, something's gone wrong</p>
