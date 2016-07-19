@@ -18,17 +18,6 @@ var LandingPage = React.createClass({
   componentDidMount: function() {
     var that = this;
 
-    $(document).ready(function(){
-      $("#button-collapse").sideNav({
-        menuWidth: 170,
-        edge: 'right',
-        closeOnClick: true
-      });
-      $("#button-collapse").click(function(){
-        $(".landing-menu").css("display", "block")
-      })
-    })
-
     $("#landing-button").click(function(){
       if(that.state.selectedExpoCenter === ""){
         $("#landing-validation-text").show()
@@ -68,24 +57,17 @@ var LandingPage = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "FAQ+/expo-faq"]
 
     try {
       localStorage.setItem("privateBrowsing", false)
     return (
       <div className="landing-background">
-      <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons landing-menu-icon">menu</i></ul>
-        <ul className="side-nav fixed landing-menu" id="mobile-demo">
-          <li className="landing-menu-links"><Link to='/expo-about'>About</Link></li>
-          <li className="landing-menu-links"><Link to='/expo-faq'>FAQs</Link></li>
-        </ul>
+      <Header headerTheme={"whiteNav"} text={""} iconRight={"menu"} iconLeft={"Piccnicc"} burgerMenuOptions={burgerMenuOptions}/>
 
-        <img className="landing-logo-container" src="./piccnicclogo.png" alt="Piccnicc Logo"></img>
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
         <div className="valign-wrapper landing-content-container">
           <div className="landing-content">
-            <h2>Delivering Great Food</h2>
-            <h2>to People on the Move</h2>
             <h5 className="landing-dropdown-label">Exhibition Centre</h5>
             {this.selectExpoCenter()}
             <p id="landing-validation-text">You must select an exhibition centre</p>
