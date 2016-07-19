@@ -21,10 +21,15 @@ let ExpoPayment = React.createClass({
 
   getInitialState: function() {
     return {
-      cardNumber: "invalid",
-      cvv: "invalid",
-      expireMonth: "invalid",
-      expireYear: "invalid"
+      cardNumber: "",
+      cvv: "",
+      expireMonth: "",
+      expireYear: "",
+      firstName: "",
+      lastName: "",
+      email:"",
+      phoneNumber: "",
+      cardName: ""
     };
   },
 
@@ -50,21 +55,29 @@ let ExpoPayment = React.createClass({
     var form = document.getElementById('braintree-payment-form');
 
     form.noValidate = true;
-    form.addEventListener('submit', function(event) {
-      var cardValid = Object.keys(that.state).map(function(elem){
-        if(that.state[elem] === "invalid") {
+    document.getElementById("submit-order-button").addEventListener('click', function(event) {
+      var formValid = Object.keys(that.state).map(function(elem){
+        if(that.state[elem] === "") {
           return false
         } else {
           return true
         }
       })
 
-      if (!event.target.checkValidity() || cardValid.indexOf(false) > -1) {
+      var emailValid;
+      if (that.state.email.indexOf("@") > -1 && that.state.email.indexOf(".") > -1) {
+        emailValid = true;
+      } else {
+        emailValid = false;
+      }
+
+      if (!emailValid || formValid.indexOf(false) > -1) {
         event.preventDefault();
         $("#validation-text").show()
+        $("html, body").animate({ scrollTop: 0 }, "slow");
       } else {
         ("disable submit")
-        document.getElementById("submit-order-button").disabled = true;
+        document.getElementById("submit-order-button").disabled = false;
       }
     }, false);
 
@@ -85,7 +98,7 @@ let ExpoPayment = React.createClass({
             validCard("card-number-label", "card-number")
           } else {
             that.setState({
-              cardNumber: "invalid"
+              cardNumber: ""
             })
             renderInvalidCard("card number", "card-number-label", "card-number");
           }
@@ -97,7 +110,7 @@ let ExpoPayment = React.createClass({
             validCard("card-number-label", "card-number")
           } else {
             that.setState({
-              cardNumber: "invalid"
+              cardNumber: ""
             })
             renderInvalidCard("card number", "card-number-label", "card-number");
           }
@@ -110,7 +123,7 @@ let ExpoPayment = React.createClass({
       var monthValidation = valid.expirationMonth(month);
       if (!monthValidation.isPotentiallyValid) {
         that.setState({
-          expireMonth: "invalid"
+          expireMonth: ""
         })
         renderInvalidCard("expiration month", "expire-label", "card-month");
       } else {
@@ -126,7 +139,7 @@ let ExpoPayment = React.createClass({
       var yearValidation = valid.expirationYear(year);
       if (!yearValidation.isPotentiallyValid) {
         that.setState({
-          expireYear: "invalid"
+          expireYear: ""
         })
         renderInvalidCard("expiration year", "expire-label", "card-year");
       } else {
@@ -142,13 +155,13 @@ let ExpoPayment = React.createClass({
       var cvvValidation = valid.cvv(cvv, 4);
       if (!cvvValidation.isPotentiallyValid) {
         that.setState({
-          cvv: "invalid"
+          cvv: ""
         })
         renderInvalidCard("cvv number", "cvv-label", "cvv");
       } else {
         if (this.value.length <= 2) {
           that.setState({
-            cvv: "invalid"
+            cvv: ""
           })
           renderInvalidCard("cvv number", "cvv-label", "cvv");
         } else {
@@ -180,6 +193,12 @@ let ExpoPayment = React.createClass({
   generateOrderNumber: function() {
     var longNumber = Date.now().toString() + parseInt((Math.random() * 9999)).toString();
     return longNumber.substr(longNumber.length - 8);
+  },
+
+  selectorChange: function (keyName, event){
+    var change = {};
+    change[keyName] = event.target.value;
+    this.setState(change);
   },
 
   render: function() {
@@ -224,22 +243,22 @@ let ExpoPayment = React.createClass({
             <form method="POST" action="/process-payment" id="braintree-payment-form">
               <div className="card-input-wrapper">
                 <p>First Name *</p>
-                <input type="text" autocomplete="off" name='firstName' required/>
+                <input type="text" autocomplete="off" name='firstName' onChange={this.selectorChange.bind(this, 'firstName')}/>
               </div>
 
               <div className="card-input-wrapper">
                 <p>Last Name *</p>
-                <input type="text" autocomplete="off" name='lastName' required/>
+                <input type="text" autocomplete="off" name='lastName' onChange={this.selectorChange.bind(this, 'lastName')}/>
               </div>
 
               <div className="card-input-wrapper">
-                <p>Email *</p>
-                <input type="email" autocomplete="off" name='email' required/>
+                <p id="email-label">Email *</p>
+                <input id="email-input" type="email" autocomplete="off" name='email' onChange={this.selectorChange.bind(this, 'email')}/>
               </div>
 
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
-                <input type="text" autocomplete="off" name='phoneNumber' required/>
+                <input type="text" autocomplete="off" name='phoneNumber' onChange={this.selectorChange.bind(this, 'phoneNumber')}/>
               </div>
 
               <div className="card-input-wrapper">
@@ -249,23 +268,23 @@ let ExpoPayment = React.createClass({
 
               <div className="card-input-wrapper">
                 <p>Name on Card *</p>
-                <input data-braintree-name="cardholder_name" autocomplete="off" type="text" required/>
+                <input data-braintree-name="cardholder_name" autocomplete="off" type="text" onChange={this.selectorChange.bind(this, 'cardName')}/>
               </div>
 
               <div className="card-input-wrapper">
                 <p id="card-number-label">Card Number *</p>
-                <input data-braintree-name="number" id="card-number" type="text" autocomplete="off" required/>
+                <input data-braintree-name="number" id="card-number" type="text" autocomplete="off"/>
               </div>
 
               <div className="card-input-wrapper">
                 <div className="cvv-wrapper">
                   <p id="cvv-label">CVV *</p>
-                  <input data-braintree-name="cvv" id="cvv" type="text" autocomplete="off" required/>
+                  <input data-braintree-name="cvv" id="cvv" type="text" autocomplete="off"/>
                 </div>
                 <div className="expiration-wrapper">
                   <p id="expire-label">Expiration (MM/YYYY) *</p>
-                  <input data-braintree-name="expiration_month" id="card-month" type="text" size="2" required/> /
-                  <input data-braintree-name="expiration_year" id="card-year" type="text" size="4" required/>
+                  <input data-braintree-name="expiration_month" id="card-month" type="text" size="2"/> /
+                  <input data-braintree-name="expiration_year" id="card-year" type="text" size="4"/>
                 </div>
               </div>
 
