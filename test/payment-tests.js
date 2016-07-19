@@ -19,8 +19,7 @@ test('Does successful payment return successful page', function(t){
     method: "POST",
     url: "/process-payment",
     payload: {
-        firstName: 'Katerina',
-        lastName: 'Pascoulis',
+        customerName: 'Katerina Pascoulis',
         email: 'kat_pas@hotmail.co.uk',
         phoneNumber: '79527958721',
         company: 'FAC',
@@ -46,8 +45,7 @@ test('Does failed payment return failed page', function(t){
     method: "POST",
     url: "/process-payment",
     payload: {
-      firstName: 'TestFirstName',
-      lastName: 'TestSecondName',
+      customerName: 'TestFirstName TestSecondName',
       email: 'email@email.com',
       phoneNumber: '07111111111',
       company: 'Failed Payment Co',
