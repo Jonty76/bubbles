@@ -55,6 +55,13 @@ let ExpoPayment = React.createClass({
     var form = document.getElementById('braintree-payment-form');
 
     form.noValidate = true;
+    form.addEventListener('submit', function(){
+      $(this).submit(function() {
+        return false;
+      });
+      return true;
+    })
+
     document.getElementById("submit-order-button").addEventListener('click', function(event) {
       var formValid = Object.keys(that.state).map(function(elem){
         if(that.state[elem] === "") {
@@ -76,8 +83,7 @@ let ExpoPayment = React.createClass({
         $("#validation-text").show()
         $("html, body").animate({ scrollTop: 0 }, "slow");
       } else {
-        ("disable submit")
-        document.getElementById("submit-order-button").disabled = false;
+        // document.getElementById("submit-order-button").disabled = true;
       }
     }, false);
 
