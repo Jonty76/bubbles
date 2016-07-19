@@ -347,6 +347,10 @@ a:focus, a:hover {
 }
 /* Select Food Page */
 
+.add {
+  cursor: pointer;
+}
+
 .restaurant-option {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
