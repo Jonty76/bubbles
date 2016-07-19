@@ -22,7 +22,7 @@ var ExpoOrderFailedPage = React.createClass({
     return (
 
     <div className="custom-container desktop-container">
-      <Header headerTheme={"whiteNav"} text={"Oops..."} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+      <Header headerTheme={"whiteNav"} text={"Oops..."} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
       <div className="order-confirmed-container center-align">
 
         <p id="large-p">There was an issue with your payment, please try again.</p>

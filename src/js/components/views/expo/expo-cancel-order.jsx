@@ -40,17 +40,6 @@ var ExpoCancelOrder = React.createClass({
     )
   },
 
-  renderCancelFailedComponent: function(){
-    return (
-      <div className="custom-container desktop-container center-align">
-        <p id="large-p">Your order cannot be cancelled at this time. Please contact jonny@piccnicc.com directly to cancel your order. Please quote your order number when cancelling.</p>
-        <div className="">
-          <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
-        </div>
-      </div>
-    )
-  },
-
   render: function() {
     var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     console.log("this.props.params",this.props.params);
@@ -58,7 +47,7 @@ var ExpoCancelOrder = React.createClass({
 
     return (
       <div>
-        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
         {component}
       </div>
     );

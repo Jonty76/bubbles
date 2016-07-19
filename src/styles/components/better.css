@@ -27,10 +27,12 @@ label {
 
 .icon-right {
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .icon-left {
   margin-left: 1em;
+  cursor: pointer;
 }
 
 
@@ -984,6 +986,9 @@ input[type="submit"] {
 @media only screen and (min-width: 993px) {
   #icon-right {
     display: none;
+  }
+  #icon-left {
+    margin-left: 240px;
   }
   #header {
     margin-left: -220px;
