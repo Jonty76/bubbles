@@ -449,7 +449,13 @@ input[type="submit"] {
 }
 
 #basket-bar-cart {
-  padding-top: 1.2em;
+  padding-top: 1em;
+}
+
+.piccnicc-shopping-cart {
+  height: 1.4em;
+  width: 1.8em;
+  margin-bottom: 5em;
 }
 
 .list-group-item:last-child {

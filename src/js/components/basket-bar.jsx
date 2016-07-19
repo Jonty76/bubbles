@@ -21,7 +21,7 @@ var BasketBar = React.createClass({
           <div className="btn-large base-button">
             <div className="row">
               <div className="col s8 left-align">VIEW HAMPER</div>
-              <div id="basket-bar-cart" className="col s1 glyphicon glyphicon-shopping-cart">{itemsInBasket}</div>
+              <div id="basket-bar-cart" className="col s1"><span><img className="piccnicc-shopping-cart" src="/piccniccbasket.png" alt="Piccnicc Logo"></img></span>{itemsInBasket}</div>
               <div className="col s3">{subtotal}</div>
             </div>
           </div>
