@@ -68,7 +68,7 @@ var LandingPage = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
 
     try {
       localStorage.setItem("privateBrowsing", false)
@@ -86,7 +86,7 @@ var LandingPage = React.createClass({
           <div className="landing-content">
             <h2>Delivering Great Food</h2>
             <h2>to People on the Move</h2>
-            <h5 className="landing-dropdown-label">Select Exhibition Center</h5>
+            <h5 className="landing-dropdown-label">Exhibition Centre</h5>
             {this.selectExpoCenter()}
             <p id="landing-validation-text">You must select an exhibition centre</p>
             <div>

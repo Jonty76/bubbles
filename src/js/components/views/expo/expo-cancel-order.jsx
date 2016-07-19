@@ -52,7 +52,7 @@ var ExpoCancelOrder = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     console.log("this.props.params",this.props.params);
     var component = this.checkTooSoon(this.props.params.deliveryTime);
 

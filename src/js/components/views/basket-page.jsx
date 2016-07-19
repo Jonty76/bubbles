@@ -92,11 +92,11 @@ var BasketPage = React.createClass({
 
     var burgerMenuOptions;
     if(this.props.app === "airport") {
-      burgerMenuOptions = ["About+/about", "Create Order+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+      burgerMenuOptions = ["About+/about", "Start Again+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     } else if (this.props.app === "expo") {
-      burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+      burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     } else {
-      burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+      burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     }
 
     var adjustMargin = {
@@ -125,7 +125,7 @@ var BasketPage = React.createClass({
 
         <div className="button-wrapper center-align">
           <Link to='/basket/select-restaurant'>
-            <div className="white-button btn-large">Order from elsewhere</div>
+            <div className="white-button btn-large">Add from another restaurant</div>
           </Link>
             <div onClick={this.onClick} style={adjustMargin} className="btn-large red-button"> CHECKOUT </div>
         </div>

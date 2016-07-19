@@ -21,16 +21,13 @@ var ExpoFaq = React.createClass({
 
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "FAQ+/expo-faq"]
 
     return (
       <div>
         <Header headerTheme={"whiteNav"} text={"Piccnicc Questions"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
         <div className="left-align desktop-container">
           <div className="content-container margin-all">
-              <div>
-                <button id="mail-gun-trigger">Test button</button>
-              </div>
               <div>
 
                  <ul className="collapsible" data-collapsible="expandable">
@@ -49,7 +46,7 @@ var ExpoFaq = React.createClass({
                       <p><span className="faq-number">2.</span> When can I use the service?</p>
                     </div>
                     <div className="collapsible-body faq-body">
-                      <p>Piccnicc will operate throughout each day of the exhibition / between the hours of 11 and 3. All you need to do is choose your items, specify a delivery time and we’ll deliver them to you.</p>
+                      <p>Piccnicc will operate throughout each day of the exhibition / between the hours of 10 and 4. All you need to do is choose your items, specify a delivery time and we’ll deliver them to you.</p>
                     </div>
                   </li>
                   <li>
@@ -169,7 +166,7 @@ var ExpoFaq = React.createClass({
 
                   <li>
                     <div className="collapsible-header faq-header">
-                      <p><span className="faq-number">13.</span> How do I provide feedback?</p>
+                      <p><span className="faq-number">14.</span> How do I provide feedback?</p>
                     </div>
                     <div className="collapsible-body faq-body">
                       <p> Please send an email to <a href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a>. Jonny will review your email and get back to you accordingly.</p>
@@ -178,7 +175,7 @@ var ExpoFaq = React.createClass({
 
                   <li>
                     <div className="collapsible-header faq-header">
-                      <p><span className="faq-number">14.</span>What if my question isn’t covered by the list above?</p>
+                      <p><span className="faq-number">15.</span>What if my question isn’t covered by the list above?</p>
                     </div>
                     <div className="collapsible-body faq-body">
                       <p>Please send us an <a href="mailto:jonny@piccnicc.com">email</a> and we’ll be happy to help.</p>

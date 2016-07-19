@@ -32,7 +32,7 @@ var MapView = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/about", "Create Order+/", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Start Again+/", "Order History+/order-history", "Logout+/login"]
 
     return (
       <div>

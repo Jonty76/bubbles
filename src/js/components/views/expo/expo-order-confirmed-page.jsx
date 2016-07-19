@@ -16,7 +16,7 @@ var ExpoOrderConfirmedPage = React.createClass({
     var deliveryPoint = localStorage.getItem("deliveryPoint")
     localStorage.removeItem("order")
 
-    var burgerMenuOptions = ["About+/expo-about", "Create Order+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
 
     return (
 
