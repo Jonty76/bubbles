@@ -84,10 +84,11 @@ var LandingPage = React.createClass({
         <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
         <div className="center-align">
 
-          <p id="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
+          <p className="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
 
           <div className="">
             <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+            <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
           </div>
         </div>
       </div>

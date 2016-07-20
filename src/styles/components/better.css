@@ -94,8 +94,7 @@ a:focus, a:hover {
 
 }
 
-.piccnicc-sig-style .piccnicc-slogan {
-  font-family: 'Pacifico', cursive;
+.piccnicc-slogan {
   color: #ED2C31;
   font-size: 1.2em;
 }
@@ -815,10 +814,10 @@ input[type="submit"] {
   font-size: 0.8em !important;
 }
 
-#large-p {
+.large-p {
   margin-top: 3em;
   margin-bottom: 3em;
-  font-size: x-large;
+  font-size: 18px;
 }
 
 /* LANDING PAGE */
