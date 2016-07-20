@@ -27,10 +27,12 @@ label {
 
 .icon-right {
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .icon-left {
   margin-left: 1em;
+  cursor: pointer;
 }
 
 
@@ -344,6 +346,10 @@ a:focus, a:hover {
   border-color: #ED2C31;
 }
 /* Select Food Page */
+
+.add {
+  cursor: pointer;
+}
 
 .restaurant-option {
   padding-top: 1.5em;
@@ -984,6 +990,9 @@ input[type="submit"] {
 @media only screen and (min-width: 993px) {
   #icon-right {
     display: none;
+  }
+  #icon-left {
+    margin-left: 240px;
   }
   #header {
     margin-left: -220px;
