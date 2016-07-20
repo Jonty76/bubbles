@@ -223,13 +223,8 @@ let ExpoPayment = React.createClass({
 
             <form method="POST" action="/process-payment" id="braintree-payment-form">
               <div className="card-input-wrapper">
-                <p>First Name *</p>
-                <input type="text" autocomplete="off" name='firstName' required/>
-              </div>
-
-              <div className="card-input-wrapper">
-                <p>Last Name *</p>
-                <input type="text" autocomplete="off" name='lastName' required/>
+                <p>Name *</p>
+                <input type="text" autocomplete="off" name='customerName' required/>
               </div>
 
               <div className="card-input-wrapper">
@@ -240,11 +235,6 @@ let ExpoPayment = React.createClass({
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
                 <input type="text" autocomplete="off" name='phoneNumber' required/>
-              </div>
-
-              <div className="card-input-wrapper">
-                <p>Company</p>
-                <input type="text" autocomplete="off" name='company'/>
               </div>
 
               <div className="card-input-wrapper">
