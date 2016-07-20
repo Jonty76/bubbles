@@ -11,7 +11,7 @@ var payload = {
   total: '2600',
   tip: '100',
   orderNumber: '14678013129742600',
-  deliveryPoint: 'Main Entrance',
+  deliveryPoint: 'A45',
   deliveryTime: '1474428840000',
   expoCenter: 'Earls Court',
   expoName: 'Tech Conf',
