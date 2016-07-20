@@ -24,6 +24,7 @@ let PiccniccerOrders      = require('./components/views/piccniccer-orders.jsx');
 let PiccniccerDeliveries  = require('./components/views/piccniccer-deliveries.jsx');
 let RetailerOrders        = require('./components/views/retailer-orders.jsx');
 let LandingPage           = require('./components/views/landing-page.jsx');
+let ErrorPage             = require('./components/views/404-page.jsx');
 
 
 /* Expo MVP */
@@ -75,6 +76,7 @@ render((
       <Route path="login" component={Login} />
       <Route path="payment" component={Payment} />
       <Route path="expo-payment" component={ExpoPayment} />
+      <Route path="*" component={ErrorPage}/>
     </Route>
 
     <Route path="/piccniccer-deliveries" component={PiccniccerDeliveries} />
