@@ -25,8 +25,7 @@ let ExpoPayment = React.createClass({
       cvv: "",
       expireMonth: "",
       expireYear: "",
-      firstName: "",
-      lastName: "",
+      customerName: "",
       email:"",
       phoneNumber: "",
       cardName: ""
@@ -55,12 +54,12 @@ let ExpoPayment = React.createClass({
     var form = document.getElementById('braintree-payment-form');
 
     form.noValidate = true;
-    form.addEventListener('submit', function(){
-      $(this).submit(function() {
-        return false;
+
+    $.get("/get-client-token", function(data, status){
+      braintree.setup(data, 'custom', {
+        id: 'braintree-payment-form'
       });
-      return true;
-    })
+    });
 
     document.getElementById("submit-order-button").addEventListener('click', function(event) {
       var formValid = Object.keys(that.state).map(function(elem){
@@ -178,13 +177,6 @@ let ExpoPayment = React.createClass({
         }
       }
     })
-
-
-    $.get("/get-client-token", function(data, status){
-      braintree.setup(data, 'custom', {
-        id: 'braintree-payment-form'
-      });
-    });
   },
 
   getCheckoutList: function() {
@@ -248,13 +240,8 @@ let ExpoPayment = React.createClass({
 
             <form method="POST" action="/process-payment" id="braintree-payment-form">
               <div className="card-input-wrapper">
-                <p>First Name *</p>
-                <input type="text" autocomplete="off" name='firstName' onChange={this.selectorChange.bind(this, 'firstName')}/>
-              </div>
-
-              <div className="card-input-wrapper">
-                <p>Last Name *</p>
-                <input type="text" autocomplete="off" name='lastName' onChange={this.selectorChange.bind(this, 'lastName')}/>
+                <p>Name *</p>
+                <input type="text" autocomplete="off" name='customerName' onChange={this.selectorChange.bind(this, 'customerName')}/>
               </div>
 
               <div className="card-input-wrapper">
@@ -265,11 +252,6 @@ let ExpoPayment = React.createClass({
               <div className="card-input-wrapper">
                 <p>Phone Number *</p>
                 <input type="text" autocomplete="off" name='phoneNumber' onChange={this.selectorChange.bind(this, 'phoneNumber')}/>
-              </div>
-
-              <div className="card-input-wrapper">
-                <p>Company</p>
-                <input type="text" autocomplete="off" name='company'/>
               </div>
 
               <div className="card-input-wrapper">

@@ -47,10 +47,15 @@ var Header = React.createClass({
       document.getElementById('header').classList.add("white-nav")
       document.getElementById('mobile-demo').classList.add("red-side-nav")
     }
+
+    if (this.props.iconLeft === "Piccnicc") {
+      document.getElementById("icon-left").innerHTML = '<p className="brand-logo center" id="brand-logo">Piccnicc</p>'
+    }
   },
 
 
   render: function() {
+
     return (
       <div className="navbar-fixed">
         <nav className="nav-class">

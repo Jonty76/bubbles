@@ -236,7 +236,7 @@ let ExpoLanding = React.createClass({
 
       return (
         <div>
-          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
+          <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
           <div className="center-align desktop-container custom-container">
             <div className="content-container">
               <div className="question-container">

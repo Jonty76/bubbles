@@ -4,8 +4,7 @@ var server = require("../lib/index.js");
 var sendEmail = require("../lib/mail-gun.js");
 
 var payload = {
-  firstName: 'Katerina',
-  lastName: 'Pascoulis',
+  customerName: 'Katerina Pascoulis',
   email: 'kat_pas@hotmail.co.uk',
   phoneNumber: '79521267321',
   company: 'FAC',
