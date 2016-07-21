@@ -47,7 +47,11 @@ test("test order details email is sent to user", function(t) {
 });
 
 test("test cancel order email is sent to", function(t) {
-  sendEmail("ORDER-NUMBER", "piccniccCancelledOrder", function(error){
+  var cancelObj = {
+    customerEmail: "kat_pas@hotmail.co.uk",
+    orderNumber: "456777777test"
+  }
+  sendEmail(cancelObj, "piccniccCancelledOrder", function(error){
     var actual = typeof error;
     var expected = "undefined";
     t.equal(actual, expected, "Cancel email should have been sent");

@@ -71,7 +71,7 @@ render((
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-order-not-taken-page" component={ExpoOrderNotTaken} />
       <Route path="expo-order-failed" component={ExpoOrderFailed} />
-      <Route path="/expo-cancel-order/:orderNumber/:deliveryTime" component={ExpoCancelOrder}/>
+      <Route path="/expo-cancel-order/:orderNumber/:deliveryTime/:email" component={ExpoCancelOrder}/>
       <Route path="/order-details" component={OrderDetails} />
       <Route path="/order-track" component={OrderTrack} />
       <Route path="/order-track-complete" component={OrderTrackComplete} />
