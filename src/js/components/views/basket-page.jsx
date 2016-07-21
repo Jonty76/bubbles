@@ -71,7 +71,7 @@ var BasketPage = React.createClass({
     if(this.props.app === "airport") {
       var location = window.location.origin + window.location.pathname + "#/payment"
       window.location.href = location
-    } else if (this.props.app === "expo") {
+    } else if (this.props.app === "expo" && this.props.deliveryPoint !== "") {
       this.props.actions.setExpoState("completed", "", "", "completed")
       var location = window.location.origin + window.location.pathname + "#/expo-payment"
       window.location.href = location
