@@ -14,13 +14,13 @@ let smallerField = {fontSize: "0.8em", width: "100px", marginRight: "2em"}
 let ExpoLanding = React.createClass({
   getInitialState: function() {
     return {
-      selectedExpo: "",
-      selectedDeliveryDate: "",
-      selectedDeliveryTime: "",
-      selectedDeliveryHour: "",
-      selectedDeliveryMin: "",
-      selectedUserType: "",
-      deliveryPoint: "Main Entrance"
+      selectedExpo: this.props.selectedExpo,
+      selectedDeliveryDate: this.props.selectedDeliveryDate,
+      selectedDeliveryTime: this.props.selectedDeliveryTime,
+      selectedDeliveryHour: this.props.selectedDeliveryHour,
+      selectedDeliveryMin: this.props.selectedDeliveryMin,
+      selectedUserType: this.props.selectedUserType,
+      deliveryPoint: this.props.deliveryPoint
     };
   },
 
@@ -58,12 +58,13 @@ let ExpoLanding = React.createClass({
     this.setState(change, function(){
       this.timeChange();
     });
+    this.props.actions.setExpoState(keyName, "", "", value)
   },
 
   timeChange: function (){
-    console.log(this.state.selectedDeliveryHour);
-    console.log(this.state.selectedDeliveryMin);
-    var dateObj = new Date('Sun, 21 Aug 2016 ' + this.state.selectedDeliveryHour + ':' + this.state.selectedDeliveryMin)
+    console.log(this.props.selectedDeliveryHour);
+    console.log(this.props.selectedDeliveryMin);
+    var dateObj = new Date('Sun, 21 Aug 2016 ' + this.props.selectedDeliveryHour + ':' + this.props.selectedDeliveryMin)
     console.log('dateObj',dateObj);
     var time = Date.parse(dateObj)
     // time variable needs to be in local time
@@ -71,12 +72,11 @@ let ExpoLanding = React.createClass({
       selectedDeliveryTime: time
     })
     this.props.actions.setTime(dateObj)
-    this.props.actions.setExpoState("deliveryPoint", "", "", "Main Entrance")
   },
 
   tooSoonCheck: function () {
-    var formattedSelectedDate = new Date(this.state.selectedDeliveryDate)
-    var formattedSelectedTime = new Date(this.state.selectedDeliveryTime)
+    var formattedSelectedDate = new Date(this.props.selectedDeliveryDate)
+    var formattedSelectedTime = new Date(this.props.selectedDeliveryTime)
     console.log(formattedSelectedTime);
 
     var year = formattedSelectedDate.getFullYear()
@@ -112,9 +112,9 @@ let ExpoLanding = React.createClass({
   },
 
   renderDeliveryLocation: function(){
-    if (this.state.selectedDeliveryTime !== ""){
-      if (this.state.selectedUserType !== "") {
-        if (this.state.selectedUserType === "attendee") {
+    if (this.props.selectedDeliveryTime !== ""){
+      if (this.props.selectedUserType !== "") {
+        if (this.props.selectedUserType === "attendee") {
           return (
             <div>
               <br></br>
@@ -125,7 +125,7 @@ let ExpoLanding = React.createClass({
         } else {
           return (
             <div>
-              <TextField className={"material-ui-small-font"} onChange={this.setStand} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
+              <TextField className={"material-ui-small-font"} onChange={this.setStand} value={this.props.deliveryPoint} hintText="Stand Number and Company" floatingLabelText="Stand Number and Company" />
               <p style={smallerFont}>We will deliver your Piccnicc to your Exhibition Stand.</p>
             </div>
           )
@@ -134,17 +134,38 @@ let ExpoLanding = React.createClass({
     }
   },
 
+  setUserType: function(event, index, value) {
+    if(value === "attendee") {
+      console.log("value attendee>>", value)
+      this.setState({
+        selectedUserType: value,
+        deliveryPoint: "Main Entrance"
+      })
+      this.props.actions.setExpoState("selectedUserType", "", "", value)
+      this.props.actions.setExpoState("deliveryPoint", "", "", "Main Entrance")
+    } else {
+      this.setState({
+        selectedUserType: value,
+        deliveryPoint: ""
+      })
+      this.props.actions.setExpoState("selectedUserType", "", "", value)
+      this.props.actions.setExpoState("deliveryPoint", "", "", "")
+    }
+  },
+
   selectUserType: function(){
-    if (this.state.selectedDeliveryMin !== "") {
+    if (this.props.selectedDeliveryMin !== "") {
       var orderTimeValid = this.tooSoonCheck()
         if (orderTimeValid) {
+          console.log("render exhibitor")
           return (
-            <SelectField className="dropdown" style={smallerFont} value={this.state.selectedUserType} floatingLabelText="Are you an Exhibitor?" onChange={this.selectorChange.bind(this, 'selectedUserType')}>
+            <SelectField className="dropdown" style={smallerFont} value={this.props.selectedUserType} floatingLabelText="Are you an Exhibitor?" onChange={this.setUserType}>
               <MenuItem value="exhibitor" primaryText="Yes" />
               <MenuItem value="attendee" primaryText="No" />
             </SelectField>
           )
         } else {
+          console.log("don't render exhibitor")
           this.setState({
             selectedDeliveryTime: ""
           })
@@ -156,12 +177,12 @@ let ExpoLanding = React.createClass({
   },
 
   selectDeliveryTime: function(){
-    if (this.state.selectedDeliveryDate !== "") {
+    if (this.props.selectedDeliveryDate !== "") {
      return (
        <div>
        <p id="label" style={{marginRight: "21em", marginTop: "2em", fontSize: "0.6em"}} className="select-date-label">Select Delivery Time</p>
 
-         <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryHour} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryHour')}>
+         <SelectField className="dropdown" style={smallerField} value={this.props.selectedDeliveryHour} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryHour')}>
            <MenuItem value="10" primaryText="10" />
            <MenuItem value="11" primaryText="11" />
            <MenuItem value="12" primaryText="12" />
@@ -170,7 +191,7 @@ let ExpoLanding = React.createClass({
            <MenuItem value="15" primaryText="15" />
          </SelectField>
 
-       <SelectField className="dropdown" style={smallerField} value={this.state.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
+       <SelectField className="dropdown" style={smallerField} value={this.props.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
          <MenuItem value="00" primaryText="00" />
          <MenuItem value="10" primaryText="10" />
          <MenuItem value="20" primaryText="20" />
@@ -185,7 +206,7 @@ let ExpoLanding = React.createClass({
   },
 
   renderDeliveryDateOptions: function(expoCenter){
-    var dates = expoData[expoCenter][this.state.selectedExpo].dates
+    var dates = expoData[expoCenter][this.props.selectedExpo].dates
     return dates.map(function(date){
       var t = new Date(date)
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -198,10 +219,10 @@ let ExpoLanding = React.createClass({
   },
 
   selectDeliveryDate: function(expoCenter){
-    if (this.state.selectedExpo !== "") {
+    if (this.props.selectedExpo !== "") {
       return (
         <div>
-          <SelectField className="dropdown" style={smallerFont} value={this.state.selectedDeliveryDate} floatingLabelText="Select Delivery Date" onChange={this.selectorChange.bind(this, 'selectedDeliveryDate')}>
+          <SelectField className="dropdown" style={smallerFont} value={this.props.selectedDeliveryDate} floatingLabelText="Select Delivery Date" onChange={this.selectorChange.bind(this, 'selectedDeliveryDate')}>
             {this.renderDeliveryDateOptions(expoCenter)}
           </SelectField >
         </div>
@@ -220,10 +241,20 @@ let ExpoLanding = React.createClass({
     })
   },
 
+  setExpo: function(event, index, value) {
+    this.setState({
+      selectedExpo: value,
+      selectedDeliveryDate: ""
+    })
+    this.props.actions.setExpoState("selectedExpo", "", "", value)
+    this.props.actions.setExpoState("selectedDeliveryDate", "", "", "")
+  },
+
   selectExpo: function(expoCenter) {
+    console.log("selected expo>>>>", this.props.selectedExpo)
     return (
       <div>
-        <SelectField className="dropdown" style={smallerFont} value={this.state.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
+        <SelectField className="dropdown" style={smallerFont} value={this.props.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.setExpo}>
           {this.renderExpo(expoCenter)}
         </SelectField >
       </div>
