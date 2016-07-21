@@ -14,13 +14,13 @@ let smallerField = {fontSize: "0.8em", width: "100px", marginRight: "2em"}
 let ExpoLanding = React.createClass({
   getInitialState: function() {
     return {
-      selectedExpo: "",
-      selectedDeliveryDate: "",
-      selectedDeliveryTime: "",
-      selectedDeliveryHour: "",
-      selectedDeliveryMin: "",
-      selectedUserType: "",
-      deliveryPoint: ""
+      selectedExpo: this.props.selectedExpo,
+      selectedDeliveryDate: this.props.selectedDeliveryDate,
+      selectedDeliveryTime: this.props.selectedDeliveryTime,
+      selectedDeliveryHour: this.props.selectedDeliveryHour,
+      selectedDeliveryMin: this.props.selectedDeliveryMin,
+      selectedUserType: this.props.selectedUserType,
+      deliveryPoint: this.props.deliveryPoint
     };
   },
 
@@ -241,11 +241,20 @@ let ExpoLanding = React.createClass({
     })
   },
 
+  setExpo: function(event, index, value) {
+    this.setState({
+      selectedExpo: value,
+      selectedDeliveryDate: ""
+    })
+    this.props.actions.setExpoState("selectedExpo", "", "", value)
+    this.props.actions.setExpoState("selectedDeliveryDate", "", "", "")
+  },
+
   selectExpo: function(expoCenter) {
     console.log("selected expo>>>>", this.props.selectedExpo)
     return (
       <div>
-        <SelectField className="dropdown" style={smallerFont} value={this.props.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.selectorChange.bind(this, 'selectedExpo')}>
+        <SelectField className="dropdown" style={smallerFont} value={this.props.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.setExpo}>
           {this.renderExpo(expoCenter)}
         </SelectField >
       </div>
