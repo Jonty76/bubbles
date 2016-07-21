@@ -9,6 +9,8 @@ import TextField from 'material-ui/TextField';
 let expoData  = require('../../../data/expo-data.js');
 let smallerFont = {fontSize: "0.8em"}
 let smallerField = {fontSize: "0.8em", width: "100px", marginRight: "2em"}
+let rightField = {fontSize: "0.8em", width: "100px", marginRight: "2em", float:"right"}
+
 
 
 let ExpoLanding = React.createClass({
@@ -181,7 +183,7 @@ let ExpoLanding = React.createClass({
      return (
        <div>
        <p id="label" style={{marginRight: "21em", marginTop: "2em", fontSize: "0.6em"}} className="select-date-label">Select Delivery Time</p>
-
+       <div className="delivery-time-container">
          <SelectField className="dropdown" style={smallerField} value={this.props.selectedDeliveryHour} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryHour')}>
            <MenuItem value="10" primaryText="10" />
            <MenuItem value="11" primaryText="11" />
@@ -191,7 +193,7 @@ let ExpoLanding = React.createClass({
            <MenuItem value="15" primaryText="15" />
          </SelectField>
 
-       <SelectField className="dropdown" style={smallerField} value={this.props.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
+       <SelectField className="dropdown" style={rightField} value={this.props.selectedDeliveryMin} onChange={this.timeSelectorChange.bind(this, 'selectedDeliveryMin')}>
          <MenuItem value="00" primaryText="00" />
          <MenuItem value="10" primaryText="10" />
          <MenuItem value="20" primaryText="20" />
@@ -199,7 +201,7 @@ let ExpoLanding = React.createClass({
          <MenuItem value="40" primaryText="40" />
          <MenuItem value="50" primaryText="50" />
        </SelectField>
-
+       </div>
       </div>
       )
     }
