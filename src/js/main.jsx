@@ -28,6 +28,8 @@ let LandingPage           = require('./components/views/landing-page.jsx');
 
 /* Expo MVP */
 let ExpoAbout             = require('./components/views/expo/expo-about.jsx');
+let ExpoTerms             = require('./components/views/expo/expo-terms.jsx');
+let ExpoPrivacy           = require('./components/views/expo/expo-privacy.jsx');
 let ExpoOrderDetails      = require('./components/views/expo/expo-order-details.jsx');
 let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
@@ -63,6 +65,8 @@ render((
       <Route path="/map-view" component={MapView} />
       <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path='expo-about' component={ExpoAbout} />
+      <Route path='expo-privacy' component={ExpoPrivacy} />
+      <Route path='expo-terms' component={ExpoTerms} />
       <Route path='expo-order-details' component={ExpoOrderDetails} />
       <Route path="expo-order-confirmed-page" component={ExpoOrderConfirmed} />
       <Route path="expo-order-not-taken-page" component={ExpoOrderNotTaken} />

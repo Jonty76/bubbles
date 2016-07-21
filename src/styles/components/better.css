@@ -672,6 +672,10 @@ input[type="submit"] {
   padding: 0;
 }
 
+.link-text, .link-text:hover, .link-text:visited{
+  color: #ED2C31;
+}
+
 /* Exhibition App only */
 
 .validation-text {

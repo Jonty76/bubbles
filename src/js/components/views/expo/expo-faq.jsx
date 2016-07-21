@@ -181,6 +181,14 @@ var ExpoFaq = React.createClass({
                       <p>Please send us an <a href="mailto:jonny@piccnicc.com">email</a> and we’ll be happy to help.</p>
                     </div>
                   </li>
+                  <li>
+                    <div className="collapsible-header faq-header">
+                      <p><span className="faq-number">16.</span>Where can I see the Terms & Conditions and Privacy Policy?</p>
+                    </div>
+                    <div className="collapsible-body faq-body">
+                      <p>Right here - <Link className="link-text" to="/expo-terms">Terms & Conditions</Link> and <Link className="link-text" to="/expo-privacy">Privacy Policy</Link></p>
+                    </div>
+                  </li>
 
                 </ul>
               </div>
