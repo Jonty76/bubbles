@@ -5,7 +5,7 @@ var server = require("../lib/index.js");
 test("Is cancel route working correctly", function(t) {
     var options = {
       method: "POST",
-      url: "/cancel-order/ORDER-NUMBER"
+      url: "/cancel-order/ORDER-NUMBER/kat_pas@homtail.co.uk"
     };
     server.inject(options, function(response) {
       t.equal(response.payload, "cancel email sent", "Cancel route working correctly");
