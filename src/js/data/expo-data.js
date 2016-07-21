@@ -1,12 +1,10 @@
-var date = Date.now()
-
 var expoData = {
     "Earls Court": {
       TodayConf: {
         code: "TodayConf",
         name: "Today Conference '16: 11th July",
         venue: "Earls Court",
-        dates: [date]
+        dates: [1468251259286]
       },
       HealthConf: {
         code: "HealthConf",
