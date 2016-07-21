@@ -51,9 +51,9 @@ let ExpoPayment = React.createClass({
 
   componentDidMount: function() {
     var that = this;
-    var form = document.getElementById('braintree-payment-form');
-
-    form.noValidate = true;
+    // var form = document.getElementById('braintree-payment-form');
+    //
+    // form.noValidate = true;
 
     $.get("/get-client-token", function(data, status){
       braintree.setup(data, 'custom', {
@@ -61,30 +61,35 @@ let ExpoPayment = React.createClass({
       });
     });
 
-    document.getElementById("submit-order-button").addEventListener('click', function(event) {
-      var formValid = Object.keys(that.state).map(function(elem){
-        if(that.state[elem] === "") {
-          return false
-        } else {
-          return true
-        }
-      })
-
-      var emailValid;
-      if (that.state.email.indexOf("@") > -1 && that.state.email.indexOf(".") > -1) {
-        emailValid = true;
-      } else {
-        emailValid = false;
-      }
-
-      if (!emailValid || formValid.indexOf(false) > -1) {
-        event.preventDefault();
-        $("#validation-text").show()
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-      } else {
-        // document.getElementById("submit-order-button").disabled = true;
-      }
-    }, false);
+    // document.getElementById("submit-order-button").addEventListener('click', function(event) {
+    //
+    //   var formValid = Object.keys(that.state).map(function(elem){
+    //     if(that.state[elem] === "") {
+    //       return false
+    //     } else {
+    //       return true
+    //     }
+    //   })
+    //
+    //   var emailValid;
+    //   if (that.state.email.indexOf("@") > -1 && that.state.email.indexOf(".") > -1) {
+    //     emailValid = true;
+    //   } else {
+    //     emailValid = false;
+    //   }
+    //
+    //   if (!emailValid || formValid.indexOf(false) > -1) {
+    //     console.log("dont submit");
+    //     event.preventDefault();
+    //     $("#validation-text").show()
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //   } else {
+    //     console.log("submit");
+    //     // document.getElementById("submit-order-button").removeEventListener('click', false)
+    //     document.getElementById("submit-order-button").disabled = true;
+    //     // form.submit();
+    //   }
+    // });
 
 
     $("#card-number").change(function() {
@@ -177,6 +182,41 @@ let ExpoPayment = React.createClass({
         }
       }
     })
+  },
+
+  submitForm: function (event) {
+    var that = this;
+    var form = $('#braintree-payment-form');
+    form.noValidate = true;
+
+    var formValid = Object.keys(this.state).map(function(elem){
+      if(that.state[elem] === "") {
+        return false
+      } else {
+        return true
+      }
+    })
+
+    var emailValid;
+    if (this.state.email.indexOf("@") > -1 && this.state.email.indexOf(".") > -1) {
+      emailValid = true;
+    } else {
+      emailValid = false;
+    }
+
+    if (!emailValid || formValid.indexOf(false) > -1) {
+      event.preventDefault();
+      console.log("dont submit");
+      $("#validation-text").show()
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+    } else {
+      console.log("submit");
+      document.forms[0].onsubmit = function () {
+        console.log("hereeeeee");
+        $("#submit-order-button").attr("disabled", true);
+        return false;
+      }
+    }
   },
 
   getCheckoutList: function() {
@@ -290,7 +330,7 @@ let ExpoPayment = React.createClass({
               <input type="hidden" name="deliveryTime" value={deliveryTime}></input>
               <input type="hidden" name="order" value={sendOrder}></input>
 
-              <input type="submit" id="submit-order-button" value="PAY" className="waves-effect waves-light base-button btn-large"/>
+              <button role="submit" id="submit-order-button" className="waves-effect waves-light base-button btn-large" onClick={this.submitForm}>PAY</button>
             </form>
 
         </div>
