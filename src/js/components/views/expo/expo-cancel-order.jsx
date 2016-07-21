@@ -21,9 +21,10 @@ var ExpoCancelOrder = React.createClass({
   renderTooSoonComponent: function(){
     return (
       <div className="custom-container desktop-container center-align">
-        <p id="large-p">Your order cannot be cancelled less than 45 minutes before your delivery time.</p>
+        <p className="large-p">Your order cannot be cancelled less than 45 minutes before your delivery time.</p>
         <div className="">
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+          <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
         </div>
       </div>
     )
@@ -32,9 +33,10 @@ var ExpoCancelOrder = React.createClass({
   renderCancelComponent: function(){
     return (
       <div className="custom-container desktop-container center-align">
-        <p id="large-p">Your order has been successfully cancelled.</p>
+        <p className="large-p">Your order has been successfully cancelled.</p>
         <div className="">
           <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
+          <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
         </div>
       </div>
     )

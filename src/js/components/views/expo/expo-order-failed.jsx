@@ -25,7 +25,8 @@ var ExpoOrderFailedPage = React.createClass({
       <Header headerTheme={"whiteNav"} text={"Oops..."} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
       <div className="order-confirmed-container center-align">
 
-        <p id="large-p">There was an issue with your payment, please try again.</p>
+        <p className="large-p">There was an issue with your payment.</p>
+        <p className="large-p">Please try again.</p>
 
           <div className="button-wrapper center-align">
             <Link to="/expo-payment">
