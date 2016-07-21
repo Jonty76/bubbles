@@ -51,46 +51,12 @@ let ExpoPayment = React.createClass({
 
   componentDidMount: function() {
     var that = this;
-    // var form = document.getElementById('braintree-payment-form');
-    //
-    // form.noValidate = true;
 
     $.get("/get-client-token", function(data, status){
       braintree.setup(data, 'custom', {
         id: 'braintree-payment-form'
       });
     });
-
-    // document.getElementById("submit-order-button").addEventListener('click', function(event) {
-    //
-    //   var formValid = Object.keys(that.state).map(function(elem){
-    //     if(that.state[elem] === "") {
-    //       return false
-    //     } else {
-    //       return true
-    //     }
-    //   })
-    //
-    //   var emailValid;
-    //   if (that.state.email.indexOf("@") > -1 && that.state.email.indexOf(".") > -1) {
-    //     emailValid = true;
-    //   } else {
-    //     emailValid = false;
-    //   }
-    //
-    //   if (!emailValid || formValid.indexOf(false) > -1) {
-    //     console.log("dont submit");
-    //     event.preventDefault();
-    //     $("#validation-text").show()
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //   } else {
-    //     console.log("submit");
-    //     // document.getElementById("submit-order-button").removeEventListener('click', false)
-    //     document.getElementById("submit-order-button").disabled = true;
-    //     // form.submit();
-    //   }
-    // });
-
 
     $("#card-number").change(function() {
       var number = $("#card-number").val().substring(0,4)
