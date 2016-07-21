@@ -108,10 +108,14 @@ let Basket = React.createClass({
       selectedExpoCenter: value,
       selectedExpo: "",
       selectedDeliveryDate: "",
+      selectedDeliveryHour: "",
+      selectedDeliveryMin: "",
+      selectedUserType: "",
+      deliveryPoint: "",
       basket: getMenu[menu](),
       app: "expo",
       tip: 100,
-      completed: "incomplete"
+      completed: "incomplete",
     })
   },
 
