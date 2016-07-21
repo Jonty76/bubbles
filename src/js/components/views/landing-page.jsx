@@ -66,7 +66,7 @@ var LandingPage = React.createClass({
       <Header headerTheme={"whiteNav"} text={""} iconRight={"menu"} iconLeft={"Piccnicc"} burgerMenuOptions={burgerMenuOptions}/>
 
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
-        <div className="valign-wrapper landing-content-container">
+        <div className="valign-wrapper landing-content-container desktop-container">
           <div className="landing-content">
             <h5 className="landing-dropdown-label">Exhibition Centre</h5>
             {this.selectExpoCenter()}
@@ -80,7 +80,7 @@ var LandingPage = React.createClass({
     );
   } catch(err) {
     return (
-      <div>
+      <div className="desktop-container">
         <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
         <div className="center-align">
 

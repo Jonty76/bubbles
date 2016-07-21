@@ -26,6 +26,14 @@ let ExpoLanding = React.createClass({
     };
   },
 
+  componentWillMount: function() {
+    var isExpoCentreSelected = typeof this.props.selectedExpoCenter
+    if (isExpoCentreSelected === "undefined") {
+      var location = window.location.origin + window.location.pathname
+      window.location.href = location
+    }
+  },
+
   componentDidMount: function() {
     var that = this
 
