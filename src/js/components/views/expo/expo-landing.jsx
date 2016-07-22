@@ -41,7 +41,7 @@ let ExpoLanding = React.createClass({
       if(isStateEmpty.indexOf(false) > -1){
         $("#validation-text").show()
       } else {
-        var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
+        var location = "https://" + window.location.host + window.location.pathname + "#/basket/select-restaurant"
         window.location.href = location
       }
     })
