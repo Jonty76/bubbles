@@ -1,5 +1,11 @@
+
+@font-face {
+  font-family: ozregular;
+  src: url(/../../../public/ozregular.otf) format("opentype");
+}
+
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: ozregular, 'Roboto', sans-serif;;
 }
 
 h1, h2, h3, h4, h5, h6 {
