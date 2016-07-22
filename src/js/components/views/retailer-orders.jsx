@@ -31,7 +31,7 @@ let RetailerOrders = React.createClass({
       } else if (order.time === "9.20 am"){
         batchTwo.push(orderNo)
       } else {
-        console.log("No batches")
+        console.log("No Batches")
       }
 
       if (batchOne.length === 4) {

@@ -14,7 +14,6 @@ var ExpoFaq = React.createClass({
     $('#mail-gun-trigger').click(function(){
       $.post("/mail-test", function(data, status){
 
-        console.log("data", data, "status", status)
       });
     })
   },

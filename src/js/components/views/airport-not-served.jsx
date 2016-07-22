@@ -23,7 +23,7 @@ let Page = React.createClass({
     var submittedText = (
       <div className="airportSubmitted">
         <p className ="view-text p-top-margin">Thank you for letting us know!</p>
-        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp'>twitter</a> or contact us anytime through our <a href='http://www.piccnicc.com/'>website.</a></p>
+        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp'>twitter</a> or contact us anytime through our <a href='https://www.piccnicc.com/'>website.</a></p>
       </div>
     );
     var submitForm = (
@@ -63,7 +63,7 @@ let Page = React.createClass({
          {this.state.emailSubmitted ? submittedText : submitForm}
         <div className="terms">
            <p className='view-text'>Hampers of Happiness, Delivered</p>
-           <p className='view-text'>Visit us at <a href='http://www.piccnicc.com/'>piccnicc.com</a></p>
+           <p className='view-text'>Visit us at <a href='https://www.piccnicc.com/'>piccnicc.com</a></p>
            <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
            <p className='view-text'>Privacy Policy: We promise never to share your email or any other details with anybody else, ever. Nobody. Never.</p>
          </div>
