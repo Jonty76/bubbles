@@ -4,7 +4,6 @@ import React from 'react';
 var AddItem = React.createClass({
   addItem: function() {
     if (this.props.page === "order-details") {
-      console.log("order details")
     } else {
       this.props.addItem(this.props.id);
     }
@@ -169,7 +168,6 @@ var FoodItem = React.createClass({
     }
 
     if (this.props.page === "order-details") {
-      console.log("order details")
     } else {
       this.props.actions.addItem(this.props.id);
     }

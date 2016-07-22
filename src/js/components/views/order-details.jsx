@@ -25,7 +25,6 @@ let OrderDetails = React.createClass({
   onClick: function(){
     this.props.actions.clearBasket()
     $('#cancel-modal').closeModal()
-    console.log("Cleared")
   },
 
 
