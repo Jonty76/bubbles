@@ -35,14 +35,14 @@ let ExpoPayment = React.createClass({
   componentWillMount: function(){
     if (this.props.app !== "expo") {
       if(this.props.completed !== "completed"){
-        var location = window.location.origin + window.location.pathname
+        var location = "https://" + window.location.host + window.location.pathname
         window.location.href = location
       }
     }
 
     if (this.props.app === "expo") {
         if(this.props.completed !== "completed"){
-        var location = window.location.origin + window.location.pathname
+        var location = "https://" + window.location.host + window.location.pathname
         window.location.href = location
       }
     }
