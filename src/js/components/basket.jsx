@@ -292,7 +292,7 @@ let Basket = React.createClass({
 
   getInitialState: function() {
     return {
-      basket: getMenu.southMenu()
+      basket: getMenu.OlympiaMenu()
     };
   },
 
