@@ -23,7 +23,7 @@ let Page = React.createClass({
     var submittedText = (
       <div className="airportSubmitted">
         <p className ="view-text p-top-margin">Thank you for letting us know!</p>
-        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp'>twitter</a> or contact us anytime through our <a href='https://www.piccnicc.com/'>website.</a></p>
+        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp' target='_blank'>twitter</a> or contact Jonny anytime on <a className="link-text" href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a></p>
       </div>
     );
     var submitForm = (
@@ -61,15 +61,14 @@ let Page = React.createClass({
           Please provide your email address below so we can add your support and update you when the time comes.
          </p>
          {this.state.emailSubmitted ? submittedText : submitForm}
-        <div className="terms">
-           <p className='view-text'>Hampers of Happiness, Delivered</p>
-           <p className='view-text'>Visit us at <a href='https://www.piccnicc.com/'>piccnicc.com</a></p>
-           <p className='view-text'>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
-           <p className='view-text'>Privacy Policy: We promise never to share your email or any other details with anybody else, ever. Nobody. Never.</p>
-         </div>
          <div className="">
            <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
          </div>
+        <div className="terms">
+           <p className='piccnicc-slogan'>Hampers of Happiness, Delivered</p>
+           <p className='view-text'>Follow us on <a className="link-text" href='https://twitter.com/piccniccapp' target='_blank'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+           <p>Click for our <Link className="link-text" to="/expo-terms">Terms & Conditions</Link> and <Link className="link-text" to="/expo-privacy">Privacy Policy</Link></p>
+        </div>
        </div>
     </div>
   </div>

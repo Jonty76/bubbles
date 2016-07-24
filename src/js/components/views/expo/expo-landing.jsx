@@ -271,7 +271,7 @@ let ExpoLanding = React.createClass({
           <div className="center-align desktop-container custom-container">
             <div className="content-container">
               <div className="question-container">
-                <p className="standard-question-style">Hampers of Happiness, Delivered </p>
+                <p className="piccnicc-slogan">Hampers of Happiness, Delivered </p>
               </div>
                 <div className="center-align">
                   <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>
