@@ -23,7 +23,7 @@ let Page = React.createClass({
     var submittedText = (
       <div className="airportSubmitted">
         <p className ="view-text p-top-margin">Thank you for letting us know!</p>
-        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp'>twitter</a> or contact Jonny anytime on <a className="link-text" href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a></p>
+        <p className='view-text'> We'll update you as soon as we have something newsworthy - in the meantime, safe travels and by all means follow us on <a href='https://twitter.com/piccniccapp' target='_blank'>twitter</a> or contact Jonny anytime on <a className="link-text" href="mailto:jonny@piccnicc.com">jonny@piccnicc.com</a></p>
       </div>
     );
     var submitForm = (
@@ -66,7 +66,7 @@ let Page = React.createClass({
          </div>
         <div className="terms">
            <p className='piccnicc-slogan'>Hampers of Happiness, Delivered</p>
-           <p className='view-text'>Follow us on <a className="link-text" href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+           <p className='view-text'>Follow us on <a className="link-text" href='https://twitter.com/piccniccapp' target='_blank'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
            <p>Click for our <Link className="link-text" to="/expo-terms">Terms & Conditions</Link> and <Link className="link-text" to="/expo-privacy">Privacy Policy</Link></p>
         </div>
        </div>

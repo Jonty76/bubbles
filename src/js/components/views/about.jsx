@@ -20,7 +20,7 @@ var About = React.createClass({
                 <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
               </div>
             <p className='piccnicc-slogan'>Hampers of Happiness, Delivered</p>
-            <p className='view-text'>Follow us on <a className="link-text" href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+            <p className='view-text'>Follow us on <a className="link-text" href='https://twitter.com/piccniccapp' target='_blank'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
           </div>
         </div>
       </div>

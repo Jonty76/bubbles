@@ -18,7 +18,7 @@ var ExpoAbout = React.createClass({
             <div className="piccnicc-sig-style">
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
               <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
-              <p>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
+              <p>Follow us on <a href='https://twitter.com/piccniccapp' target='_blank'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
             </div>
           </div>
         </div>
