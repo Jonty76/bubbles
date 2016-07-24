@@ -24,7 +24,6 @@ var ExpoAbout = React.createClass({
               <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
               <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
               <p>Click for our <Link className="link-text" to="/expo-terms">Terms & Conditions</Link> and <Link className="link-text" to="/expo-privacy">Privacy Policy</Link></p>
-              <p>Visit us at <a href='https://www.piccnicc.com/'>piccnicc.com</a></p>
               <p>Follow us on <a href='https://twitter.com/piccniccapp'>twitter.com/piccniccapp</a> #nomoregreychicken</p>
             </div>
           </div>
