@@ -4,7 +4,6 @@ import React from 'react';
 var AddItem = React.createClass({
   addItem: function() {
     if (this.props.page === "order-details") {
-      console.log("order details")
     } else {
       this.props.addItem(this.props.id);
     }
@@ -77,7 +76,9 @@ var ClearQuantityOfItem = React.createClass({
 
   render: function() {
     var inCheckoutPage = (
-      <span className="glyphicon glyphicon-remove x-button" onClick={this.clearQuantityOfItem}></span>
+      <div style={{height: "2.8em"}} className="remove-cross" onClick={this.clearQuantityOfItem}>
+        <span className="glyphicon glyphicon-remove x-button"></span>
+      </div>
     );
     var notInCheckoutPage = (
       <div></div>
@@ -167,7 +168,6 @@ var FoodItem = React.createClass({
     }
 
     if (this.props.page === "order-details") {
-      console.log("order details")
     } else {
       this.props.actions.addItem(this.props.id);
     }

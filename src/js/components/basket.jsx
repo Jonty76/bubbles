@@ -99,10 +99,7 @@ let Basket = React.createClass({
 
   setExpoCenter: function(event, index, value){
     var expoCenter = value.replace(/\s/g, '')
-    console.log('expoCenter', expoCenter)
     var menu = expoCenter + "Menu"
-    console.log(menu)
-
 
     this.setState({
       selectedExpoCenter: value,
@@ -295,7 +292,7 @@ let Basket = React.createClass({
 
   getInitialState: function() {
     return {
-      basket: getMenu.southMenu()
+      basket: getMenu.OlympiaMenu()
     };
   },
 

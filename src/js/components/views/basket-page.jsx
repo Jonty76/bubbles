@@ -71,7 +71,7 @@ var BasketPage = React.createClass({
     if(this.props.app === "airport") {
       var location = "https://" + window.location.host + window.location.pathname + "#/payment"
       window.location.href = location
-    } else if (this.props.app === "expo") {
+    } else if (this.props.app === "expo" && this.props.deliveryPoint !== "") {
       this.props.actions.setExpoState("completed", "", "", "completed")
       var location = "https://" + window.location.host + window.location.pathname + "#/expo-payment"
       window.location.href = location
@@ -118,7 +118,7 @@ var BasketPage = React.createClass({
           <p>
             <i id="add-tip" className="material-icons">add</i>
             <i id="remove-tip" className="material-icons">remove</i>
-            <p className="tip">Optional Delivery Fee: {formatPrice(this.state.tip)}</p>
+            <p className="tip">Delivery Fee (Optional): {formatPrice(this.state.tip)}</p>
           </p>
           <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>

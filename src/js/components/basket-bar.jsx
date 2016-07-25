@@ -20,9 +20,12 @@ var BasketBar = React.createClass({
         <Link to='/basket/page'>
           <div className="btn-large base-button">
             <div className="row">
-              <div className="col s8 left-align">VIEW HAMPER</div>
-              <div id="basket-bar-cart" className="col s1"><span><img className="piccnicc-shopping-cart" src="/piccniccbasket.png" alt="Piccnicc Logo"></img></span>{itemsInBasket}</div>
-              <div className="col s3">{subtotal}</div>
+              <div className="col s7 m8 left-align">VIEW HAMPER</div>
+              <div className="col s1 m1">{itemsInBasket}</div>
+              <div id="basket-bar-cart" className="col s1 m1">
+                <span><img className="piccnicc-shopping-cart" src="/piccniccbasket.png" alt="Piccnicc Logo"></img></span>
+              </div>
+              <div className="col s3 m2">{subtotal}</div>
             </div>
           </div>
 

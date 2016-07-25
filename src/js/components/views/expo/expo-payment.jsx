@@ -172,13 +172,10 @@ let ExpoPayment = React.createClass({
 
     if (!emailValid || formValid.indexOf(false) > -1) {
       event.preventDefault();
-      console.log("dont submit");
       $("#validation-text").show()
       $("html, body").animate({ scrollTop: 0 }, "slow");
     } else {
-      console.log("submit");
       document.forms[0].onsubmit = function () {
-        console.log("hereeeeee");
         $("#submit-order-button").attr("disabled", true);
         return false;
       }
