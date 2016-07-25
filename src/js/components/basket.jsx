@@ -6,6 +6,7 @@ import StaticContainer from 'react-static-container'
 import { createHistory, useBasename } from 'history'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import HttpsRedirect from 'react-https-redirect';
 
 var getMenu = require('../data/restaurant-data.js');
 
@@ -336,11 +337,13 @@ let Basket = React.createClass({
   render: function() {
 
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-      <div>
-        <div className=''>{this.getChildrenWithActions()}</div>
-      </div>
-      </MuiThemeProvider>
+      <HttpsRedirect>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <div>
+            <div className=''>{this.getChildrenWithActions()}</div>
+          </div>
+        </MuiThemeProvider>
+      </HttpsRedirect>
     );
   }
 });

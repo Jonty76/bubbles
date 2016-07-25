@@ -15,12 +15,12 @@ var LandingPage = React.createClass({
     }
   },
 
-  componentWillMount: function(){
-  console.log("will mount");
-    var location = "https://" + window.location.host + window.location.pathname
-    console.log("LOCATION",location);
-    // window.location.href = location;
-  },
+  // componentWillMount: function(){
+  // console.log("will mount");
+  //   var location = "https://" + window.location.host + window.location.pathname
+  //   console.log("LOCATION",location);
+  //   // window.location.href = location;
+  // },
 
   componentDidMount: function() {
     var that = this;
