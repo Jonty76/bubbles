@@ -17,7 +17,7 @@ var LandingPage = React.createClass({
 
   componentDidMount: function() {
     var that = this;
-
+    localStorage.clear()
     $("#landing-button").click(function(){
       if(that.state.selectedExpoCenter === ""){
         $("#landing-validation-text").show()
@@ -27,6 +27,8 @@ var LandingPage = React.createClass({
       }
     })
   },
+
+
 
   setExpoCenter: function(event, index, value){
     this.setState({

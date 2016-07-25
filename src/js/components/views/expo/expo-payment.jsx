@@ -207,6 +207,7 @@ let ExpoPayment = React.createClass({
     var deliveryTime = localStorage.getItem("deliveryTime").toString();
     var order = JSON.stringify(this.getCheckoutList());
     var orderNumber = this.generateOrderNumber();
+    var backArrowOrNot;
     var sendOrder, deliveryPoint, total, tip, expoName, expoCenter;
 
     if (order.length === 2){ //.length is 2 because it's a string
@@ -216,6 +217,8 @@ let ExpoPayment = React.createClass({
       tip = localStorage.getItem("tip");
       expoName = localStorage.getItem("expoName")
       expoCenter = localStorage.getItem("expoCenter")
+      backArrowOrNot = ""
+
     } else {
       var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
       sendOrder = order;
@@ -224,6 +227,7 @@ let ExpoPayment = React.createClass({
       total = foodSubtotal + tip;
       expoName = this.props.selectedExpo;
       expoCenter = this.props.selectedExpoCenter;
+      backArrowOrNot = "arrow_back"
 
       localStorage.setItem("order", order);
       localStorage.setItem("deliveryPoint", deliveryPoint);
@@ -237,7 +241,7 @@ let ExpoPayment = React.createClass({
 
       <div>
         <div className="custom-container desktop-container">
-          <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>
+          <Header headerTheme={"whiteNav"} text={"Pay"} iconRight={"menu"} iconLeft={backArrowOrNot} burgerMenuOptions={burgerMenuOptions}/>
 
             <p id="validation-text" className="validation-text center-align">Please fill in all required fields correctly!</p>
 
