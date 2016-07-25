@@ -337,13 +337,11 @@ let Basket = React.createClass({
   render: function() {
 
     return (
-      <HttpsRedirect>
         <MuiThemeProvider muiTheme={muiTheme}>
           <div>
             <div className=''>{this.getChildrenWithActions()}</div>
           </div>
         </MuiThemeProvider>
-      </HttpsRedirect>
     );
   }
 });
