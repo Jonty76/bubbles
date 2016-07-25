@@ -16,8 +16,10 @@ var LandingPage = React.createClass({
   },
 
   componentWillMount: function(){
+  console.log("will mount");
     var location = "https://" + window.location.host + window.location.pathname
-    window.location.href = location;
+    console.log("LOCATION",location);
+    // window.location.href = location;
   },
 
   componentDidMount: function() {
