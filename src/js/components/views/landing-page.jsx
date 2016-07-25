@@ -15,6 +15,11 @@ var LandingPage = React.createClass({
     }
   },
 
+  componentWillMount: function(){
+    var location = "https://" + window.location.host + window.location.pathname
+    window.location.href = location;
+  },
+
   componentDidMount: function() {
     var that = this;
     localStorage.clear()
@@ -22,7 +27,7 @@ var LandingPage = React.createClass({
       if(that.state.selectedExpoCenter === ""){
         $("#landing-validation-text").show()
       } else {
-        var location = window.location.origin + window.location.pathname + "#/select-expo"
+        var location = "https://" + window.location.host + window.location.pathname + "#/select-expo"
         window.location.href = location
       }
     })
