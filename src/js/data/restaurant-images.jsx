@@ -1,19 +1,19 @@
 import React from 'react';
 
 var yoSushiLogo= (
-<img src = "../../images/yosushi-logo.jpg" width="40" height="40"/>
+<img src = "./images/yosushi-logo.jpg" width="40" height="40"/>
 );
 
 var pretLogo = (
-  <img src = "../../images/pret-logo.jpg" width="40" height="40"/>
+  <img src = "./images/pret-logo.jpg" width="40" height="40"/>
 );
 
 var comptoirLibanaisLogo = (
-  <img src = "https://res.cloudinary.com/wlabs/image/upload/spqg00oxexra5dbizqv9.png" height="50"/>
+  <img src = "./images/comptoirlibanais-logo.png" height="50"/>
 );
 
 var jamiesLogo = (
-  <img src = "../../images/jamies-logo.png" height="45"/>
+  <img src = "./images/jamies-logo.png" height="45"/>
 );
 
 var caviarHouseLogo = (
@@ -21,7 +21,7 @@ var caviarHouseLogo = (
 );
 
 var wagamamaLogo = (
-  <img src = "../../images/pret-logo.jpg" height="40"/>
+  <img src = "./wagamama/pret-logo.jpg" height="40"/>
 );
 
 var nandosLogo = (
