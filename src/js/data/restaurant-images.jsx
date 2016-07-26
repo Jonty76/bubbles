@@ -17,23 +17,23 @@ var jamiesLogo = (
 );
 
 var caviarHouseLogo = (
-  <img src = "https://pbs.twimg.com/profile_images/837874950/19245_237640513564_237614963564_3248209_3020982_n.jpg" height="45"/>
+  <img src = "./images/caviarhouse-logo.png" height="45"/>
 );
 
 var wagamamaLogo = (
-  <img src = "./wagamama/pret-logo.jpg" height="40"/>
+  <img src = "./images/wagamama-logo.jpg" height="40"/>
 );
 
 var nandosLogo = (
-  <img src = "http://blackmarket.co.za/wp-content/uploads/2013/01/Nandos-logo.jpg" height="40"/>
+  <img src = "./images/nandos-logo.jpg" height="40"/>
 );
 
 var wonderTreeLogo = (
-  <img src = "http://www.gatwickairport.com/globalassets/restaurants/wondertree/g186-logo-colour-cmyk-aw.jpg" height="40"/>
+  <img src = "./images/wondertree-logo.jpg" height="40"/>
 );
 
 var grainStoreLogo = (
-  <img src = "http://www.grainstore.com/images/grain-store-logo.png" height="40"/>
+  <img src = "./images/grainstore-logo.jpg" height="40"/>
 );
 
 var yoSushiImage= (
