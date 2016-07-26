@@ -4,14 +4,14 @@ import { Link } from 'react-router';
 
 var ExpoCancelOrder = React.createClass({
 
-  checkTooSoon: function(deliveryTime, email){
+  checkTooSoon: function(orderNumber, deliveryTime, email){
     var now = new Date().getTime()
     var diff = now + 45*60000
 
     if (deliveryTime < diff) {
       return this.renderTooSoonComponent();
     } else {
-      var route = "/cancel-order/" + deliveryTime + "/" + email;
+      var route = "/cancel-order/" + orderNumber + "/" + deliveryTime + "/" + email;
       $.post(route, function(data, status){
       });
       return this.renderCancelComponent();
@@ -44,7 +44,7 @@ var ExpoCancelOrder = React.createClass({
 
   render: function() {
     var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
-    var component = this.checkTooSoon(this.props.params.deliveryTime, this.props.params.email);
+    var component = this.checkTooSoon(this.props.params.orderNumber, this.props.params.deliveryTime, this.props.params.email);
 
     return (
       <div>
