@@ -17,7 +17,7 @@ var jamiesLogo = (
 );
 
 var caviarHouseLogo = (
-  <img src = "./images/caviarhouse-logo.png" height="45"/>
+  <img src = "./images/caviarhouse-logo.jpg" height="45"/>
 );
 
 var wagamamaLogo = (
@@ -33,7 +33,7 @@ var wonderTreeLogo = (
 );
 
 var grainStoreLogo = (
-  <img src = "./images/grainstore-logo.jpg" height="40"/>
+  <img src = "./images/grainstore-logo.png" height="40"/>
 );
 
 var yoSushiImage= (
