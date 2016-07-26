@@ -1,75 +1,75 @@
 import React from 'react';
 
 var yoSushiLogo= (
-<img src = "http://didix0merchant0prod.blob.core.windows.net/chains/6fefd508-378e-44dc-a407-4d2bbfe61920/logo/logo%20yo%20sushi.png" width="40" height="40"/>
+<img src = "./images/yosushi-logo.png" width="40" height="40"/>
 );
 
 var pretLogo = (
-  <img src = "https://s-media-cache-ak0.pinimg.com/736x/8a/e2/cf/8ae2cf908bc581f6e321f5791b7d4d14.jpg" width="40" height="40"/>
+  <img src = "./images/pret-logo.jpg" width="40" height="40"/>
 );
 
 var comptoirLibanaisLogo = (
-  <img src = "https://res.cloudinary.com/wlabs/image/upload/spqg00oxexra5dbizqv9.png" height="50"/>
+  <img src = "./images/comptoirlibanais-logo.png" height="50"/>
 );
 
 var jamiesLogo = (
-  <img src = "http://didix0merchant0prod.blob.core.windows.net/chains/f8697810-83ec-4f32-8509-9c0da0c67e59/logo/jamies-italian.png" height="45"/>
+  <img src = "./images/jamies-logo.png" height="45"/>
 );
 
 var caviarHouseLogo = (
-  <img src = "https://pbs.twimg.com/profile_images/837874950/19245_237640513564_237614963564_3248209_3020982_n.jpg" height="45"/>
+  <img src = "./images/caviarhouse-logo.jpg" height="45"/>
 );
 
 var wagamamaLogo = (
-  <img src = "http://www.xscape.co.uk/system/images/3057/assets/concession.jpg?1379416719" height="40"/>
+  <img src = "./images/wagamama-logo.jpg" height="40"/>
 );
 
 var nandosLogo = (
-  <img src = "http://blackmarket.co.za/wp-content/uploads/2013/01/Nandos-logo.jpg" height="40"/>
+  <img src = "./images/nandos-logo.jpg" height="40"/>
 );
 
 var wonderTreeLogo = (
-  <img src = "http://www.gatwickairport.com/globalassets/restaurants/wondertree/g186-logo-colour-cmyk-aw.jpg" height="40"/>
+  <img src = "./images/wondertree-logo.jpg" height="40"/>
 );
 
 var grainStoreLogo = (
-  <img src = "http://www.grainstore.com/images/grain-store-logo.png" height="40"/>
+  <img src = "./images/grainstore-logo.png" height="40"/>
 );
 
 var yoSushiImage= (
-  <img className = "restaurant-image" src = "http://www.irishtimes.com/polopoly_fs/1.2203402.1430991105!/image/image.jpg_gen/derivatives/landscape_620/image.jpg"/>
+  <img className = "restaurant-image" src = "./images/yosushi-image.jpg"/>
 );
 
 var pretImage = (
-  <img className = "restaurant-image" src = "https://cloud.githubusercontent.com/assets/13667174/16146338/6edb138e-3475-11e6-962a-504e73dccc4d.jpg"/>
+  <img className = "restaurant-image" src = "./images/pret-image.jpg"/>
 );
 
 var grainStoreImage = (
-  <img className = "restaurant-image" src = "http://www.hot-dinners.com/images/stories/blog/2016/gsgatwick/gs-view.jpg"/>
+  <img className = "restaurant-image" src = "./images/grainstore-image.jpg"/>
 );
 
 var jamiesImage = (
-  <img className = "restaurant-image" src = "http://www.gatwickairport.com/contentassets/230d27d41df14e9882a70833527e736c/jamiesitalian_image_480x300.jpg"/>
+  <img className = "restaurant-image" src = "./images/jamies-image.jpg"/>
 );
 
 var caviarHouseImage = (
-  <img className = "restaurant-image" src = "http://www.fluidnetwork.co.uk/gfx/venues/17410/caviar_house_prunier_mayfair_fish_restaurant_london_04.jpg"/>
+  <img className = "restaurant-image" src = "./images/caviarhouse-image.jpg"/>
 );
 
 var comptoirLibanaisImage = (
-  <img className = "restaurant-image" src = "http://cheriecity.co.uk/wp-content/uploads/2012/01/ComptoirSouthKen-restaurant-3jpg.jpg"/>
+  <img className = "restaurant-image" src = "./images/comptoirlibanais-image.jpg"/>
 );
 
 var wagamamaImage = (
-  <img className = "restaurant-image" src = "http://www.wagamama.com/~/media/WagamamaMainsite/hero-pod-images/delivery_hero_gradient.jpg"/>
+  <img className = "restaurant-image" src = "./images/wagamama-image.jpg"/>
 );
 
 var nandosImage = (
-  <img className = "restaurant-image" src = "http://eu-static.bullring.co.uk.s3.amazonaws.com/Live/ResizedImages/storefronts/ye0bu4wx1vg/Gallery_Image/nandos.jpg"/>
+  <img className = "restaurant-image" src = "./images/nandos-image.jpg"/>
 );
 
 var wonderTreeImage = (
-  <img className = "restaurant-image" src = "https://cloud.githubusercontent.com/assets/13667174/16146343/73571106-3475-11e6-8d9f-6650dcb6b27d.jpg"/>
+  <img className = "restaurant-image" src = "./images/wondertree-image.jpg"/>
 );
 
 var noImage = (
