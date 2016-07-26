@@ -1,7 +1,7 @@
 import React from 'react';
 
 var yoSushiLogo= (
-<img src = "./images/yosushi-logo.jpg" width="40" height="40"/>
+<img src = "./images/yosushi-logo.png" width="40" height="40"/>
 );
 
 var pretLogo = (
