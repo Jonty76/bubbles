@@ -1,11 +1,11 @@
 import React from 'react';
 
 var yoSushiLogo= (
-<img src = "http://didix0merchant0prod.blob.core.windows.net/chains/6fefd508-378e-44dc-a407-4d2bbfe61920/logo/logo%20yo%20sushi.png" width="40" height="40"/>
+<img src = "../../images/yosushi-logo.jpg" width="40" height="40"/>
 );
 
 var pretLogo = (
-  <img src = "https://s-media-cache-ak0.pinimg.com/736x/8a/e2/cf/8ae2cf908bc581f6e321f5791b7d4d14.jpg" width="40" height="40"/>
+  <img src = "../../images/pret-logo.jpg" width="40" height="40"/>
 );
 
 var comptoirLibanaisLogo = (
@@ -13,7 +13,7 @@ var comptoirLibanaisLogo = (
 );
 
 var jamiesLogo = (
-  <img src = "http://didix0merchant0prod.blob.core.windows.net/chains/f8697810-83ec-4f32-8509-9c0da0c67e59/logo/jamies-italian.png" height="45"/>
+  <img src = "../../images/jamies-logo.png" height="45"/>
 );
 
 var caviarHouseLogo = (
@@ -21,7 +21,7 @@ var caviarHouseLogo = (
 );
 
 var wagamamaLogo = (
-  <img src = "http://www.xscape.co.uk/system/images/3057/assets/concession.jpg?1379416719" height="40"/>
+  <img src = "../../images/pret-logo.jpg" height="40"/>
 );
 
 var nandosLogo = (
