@@ -12,6 +12,14 @@ var BasketPage = React.createClass({
     }
   },
 
+  componentWillMount: function(){
+    var isExpo = typeof this.props.app
+    if(isExpo === "undefined") {
+      var location = window.location.origin + window.location.pathname + "#/"
+      window.location.href = location
+    }
+  },
+
   componentDidMount: function(){
     var that = this
     var tip = this.state.tip
