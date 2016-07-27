@@ -12,6 +12,14 @@ var BasketPage = React.createClass({
     }
   },
 
+  componentWillMount: function(){
+    var isExpo = typeof this.props.app
+    if(isExpo === "undefined") {
+      var location = window.location.origin + window.location.pathname + "#/"
+      window.location.href = location
+    }
+  },
+
   componentDidMount: function(){
     var that = this
     var tip = this.state.tip
@@ -118,7 +126,7 @@ var BasketPage = React.createClass({
           <p>
             <i id="add-tip" className="material-icons">add</i>
             <i id="remove-tip" className="material-icons">remove</i>
-            <p className="tip">Optional Delivery Fee: {formatPrice(this.state.tip)}</p>
+            <p className="tip">Delivery Fee (Optional): {formatPrice(this.state.tip)}</p>
           </p>
           <p><strong>Total: {formatPrice(total)}</strong></p>
         </div>

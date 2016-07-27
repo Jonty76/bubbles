@@ -25,7 +25,7 @@ test('Does successful payment return successful page', function(t){
         company: 'FAC',
         total: '2600',
         tip: '300',
-        orderNumber: '14678013129742600',
+        orderNumber: '322222242600',
         deliveryPoint: 'Main Entrance',
         deliveryTime: '1474428840000',
         expoCenter: 'Earls Court',

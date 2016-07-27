@@ -18,6 +18,14 @@ let selectRestaurant = React.createClass({
     };
   },
 
+  componentWillMount: function(){
+    var isExpo = typeof this.props.app
+    if(isExpo === "undefined") {
+      var location = window.location.origin + window.location.pathname + "#/"
+      window.location.href = location
+    }
+  },
+
   getRestaurantList: function() {
     var getUniqueTags = this.props.helpers.getUniqueTags;
     var uniqueTags = getUniqueTags(this.props.basket, "restaurant");

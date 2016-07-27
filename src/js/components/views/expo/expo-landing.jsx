@@ -72,10 +72,7 @@ let ExpoLanding = React.createClass({
   },
 
   timeChange: function (){
-    console.log(this.props.selectedDeliveryHour);
-    console.log(this.props.selectedDeliveryMin);
     var dateObj = new Date('Sun, 21 Aug 2016 ' + this.props.selectedDeliveryHour + ':' + this.props.selectedDeliveryMin)
-    console.log('dateObj',dateObj);
     var time = Date.parse(dateObj)
     // time variable needs to be in local time
     this.setState({
@@ -87,7 +84,6 @@ let ExpoLanding = React.createClass({
   tooSoonCheck: function () {
     var formattedSelectedDate = new Date(this.props.selectedDeliveryDate)
     var formattedSelectedTime = new Date(this.props.selectedDeliveryTime)
-    console.log(formattedSelectedTime);
 
     var year = formattedSelectedDate.getFullYear()
     var month = formattedSelectedDate.getMonth()
@@ -106,10 +102,8 @@ let ExpoLanding = React.createClass({
 
     if (parsedDate < Date.parse(diff)) {
       $('#expo-order-too-soon-modal').openModal()
-      console.log("time selected is too soon")
       return (false)
     } else {
-      console.log("that's fine")
       return (true)
     }
   },
@@ -146,7 +140,6 @@ let ExpoLanding = React.createClass({
 
   setUserType: function(event, index, value) {
     if(value === "attendee") {
-      console.log("value attendee>>", value)
       this.setState({
         selectedUserType: value,
         deliveryPoint: "Main Entrance"
@@ -167,7 +160,6 @@ let ExpoLanding = React.createClass({
     if (this.props.selectedDeliveryMin !== "") {
       var orderTimeValid = this.tooSoonCheck()
         if (orderTimeValid) {
-          console.log("render exhibitor")
           return (
             <SelectField className="dropdown" style={smallerFont} value={this.props.selectedUserType} floatingLabelText="Are you an Exhibitor?" onChange={this.setUserType}>
               <MenuItem value="exhibitor" primaryText="Yes" />
@@ -175,7 +167,6 @@ let ExpoLanding = React.createClass({
             </SelectField>
           )
         } else {
-          console.log("don't render exhibitor")
           this.setState({
             selectedDeliveryTime: ""
           })
@@ -261,7 +252,6 @@ let ExpoLanding = React.createClass({
   },
 
   selectExpo: function(expoCenter) {
-    console.log("selected expo>>>>", this.props.selectedExpo)
     return (
       <div>
         <SelectField className="dropdown" style={smallerFont} value={this.props.selectedExpo} floatingLabelText="Select Exhibition" onChange={this.setExpo}>
@@ -281,7 +271,7 @@ let ExpoLanding = React.createClass({
           <div className="center-align desktop-container custom-container">
             <div className="content-container">
               <div className="question-container">
-                <p className="standard-question-style">Hampers of Happiness, Delivered </p>
+                <p className="piccnicc-slogan">Hampers of Happiness, Delivered </p>
               </div>
                 <div className="center-align">
                   <p id="validation-text" className="validation-text center-align">Please fill in all fields!</p>

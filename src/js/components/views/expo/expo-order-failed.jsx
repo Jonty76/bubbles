@@ -8,7 +8,7 @@ var ExpoOrderFailedPage = React.createClass({
     var isOrder = localStorage.getItem("order");
 
     if (isOrder === null){
-      console.log("no order");
+      console.log("No Order");
     } else {
       this.props.actions.setExpoState("completed", "", "", "completed")
       this.props.actions.setExpoState("app", "", "", "expo")

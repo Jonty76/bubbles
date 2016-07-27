@@ -9,6 +9,14 @@ let restaurantImages = require('../../data/restaurant-images.jsx');
 
 var Menu = React.createClass({
 
+  componentWillMount: function(){
+    var isExpo = typeof this.props.app
+    if(isExpo === "undefined") {
+      var location = window.location.origin + window.location.pathname + "#/"
+      window.location.href = location
+    }
+  },
+
   getStructuredMenu: function() {
 
     var filterer = this.props.helpers.filterMenu;
