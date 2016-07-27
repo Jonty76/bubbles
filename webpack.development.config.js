@@ -15,7 +15,8 @@ module.exports = {
       loaders: [
         { test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot','babel-loader']},
         { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot','babel-loader']},
-        { test: /\.css$/, loader: 'style!css'}
+        { test: /\.css$/, loader: 'style!css'},
+        { test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, loader: 'file-loader?name=public/ozregular.otf'}
       ]
     },
     plugins: [
