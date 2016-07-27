@@ -1,11 +1,11 @@
 var expoData = {
     "Earls Court": {
-      TodayConf: {
-        code: "TodayConf",
-        name: "Today Conference '16: 11th July",
-        venue: "Earls Court",
-        dates: [1468251259286]
-      },
+      // TodayConf: {
+      //   code: "TodayConf",
+      //   name: "Today Conference '16: 11th July",
+      //   venue: "Earls Court",
+      //   dates: [1468251259286]
+      // },
       HealthConf: {
         code: "HealthConf",
         name: "Health Conference '16: 21st & 22nd Aug",
