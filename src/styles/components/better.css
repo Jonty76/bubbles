@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: OzRegular;
-  src: url(/ozregular.otf) format("opentype");
+  src: url(/#/public/ozregular.otf) format("opentype");
 }
 
 * {
