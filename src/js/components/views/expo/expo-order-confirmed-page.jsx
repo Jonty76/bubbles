@@ -36,6 +36,8 @@ var ExpoOrderConfirmedPage = React.createClass({
 
         <p>Any cancelation / change needs to be made at least 45 minutes before the requested delivery time, otherwise you will not receive a refund.</p>
 
+        <p>If you think you're missing our email then please check your spam / junk folder. If it's not there, please email <a style={{color:'#039be5', textDecoration:'underline'}} href="mailto:admin@piccnicc.com">admin@piccnicc.com</a></p>
+
           <div className="">
             <img className="logo-container" src="/piccnicclogo.png" alt="Piccnicc Logo"></img>
             <p className="piccnicc-slogan">Hampers of Happiness, Delivered</p>
