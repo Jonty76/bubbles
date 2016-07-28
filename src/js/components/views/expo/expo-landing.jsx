@@ -37,20 +37,24 @@ let ExpoLanding = React.createClass({
   componentDidMount: function() {
     var that = this
 
-    $("#expo-landing-page-button").click(function(){
+    $("#expo-landing-page-button").click(function(e){
       var isStateEmpty = Object.keys(that.state).map(function(elem){
         if(that.state[elem] === "") {
-          return false
+          return false;
         } else {
-          return true
+          return true;
         }
-      })
+      });
 
-      if(isStateEmpty.indexOf(false) > -1){
-        $("#validation-text").show()
+      if($(".too-soon-text").is(":visible") === true ) {
+        e.preventDefault();
       } else {
-        var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant"
-        window.location.href = location
+        if(isStateEmpty.indexOf(false) > -1){
+          $("#validation-text").show();
+        } else {
+          var location = window.location.origin + window.location.pathname + "#/basket/select-restaurant";
+          window.location.href = location
+        }
       }
     })
   },
@@ -101,7 +105,6 @@ let ExpoLanding = React.createClass({
     var diff = new Date(now.getTime() + 45*60000)
 
     if (parsedDate < Date.parse(diff)) {
-      $('#expo-order-too-soon-modal').openModal()
       return (false)
     } else {
       return (true)
@@ -167,11 +170,8 @@ let ExpoLanding = React.createClass({
             </SelectField>
           )
         } else {
-          this.setState({
-            selectedDeliveryTime: ""
-          })
           return (
-            <div></div>
+            <div className="too-soon-text">You can not order for less than 45 minutes time. Please select another time and try again.</div>
           )
         }
     }
@@ -286,18 +286,6 @@ let ExpoLanding = React.createClass({
 
                   {this.renderDeliveryLocation()}
 
-                </div>
-
-                <div id="expo-order-too-soon-modal" className="modal">
-                  <div className="flight-too-soon-content">
-                      <div className="flight-too-soon-text">
-                        <p className="top-line">You're trying to order for less than forty-five minutes time.</p>
-                        <p>Unfortunately, that doesn't give us quite enough time to have your order made up, collected and delivered to you.</p>
-                        <p>Please select another time and try again.</p>
-
-                        <a href="#!" className="modal-action modal-close btn-flat">Close</a>
-                      </div>
-                  </div>
                 </div>
 
             </div>
