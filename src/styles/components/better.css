@@ -992,6 +992,14 @@ input[type="submit"] {
   max-width: 290px;
 }
 
+.too-soon-text {
+  max-width: 290px;
+  color: #ED2C31;
+  padding-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* END OF EXPO STYLING */
 
 
