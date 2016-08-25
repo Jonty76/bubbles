@@ -29,7 +29,7 @@ var UnresponsiveHeader = React.createClass({
     )
   },
 
-  unactiveMenu: function (){
+  inactiveMenu: function (){
     return (
       <i className="material-icons icon-right right" style={{fontSize:"2.7rem", cursor:"default"}}>menu</i>
     )
@@ -40,7 +40,7 @@ var UnresponsiveHeader = React.createClass({
     if (this.props.active) {
       menu = this.activeMenu();
     } else {
-      menu = this.unactiveMenu();
+      menu = this.inactiveMenu();
     }
     return (
       <div className="navbar-fixed">
