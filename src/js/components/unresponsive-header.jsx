@@ -22,7 +22,7 @@ var UnresponsiveHeader = React.createClass({
         <nav className="nav-class">
           <div className="header nav-wrapper white-nav">
             <p className="left" id="brand-logo" style={{marginLeft:"1em"}}>Piccnicc</p>
-            <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons icon-right">menu</i></ul>
+            <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons icon-right">{this.props.icon}</i></ul>
               <ul className="side-nav fixed red-side-nav" id="mobile-demo" style={{display:"none", zIndex:"-1"}}>
                 <li>Hidden</li>
                 <li><Link className="right" to={"/expo-about"}>About</Link></li>

@@ -25,7 +25,7 @@ var LandingPage = React.createClass({
   render: function() {
     return (
       <div className="landing-background">
-      <UnresponsiveHeader />
+      <UnresponsiveHeader icon={""}/>
 
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
         <div className="valign-wrapper landing-content-container">
