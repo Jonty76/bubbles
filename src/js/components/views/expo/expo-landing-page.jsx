@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Header from '../../header.jsx';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import UnresponsiveHeader from '../../unresponsive-header.jsx'
 
 let expoData  = require('../../../data/expo-data.js');
 let smallerFont = {fontSize: "1em"}
@@ -59,16 +60,15 @@ var ExpoLandingPage = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "FAQ+/expo-faq"]
 
     try {
       localStorage.setItem("privateBrowsing", false)
     return (
       <div className="landing-background">
-      <Header headerTheme={"whiteNav"} text={""} iconRight={"menu"} iconLeft={"Piccnicc"} burgerMenuOptions={burgerMenuOptions}/>
+      <UnresponsiveHeader />
 
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
-        <div className="valign-wrapper landing-content-container desktop-container">
+        <div className="valign-wrapper landing-content-container">
           <div className="landing-content">
             <h5 className="landing-dropdown-label">Exhibition Centre</h5>
             {this.selectExpoCenter()}
@@ -82,8 +82,8 @@ var ExpoLandingPage = React.createClass({
     );
   } catch(err) {
     return (
-      <div className="desktop-container">
-        <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>
+      <div>
+      <UnresponsiveHeader />
         <div className="center-align">
 
           <p className="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>

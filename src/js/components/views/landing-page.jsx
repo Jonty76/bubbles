@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Header from '../header.jsx';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import UnresponsiveHeader from '../unresponsive-header.jsx'
 
 let expoData  = require('../../data/expo-data.js');
 let smallerFont = {fontSize: "1em"}
@@ -15,20 +16,6 @@ var LandingPage = React.createClass({
     }
   },
 
-  componentDidMount: function (){
-    $("#button-collapse").click(function(){
-      console.log("clickedddd");
-      $("#mobile-demo").css("display", "initial")
-    })
-    $(document).ready(function(){
-      $("#button-collapse").sideNav({
-        menuWidth: 220,
-        edge: 'right',
-        closeOnClick: true
-      });
-    })
-  },
-
   isSelected: function(event, index, value){
     this.setState({
       isSelected: value
@@ -38,22 +25,7 @@ var LandingPage = React.createClass({
   render: function() {
     return (
       <div className="landing-background">
-
-
-      <div className="navbar-fixed">
-        <nav className="nav-class">
-          <div className="header nav-wrapper white-nav">
-            <p className="left" id="brand-logo" style={{marginLeft:"1em"}}>Piccnicc</p>
-            <ul data-activates="mobile-demo" id="button-collapse" className="button-collapse right"><i className="material-icons icon-right">menu</i></ul>
-              <ul className="side-nav fixed red-side-nav" id="mobile-demo" style={{display:"none", zIndex:"-1"}}>
-                <li>Hidden</li>
-                <li><Link className="right" to={"/expo-about"}>About</Link></li>
-                <li><Link className="right" to={"/expo-faq"}>FAQ</Link></li>
-              </ul>
-          </div>
-        </nav>
-      </div>
-
+      <UnresponsiveHeader />
 
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
         <div className="valign-wrapper landing-content-container">
