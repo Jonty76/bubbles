@@ -13,7 +13,7 @@ let rightField = {fontSize: "0.8em", width: "100px", marginRight: "2em", float:"
 
 
 
-let ExpoLanding = React.createClass({
+let ExpoDetails = React.createClass({
   getInitialState: function() {
     return {
       selectedExpo: this.props.selectedExpo,
@@ -301,4 +301,4 @@ let ExpoLanding = React.createClass({
   }
 });
 
-module.exports = ExpoLanding;
+module.exports = ExpoDetails;

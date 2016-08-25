@@ -149,7 +149,7 @@ let OrderTrack = React.createClass({
 
 
   render: function() {
-    var burgerMenuOptions = ["About+/about", "Start Again+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Start Again+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     var mapOrRate;
     var button;
     if (this.props.complete) {

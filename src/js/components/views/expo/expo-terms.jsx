@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 var ExpoTerms = React.createClass({
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "FAQ+/expo-faq"]
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/events", "FAQ+/expo-faq"]
 
     return (
       <div>

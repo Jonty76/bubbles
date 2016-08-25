@@ -34,7 +34,7 @@ var OrderPage = React.createClass({
     var foodSubtotal = this.props.helpers.totalPriceOfItemsInBasket(this.props.basket);
     var deliveryFee = this.getDeliveryFee(menu);
     var total = foodSubtotal + deliveryFee;
-    var burgerMenuOptions = ["About+/about", "Start Again+/", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Start Again+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     return (
         <div className="custom-container desktop-container">
         <Header headerTheme={"whiteNav"} text={"Order Confirmed"} iconRight={"menu"} iconLeft={"arrow_back"} burgerMenuOptions={burgerMenuOptions}/>

@@ -102,9 +102,9 @@ var BasketPage = React.createClass({
     if(this.props.app === "airport") {
       burgerMenuOptions = ["About+/about", "Start Again+/airport", "Piccnicc Point+/map-view", "Order History+/order-history", "Logout+/login"]
     } else if (this.props.app === "expo") {
-      burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+      burgerMenuOptions = ["About+/expo-about", "Start Again+/events", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     } else {
-      burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
+      burgerMenuOptions = ["About+/expo-about", "Start Again+/events", "Order Details+/expo-order-details", "FAQ+/expo-faq"]
     }
 
     var adjustMargin = {

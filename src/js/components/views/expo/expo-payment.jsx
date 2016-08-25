@@ -203,7 +203,7 @@ let ExpoPayment = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/expo-about", "Start Again+/", "Order Details+/expo-order-details", "FAQ+/expo-faq"];
+    var burgerMenuOptions = ["About+/expo-about", "Start Again+/events", "Order Details+/expo-order-details", "FAQ+/expo-faq"];
     var deliveryTime = localStorage.getItem("deliveryTime").toString();
     var order = JSON.stringify(this.getCheckoutList());
     var orderNumber = this.generateOrderNumber();
