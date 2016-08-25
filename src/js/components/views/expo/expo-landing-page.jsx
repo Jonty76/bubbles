@@ -65,7 +65,7 @@ var ExpoLandingPage = React.createClass({
       localStorage.setItem("privateBrowsing", false)
     return (
       <div className="landing-background">
-      <UnresponsiveHeader icon={"menu"}/>
+      <UnresponsiveHeader active={true}/>
 
         <p className="bottom-text">© Piccnicc Ltd 2016</p>
         <div className="valign-wrapper landing-content-container">
@@ -83,7 +83,7 @@ var ExpoLandingPage = React.createClass({
   } catch(err) {
     return (
       <div>
-      <UnresponsiveHeader icon={"menu"}/>
+      <UnresponsiveHeader active={true}/>
         <div className="center-align">
 
           <p className="large-p">You are using private browsing. Please turn off private browsing to use Piccnicc.</p>
