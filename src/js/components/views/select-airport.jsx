@@ -39,7 +39,7 @@ let Page = React.createClass({
   },
 
   render: function() {
-    var burgerMenuOptions = ["About+/about", "Start Again+/", "Order History+/order-history", "Logout+/login"]
+    var burgerMenuOptions = ["About+/about", "Start Again+/airport", "Order History+/order-history", "Logout+/login"]
     return (
       <div>
           <Header headerTheme={"whiteNav"} text={"Piccnicc"} iconRight={"menu"} iconLeft={""} burgerMenuOptions={burgerMenuOptions}/>

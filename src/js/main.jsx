@@ -31,13 +31,14 @@ let ExpoAbout             = require('./components/views/expo/expo-about.jsx');
 let ExpoTerms             = require('./components/views/expo/expo-terms.jsx');
 let ExpoPrivacy           = require('./components/views/expo/expo-privacy.jsx');
 let ExpoOrderDetails      = require('./components/views/expo/expo-order-details.jsx');
-let ExpoLanding           = require('./components/views/expo/expo-landing.jsx');
+let ExpoDetails           = require('./components/views/expo/expo-details.jsx');
 let ExpoPayment           = require('./components/views/expo/expo-payment.jsx');
 let ExpoFaq               = require('./components/views/expo/expo-faq.jsx');
 let ExpoOrderConfirmed    = require('./components/views/expo/expo-order-confirmed-page.jsx')
 let ExpoOrderNotTaken     = require('./components/views/expo/expo-order-not-taken-page.jsx')
 let ExpoCancelOrder       = require('./components/views/expo/expo-cancel-order.jsx')
 let ExpoOrderFailed       = require('./components/views/expo/expo-order-failed.jsx')
+let ExpoLandingPage       = require('./components/views/expo/expo-landing-page.jsx');
 
 
 
@@ -54,8 +55,9 @@ render((
   <Router history={hashHistory}>
     <Route path="/" component={Basket}>
       <IndexRoute component={LandingPage} />
+      <Route path="/events" component={ExpoLandingPage} />
       <Route path="expo-faq" component={ExpoFaq} />
-      <Route path="select-expo" component={ExpoLanding} />
+      <Route path="select-expo" component={ExpoDetails} />
       <Route path="about" component={About} />
       <Route path="airport-not-served" component={AirportNotServed} />
       <Route path="airport" component={SelectAirport} />
