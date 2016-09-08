@@ -4,10 +4,10 @@ var server = require("../lib/index.js");
 var sendEmail = require("../lib/mail-gun.js");
 
 var payload = {
-  customerName: 'Katerina Pascoulis',
-  email: 'kat_pas@hotmail.co.uk',
+  customerName: 'Test UserName',
+  email: 'jonny@piccnicc.com',
   phoneNumber: '79521267321',
-  company: 'FAC',
+  company: 'Fake company',
   total: '6400',
   tip: '100',
   orderNumber: '14678013129742600',
@@ -48,7 +48,7 @@ test("test order details email is sent to user", function(t) {
 
 test("test cancel order email is sent to", function(t) {
   var cancelObj = {
-    customerEmail: "kat_pas@hotmail.co.uk",
+    customerEmail: "jonny@piccnicc.com",
     orderNumber: "456777777test"
   }
   sendEmail(cancelObj, "piccniccCancelledOrder", function(error){
